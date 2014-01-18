@@ -1,0 +1,1004 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="JobsSearchJobForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="jobType" type="java.lang.String" />
+      <form-property name="jobState" type="java.lang.String" />
+      <form-property name="jobMode" type="java.lang.String" />
+      <form-property name="deviceJobStatus" type="java.lang.String" />
+      <form-property name="searchText" type="java.lang.String" />
+      <form-property name="deviceID" type="java.lang.String" />
+      <form-property name="phoneNumber" type="java.lang.String" />
+      <form-property name="recordsPerPage" type="java.lang.Integer" />
+    </form-bean>
+    
+    <form-bean name="SearchDevicesInProgressForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="jobType" type="java.lang.String" />
+      <form-property name="searchText" type="java.lang.String" />
+      <form-property name="deviceID" type="java.lang.String" />
+      <form-property name="phoneNumber" type="java.lang.String" />
+      <form-property name="recordsPerPage" type="java.lang.Integer" />
+    </form-bean>
+    
+    <form-bean name="JobsJobViewForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="jobID" type="java.lang.String" />
+    </form-bean>
+    
+    <form-bean name="JobsOperationForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="jobID" type="java.lang.String" />
+      <form-property name="jobIDs" type="java.lang.String[]" />
+    </form-bean>
+    
+    <form-bean name="JobsCreateJobForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <!-- DispatchAction parameter: method -->
+      <form-property name="method" type="java.lang.String" />
+      
+      <form-property name="jobType" type="java.lang.String" />
+      
+      <form-property name="deviceExternalIDs" type="java.lang.String" />
+      <form-property name="deviceExternalIDsFile" type="org.apache.struts.upload.FormFile" />
+      <form-property name="phoneNumbers" type="java.lang.String" />
+      <form-property name="phoneNumbersFile" type="org.apache.struts.upload.FormFile" />
+      
+      <form-property name="manufacturerIDs" type="java.lang.String[]" />
+      <form-property name="modelIDs" type="java.lang.String[]" />
+      
+      <form-property name="carrierIDs" type="java.lang.String[]" />
+      
+      <!-- Temp Variable -->
+      <form-property name="manufacturerID" type="java.lang.String" />
+      <form-property name="modelID" type="java.lang.String" />
+      <form-property name="manufacturerID4TargetManufacturer" type="java.lang.String" />
+      <form-property name="carrierID" type="java.lang.String" />      
+    </form-bean>
+
+    <form-bean name="JobsJobDiscoveryForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="description" type="java.lang.String" />
+      <form-property name="nodeURIs" type="java.lang.String[]" />
+      
+      <!-- Common Job parameters **************************************** -->
+      <!-- Schedule time for Job -->
+      <form-property name="jobSchedule" type="java.lang.String" />
+      <!-- If false, will not send notification to device -->
+      <form-property name="sendNotification" type="java.lang.Boolean" />
+      <!-- DM Session UI Mode -->
+      <form-property name="uiMode" type="java.lang.String" />
+      <!-- DM Session Initiator -->
+      <form-property name="initiator" type="java.lang.String" />
+      <!-- Max concurrent devices -->
+      <form-property name="concurrentSize" type="java.lang.Long" />
+      <!-- Interval in milleseconds between per concurrent devices -->
+      <form-property name="concurrentInterval" type="java.lang.Long" />
+      <!-- Priority for job, 10 is highest, 1 is lowest. -->
+      <form-property name="priority" type="java.lang.Integer" />
+      <form-property name="startjob" type="java.lang.String"/>
+      <form-property name="startprompttype" type="java.lang.String"/>
+      <form-property name="startprompttext" type="java.lang.String"/>
+      <form-property name="endjob" type="java.lang.String"/>
+      <form-property name="endprompttype" type="java.lang.String"/>
+      <form-property name="endprompttext" type="java.lang.String"/>      
+    </form-bean>
+    
+    <form-bean name="JobsJobScriptForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="description" type="java.lang.String" />
+      <form-property name="commandScript" type="java.lang.String" />
+      
+      <!-- Common Job parameters **************************************** -->
+      <!-- Schedule time for Job -->
+      <form-property name="jobSchedule" type="java.lang.String" />
+      <!-- If false, will not send notification to device -->
+      <form-property name="sendNotification" type="java.lang.Boolean" />
+      <!-- DM Session UI Mode -->
+      <form-property name="uiMode" type="java.lang.String" />
+      <!-- DM Session Initiator -->
+      <form-property name="initiator" type="java.lang.String" />
+      <!-- Max concurrent devices -->
+      <form-property name="concurrentSize" type="java.lang.Long" />
+      <!-- Interval in milleseconds between per concurrent devices -->
+      <form-property name="concurrentInterval" type="java.lang.Long" />
+      <!-- Priority for job, 10 is highest, 1 is lowest. -->
+      <form-property name="priority" type="java.lang.Integer" />
+    </form-bean>
+    
+    <!-- Map-backed ActionForm -->
+    <form-bean name="JobProfileAssignmentForm4Save" type="com.npower.dm.action.jobs.ProfileAssignmentForm4Save">
+    </form-bean>
+
+    <form-bean name="JobsJobSoftwareInstallForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="description" type="java.lang.String" />
+      <form-property name="softwareID" type="java.lang.String" />
+      
+      <!-- Common Job parameters **************************************** -->
+      <!-- Schedule time for Job -->
+      <form-property name="jobSchedule" type="java.lang.String" />
+      <!-- If false, will not send notification to device -->
+      <form-property name="sendNotification" type="java.lang.Boolean" />
+      <!-- DM Session UI Mode -->
+      <form-property name="uiMode" type="java.lang.String" />
+      <!-- DM Session Initiator -->
+      <form-property name="initiator" type="java.lang.String" />
+      <!-- Max concurrent devices -->
+      <form-property name="concurrentSize" type="java.lang.Long" />
+      <!-- Interval in milleseconds between per concurrent devices -->
+      <form-property name="concurrentInterval" type="java.lang.Long" />
+      <!-- Priority for job, 10 is highest, 1 is lowest. -->
+      <form-property name="priority" type="java.lang.Integer" />
+      <form-property name="startjob" type="java.lang.String"/>
+      <form-property name="startprompttype" type="java.lang.String"/>
+      <form-property name="startprompttext" type="java.lang.String"/>
+      <form-property name="endjob" type="java.lang.String"/>
+      <form-property name="endprompttype" type="java.lang.String"/>
+      <form-property name="endprompttext" type="java.lang.String"/>      
+    </form-bean>
+    
+    <form-bean name="JobsJobFotaForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="description" type="java.lang.String" />
+      <form-property name="updateID" type="java.lang.String" />
+      
+      <!-- Common Job parameters **************************************** -->
+      <!-- Schedule time for Job -->
+      <form-property name="jobSchedule" type="java.lang.String" />
+      <!-- If false, will not send notification to device -->
+      <form-property name="sendNotification" type="java.lang.Boolean" />
+      <!-- DM Session UI Mode -->
+      <form-property name="uiMode" type="java.lang.String" />
+      <!-- DM Session Initiator -->
+      <form-property name="initiator" type="java.lang.String" />
+      <!-- Max concurrent devices -->
+      <form-property name="concurrentSize" type="java.lang.Long" />
+      <!-- Interval in milleseconds between per concurrent devices -->
+      <form-property name="concurrentInterval" type="java.lang.Long" />
+      <!-- Priority for job, 10 is highest, 1 is lowest. -->
+      <form-property name="priority" type="java.lang.Integer" />
+      <form-property name="startjob" type="java.lang.String"/>
+      <form-property name="startprompttype" type="java.lang.String"/>
+      <form-property name="startprompttext" type="java.lang.String"/>
+      <form-property name="endjob" type="java.lang.String"/>
+      <form-property name="endprompttype" type="java.lang.String"/>
+      <form-property name="endprompttext" type="java.lang.String"/>      
+    </form-bean>
+    
+    <form-bean name="JobsJobSoftwareUninstallForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="description" type="java.lang.String" />
+      <form-property name="softwareID" type="java.lang.String" />
+      
+      <!-- Common Job parameters **************************************** -->
+      <!-- Schedule time for Job -->
+      <form-property name="jobSchedule" type="java.lang.String" />
+      <!-- If false, will not send notification to device -->
+      <form-property name="sendNotification" type="java.lang.Boolean" />
+      <!-- DM Session UI Mode -->
+      <form-property name="uiMode" type="java.lang.String" />
+      <!-- DM Session Initiator -->
+      <form-property name="initiator" type="java.lang.String" />
+      <!-- Max concurrent devices -->
+      <form-property name="concurrentSize" type="java.lang.Long" />
+      <!-- Interval in milleseconds between per concurrent devices -->
+      <form-property name="concurrentInterval" type="java.lang.Long" />
+      <!-- Priority for job, 10 is highest, 1 is lowest. -->
+      <form-property name="priority" type="java.lang.Integer" />
+      <form-property name="startjob" type="java.lang.String"/>
+      <form-property name="startprompttype" type="java.lang.String"/>
+      <form-property name="startprompttext" type="java.lang.String"/>
+      <form-property name="endjob" type="java.lang.String"/>
+      <form-property name="endprompttype" type="java.lang.String"/>
+      <form-property name="endprompttext" type="java.lang.String"/>      
+    </form-bean>
+    
+    <form-bean name="JobsJobSoftwareActiveForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="description" type="java.lang.String" />
+      <form-property name="softwareID" type="java.lang.String" />
+      
+      <!-- Common Job parameters **************************************** -->
+      <!-- Schedule time for Job -->
+      <form-property name="jobSchedule" type="java.lang.String" />
+      <!-- If false, will not send notification to device -->
+      <form-property name="sendNotification" type="java.lang.Boolean" />
+      <!-- DM Session UI Mode -->
+      <form-property name="uiMode" type="java.lang.String" />
+      <!-- DM Session Initiator -->
+      <form-property name="initiator" type="java.lang.String" />
+      <!-- Max concurrent devices -->
+      <form-property name="concurrentSize" type="java.lang.Long" />
+      <!-- Interval in milleseconds between per concurrent devices -->
+      <form-property name="concurrentInterval" type="java.lang.Long" />
+      <!-- Priority for job, 10 is highest, 1 is lowest. -->
+      <form-property name="priority" type="java.lang.Integer" />
+      <form-property name="startjob" type="java.lang.String"/>
+      <form-property name="startprompttype" type="java.lang.String"/>
+      <form-property name="startprompttext" type="java.lang.String"/>
+      <form-property name="endjob" type="java.lang.String"/>
+      <form-property name="endprompttype" type="java.lang.String"/>
+      <form-property name="endprompttext" type="java.lang.String"/>      
+    </form-bean>
+    
+    <form-bean name="JobsJobSoftwareDeactiveForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="description" type="java.lang.String" />
+      <form-property name="softwareID" type="java.lang.String" />
+      
+      <!-- Common Job parameters **************************************** -->
+      <!-- Schedule time for Job -->
+      <form-property name="jobSchedule" type="java.lang.String" />
+      <!-- If false, will not send notification to device -->
+      <form-property name="sendNotification" type="java.lang.Boolean" />
+      <!-- DM Session UI Mode -->
+      <form-property name="uiMode" type="java.lang.String" />
+      <!-- DM Session Initiator -->
+      <form-property name="initiator" type="java.lang.String" />
+      <!-- Max concurrent devices -->
+      <form-property name="concurrentSize" type="java.lang.Long" />
+      <!-- Interval in milleseconds between per concurrent devices -->
+      <form-property name="concurrentInterval" type="java.lang.Long" />
+      <!-- Priority for job, 10 is highest, 1 is lowest. -->
+      <form-property name="priority" type="java.lang.Integer" />
+      <form-property name="startjob" type="java.lang.String"/>
+      <form-property name="startprompttype" type="java.lang.String"/>
+      <form-property name="startprompttext" type="java.lang.String"/>
+      <form-property name="endjob" type="java.lang.String"/>
+      <form-property name="endprompttype" type="java.lang.String"/>
+      <form-property name="endprompttext" type="java.lang.String"/>      
+    </form-bean>
+    
+    <form-bean name="JobsJobSoftwareUpgradeForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="description" type="java.lang.String" />
+      <form-property name="softwareID" type="java.lang.String" />
+      
+      <!-- Common Job parameters **************************************** -->
+      <!-- Schedule time for Job -->
+      <form-property name="jobSchedule" type="java.lang.String" />
+      <!-- If false, will not send notification to device -->
+      <form-property name="sendNotification" type="java.lang.Boolean" />
+      <!-- DM Session UI Mode -->
+      <form-property name="uiMode" type="java.lang.String" />
+      <!-- DM Session Initiator -->
+      <form-property name="initiator" type="java.lang.String" />
+      <!-- Max concurrent devices -->
+      <form-property name="concurrentSize" type="java.lang.Long" />
+      <!-- Interval in milleseconds between per concurrent devices -->
+      <form-property name="concurrentInterval" type="java.lang.Long" />
+      <!-- Priority for job, 10 is highest, 1 is lowest. -->
+      <form-property name="priority" type="java.lang.Integer" />
+      <form-property name="startjob" type="java.lang.String"/>
+      <form-property name="startprompttype" type="java.lang.String"/>
+      <form-property name="startprompttext" type="java.lang.String"/>
+      <form-property name="endjob" type="java.lang.String"/>
+      <form-property name="endprompttype" type="java.lang.String"/>
+      <form-property name="endprompttext" type="java.lang.String"/>      
+    </form-bean>
+    
+    <form-bean name="JobsJobSoftwareDiscoveryForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="description" type="java.lang.String" />
+      
+      <!-- Common Job parameters **************************************** -->
+      <!-- Schedule time for Job -->
+      <form-property name="jobSchedule" type="java.lang.String" />
+      <!-- If false, will not send notification to device -->
+      <form-property name="sendNotification" type="java.lang.Boolean" />
+      <!-- DM Session UI Mode -->
+      <form-property name="uiMode" type="java.lang.String" />
+      <!-- DM Session Initiator -->
+      <form-property name="initiator" type="java.lang.String" />
+      <!-- Max concurrent devices -->
+      <form-property name="concurrentSize" type="java.lang.Long" />
+      <!-- Interval in milleseconds between per concurrent devices -->
+      <form-property name="concurrentInterval" type="java.lang.Long" />
+      <!-- Priority for job, 10 is highest, 1 is lowest. -->
+      <form-property name="priority" type="java.lang.Integer" />
+      <form-property name="startjob" type="java.lang.String"/>
+      <form-property name="startprompttype" type="java.lang.String"/>
+      <form-property name="startprompttext" type="java.lang.String"/>
+      <form-property name="endjob" type="java.lang.String"/>
+      <form-property name="endprompttype" type="java.lang.String"/>
+      <form-property name="endprompttext" type="java.lang.String"/>      
+    </form-bean>
+    <form-bean name="JobsSelectSoftware4InstallForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="searchText" type="java.lang.String" />
+      <form-property name="recordsPerPage" type="java.lang.Integer" />      
+    </form-bean>
+  </form-beans>
+
+  <action-mappings >
+    
+    <!-- Job List: all of jobs -->
+    <action
+      path="/jobs/list/all"
+      attribute="SearchJobForm"
+      name="JobsSearchJobForm"
+      scope="request"
+      type="com.npower.dm.action.jobs.Jobs4AllAction"
+      roles="authenticated">
+      <forward
+        name="list"
+        path="tile.jobs.list.all"
+        contextRelative="true" />
+    </action>
+
+    <!-- Job List: all of queued jobs -->
+    <action
+      path="/jobs/list/queued"
+      attribute="SearchJobForm"
+      name="JobsSearchJobForm"
+      scope="request"
+      type="com.npower.dm.action.jobs.Jobs4QueuedAction"
+      roles="authenticated">
+      <forward
+        name="list"
+        path="tile.jobs.list.queued"
+        contextRelative="true" />
+    </action>
+    
+    <!-- Job List: all of finished jobs -->
+    <action
+      path="/jobs/list/finished"
+      attribute="SearchJobForm"
+      name="JobsSearchJobForm"
+      scope="request"
+      type="com.npower.dm.action.jobs.Jobs4FinishedAction"
+      roles="authenticated">
+      <forward
+        name="list"
+        path="tile.jobs.list.finished"
+        contextRelative="true" />
+    </action>
+    
+    
+    <action
+      attribute="JobViewForm"
+      name="JobsJobViewForm"
+      path="/jobs/JobView"
+      scope="request"
+      type="com.npower.dm.action.jobs.JobViewAction"
+      validate="false"
+      roles="authenticated">
+      <!-- DM Profile Assignment -->
+      <forward
+        name="view.dm.assign.profile"
+        path="tile.jobs.job.view.dm.assign.profile"
+        contextRelative="true" />
+      <!-- DM Profile Re-Assignment -->
+      <forward
+        name="view.dm.re_assign.profile"
+        path="tile.jobs.job.view.dm.re_assign.profile"
+        contextRelative="true" />
+      <!-- DM Device Discovery -->
+      <forward
+        name="view.dm.discovery"
+        path="tile.jobs.job.view.dm.discovery"
+        contextRelative="true" />
+      <!-- DM Command script -->
+      <forward
+        name="view.dm.command.script"
+        path="tile.jobs.job.view.dm.command.script"
+        contextRelative="true" />
+       <!-- DM Firmware Update -->
+      <forward
+        name="view.dm.firmware.update"
+        path="tile.jobs.job.view.dm.firmware.update"
+        contextRelative="true" />
+       <!-- DM Software Install -->
+      <forward
+        name="view.dm.software.install"
+        path="tile.jobs.job.view.dm.software.install"
+        contextRelative="true" />
+       <!-- DM Software UnInstall -->
+      <forward
+        name="view.dm.software.uninstall"
+        path="tile.jobs.job.view.dm.software.uninstall"
+        contextRelative="true" />
+       <!-- DM Software Active -->
+      <forward
+        name="view.dm.software.active"
+        path="tile.jobs.job.view.dm.software.active"
+        contextRelative="true" />
+       <!-- DM Software Deactive -->
+      <forward
+        name="view.dm.software.deactive"
+        path="tile.jobs.job.view.dm.software.deactive"
+        contextRelative="true" />
+       <!-- DM Software Upgrade -->
+      <forward
+        name="view.dm.software.upgrade"
+        path="tile.jobs.job.view.dm.software.upgrade"
+        contextRelative="true" />
+       <!-- DM Software Discovery -->
+      <forward
+        name="view.dm.software.discovery"
+        path="tile.jobs.job.view.dm.software.discovery"
+        contextRelative="true" />
+      <!-- CP Profile Assignment -->
+      <forward
+        name="view.cp.assign.profile"
+        path="tile.jobs.job.view.cp.assign.profile"
+        contextRelative="true" />
+    </action>
+    
+    <action
+      path="/jobs/Job"
+      parameter="action"
+      attribute="JobsOperationForm"
+      name="JobsOperationForm"
+      scope="request"
+      type="com.npower.dm.action.jobs.JobAction"
+      validate="false"
+      roles="authenticated">
+      <forward
+        name="view"
+        path="/jobs/JobView.do"
+        contextRelative="true" />
+      <forward
+        name="job.list.queued"
+        path="/jobs/list/queued.do"
+        contextRelative="true" />
+      <forward
+        name="job.list.finished"
+        path="/jobs/list/finished.do"
+        contextRelative="true" />
+      <forward
+        name="job.list.all"
+        path="/jobs/list/all.do"
+        contextRelative="true" />
+    </action>
+
+    <!-- Select Job Type -->
+    <action
+      path="/jobs/SelectJobType"
+      parameter="method"
+      name="JobsCreateJobForm"
+      attribute="JobsCreateJobForm"
+      scope="request"
+      type="com.npower.dm.action.jobs.SelectJobTypeAction"
+      validate="false"
+      roles="authenticated">
+      <forward
+        name="SelectJobType"
+        path="tile.jobs.edit.jobType"
+        contextRelative="true" />
+      <forward
+        name="setTargetDevices"
+        path="/jobs/SetTargetDevices.do"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/jobs/list/queued.do"
+        contextRelative="true"
+        redirect="true" />
+    </action>
+
+    <!-- Set Target Devices -->
+    <action
+      path="/jobs/SetTargetDevices"
+      name="JobsCreateJobForm"
+      attribute="JobsCreateJobForm"
+      scope="request"
+      type="com.npower.dm.action.jobs.SetTargetDevicesAction"
+      validate="false"
+      roles="authenticated">
+      <forward
+        name="view"
+        path="tile.jobs.edit.setTargetDevices"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/jobs/SelectJobType.do"
+        contextRelative="true"
+        redirect="true" />
+    </action>
+
+    <action
+      path="/jobs/EditJobType"
+      parameter="jobType"
+      name="JobsCreateJobForm"
+      attribute="JobsCreateJobForm"
+      input="/jobs/SetTargetDevices.do"
+      scope="request"
+      type="com.npower.dm.action.jobs.EditJobAction"
+      validate="true"
+      roles="authenticated">
+      <forward
+        name="cancel"
+        path="/jobs/SelectJobType.do"
+        contextRelative="true"
+        redirect="true"/>
+      <forward
+        name="EditScript"
+        path="tile.jobs.edit.jobScript"
+        contextRelative="true" />
+      <forward
+        name="WizardAssignProfile4DM"
+        path="/jobs/dm/SelectProfileConfig.do"
+        contextRelative="true" />
+      <forward
+        name="WizardAssignProfile4CP"
+        path="/jobs/cp/SelectProfileConfig.do"
+        contextRelative="true" />
+      <forward
+        name="EditDiscoveryNode"
+        path="/jobs/SaveDiscoveryJob.do"
+        contextRelative="true" />
+      <forward
+        name="SelectJobType"
+        path="/jobs/SelectJobType.do"
+        contextRelative="true" />
+      <forward
+        name="software.install.select.software"
+        path="/jobs/SelectSoftware4Install.do"
+        contextRelative="true" />
+      <forward
+        name="software.discovery"
+        path="/jobs/job/software/discovery/save.do"
+        contextRelative="true" />
+      <forward
+        name="software.uninstall.select.software"
+        path="tile.jobs.edit.software.uninstall.select.software"
+        contextRelative="true" />
+      <forward
+        name="software.active.select.software"
+        path="tile.jobs.edit.software.active.select.software"
+        contextRelative="true" />
+      <forward
+        name="software.deactive.select.software"
+        path="tile.jobs.edit.software.deactive.select.software"
+        contextRelative="true" />
+      <forward
+        name="software.upgrade.select.software"
+        path="tile.jobs.edit.software.upgrade.select.software"
+        contextRelative="true" />
+      <forward
+        name="fota.select.update"
+        path="tile.jobs.edit.fota.select.update"
+        contextRelative="true" />
+    </action>
+    <action 
+      path="/jobs/SelectSoftware4Install"
+      type="com.npower.dm.action.jobs.SelectSoftware4InstallAction"
+      name="JobsSelectSoftware4InstallForm"
+      attribute="JobsSelectSoftware4InstallForm"
+      scope="request"
+      validate="false"
+      roles="authenticated">
+      <forward
+        name="display"
+        path="tile.jobs.edit.software.install.select.software"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/jobs/SaveDiscoveryJob"
+      parameter="action"
+      attribute="JobsJobDiscoveryForm"
+      input="tile.jobs.edit.discovery"
+      name="JobsJobDiscoveryForm"
+      scope="request"
+      type="com.npower.dm.action.jobs.SaveJobDiscoveryAction"
+      roles="authenticated">
+      <forward
+        name="edit"
+        path="tile.jobs.edit.discovery"
+        contextRelative="true" />
+      <forward
+        name="schedule"
+        path="tile.jobs.edit.discovery.schedule"
+        contextRelative="true" />
+      <forward
+        name="success"
+        path="tile.jobs.success.jobDiscovery"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/jobs/SelectJobType.do"
+        contextRelative="true"
+        redirect="true"/>
+    </action>
+    
+    <action
+      path="/jobs/SaveScirpt"
+      attribute="JobsJobScriptForm"
+      name="JobsJobScriptForm"
+      input="tile.jobs.edit.jobScript"
+      parameter="action"
+      scope="request"
+      type="com.npower.dm.action.jobs.SaveJobScriptAction"
+      validate="true"
+      roles="authenticated">
+      <forward
+        name="schedule"
+        path="tile.jobs.view.jobScript.schedule"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/jobs/SelectJobType.do"
+        contextRelative="true" />
+      <forward
+        name="ViewScript"
+        path="tile.jobs.view.jobScript"
+        contextRelative="true" />
+      <forward
+        name="EditScript"
+        path="tile.jobs.edit.jobScript"
+        contextRelative="true" />
+      <forward
+        name="success"
+        path="tile.jobs.success.jobScript"
+        contextRelative="true" />
+    </action>
+    
+    <!-- Action for Job ProfileAssgingment DM mode: Select Profile Config -->
+    <action
+      attribute="JobProfileAssignmentForm"
+      name="JobProfileAssignmentForm4Save"
+      path="/jobs/dm/SelectProfileConfig"
+      scope="request"
+      type="com.npower.dm.action.jobs.SelectProfileConfigAction"
+      validate="false"
+      roles="authenticated">
+      <forward
+        name="display"
+        path="tile.jobs.dm.select.profileconfigs"
+        contextRelative="true" />
+    </action>
+    <!-- Action for Job ProfileAssgingment CP mode: Select Profile Config -->
+    <action
+      attribute="JobProfileAssignmentForm"
+      name="JobProfileAssignmentForm4Save"
+      path="/jobs/cp/SelectProfileConfig"
+      scope="request"
+      type="com.npower.dm.action.jobs.SelectProfileConfigAction"
+      validate="false"
+      roles="authenticated">
+      <forward
+        name="display"
+        path="tile.jobs.cp.select.profileconfigs"
+        contextRelative="true" />
+    </action>
+    <!-- Action for Job ProfileAssgingment DM Mode: Edit or view Profile Config -->
+    <action
+      attribute="JobProfileAssignmentForm"
+      input="/jobs/dm/SelectProfileConfig.do"
+      name="JobProfileAssignmentForm4Save"
+      path="/jobs/dm/EditProfileAssignment"
+      scope="request"
+      type="com.npower.dm.action.jobs.EditProfileAssignmentAction"
+      validate="false"
+      roles="authenticated">
+      <forward
+        name="assign.new.profile"
+        path="tile.jobs.dm.edit.profileAssignment"
+        contextRelative="true" />
+      <forward
+        name="re-assign.profile"
+        path="tile.jobs.dm.edit.profileReAssignment"
+        contextRelative="true" />
+      <forward
+        name="inputProfileID"
+        path="/jobs/dm/SelectProfileConfig.do"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/jobs/SelectJobType.do"
+        contextRelative="true" />
+    </action>
+    <!-- Action for Job ProfileAssgingment CP Mode: Edit or view Profile Config -->
+    <action
+      attribute="JobProfileAssignmentForm"
+      input="/jobs/cp/SelectProfileConfig.do"
+      name="JobProfileAssignmentForm4Save"
+      path="/jobs/cp/EditProfileAssignment"
+      scope="request"
+      type="com.npower.dm.action.jobs.EditProfileAssignmentAction"
+      validate="false"
+      roles="authenticated">
+      <forward
+        name="assign.new.profile"
+        path="tile.jobs.cp.edit.profileAssignment"
+        contextRelative="true" />
+      <forward
+        name="re-assign.profile"
+        path="tile.jobs.cp.edit.profileReAssignment"
+        contextRelative="true" />
+      <forward
+        name="inputProfileID"
+        path="/jobs/cp/SelectProfileConfig.do"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/jobs/SelectJobType.do"
+        contextRelative="true" />
+    </action>
+    <!-- Action for Job ProfileAssgingment DM Mode: Save Profile Config -->
+    <action
+      attribute="JobProfileAssignmentForm"
+      name="JobProfileAssignmentForm4Save"
+      parameter="action"
+      path="/jobs/dm/SaveProfileAssignment"
+      scope="request"
+      type="com.npower.dm.action.jobs.SaveProfileAssignment4DMAction"
+      roles="authenticated"
+      validate="false">
+      <forward
+        name="success"
+        path="tile.jobs.success.profileAssignment"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/jobs/SelectJobType.do"
+        contextRelative="true" />
+      <forward
+        name="edit"
+        path="/jobs/dm/EditProfileAssignment.do"
+        contextRelative="true" />
+      <forward
+        name="schedule"
+        path="tile.jobs.dm.edit.profileAssignment.schedule"
+        contextRelative="true" />
+    </action>
+    <!-- Action for Job ProfileAssgingment CP Mode: Save Profile Config -->
+    <action
+      attribute="JobProfileAssignmentForm"
+      name="JobProfileAssignmentForm4Save"
+      parameter="action"
+      path="/jobs/cp/SaveProfileAssignment"
+      scope="request"
+      type="com.npower.dm.action.jobs.SaveProfileAssignment4CPAction"
+      roles="authenticated"
+      validate="false">
+      <forward
+        name="success"
+        path="tile.jobs.success.profileAssignment"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/jobs/SelectJobType.do"
+        contextRelative="true" />
+      <forward
+        name="edit"
+        path="/jobs/cp/EditProfileAssignment.do"
+        contextRelative="true" />
+      <forward
+        name="schedule"
+        path="tile.jobs.cp.edit.profileAssignment.schedule"
+        contextRelative="true" />
+    </action>
+    
+    <action
+      path="/jobs/DevicesInProgress"
+      attribute="SearchDevicesInProgressForm"
+      name="SearchDevicesInProgressForm"
+      scope="request"
+      type="com.npower.dm.action.jobs.DevicesInProgressAction"
+      roles="authenticated">
+      <forward
+        name="list"
+        path="tile.jobs.in.progress.devices.list"
+        contextRelative="true" />
+    </action>
+    
+    <!-- Save Software Installation Job -->
+    <action
+      path="/jobs/job/software/install/save"
+      parameter="action"
+      attribute="JobsJobSoftwareInstallForm"
+      input="tile.jobs.edit.software.install.select.software"
+      name="JobsJobSoftwareInstallForm"
+      scope="request"
+      type="com.npower.dm.action.jobs.SaveJob4SoftwareInstallAction"
+      roles="authenticated">
+      <forward
+        name="edit"
+        path="tile.jobs.edit.software.install.select.software"
+        contextRelative="true" />
+      <forward
+        name="schedule"
+        path="tile.jobs.edit.software.install.schedule"
+        contextRelative="true" />
+      <forward
+        name="success"
+        path="tile.jobs.success.software.install"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/jobs/SelectJobType.do"
+        contextRelative="true"
+        redirect="true"/>
+    </action>
+    
+    <!-- Save Software Uninstallation Job -->
+    <action
+      path="/jobs/job/software/uninstall/save"
+      parameter="action"
+      attribute="JobsJobSoftwareUninstallForm"
+      input="tile.jobs.edit.software.uninstall.select.software"
+      name="JobsJobSoftwareUninstallForm"
+      scope="request"
+      type="com.npower.dm.action.jobs.SaveJob4SoftwareUninstallAction"
+      roles="authenticated">
+      <forward
+        name="edit"
+        path="tile.jobs.edit.software.uninstall.select.software"
+        contextRelative="true" />
+      <forward
+        name="schedule"
+        path="tile.jobs.edit.software.uninstall.schedule"
+        contextRelative="true" />
+      <forward
+        name="success"
+        path="tile.jobs.success.software.uninstall"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/jobs/SelectJobType.do"
+        contextRelative="true"
+        redirect="true"/>
+    </action>
+    
+    <!-- Save Software Active Job -->
+    <action
+      path="/jobs/job/software/active/save"
+      parameter="action"
+      attribute="JobsJobSoftwareActiveForm"
+      input="tile.jobs.edit.software.active.select.software"
+      name="JobsJobSoftwareActiveForm"
+      scope="request"
+      type="com.npower.dm.action.jobs.SaveJob4SoftwareActiveAction"
+      roles="authenticated">
+      <forward
+        name="edit"
+        path="tile.jobs.edit.software.active.select.software"
+        contextRelative="true" />
+      <forward
+        name="schedule"
+        path="tile.jobs.edit.software.active.schedule"
+        contextRelative="true" />
+      <forward
+        name="success"
+        path="tile.jobs.success.software.active"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/jobs/SelectJobType.do"
+        contextRelative="true"
+        redirect="true"/>
+    </action>
+    
+    <!-- Save Software Deactive Job -->
+    <action
+      path="/jobs/job/software/deactive/save"
+      parameter="action"
+      attribute="JobsJobSoftwareDeactiveForm"
+      input="tile.jobs.edit.software.deactive.select.software"
+      name="JobsJobSoftwareDeactiveForm"
+      scope="request"
+      type="com.npower.dm.action.jobs.SaveJob4SoftwareDeactiveAction"
+      roles="authenticated">
+      <forward
+        name="edit"
+        path="tile.jobs.edit.software.deactive.select.software"
+        contextRelative="true" />
+      <forward
+        name="schedule"
+        path="tile.jobs.edit.software.deactive.schedule"
+        contextRelative="true" />
+      <forward
+        name="success"
+        path="tile.jobs.success.software.deactive"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/jobs/SelectJobType.do"
+        contextRelative="true"
+        redirect="true"/>
+    </action>
+    
+    <!-- Save Software Upgrade Job -->
+    <action
+      path="/jobs/job/software/upgrade/save"
+      parameter="action"
+      attribute="JobsJobSoftwareUpgradeForm"
+      input="tile.jobs.edit.software.upgrade.select.software"
+      name="JobsJobSoftwareUpgradeForm"
+      scope="request"
+      type="com.npower.dm.action.jobs.SaveJob4SoftwareUpgradeAction"
+      roles="authenticated">
+      <forward
+        name="edit"
+        path="tile.jobs.edit.software.upgrade.select.software"
+        contextRelative="true" />
+      <forward
+        name="schedule"
+        path="tile.jobs.edit.software.upgrade.schedule"
+        contextRelative="true" />
+      <forward
+        name="success"
+        path="tile.jobs.success.software.upgrade"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/jobs/SelectJobType.do"
+        contextRelative="true"
+        redirect="true"/>
+    </action>
+    
+    <!-- Save Software Discovery Job -->
+    <action
+      path="/jobs/job/software/discovery/save"
+      parameter="action"
+      attribute="JobsJobSoftwareDiscoveryForm"
+      name="JobsJobSoftwareDiscoveryForm"
+      scope="request"
+      type="com.npower.dm.action.jobs.SaveJob4SoftwareDiscoveryAction"
+      roles="authenticated">
+      <forward
+        name="schedule"
+        path="tile.jobs.edit.software.discovery.schedule"
+        contextRelative="true" />
+      <forward
+        name="success"
+        path="tile.jobs.success.software.discovery"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/jobs/SelectJobType.do"
+        contextRelative="true"
+        redirect="true"/>
+    </action>
+    
+    <!-- Save FOTA Job -->
+    <action
+      path="/jobs/job/fota/save"
+      parameter="action"
+      attribute="JobsJobFotaForm"
+      input="tile.jobs.edit.fota.select.update"
+      name="JobsJobFotaForm"
+      scope="request"
+      type="com.npower.dm.action.jobs.SaveJob4FotaAction"
+      roles="authenticated">
+      <forward
+        name="edit"
+        path="tile.jobs.edit.fota.select.update"
+        contextRelative="true" />
+      <forward
+        name="schedule"
+        path="tile.jobs.edit.fota.schedule"
+        contextRelative="true" />
+      <forward
+        name="success"
+        path="tile.jobs.success.fota"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/jobs/SelectJobType.do"
+        contextRelative="true"
+        redirect="true"/>
+    </action>
+    
+    <!-- Command script helper -->
+    <action parameter="method" path="/common/CmdTemplate"
+      type="com.npower.dm.action.CommandTemplateAjaxAction" />
+    
+    <!-- DM Session Tracking Sumary logs for a device and a job -->
+    <action path="/jobs/job/device/dmSessionTracking/sumary" 
+            type="com.npower.dm.action.jobs.DMSessionTrackingLogSumary4DeviceAction"
+            roles="authenticated">
+      <forward name="list" path="tile.jobs.job.device.dmSessionTracking.sumary"></forward>
+    </action>
+    
+    <!-- DM Session Tracking Detail logs for a device and a job -->
+    <action path="/jobs/job/device/dmSessionTracking/detail" 
+            type="com.npower.dm.action.jobs.DMSessionTrackingLogDetail4DeviceAction"
+            roles="authenticated">
+      <forward name="list" path="tile.jobs.job.device.dmSessionTracking.detail"></forward>
+    </action>
+  </action-mappings>    
+    
+</struts-config>
+  

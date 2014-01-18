@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<tiles-definitions>
+
+    <!-- Tiles: Profile Management  -->
+    <definition name="baseJobsManagement" extends="otas.dm.main.base">
+	    <put name="title">Change_Me</put>
+		<put name="SubMenus" value="/jsp/jobs/menus.jsp" />
+		<put name="MainContent" value="Change_Me" />
+        <putList name="LocationLabels">
+           <add value="Change_Me"></add>
+           <add value="Change_Me"></add>
+           <add value="Change_Me"></add>
+        </putList>
+    </definition>
+
+    <!-- View: List all of jobs -->
+	<definition name="tile.jobs.list.all" extends="baseJobsManagement">
+	    <put name="title">tile.jobs.list.all.pageTitle</put>
+		<put name="MainContent" value="/jsp/jobs/jobs/jobs4all.jsp" />
+        <put name="SearchPannel" value="/jsp/jobs/jobs/searchpannel4all.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.list.all.location1.label"></add>
+           <add value="tile.jobs.list.all.location2.label"></add>
+        </putList>
+	</definition>
+
+    <!-- View: List all of queued jobs -->
+	<definition name="tile.jobs.list.queued" extends="baseJobsManagement">
+	    <put name="title">tile.jobs.list.queued.pageTitle</put>
+		<put name="MainContent" value="/jsp/jobs/jobs/jobs4queued.jsp" />
+        <put name="SearchPannel" value="/jsp/jobs/jobs/searchpannel4queued.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.list.queued.location1.label"></add>
+           <add value="tile.jobs.list.queued.location2.label"></add>
+        </putList>
+	</definition>
+
+    <!-- View: List all of finished jobs -->
+	<definition name="tile.jobs.list.finished" extends="baseJobsManagement">
+	    <put name="title">tile.jobs.list.finished.pageTitle</put>
+		<put name="MainContent" value="/jsp/jobs/jobs/jobs4finished.jsp" />
+        <put name="SearchPannel" value="/jsp/jobs/jobs/searchpannel4finished.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.list.finished.location1.label"></add>
+           <add value="tile.jobs.list.finished.location2.label"></add>
+        </putList>
+	</definition>
+
+    <!-- View: Job for DM profile assign -->
+	<definition name="tile.jobs.job.view.dm.assign.profile" extends="baseJobsManagement">
+	    <put name="title">tile.jobs.jobView.pageTitle</put>
+		<put name="MainContent" value="/jsp/jobs/view/dm/assign_profile.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.jobView.location1.label"></add>
+           <add value="tile.jobs.jobView.location2.label"></add>
+        </putList>
+	</definition>
+
+    <!-- View: Job for DM Prefile reassign -->
+	<definition name="tile.jobs.job.view.dm.re_assign.profile" extends="baseJobsManagement">
+	    <put name="title">tile.jobs.jobView.pageTitle</put>
+		<put name="MainContent" value="/jsp/jobs/view/dm/re_assign_profile.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.jobView.location1.label"></add>
+           <add value="tile.jobs.jobView.location2.label"></add>
+        </putList>
+	</definition>
+
+    <!-- View: Job for DM Device discovery -->
+	<definition name="tile.jobs.job.view.dm.discovery" extends="baseJobsManagement">
+	    <put name="title">tile.jobs.jobView.pageTitle</put>
+		<put name="MainContent" value="/jsp/jobs/view/dm/discovery.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.jobView.location1.label"></add>
+           <add value="tile.jobs.jobView.location2.label"></add>
+        </putList>
+	</definition>
+
+    <!-- View: Job for DM Command script -->
+	<definition name="tile.jobs.job.view.dm.command.script" extends="baseJobsManagement">
+	    <put name="title">tile.jobs.jobView.pageTitle</put>
+		<put name="MainContent" value="/jsp/jobs/view/dm/command_script.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.jobView.location1.label"></add>
+           <add value="tile.jobs.jobView.location2.label"></add>
+        </putList>
+	</definition>
+
+    <!-- View: Job for DM Firmware update -->
+	<definition name="tile.jobs.job.view.dm.firmware.update" extends="baseJobsManagement">
+	    <put name="title">tile.jobs.jobView.pageTitle</put>
+		<put name="MainContent" value="/jsp/jobs/view/dm/firmware_update.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.jobView.location1.label"></add>
+           <add value="tile.jobs.jobView.location2.label"></add>
+        </putList>
+	</definition>
+
+    <!-- View: Job for DM Software Install -->
+    <definition name="tile.jobs.job.view.dm.software.install" extends="baseJobsManagement">
+        <put name="title">tile.jobs.jobView.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/view/dm/software_install.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.jobView.location1.label"></add>
+           <add value="tile.jobs.jobView.location2.label"></add>
+        </putList>
+    </definition>
+
+    <!-- View: Job for DM Software UnInstall -->
+    <definition name="tile.jobs.job.view.dm.software.uninstall" extends="baseJobsManagement">
+        <put name="title">tile.jobs.jobView.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/view/dm/software_uninstall.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.jobView.location1.label"></add>
+           <add value="tile.jobs.jobView.location2.label"></add>
+        </putList>
+    </definition>
+
+    <!-- View: Job for DM Software Active -->
+    <definition name="tile.jobs.job.view.dm.software.active" extends="baseJobsManagement">
+        <put name="title">tile.jobs.jobView.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/view/dm/software_active.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.jobView.location1.label"></add>
+           <add value="tile.jobs.jobView.location2.label"></add>
+        </putList>
+    </definition>
+
+    <!-- View: Job for DM Software Deactive -->
+    <definition name="tile.jobs.job.view.dm.software.deactive" extends="baseJobsManagement">
+        <put name="title">tile.jobs.jobView.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/view/dm/software_deactive.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.jobView.location1.label"></add>
+           <add value="tile.jobs.jobView.location2.label"></add>
+        </putList>
+    </definition>
+
+    <!-- View: Job for DM Software Upgrade -->
+    <definition name="tile.jobs.job.view.dm.software.upgrade" extends="baseJobsManagement">
+        <put name="title">tile.jobs.jobView.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/view/dm/software_upgrade.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.jobView.location1.label"></add>
+           <add value="tile.jobs.jobView.location2.label"></add>
+        </putList>
+    </definition>
+
+    <!-- View: Job for DM Software Discovery -->
+    <definition name="tile.jobs.job.view.dm.software.discovery" extends="baseJobsManagement">
+        <put name="title">tile.jobs.jobView.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/view/dm/software_discovery.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.jobView.location1.label"></add>
+           <add value="tile.jobs.jobView.location2.label"></add>
+        </putList>
+    </definition>
+
+    <!-- View: Job for CP profile assign -->
+	<definition name="tile.jobs.job.view.cp.assign.profile" extends="baseJobsManagement">
+	    <put name="title">tile.jobs.jobView.pageTitle</put>
+		<put name="MainContent" value="/jsp/jobs/view/cp/assign_profile.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.jobView.location1.label"></add>
+           <add value="tile.jobs.jobView.location2.label"></add>
+        </putList>
+	</definition>
+
+  <!-- Select job type -->
+	<definition name="tile.jobs.edit.jobType" extends="baseJobsManagement">
+	    <put name="title">tile.jobs.edit.jobType.pageTitle</put>
+		<put name="MainContent" value="/jsp/jobs/job/jobtypes.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.edit.jobType.location1.label"></add>
+           <add value="tile.jobs.edit.jobType.location2.label"></add>
+        </putList>
+	</definition>
+
+  <!-- Set target devices -->
+  <definition name="tile.jobs.edit.setTargetDevices" extends="baseJobsManagement">
+      <put name="title">tile.jobs.edit.jobType.pageTitle</put>
+    <put name="MainContent" value="/jsp/jobs/job/set_target_devices.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.edit.jobType.location1.label"></add>
+           <add value="tile.jobs.edit.jobType.location2.label"></add>
+        </putList>
+  </definition>
+
+    <!-- Discovery Job form page -->
+	<definition name="tile.jobs.edit.discovery" extends="baseJobsManagement">
+	    <put name="title">tile.jobs.edit.discovery.pageTitle</put>
+		<put name="MainContent" value="/jsp/jobs/job/selectdiscoverynode.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.edit.discovery.location1.label"></add>
+           <add value="tile.jobs.edit.discovery.location2.label"></add>
+           <add value="tile.jobs.edit.discovery.location3.label"></add>
+        </putList>
+	</definition>
+
+    <!-- Discovery Job schedule page -->
+    <definition name="tile.jobs.edit.discovery.schedule" extends="baseJobsManagement">
+        <put name="title">tile.jobs.edit.discovery.schedule.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/job/schedule4discovery.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.edit.discovery.schedule.location1.label"></add>
+           <add value="tile.jobs.edit.discovery.schedule.location2.label"></add>
+        </putList>
+    </definition>
+
+    <!-- Discovery Job success page -->
+	<definition name="tile.jobs.success.jobDiscovery" extends="baseJobsManagement">
+	    <put name="title">tile.jobs.success.jobDiscovery.pageTitle</put>
+		<put name="MainContent" value="/jsp/jobs/job/success.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.success.jobDiscovery.location1.label"></add>
+           <add value="tile.jobs.success.jobDiscovery.location2.label"></add>
+           <add value="tile.jobs.success.jobDiscovery.location3.label"></add>
+        </putList>
+	</definition>
+	
+    <!-- Script Job form page -->
+	<definition name="tile.jobs.edit.jobScript" extends="baseJobsManagement">
+	    <put name="title">tile.jobs.edit.jobScript.pageTitle</put>
+		<put name="MainContent" value="/jsp/jobs/job/script.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.edit.jobScript.location1.label"></add>
+           <add value="tile.jobs.edit.jobScript.location2.label"></add>
+           <add value="tile.jobs.edit.jobScript.location3.label"></add>
+        </putList>
+	</definition>
+
+	<definition name="tile.jobs.view.jobScript" extends="baseJobsManagement">
+	    <put name="title">tile.jobs.view.jobScript.pageTitle</put>
+		<put name="MainContent" value="/jsp/jobs/job/viewscript.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.view.jobScript.location1.label"></add>
+           <add value="tile.jobs.view.jobScript.location2.label"></add>
+           <add value="tile.jobs.view.jobScript.location3.label"></add>
+           <add value="tile.jobs.view.jobScript.location4.label"></add>
+        </putList>
+	</definition>
+
+    <definition name="tile.jobs.view.jobScript.schedule" extends="baseJobsManagement">
+        <put name="title">tile.jobs.view.jobScript.schedule.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/job/schedule4script.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.view.jobScript.schedule.location1.label"></add>
+           <add value="tile.jobs.view.jobScript.schedule.location2.label"></add>
+           <add value="tile.jobs.view.jobScript.schedule.location3.label"></add>
+           <add value="tile.jobs.view.jobScript.schedule.location4.label"></add>
+        </putList>
+    </definition>
+
+	<definition name="tile.jobs.success.jobScript" extends="baseJobsManagement">
+	    <put name="title">tile.jobs.success.jobScript.pageTitle</put>
+		<put name="MainContent" value="/jsp/jobs/job/success.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.success.jobScript.location1.label"></add>
+           <add value="tile.jobs.success.jobScript.location2.label"></add>
+           <add value="tile.jobs.success.jobScript.location3.label"></add>
+           <add value="tile.jobs.success.jobScript.location4.label"></add>
+        </putList>
+	</definition>
+
+    <!-- Profile Assigngment: Select Profile configs for DM mode -->
+    <definition name="tile.jobs.dm.select.profileconfigs" extends="baseJobsManagement">
+        <put name="title">tile.jobs.select.profileconfigs.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/job/assignment/profileconfigs4dm.jsp" />
+        <put name="SearchPannel" value="/jsp/jobs/job/assignment/searchpannel4dm.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.select.profileconfigs.location1.label"></add>
+           <add value="tile.jobs.select.profileconfigs.location2.label"></add>
+           <add value="tile.jobs.select.profileconfigs.location3.label"></add>
+        </putList>
+    </definition>
+ 
+    <!-- Profile Assigngment: Select Profile configs for CP mode -->
+    <definition name="tile.jobs.cp.select.profileconfigs" extends="baseJobsManagement">
+        <put name="title">tile.jobs.select.profileconfigs.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/job/assignment/profileconfigs4cp.jsp" />
+        <put name="SearchPannel" value="/jsp/jobs/job/assignment/searchpannel4cp.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.select.profileconfigs.location1.label"></add>
+           <add value="tile.jobs.select.profileconfigs.location2.label"></add>
+           <add value="tile.jobs.select.profileconfigs.location3.label"></add>
+        </putList>
+    </definition>
+ 
+    <!-- Profile Assigngment: Edit or view profile config for DM mode-->
+    <definition name="tile.jobs.dm.edit.profileAssignment" extends="baseJobsManagement">
+        <put name="title">tile.jobs.edit.profileAssignment.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/job/assignment/profileassignment4dm.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.edit.profileAssignment.location1.label"></add>
+           <add value="tile.jobs.edit.profileAssignment.location2.label"></add>
+           <add value="tile.jobs.edit.profileAssignment.location3.label"></add>
+        </putList>
+    </definition>
+
+    <!-- Profile Assigngment: Edit or view profile config for CP mode-->
+    <definition name="tile.jobs.cp.edit.profileAssignment" extends="baseJobsManagement">
+        <put name="title">tile.jobs.edit.profileAssignment.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/job/assignment/profileassignment4cp.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.edit.profileAssignment.location1.label"></add>
+           <add value="tile.jobs.edit.profileAssignment.location2.label"></add>
+           <add value="tile.jobs.edit.profileAssignment.location3.label"></add>
+        </putList>
+    </definition>
+
+    <!-- Profile Assigngment: Edit or view profile config for DM mode -->
+    <definition name="tile.jobs.dm.edit.profileReAssignment" extends="baseJobsManagement">
+        <put name="title">tile.jobs.edit.profileReAssignment.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/job/assignment/profileassignment4dm.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.edit.profileReAssignment.location1.label"></add>
+           <add value="tile.jobs.edit.profileReAssignment.location2.label"></add>
+           <add value="tile.jobs.edit.profileReAssignment.location3.label"></add>
+        </putList>
+    </definition>
+
+    <!-- Profile Assigngment: Edit or view profile config for CP mode -->
+    <definition name="tile.jobs.cp.edit.profileReAssignment" extends="baseJobsManagement">
+        <put name="title">tile.jobs.edit.profileReAssignment.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/job/assignment/profileassignment4cp.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.edit.profileReAssignment.location1.label"></add>
+           <add value="tile.jobs.edit.profileReAssignment.location2.label"></add>
+           <add value="tile.jobs.edit.profileReAssignment.location3.label"></add>
+        </putList>
+    </definition>
+
+    <!-- Profile Assigngment: Edit schedule parameters for DM mode -->
+    <definition name="tile.jobs.dm.edit.profileAssignment.schedule" extends="baseJobsManagement">
+        <put name="title">tile.jobs.edit.profileAssignment.schedule.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/job/assignment/schedule4dm.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.edit.profileAssignment.schedule.location1.label"></add>
+           <add value="tile.jobs.edit.profileAssignment.schedule.location2.label"></add>
+           <add value="tile.jobs.edit.profileAssignment.schedule.location3.label"></add>
+        </putList>
+    </definition>
+    
+    <!-- Profile Assigngment: Edit schedule parameters for CP mode -->
+    <definition name="tile.jobs.cp.edit.profileAssignment.schedule" extends="baseJobsManagement">
+        <put name="title">tile.jobs.edit.profileAssignment.schedule.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/job/assignment/schedule4cp.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.edit.profileAssignment.schedule.location1.label"></add>
+           <add value="tile.jobs.edit.profileAssignment.schedule.location2.label"></add>
+           <add value="tile.jobs.edit.profileAssignment.schedule.location3.label"></add>
+        </putList>
+    </definition>
+    
+    <!-- Profile Assigngment: Success -->
+    <definition name="tile.jobs.success.profileAssignment" extends="baseJobsManagement">
+        <put name="title">tile.jobs.success.profileAssignment.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/job/success.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.success.profileAssignment.location1.label"></add>
+           <add value="tile.jobs.success.profileAssignment.location2.label"></add>
+           <add value="tile.jobs.success.profileAssignment.location3.label"></add>
+        </putList>
+    </definition>
+
+	<definition name="tile.jobs.in.progress.devices.list" extends="baseJobsManagement">
+	    <put name="title">tile.jobs.in.progress.devices.list.pageTitle</put>
+		<put name="MainContent" value="/jsp/jobs/devices4inprogress.jsp" />
+        <put name="SearchPannel" value="/jsp/jobs/searchpannel4inprogress.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.in.progress.devices.list.location1.label"></add>
+           <add value="tile.jobs.in.progress.devices.list.location2.label"></add>
+        </putList>
+	</definition>
+
+    <!-- Software Install Job form page -->
+    <definition name="tile.jobs.edit.software.install.select.software" extends="baseJobsManagement">
+        <put name="title">tile.jobs.edit.software.install.select.software.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/job/select_software4install.jsp" />
+        <put name="SearchPannel" value="/jsp/jobs/job/searchpannel.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.edit.software.install.select.software.location1.label"></add>
+           <add value="tile.jobs.edit.software.install.select.software.location2.label"></add>
+           <add value="tile.jobs.edit.software.install.select.software.location3.label"></add>
+        </putList>
+    </definition>
+
+    <!-- Software Install Job schedule page -->
+    <definition name="tile.jobs.edit.software.install.schedule" extends="baseJobsManagement">
+        <put name="title">tile.jobs.edit.software.install.schedule.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/job/schedule4software_install.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.edit.software.install.schedule.location1.label"></add>
+           <add value="tile.jobs.edit.software.install.schedule.location2.label"></add>
+           <add value="tile.jobs.edit.software.install.schedule.location3.label"></add>
+        </putList>
+    </definition>
+
+    <!-- Software Install Job success page -->
+    <definition name="tile.jobs.success.software.install" extends="baseJobsManagement">
+        <put name="title">tile.jobs.success.software.install.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/job/success.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.success.software.install.location1.label"></add>
+           <add value="tile.jobs.success.software.install.location2.label"></add>
+           <add value="tile.jobs.success.software.install.location3.label"></add>
+        </putList>
+    </definition>
+    
+    <!-- Software Discovery Job schedule page -->
+    <definition name="tile.jobs.edit.software.discovery.schedule" extends="baseJobsManagement">
+        <put name="title">tile.jobs.edit.software.discovery.schedule.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/job/schedule4software_discovery.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.edit.software.discovery.schedule.location1.label"></add>
+           <add value="tile.jobs.edit.software.discovery.schedule.location2.label"></add>
+           <add value="tile.jobs.edit.software.discovery.schedule.location3.label"></add>
+        </putList>
+    </definition>
+
+    <!-- Software Discovery Job success page -->
+    <definition name="tile.jobs.success.software.discovery" extends="baseJobsManagement">
+        <put name="title">tile.jobs.success.software.discovery.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/job/success.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.success.software.discovery.location1.label"></add>
+           <add value="tile.jobs.success.software.discovery.location2.label"></add>
+           <add value="tile.jobs.success.software.discovery.location3.label"></add>
+        </putList>
+    </definition>
+    
+    <!-- Software Uninstall Job form page -->
+    <definition name="tile.jobs.edit.software.uninstall.select.software" extends="baseJobsManagement">
+        <put name="title">tile.jobs.edit.software.uninstall.select.software.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/job/select_software4uninstall.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.edit.software.uninstall.select.software.location1.label"></add>
+           <add value="tile.jobs.edit.software.uninstall.select.software.location2.label"></add>
+           <add value="tile.jobs.edit.software.uninstall.select.software.location3.label"></add>
+        </putList>
+    </definition>
+
+    <!-- Software Uninstall Job schedule page -->
+    <definition name="tile.jobs.edit.software.uninstall.schedule" extends="baseJobsManagement">
+        <put name="title">tile.jobs.edit.software.uninstall.schedule.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/job/schedule4software_uninstall.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.edit.software.uninstall.schedule.location1.label"></add>
+           <add value="tile.jobs.edit.software.uninstall.schedule.location2.label"></add>
+           <add value="tile.jobs.edit.software.uninstall.schedule.location3.label"></add>
+        </putList>
+    </definition>
+
+    <!-- Software Uninstall Job success page -->
+    <definition name="tile.jobs.success.software.uninstall" extends="baseJobsManagement">
+        <put name="title">tile.jobs.success.software.uninstall.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/job/success.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.success.software.uninstall.location1.label"></add>
+           <add value="tile.jobs.success.software.uninstall.location2.label"></add>
+           <add value="tile.jobs.success.software.uninstall.location3.label"></add>
+        </putList>
+    </definition>
+    
+    <!-- Software Upgrade Job form page -->
+    <definition name="tile.jobs.edit.software.upgrade.select.software" extends="baseJobsManagement">
+        <put name="title">tile.jobs.edit.software.upgrade.select.software.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/job/select_software4upgrade.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.edit.software.upgrade.select.software.location1.label"></add>
+           <add value="tile.jobs.edit.software.upgrade.select.software.location2.label"></add>
+           <add value="tile.jobs.edit.software.upgrade.select.software.location3.label"></add>
+        </putList>
+    </definition>
+
+    <!-- Software Upgrade Job schedule page -->
+    <definition name="tile.jobs.edit.software.upgrade.schedule" extends="baseJobsManagement">
+        <put name="title">tile.jobs.edit.software.upgrade.schedule.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/job/schedule4software_upgrade.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.edit.software.upgrade.schedule.location1.label"></add>
+           <add value="tile.jobs.edit.software.upgrade.schedule.location2.label"></add>
+           <add value="tile.jobs.edit.software.upgrade.schedule.location3.label"></add>
+        </putList>
+    </definition>
+
+    <!-- Software Upgrade Job success page -->
+    <definition name="tile.jobs.success.software.upgrade" extends="baseJobsManagement">
+        <put name="title">tile.jobs.success.software.upgrade.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/job/success.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.success.software.upgrade.location1.label"></add>
+           <add value="tile.jobs.success.software.upgrade.location2.label"></add>
+           <add value="tile.jobs.success.software.upgrade.location3.label"></add>
+        </putList>
+    </definition>
+    
+    <!-- Software Active Job form page -->
+    <definition name="tile.jobs.edit.software.active.select.software" extends="baseJobsManagement">
+        <put name="title">tile.jobs.edit.software.active.select.software.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/job/select_software4active.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.edit.software.active.select.software.location1.label"></add>
+           <add value="tile.jobs.edit.software.active.select.software.location2.label"></add>
+           <add value="tile.jobs.edit.software.active.select.software.location3.label"></add>
+        </putList>
+    </definition>
+
+    <!-- Software Active Job schedule page -->
+    <definition name="tile.jobs.edit.software.active.schedule" extends="baseJobsManagement">
+        <put name="title">tile.jobs.edit.software.active.schedule.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/job/schedule4software_active.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.edit.software.active.schedule.location1.label"></add>
+           <add value="tile.jobs.edit.software.active.schedule.location2.label"></add>
+           <add value="tile.jobs.edit.software.active.schedule.location3.label"></add>
+        </putList>
+    </definition>
+
+    <!-- Software Active Job success page -->
+    <definition name="tile.jobs.success.software.active" extends="baseJobsManagement">
+        <put name="title">tile.jobs.success.software.active.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/job/success.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.success.software.active.location1.label"></add>
+           <add value="tile.jobs.success.software.active.location2.label"></add>
+           <add value="tile.jobs.success.software.active.location3.label"></add>
+        </putList>
+    </definition>
+    
+    <!-- Software Deactive Job form page -->
+    <definition name="tile.jobs.edit.software.deactive.select.software" extends="baseJobsManagement">
+        <put name="title">tile.jobs.edit.software.deactive.select.software.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/job/select_software4deactive.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.edit.software.deactive.select.software.location1.label"></add>
+           <add value="tile.jobs.edit.software.deactive.select.software.location2.label"></add>
+           <add value="tile.jobs.edit.software.deactive.select.software.location3.label"></add>
+        </putList>
+    </definition>
+
+    <!-- Software Deactive Job schedule page -->
+    <definition name="tile.jobs.edit.software.deactive.schedule" extends="baseJobsManagement">
+        <put name="title">tile.jobs.edit.software.deactive.schedule.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/job/schedule4software_deactive.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.edit.software.deactive.schedule.location1.label"></add>
+           <add value="tile.jobs.edit.software.deactive.schedule.location2.label"></add>
+           <add value="tile.jobs.edit.software.deactive.schedule.location3.label"></add>
+        </putList>
+    </definition>
+
+    <!-- Software Deactive Job success page -->
+    <definition name="tile.jobs.success.software.deactive" extends="baseJobsManagement">
+        <put name="title">tile.jobs.success.software.deactive.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/job/success.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.success.software.deactive.location1.label"></add>
+           <add value="tile.jobs.success.software.deactive.location2.label"></add>
+           <add value="tile.jobs.success.software.deactive.location3.label"></add>
+        </putList>
+    </definition>
+    
+    <!-- FOTA Job form page -->
+    <definition name="tile.jobs.edit.fota.select.update" extends="baseJobsManagement">
+        <put name="title">tile.jobs.edit.fota.select.update.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/job/select_fota_update.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.edit.fota.select.update.location1.label"></add>
+           <add value="tile.jobs.edit.fota.select.update.location2.label"></add>
+           <add value="tile.jobs.edit.fota.select.update.location3.label"></add>
+        </putList>
+    </definition>
+
+    <!-- FOTA Job schedule page -->
+    <definition name="tile.jobs.edit.fota.schedule" extends="baseJobsManagement">
+        <put name="title">tile.jobs.edit.fota.schedule.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/job/schedule4fota.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.edit.fota.schedule.location1.label"></add>
+           <add value="tile.jobs.edit.fota.schedule.location2.label"></add>
+           <add value="tile.jobs.edit.fota.schedule.location3.label"></add>
+        </putList>
+    </definition>
+
+    <!-- FOTA Job success page -->
+    <definition name="tile.jobs.success.fota" extends="baseJobsManagement">
+        <put name="title">tile.jobs.success.fota.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/job/success.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.success.fota.location1.label"></add>
+           <add value="tile.jobs.success.fota.location2.label"></add>
+           <add value="tile.jobs.success.fota.location3.label"></add>
+        </putList>
+    </definition>
+    
+    <!-- DM Session Tracking Sumary logs for a device and a job -->
+    <definition name="tile.jobs.job.device.dmSessionTracking.sumary" extends="baseJobsManagement">
+        <put name="title">tile.jobs.job.device.dmSessionTracking.sumary.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/trackinglog/sumary4device_and_job.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.job.device.dmSessionTracking.sumary.location1.label"></add>
+           <add value="tile.jobs.job.device.dmSessionTracking.sumary.location2.label"></add>
+           <add value="tile.jobs.job.device.dmSessionTracking.sumary.location3.label"></add>
+        </putList>
+    </definition>
+    
+    <!-- DM Session Tracking Detail logs for a device and a job -->
+    <definition name="tile.jobs.job.device.dmSessionTracking.detail" extends="baseJobsManagement">
+        <put name="title">tile.jobs.job.device.dmSessionTracking.detail.pageTitle</put>
+        <put name="MainContent" value="/jsp/jobs/trackinglog/detail4device_and_job.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.jobs.job.device.dmSessionTracking.detail.location1.label"></add>
+           <add value="tile.jobs.job.device.dmSessionTracking.detail.location2.label"></add>
+           <add value="tile.jobs.job.device.dmSessionTracking.detail.location3.label"></add>
+        </putList>
+    </definition>
+    
+</tiles-definitions>

@@ -1,0 +1,350 @@
+﻿body {
+    margin: 0px;
+}
+
+div {
+    background-repeat: no-repeat;
+}
+
+.raw_image {
+    width: 100%;
+    height: 100%;
+}
+
+.preload {
+    display: none;
+}
+#main_container {
+}
+
+.form_sketch {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.u0_normal {
+    background-image: url('../登陆_files/u0_normal.png');
+}
+
+.u0_container {
+    position:absolute;
+    left:112px;
+    top:56px;
+    width:316px;
+    height:336px;
+}
+
+#u0_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:322px;
+    height:342px;
+}
+
+.u1 {
+    position:absolute;
+    left:2px;
+    top:160px;
+    width:312px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u2 {
+    position:absolute;
+    left:128px;
+    top:86px;
+    width:61px;
+    height:17px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u3 {
+    position:absolute;
+    left:128px;
+    top:122px;
+    width:61px;
+    height:17px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u4 {
+    position:absolute;
+    left:204px;
+    top:82px;
+    width:201px;
+    height:25px;
+    ;
+    ;
+    text-align: left;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#E4E4E4;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u5 {
+    position:absolute;
+    left:204px;
+    top:117px;
+    width:201px;
+    height:25px;
+    ;
+    ;
+    text-align: left;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u6 {
+    position:absolute;
+    left:128px;
+    top:156px;
+    width:61px;
+    height:17px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u7 {
+    position:absolute;
+    left:204px;
+    top:152px;
+    width:90px;
+    height:25px;
+    ;
+    ;
+    text-align: left;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u8_normal {
+    background-image: url('../登陆_files/u8_normal.png');
+}
+
+.u8_container {
+    position:absolute;
+    left:309px;
+    top:154px;
+    width:96px;
+    height:20px;
+}
+
+#u8_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:96px;
+    height:20px;
+}
+
+.u9 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:92px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u10 {
+    position:absolute;
+    left:206px;
+    top:207px;
+    width:128px;
+    height:25px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 15px;
+    color:#000000;
+    font-style:normal;
+    font-weight:bold;
+    text-decoration:none;
+    
+}
+
+.u11 {
+    position:absolute;
+    left:355px;
+    top:184px;
+    width:60px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u12 {
+    position:absolute;
+    left:344px;
+    top:216px;
+    width:80px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u13 {
+    position:absolute;
+    left:128px;
+    top:262px;
+    width:200px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u14_normal {
+    background-image: url('../登陆_files/u14_normal.png');
+}
+
+.u14_container {
+    position:absolute;
+    left:216px;
+    top:300px;
+    width:28px;
+    height:28px;
+}
+
+#u14_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:28px;
+    height:28px;
+}
+
+.u15 {
+    position:absolute;
+    left:2px;
+    top:6px;
+    width:24px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u16_normal {
+    background-image: url('../登陆_files/u16_normal.png');
+}
+
+.u16_container {
+    position:absolute;
+    left:270px;
+    top:300px;
+    width:28px;
+    height:28px;
+}
+
+#u16_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:28px;
+    height:28px;
+}
+
+.u17 {
+    position:absolute;
+    left:2px;
+    top:6px;
+    width:24px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u18_normal {
+    background-image: url('../登陆_files/u18_normal.png');
+}
+
+.u18_container {
+    position:absolute;
+    left:324px;
+    top:300px;
+    width:28px;
+    height:28px;
+}
+
+#u18_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:28px;
+    height:28px;
+}
+
+.u19 {
+    position:absolute;
+    left:2px;
+    top:6px;
+    width:24px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<tiles-definitions>
+
+    <!--                                                                        -->
+    <!--  Base tile for Main page                                               -->
+    <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   -->
+    <!--  |                                                                 |   -->
+    <!--  |                           banner                                |   -->
+    <!--  |                                                                 |   -->
+    <!--  |  +++++++++++++++++    +++++++++++++++++++++++++++++++++++++++   |   -->
+    <!--  |  | SubMenus      |    |                                     |   |   -->
+    <!--  |  +++++++++++++++++    |                                     |   |   -->
+    <!--  |                       |                                     |   |   -->
+    <!--  |                       |                                     |   |   -->
+    <!--  |                       |                                     |   |   -->
+    <!--  |                       |                                     |   |   -->
+    <!--  |                       |                                     |   |   -->
+    <!--  |                       |             MainContent             |   |   -->
+    <!--  |                       |                                     |   |   -->
+    <!--  |                       |                                     |   |   -->
+    <!--  |                       |                                     |   |   -->
+    <!--  |                       |                                     |   |   -->
+    <!--  |                       |                                     |   |   -->
+    <!--  |                       |                                     |   |   -->
+    <!--  |                       |                                     |   |   -->
+    <!--  |                       |                                     |   |   -->
+    <!--  |                       |                                     |   |   -->
+    <!--  |                       +++++++++++++++++++++++++++++++++++++++   |   -->
+    <!--  |                                                                 |   -->
+    <!--  |                        footer                                   |   -->
+    <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   -->
+    
+    <definition name="otas.dm.main.base" path="/jsp/common/layout.jsp">
+		<put name="title">Change_Me</put>
+        <put name="banner" value="/jsp/common/mainmenu.jsp" />
+        <put name="footer" value="/jsp/common/copyright.jsp" />
+        <put name="SubMenus" value="Change_Me" />
+        <put name="MainContent" value="Change_Me" />
+    </definition>
+    
+    <definition name="tile.global.error" extends="otas.dm.main.base">
+        <put name="title">tile.global.error.pageTitle</put>
+        <put name="SubMenus" value="/jsp/common/error_menus.jsp" />
+        <put name="MainContent" value="/jsp/error.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.global.error.location1.label"></add>
+        </putList>
+    </definition>
+
+    <!--                                                                        -->
+    <!--  Simple layout for Main page                                           -->
+    <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   -->
+    <!--  |                                                                 |   -->
+    <!--  |  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   |   -->
+    <!--  |  |                                                          |   |   -->
+    <!--  |  |                                                          |   |   -->
+    <!--  |  |                                                          |   |   -->
+    <!--  |  |                                                          |   |   -->
+    <!--  |  |                                                          |   |   -->
+    <!--  |  |                                                          |   |   -->
+    <!--  |  |                                                          |   |   -->
+    <!--  |  |                       MainContent                        |   |   -->
+    <!--  |  |                                                          |   |   -->
+    <!--  |  |                                                          |   |   -->
+    <!--  |  |                                                          |   |   -->
+    <!--  |  |                                                          |   |   -->
+    <!--  |  |                                                          |   |   -->
+    <!--  |  |                                                          |   |   -->
+    <!--  |  |                                                          |   |   -->
+    <!--  |  |                                                          |   |   -->
+    <!--  |  |                                                          |   |   -->
+    <!--  |  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   |   -->
+    <!--  |                                                                 |   -->
+    <!--  |                        footer                                   |   -->
+    <!--  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   -->
+    
+    <definition name="otas.dm.main.simple.base" path="/jsp/common/layout4simple.jsp">
+        <put name="title">Change_Me</put>
+        <put name="footer" value="/jsp/common/copyright.jsp" />
+        <put name="MainContent" value="Change_Me" />
+    </definition>
+    
+</tiles-definitions>

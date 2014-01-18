@@ -1,0 +1,316 @@
+@import url("displaytag.css");
+@import url("alternative.css");
+
+table.toolbarview {
+  border: 1px solid #afcbdf;
+  border-collapse: collapse;
+  font-size: 11.5px;
+  margin: 10px 0 10px 0 !important;
+  width: 100%
+}
+
+table.entityview {
+	border: 1px solid #afcbdf;
+	border-collapse: collapse;
+	font-size: 11.5px;
+	margin: 10px 0 10px 0 !important;
+	width: 100%
+}
+
+table.entityview th {
+	border: 1px solid #afcbdf;
+	font-size: 11.5px;
+	padding: 2px 4px 2px 4px !important;
+	text-align: right;
+	vertical-align: top;
+	height: 23px;
+	vertical-align: middle;
+}
+
+table.entityview td {
+	border: 1px solid #afcbdf;
+	font-size: 11.5px;
+	padding: 2px 4px 2px 4px !important;
+	text-align: left;
+	vertical-align: top;
+	height: 23px;
+	vertical-align: middle;
+}
+
+table.entityview tbody tr th {
+	border: 1px solid #afcbdf;
+	padding: 2px 4px 2px 4px !important;
+	background-color: #e3edf4;
+	font-size: 11.5px;
+	height: 23px;
+	vertical-align: middle;
+}
+
+table.entityview tbody tr td {
+	border: 1px solid #afcbdf;
+	padding: 2px 4px 2px 4px !important;
+	font-size: 11.5px;
+	height: 23px;
+	vertical-align: middle;
+}
+
+table.entityview thead tr th {
+	border: 1px solid #afcbdf;
+	padding: 4px 4px 4px 4px !important;
+	font-size: 11.5px;
+	text-align: left;
+	height: 26px;
+	vertical-align: middle;
+    BACKGROUND-POSITION: right top; 
+    BACKGROUND-IMAGE: url(bg_dragndrop_header.gif); 
+    BACKGROUND-REPEAT: no-repeat; 
+}
+
+div.validateErrorMsg {
+	position: absolute
+    color: red !important;
+	font-weight:bold !important;
+	top: 0px;
+    left: 0px;
+}
+
+hr.locationArea {
+}
+
+table.searchPanel {
+	border-collapse: collapse;
+	font-size: 11.5px;
+	margin: 10px 0 10px 0 !important;
+}
+
+table.searchPanel tbody tr th {
+	padding: 4px 4px 4px 4px !important;
+	font-size: 11.5px;
+	text-align: right;
+}
+
+div.locationArea {
+	position: relative;
+	padding: 15px 0px 5px 5px !important;
+	top: 0px;
+    left: 0px;	
+	font-weight:bold !important;
+	font-size: 12px;
+}
+
+div.messageArea {
+	position: relative;
+	padding: 3px;
+	top: 0px;
+    left: 0px;
+    float: none;
+    clear: both;
+}
+
+div.buttonArea {
+	border: 1px solid #afcbdf;
+	/*position: relative;*/
+	padding: 10px;
+  background-color: #e3edf4;
+  min-height: 40px;
+  height: 40px;
+}
+
+div.buttonArea form {
+	width: auto;
+	float: left;
+}
+
+div.searchPanelArea {
+	border: 1px solid #ccc;
+	position: relative;
+	padding: 10px;
+	top: 0px;
+    left: 0px;
+    background-color: #e3edf4;
+    clear: both;
+    width: 100%;
+}
+
+div.treeContainer {
+	border: 1px solid #afcbdf;
+    position: absolute;
+	margin: 10px 10 10px 10 !important;
+    width: 200px;
+    height: 90%;
+    top: 0px;
+    left: 0px;
+    padding: 5px;
+    overflow: auto;
+    background-color: #f3f3f3;
+}
+div.nodeContainer {
+    position: absolute;
+    top: 0px;
+    left: 210px;
+    padding: 5px;
+}
+
+div.ddfTreeContainer {
+	  border: 1px solid #afcbdf;
+    position: relative;
+	  margin: 10px 10 10px 10 !important;
+    width: auto;
+    min-width: 200px;
+    height: auto;
+    min-height: 100%;
+    padding: 5px;
+    background-color: #fff;
+    overflow: auto;
+}
+div.ddfNodeContainer {
+    position: relative;
+	float: right;
+    padding: 5px;
+    top: 0px;
+    left: 0px;
+}
+
+div.deviceTreeContainer {
+	  border: 1px solid #afcbdf;
+    position: relative;
+	  margin: 10px 10 10px 10 !important;
+    width: auto;
+    min-width: 200px;
+    height: auto;
+    min-height: 100%;
+    padding: 5px;
+    background-color: #fff;
+    overflow: auto;
+}
+div.deviceNodeContainer {
+    position: relative;
+	  float: right;
+    padding: 5px;
+}
+
+table.model_matrix {
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+	font-size: 11.5px;
+	margin: 0px 0 0px 0 !important;
+	white-space: nowrap;
+}
+
+table.model_matrix thead tr th {
+	background-color: #eee;
+	font-size: 11.5px;
+	text-align: center;
+}
+
+table.model_matrix tr.even {
+	background-color: #fff;
+	font-size: 11.5px;
+}
+
+table.model_matrix td,table.model_matrix th {
+	border: 1px solid #ccc;
+	font-size: 11.5px;
+	padding: 2px 4px 2px 4px !important;
+	text-align: right;
+	vertical-align: middle;
+	height: 21px;
+}
+
+table.model_matrix thead tr th.flag {
+	width: 15px;
+	writing-mode: tb-rl;
+	text-align: center;
+	background-image: none;
+}
+
+table.model_matrix td.flag4cp {
+	color: #b11;
+	width: 15px;
+	text-align: center;
+	font-weight: bold;
+}
+
+table.model_matrix td.flag4dm {
+	background-color: #f1f1f1;
+	color: #b11;
+	width: 15px;
+	text-align: center;
+	font-weight: bold;
+}
+
+table.model_matrix td.flag4nokia_ota {
+	color: #b11;
+	width: 15px;
+	text-align: center;
+	font-weight: bold;
+}
+
+table.model_matrix td.index {
+	width: 50px;
+	text-align: center;
+}
+
+table.model_matrix td.rowNum {
+	font-size: 11.5px;
+	text-align: center;
+}
+
+#toc,
+.toc {
+        border: 1px solid #aaa;
+        background-color: #f9f9f9;
+        padding: 5px;
+        font-size: 95%;
+}
+
+#toc #toctitle,
+.toc #toctitle,
+#toc .toctitle,
+.toc .toctitle {
+        text-align: left;
+        font-size: 150%;
+}
+#toc ul,
+.toc ul {
+        list-style-type: none;
+        list-style-image: none;
+        margin-left: 0;
+        padding-left: 0;
+        text-align: left;
+}
+#toc ul ul,
+.toc ul ul {
+        margin: 0 0 0 2em;
+}
+#toc .toctoggle,
+.toc .toctoggle {
+        font-size: 100%;
+}
+
+.reference_link {
+    background: url("external_link.png") center right no-repeat;
+    padding-right: 13px;
+}
+
+
+.table_box {
+ BORDER-RIGHT: #afcbdf 1px solid; 
+ BORDER-TOP: #afcbdf 1px solid; 
+ BORDER-LEFT: #afcbdf 1px solid; 
+ BORDER-BOTTOM: #afcbdf 1px solid; 
+ HEIGHT: 26px;
+ margin: 10px 0 10px 0 !important;
+}
+
+.table_box_heading {
+  PADDING-LEFT: 5px; 
+  FONT-WEIGHT: bold; 
+  FONT-SIZE: 11.5px; 
+  BACKGROUND-POSITION: right top; 
+  BACKGROUND-IMAGE: url(bg_dragndrop_header.gif); 
+  BACKGROUND-REPEAT: no-repeat; 
+  FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; 
+  HEIGHT: 26px
+}
+

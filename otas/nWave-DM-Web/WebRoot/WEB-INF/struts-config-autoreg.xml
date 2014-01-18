@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans>
+    <form-bean name="AutoRegForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="msisdn" type="java.lang.String" />
+      <form-property name="imei" type="java.lang.String" />
+      <form-property name="oldImei" type="java.lang.String" />
+      <form-property name="rawdata" type="java.lang.String" />
+    </form-bean>
+  </form-beans>
+
+  <action-mappings>
+	<!--  Related with Notification  -->
+    <action
+      attribute="AutoRegForm"
+      name="AutoRegForm"
+      path="/autoreg"
+      scope="request"
+      type="com.npower.dm.action.autoreg.AutoRegAction">
+      <forward name="success" path="/jsp/autoreg/status.jsp" contextRelative="true" />
+    </action>
+  </action-mappings>
+</struts-config>
+

@@ -1,0 +1,276 @@
+<?xml version="1.0"?>
+<!--
+  * $Header: /home/master/nWave-DM-Web/build.xml,v 1.22 2008/10/16 00:03:45 zhao Exp $
+  * $Revision: 1.22 $
+  * $Date: 2008/10/16 00:03:45 $
+-->
+<project name="OTAS.DM.WebAdmin" default="bin" basedir=".">
+
+  <property environment="env"/>
+
+  <!-- ================================================================== -->
+  <!-- 1. Setup base directory                                            -->
+  <!-- ================================================================== -->
+  <!-- Load Properties and Set up the directory -->
+  <property name="otas.dm.framework.dir" value="${otas.base.dir}/${otas.dm.framework.cvs.module.name}"/>
+  <property name="otas.dm.common.dir" value="${otas.base.dir}/${otas.dm.common.cvs.module.name}"/>
+  <property name="otas.dm.library.dir" value="${otas.base.dir}/${otas.dm.library.cvs.module.name}"/>
+  <property name="otas.dm.webadmin.dir" value="${otas.base.dir}/${otas.dm.webadmin.cvs.module.name}"/>
+	
+  <property file="build.properties" />
+  <property name="project-name-text" value="OTAS-DM-WebAdmin"/>
+
+    <!-- ================================================================== -->
+    <!-- 2. Setup Local directory                                           -->
+    <!-- ================================================================== -->
+	<!-- source directory -->
+	<property name="java.src.dir" value="${basedir}/src"/>
+	<property name="config.dir" value="${basedir}/config"/>
+	<property name="web.root.src.dir" value="${basedir}/WebRoot"/>
+	<property name="WEB_DOT_XML_file" value="${web.root.src.dir}/WEB-INF/web.xml" />
+	
+	<!-- output directories -->
+	<property name="output.dir" value="${otas.dm.webadmin.dir}/output"/>
+	<property name="java.doc.dir" value="${output.dir}/javadoc"/>
+	<property name="output.webroot.dir" value="${output.dir}/WebRoot"/>
+	
+	<property name="output.WEB-INF.dir" value="${output.webroot.dir}/WEB-INF"/>
+	<property name="output.WEB-INF.lib.dir" value="${output.dir}/weblib"/>
+	<property name="output.WEB-INF.classes.dir" value="${output.webroot.dir}/WEB-INF/classes"/>
+	
+    <!-- ================================================================== -->
+    <!-- 3. Setup AspectJ Enviroment                                        -->
+    <!-- ================================================================== -->
+	<property name="ajc.adapter"
+	          value="org.aspectj.tools.ant.taskdefs.Ajc11CompilerAdapter"/>
+	<!-- required libraries - install or predefine -->
+	<property name="aspectjrt.jar" location="${otas.dm.library.dir}/aspectj1.5/lib/aspectjrt.jar"/>
+	<property name="aspectjtools.jar" location="${otas.dm.library.dir}/aspectj1.5/lib/aspectjtools.jar"/>
+	<!-- sets name of new task to iajc, old task to ajc -->
+	<taskdef resource="org/aspectj/tools/ant/taskdefs/aspectjTaskdefs.properties">
+	    <classpath>
+	        <pathelement path="${aspectjtools.jar}"/>
+	    </classpath>
+	</taskdef>
+	
+    <!-- ================================================================== -->
+	<!-- 4. Setup Classpath                                                 -->
+	<!-- ================================================================== -->
+  
+  <path id="otas.dm.web.classpath">
+      <path refid="jstl.lib.classpath"/>
+      <pathelement location="WebRoot/WEB-INF/lib/commons-validator.jar"/>
+      <!-- <pathelement location="WebRoot/WEB-INF/lib/jakarta-oro.jar"/> -->
+      <pathelement location="WebRoot/WEB-INF/lib/struts.jar"/>
+      <path refid="DisplayTag.lib.classpath"/>
+      <path refid="Hibernate.3.lib.classpath"/>
+      <path refid="Jakarta.Common.lib.classpath"/>
+      <path refid="Jakarta.ORO.lib.classpath"/>
+      <path refid="Oracle.JDBC.lib.classpath"/>
+      <path refid="P6Spy.lib.classpath"/>
+      <path refid="Struts.Menu.lib.classpath"/>
+      <path refid="Jakarta.CommonIO.lib.classpath"/>
+      <path refid="JUnit.lib.classpath"/>
+      <path refid="JFreeChart.classpath"/>
+      <path refid="XFire.lib.classpath"/>
+      <path refid="AspectJ.Runtime.classpath"/>
+      <path refid="Jibx.Runtime.classpath"/>
+      <path refid="otas.dm.common.classpath"/>
+      <path refid="otas.dm.framework.classpath"/>
+      <path refid="otas.sms.client.classpath"/>
+      <path refid="otas.sms.common.classpath"/>
+      <path refid="XOM.classpath"/>
+      <pathelement location="${env.ANT_HOME}/lib/ant.jar"/>
+  </path>
+	
+
+  <!-- ================================================================== -->
+  <!-- Tasks Definition                                                   -->
+  <!-- ================================================================== -->
+    <!-- Make build properties -->
+	<target name="make-release-stamp">
+    <!--<buildnumber file="${java.src.dir}/otas-dm-webadmin-buildnumber.properties"/>-->
+	  <echo file="${java.src.dir}/otas-dm-webadmin-release.properties">Version=${build.version}
+BuildDate=${package.builddate}
+BuildTime=${package.buildtime}
+BuildNumber=${build.number}
+	  </echo>
+    </target>
+
+	<!-- Initialize the build directories -->
+    <target name="init" depends="make-release-stamp, clean">
+        <mkdir dir="${output.dir}" />
+        <mkdir dir="${java.doc.dir}" />
+        <mkdir dir="${output.webroot.dir}" />
+        <mkdir dir="${output.WEB-INF.dir}" />
+        <mkdir dir="${output.WEB-INF.lib.dir}" />
+        <mkdir dir="${output.WEB-INF.classes.dir}" />
+    </target>
+
+    <!-- Copy necessary files to their respective directories -->
+    <target name="copy_source_files_to_output" depends="init">
+        <copy todir="${output.webroot.dir}" >
+           <fileset dir="${web.root.src.dir}">
+             <exclude name="**/classes/**/*"/>
+             <exclude name="**/web.xml"/>
+             <exclude name="**/*.ori"/>
+             <exclude name="**/*.jar"/>
+           </fileset>
+           <!--
+           <fileset dir="${config.dir}">
+             <exclude name="**/*.class"/>
+             <exclude name="**/web.xml"/>
+             <exclude name="**/*.ori"/>
+           </fileset>
+           -->
+        </copy>
+    </target>
+
+    <target name="copy_lib_files_to_output" depends="init">
+        <copy todir="${output.WEB-INF.lib.dir}" flatten="true">
+           <path refid="otas.dm.web.classpath">
+           </path>
+        </copy>
+    </target>
+
+    <!-- Compiling -->
+    <target name="build" depends="init, copy_source_files_to_output, copy_lib_files_to_output">
+      <property name="classpath4echo" refid="otas.dm.web.classpath"/>
+      <echo message="Classpath: ${classpath4echo}"/>
+        <iajc debug="on" deprecation="true"
+            srcdir="${java.src.dir}" destdir="${output.WEB-INF.classes.dir}"
+            source="1.5"
+            includes="**/*.java,**/*.aj"
+            >
+            <classpath>
+              <path refid="otas.dm.web.classpath" />
+              <path refid="j2ee.lib.classpath" />
+        	</classpath>
+        </iajc>
+
+      <!-- Copy XFire Web Services XML -->
+      <mkdir dir="${output.WEB-INF.classes.dir}/META-INF/xfire"/>
+      <copy todir="${output.WEB-INF.classes.dir}/META-INF/xfire">
+        <fileset dir="${basedir}/WebServices">
+          <include name="**/*.xml"/>
+        </fileset>
+      </copy>
+    </target>
+
+    <!-- Jarring -->
+    <target name="jar" depends="init, build">
+      <!-- Jarring DM SOAP Client -->
+      <jar   jarfile="${output.dir}/${otas-dm-soap-client-jarfilename}"
+             compress="false">
+        <fileset dir="${output.WEB-INF.classes.dir}"
+                 includes="com/npower/dm/soap/common/**/*.class,com/npower/dm/soap/client/**/*.class"
+        />
+      </jar>
+      <!-- Jarring DM WebAdmin -->
+      <jar   jarfile="${output.dir}/${otas-dm-webadmin-jarfilename}"
+             compress="false">
+        <fileset dir="${output.WEB-INF.classes.dir}"
+                 excludes="com/npower/dm/soap/common/**/*.class,com/npower/dm/soap/client/**/*.class"
+        />
+        <fileset dir="${java.src.dir}">
+            <exclude name="**/*.java" />
+        </fileset>
+      </jar>
+    </target>
+
+    <!-- jarring web archive file -->
+    <target name="${otas-dm-webadmin-warfilename}" depends="init, build, jar">
+        <delete file="${output.dir}/${otas-dm-webadmin-warfilename}"/>
+        <war warfile="${output.dir}/${otas-dm-webadmin-warfilename}"
+            webxml="${WEB_DOT_XML_file}">
+        	<lib dir="${output.WEB-INF.lib.dir}">
+              <include name="*.jar" />
+        	</lib>
+        	<lib dir="${output.dir}">
+              <include name="${otas-dm-webadmin-jarfilename}" />
+              <include name="${otas-dm-soap-client-jarfilename}" />
+        	</lib>
+            <fileset dir="${output.webroot.dir}">
+              <exclude name="**/WEB-INF/classes/**/*" />
+            </fileset>
+        </war>
+    </target>
+
+    <!-- =============================================== -->
+    <!-- Create JavaDoc for all classes                  -->
+    <!-- =============================================== -->
+    <target name="javadocs" depends="init">
+        <mkdir dir="${java.doc.dir}" />
+        <javadoc
+            sourcepath="${java.src.dir}"
+            classpath="${j2ee.jar}"
+            packagenames="com.npower.*"
+            destdir="${java.doc.dir}/all"
+            author="true"
+            version="true"
+            use="true"
+            package="true"
+            Locale="en_US"
+            windowtitle="OTAS DM WebAdmin API"
+        />
+    </target>
+
+
+
+    <!-- =============================================== -->
+    <!-- DOCS                                            -->
+    <!-- =============================================== -->
+    <target name="docs" depends="init, javadocs"/>
+
+    <!-- =============================================== -->
+    <!-- BIN                                             -->
+    <!-- =============================================== -->
+
+    <target name="bin" depends="init,
+                                ${otas-dm-webadmin-warfilename}"
+    />
+
+    <!-- =============================================== -->
+    <!-- CLEAN                                           -->
+    <!-- =============================================== -->
+
+    <target name="clean">
+        <delete dir="${output.dir}" />
+    </target>
+
+    <!-- =============================================== -->
+    <!-- ENV                                             -->
+    <!-- =============================================== -->
+
+    <target name="env" depends="init">
+      <echoproperties/>
+    </target>
+
+    <!--
+       ========================================================================
+         Help on usage. List available targets
+       ========================================================================
+    -->
+    <target name="usage" depends="init">
+
+        <echo message=""/>
+        <echo message="${project-name-text} build file"/>
+        <echo message="------------------------------------------------------"/>
+        <echo message=""/>
+        <echo message=" Available targets are :"/>
+        <echo message=""/>
+        <echo message=" usage       --> help on usage"/>
+        <echo message=" build       --> builds the project"/>
+        <echo message=" createdb    --> creates the database schema"/>
+        <echo message=" bin         --> generates binary files (default)"/>
+        <echo message=" test        --> tests the dist file"/>
+        <echo message=" clean       --> cleans up the build directory"/>
+        <echo message=" docs        --> generates the docs (javadoc, ...)"/>
+        <echo message=" deploy      --> deploys the binary ear into the J2EE reference implementation"/>
+        <echo message=" env         --> Displays the current environment"/>
+        <echo message=" make-dist   --> Create the distribution installation file"/>
+        <echo message=" all         --> do it all at once (clean, dist, doc)"/>
+        <echo message=""/>
+
+    </target>
+</project>

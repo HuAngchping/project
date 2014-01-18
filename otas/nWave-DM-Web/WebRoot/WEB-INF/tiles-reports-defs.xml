@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<tiles-definitions>
+	<!-- Tiles: Carrier Management  -->
+	<definition name="baseReportManagement" extends="otas.dm.main.base">
+		<put name="title">Change_Me</put>
+		<put name="SubMenus" value="/jsp/audit/menus.jsp" />
+		<put name="MainContent" value="Change_Me" />
+		<putList name="LocationLabels">
+			<add value="Change_Me"></add>
+			<add value="Change_Me"></add>
+			<add value="Change_Me"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.reports.reportList" extends="baseReportManagement">
+		<put name="title">tile.reports.reportList.pageTitle</put>
+		<put name="MainContent" value="/jsp/reports/list.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.reports.reportList.location1.label"></add>
+			<add value="tile.reports.reportList.location2.label"></add>
+		</putList>
+	</definition>
+</tiles-definitions>

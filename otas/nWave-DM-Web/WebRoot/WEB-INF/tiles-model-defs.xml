@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<tiles-definitions>
+	<!-- Tiles: Model Management  -->
+	<definition name="baseModelManagement"
+              extends="otas.dm.main.base">
+		<put name="title">Change_Me</put>
+		<put name="SubMenus" value="/jsp/model/menus.jsp" />
+		<put name="MainContent" value="Change_Me" />
+		<putList name="LocationLabels">
+			<add value="Change_Me"></add>
+			<add value="Change_Me"></add>
+			<add value="Change_Me"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.model.models" extends="baseModelManagement">
+		<put name="title">tile.model.models.pageTitle</put>
+		<put name="MainContent" value="/jsp/model/models.jsp" />
+    <put name="SearchPannel" value="/jsp/model/searchpannel.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.model.models.location1.label"></add>
+			<add value="tile.model.models.location2.label"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.model.model.edit" extends="baseModelManagement">
+		<put name="title">tile.model.model.edit.pageTitle</put>
+		<put name="MainContent" value="/jsp/model/model.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.model.model.edit.location1.label"></add>
+			<add value="tile.model.model.edit.location2.label"></add>
+		</putList>
+	</definition>
+
+  <definition name="tile.model.model.view" extends="baseModelManagement">
+    <put name="title">tile.model.model.view.pageTitle</put>
+    <put name="MainContent" value="/jsp/model/model4view.jsp" />
+    <put name="SearchPannel" value="/jsp/model/searchpannel.jsp" />
+    <putList name="LocationLabels">
+     <add value="tile.model.model.view.location1.label"></add>
+     <add value="tile.model.model.view.location2.label"></add>
+    </putList>
+ </definition>
+
+	<definition name="tile.model.manufacturers" extends="baseModelManagement">
+		<put name="title">tile.model.manufacturers.pageTitle</put>
+		<put name="MainContent" value="/jsp/manufacturer/manufacturers.jsp" />
+        <put name="SearchPannel" value="/jsp/manufacturer/searchpannel.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.model.manufacturers.location1.label"></add>
+			<add value="tile.model.manufacturers.location2.label"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.model.manufacturer.edit" extends="baseModelManagement">
+		<put name="title">tile.model.manufacturer.edit.pageTitle</put>
+		<put name="MainContent" value="/jsp/manufacturer/manufacturer.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.model.manufacturer.edit.location1.label"></add>
+			<add value="tile.model.manufacturer.edit.location2.label"></add>
+		</putList>
+	</definition>
+
+  <definition name="tile.model.manufacturer.view" extends="baseModelManagement">
+    <put name="title">tile.model.manufacturer.view.pageTitle</put>
+    <put name="MainContent" value="/jsp/manufacturer/manufacturer4view.jsp" />
+    <putList name="LocationLabels">
+     <add value="tile.model.manufacturer.view.location1.label"></add>
+     <add value="tile.model.manufacturer.view.location2.label"></add>
+    </putList>
+  </definition>
+
+	<definition name="tile.ddfTree.view.main" extends="baseModelManagement">
+		<put name="title">tile.ddfTree.view.main.pageTitle</put>
+		<put name="MainContent" value="/jsp/ddf/index.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.ddfTree.view.main.location1.label"></add>
+			<add value="tile.ddfTree.view.main.location2.label"></add>
+		</putList>
+	</definition>
+
+	<!--  import ddf tree  -->
+
+	<definition name="tile.ddfTree.add.main" extends="baseModelManagement">
+		<put name="title">tile.ddfTree.add.main.pageTitle</put>
+		<put name="MainContent" value="/jsp/ddf/uploadfile.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.ddfTree.add.main.location1.label"></add>
+			<add value="tile.ddfTree.add.main.location2.label"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.ddfTree.upload.main" extends="baseModelManagement">
+		<put name="title">tile.ddfTree.upload.main.pageTitle</put>
+		<put name="MainContent" value="/jsp/ddf/validationfile.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.ddfTree.upload.main.location1.label"></add>
+			<add value="tile.ddfTree.upload.main.location2.label"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.ddfTree.display.main" extends="baseModelManagement">
+		<put name="title">tile.ddfTree.display.main.pageTitle</put>
+		<put name="MainContent" value="/jsp/ddf/display.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.ddfTree.display.main.location1.label"></add>
+			<add value="tile.ddfTree.display.main.location2.label"></add>
+		</putList>
+	</definition>
+
+
+	<definition name="tile.ddfTree.import.main" extends="baseModelManagement">
+		<put name="title">tile.ddfTree.import.main.pageTitle</put>
+		<put name="MainContent" value="/jsp/ddf/import.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.ddfTree.import.main.location1.label"></add>
+			<add value="tile.ddfTree.import.main.location2.label"></add>
+		</putList>
+	</definition>
+
+
+	<definition name="tile.ddfTree.err.main" extends="baseModelManagement">
+		<put name="title">tile.ddfTree.err.main.pageTitle</put>
+		<put name="MainContent" value="/jsp/ddf/errpage.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.ddfTree.err.main.location1.label"></add>
+			<add value="tile.ddfTree.err.main.location2.label"></add>
+		</putList>
+	</definition>
+
+
+	<definition name="tile.ddfTree.view.standalone" path="/jsp/ddf/layout.jsp">
+		<put name="title">tile.ddfTree.view.standalone.pageTitle</put>
+		<put name="ddfTree" value="/jsp/ddf/ddftree.jsp" />
+		<put name="ddfNodes" value="/jsp/ddf/ddfnode.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.ddfTree.view.standalone.location1.label"></add>
+			<add value="tile.ddfTree.view.standalone.location2.label"></add>
+		</putList>
+	</definition>
+
+    <!-- Tiles: Model Updates -->
+   <definition name="tile.model.fota.updates" extends="baseModelManagement">
+       <put name="title">tile.model.fota.updates.pageTitle</put>
+      <put name="MainContent" value="/jsp/model/updates.jsp" />
+        <putList name="LocationLabels">
+             <add value="tile.model.fota.updates.location1.label"></add>
+             <add value="tile.model.fota.updates.location2.label"></add>
+        </putList>
+   </definition>
+
+    <definition name="tile.model.fota.update.edit" extends="baseModelManagement">
+        <put name="title">tile.model.fota.update.edit.pageTitle</put>
+        <put name="MainContent" value="/jsp/model/update.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.model.fota.update.edit.location1.label"></add>
+              <add value="tile.model.fota.update.edit.location2.label"></add>
+           </putList>
+    </definition>
+
+    <definition name="tile.model.fota.update.view" extends="baseModelManagement">
+        <put name="title">tile.model.fota.update.view.pageTitle</put>
+        <put name="MainContent" value="/jsp/model/update4view.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.model.fota.update.view.location1.label"></add>
+              <add value="tile.model.fota.update.view.location2.label"></add>
+           </putList>
+    </definition>
+
+    <definition name="tile.model.fota.update.success" extends="baseModelManagement">
+        <put name="title">tile.model.fota.update.success.pageTitle</put>
+        <put name="MainContent" value="/jsp/model/success4firmwareupload.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.model.fota.update.success.location1.label"></add>
+              <add value="tile.model.fota.update.success.location2.label"></add>
+           </putList>
+    </definition>
+
+    <definition name="tile.model.model.capability.view" extends="otas.dm.main.simple.base">
+        <put name="title">tile.model.model.capability.view.pageTitle</put>
+        <put name="MainContent" value="/jsp/model/capability4view.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.model.model.capability.view.location1.label"></add>
+              <add value="tile.model.model.capability.view.location2.label"></add>
+           </putList>
+    </definition>
+
+    <definition name="tile.model.models.matrix.view" extends="baseModelManagement">
+        <put name="title">tile.model.models.matrix.pageTitle</put>
+        <put name="MainContent" value="/jsp/model/matrix.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.model.models.matrix.location1.label"></add>
+           <add value="tile.model.models.matrix.location2.label"></add>
+        </putList>
+    </definition>
+    
+    <definition name="tile.ModelClassification.list" extends="baseModelManagement">
+      <put name="title">tile.model.models.ModelClassification.pageTitle</put>
+      <put name="MainContent" value="/jsp/model/modelClassifications.jsp"/>
+      <put name="SearchPannel" value="/jsp/model/modelClassificationSearchpannel.jsp" />
+      <putList name="LocationLabels">
+        <add value="tile.model.models.matrix.location1.label"></add>
+        <add value="tile.model.models.ModelClassification.location2.label"></add>
+      </putList>
+    </definition>
+    
+    <definition name="tile.ModelClassification.model.list" extends="baseModelManagement">
+      <put name="title">tile.model.models.ModelClassification.pageTitle</put>
+      <put name="MainContent" value="/jsp/model/modelClassification4view.jsp"/>
+      <put name="SearchPannel" value="/jsp/model/modelClassificationSearchpannel.jsp" />
+      <putList name="LocationLabels">
+        <add value="tile.model.models.matrix.location1.label"></add>
+        <add value="tile.model.models.ModelClassification.location2.label"></add>
+      </putList>
+    </definition>
+    
+    <definition name="tile.ModelClassification.model.edit" extends="baseModelManagement">    
+      <put name="title">tile.model.models.ModelClassification.pageTitle</put>
+      <put name="MainContent" value="/jsp/model/modelClassification4edit.jsp"/>
+      <put name="SearchPannel" value="/jsp/model/modelClassificationSearchpannel.jsp" />
+      <putList name="LocationLabels">
+        <add value="tile.model.models.matrix.location1.label"></add>
+        <add value="tile.model.models.ModelClassification.location2.label"></add>
+      </putList>
+    </definition>
+
+
+</tiles-definitions>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<tiles-definitions>
+
+    <!-- Tiles: Device Management  -->
+    <definition name="baseSMS" extends="otas.dm.main.base">
+	    <put name="title">Change_Me</put>
+		<put name="SubMenus" value="/jsp/jobs/menus.jsp" />
+		<put name="MainContent" value="Change_Me" />
+        <putList name="LocationLabels">
+           <add value="Change_Me"></add>
+           <add value="Change_Me"></add>
+        </putList>
+    </definition>
+    
+    <!--  Related with Text SMS -->
+    <definition name="tile.sms.text.input" extends="baseSMS">
+        <put name="title">tile.sms.text.input.pageTitle</put>
+        <put name="MainContent" value="/jsp/sms/text/input.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.sms.text.input.location1.label"></add>
+              <add value="tile.sms.text.input.location2.label"></add>
+           </putList>
+    </definition>
+    <definition name="tile.sms.text.success" extends="baseSMS">
+        <put name="title">tile.sms.text.success.pageTitle</put>
+        <put name="MainContent" value="/jsp/sms/text/success.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.sms.text.success.location1.label"></add>
+              <add value="tile.sms.text.success.location2.label"></add>
+           </putList>
+    </definition>
+
+    <!--  Related with WapPush -->
+    <definition name="tile.sms.wappushsi.input" extends="baseSMS">
+        <put name="title">tile.sms.wappushsi.input.pageTitle</put>
+        <put name="MainContent" value="/jsp/sms/wappushsi/input.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.sms.wappushsi.input.location1.label"></add>
+              <add value="tile.sms.wappushsi.input.location2.label"></add>
+           </putList>
+    </definition>
+    <definition name="tile.sms.wappushsi.success" extends="baseSMS">
+        <put name="title">tile.sms.wappushsi.success.pageTitle</put>
+        <put name="MainContent" value="/jsp/sms/wappushsi/success.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.sms.wappushsi.success.location1.label"></add>
+              <add value="tile.sms.wappushsi.success.location2.label"></add>
+           </putList>
+    </definition>
+</tiles-definitions>

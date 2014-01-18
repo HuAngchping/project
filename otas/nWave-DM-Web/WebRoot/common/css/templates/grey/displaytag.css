@@ -1,0 +1,88 @@
+th.sorted {
+	background-color: orange;
+}
+
+th.sorted a,th.sortable a {
+	background-position: right;
+	display: block;
+	width: 100%;
+}
+
+th.sortable a {
+	background-image: url(../images1/displaytag/arrow_off.png);
+}
+
+th.order1 a {
+	background-image: url(../images1/displaytag/arrow_down.png);
+}
+
+th.order2 a {
+	background-image: url(../images1/displaytag/arrow_up.png);
+}
+
+tr.odd {
+	background-color: #fff
+}
+
+tr.tableRowEven {
+	background-color: #fea
+}
+
+div.exportlinks {
+	background-color: #eee;
+	border: 1px dotted #999;
+	padding: 2px 4px 2px 4px;
+	margin: 2px 0 10px 0;
+	width: 100%;
+	font-size: 11.5px;
+}
+
+span.export {
+	padding: 0 4px 1px 20px;
+	display: inline;
+	display: inline-block;
+	cursor: pointer;
+}
+
+span.excel {
+	background-image: url(../images1/displaytag/ico_file_excel.png);
+}
+
+span.csv {
+	background-image: url(../images1/displaytag/ico_file_csv.png);
+}
+
+span.xml {
+	background-image: url(../images1/displaytag/ico_file_xml.png);
+}
+
+span.pdf {
+	background-image: url(../images1/displaytag/ico_file_pdf.png);
+}
+
+span.rtf {
+	background-image: url(../images1/displaytag/ico_file_rtf.png);
+}
+
+span.pagebanner {
+	background-color: #eee;
+	border: 1px dotted #999;
+	padding: 2px 4px 2px 4px;
+	width: 100%;
+	margin-top: 10px;
+	display: block;
+	border-bottom: none;
+	font-size: 11.5px;
+	clear: both;
+}
+
+span.pagelinks {
+	background-color: #eee;
+	border: 1px dotted #999;
+	padding: 2px 4px 2px 4px;
+	width: 100%;
+	display: block;
+	border-top: none;
+	margin-bottom: -5px;
+	font-size: 11.5px;
+}

@@ -1,0 +1,42 @@
+<beans xmlns="http://xfire.codehaus.org/config/1.0">
+  <!-- Model Inventory Service -->
+	<service>
+		<name>ModelService</name>
+		<serviceClass>com.npower.dm.soap.common.ModelService</serviceClass>
+		<implementationClass>com.npower.dm.soap.service.ModelServiceImpl</implementationClass>
+		<style>wrapped</style>
+		<use>literal</use>
+		<scope>application</scope>
+	</service>
+	
+	<!-- Client Prov Service -->
+	<service>
+		<name>ClientProvService</name>
+		<serviceClass>com.npower.dm.soap.common.ClientProvService</serviceClass>
+		<implementationClass>com.npower.dm.soap.service.ClientProvServiceImpl</implementationClass>
+		<style>wrapped</style>
+		<use>literal</use>
+		<scope>application</scope>
+	</service>
+	
+  <!-- Job Dispatcher Daemon Service -->
+  <service>
+    <name>JobDispatcherService</name>
+    <serviceClass>com.npower.dm.soap.common.ProvisionJobDispatcherService</serviceClass>
+    <implementationClass>com.npower.dm.soap.service.ProvisionJobDispatcherServiceImpl</implementationClass>
+    <style>wrapped</style>
+    <use>literal</use>
+    <scope>application</scope>
+  </service>
+  
+	<!-- SMSSender status observer -->
+	<service>
+		<name>SmsSenderStatusObserver</name>
+		<serviceClass>com.npower.sms.client.SmsSenderObserver</serviceClass>
+		<implementationClass>com.npower.dm.service.SmsSenderObserverImpl</implementationClass>
+		<style>wrapped</style>
+		<use>literal</use>
+		<scope>application</scope>
+	</service>
+	
+</beans>

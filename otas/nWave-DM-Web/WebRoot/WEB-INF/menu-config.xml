@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<MenuConfig>
+
+  <Displayers>
+    <Displayer   name="Velocity"
+                 type="net.sf.navigator.displayer.VelocityMenuDisplayer"/>
+  </Displayers>
+
+  <Menus>
+    <!--  Main Menus    -->
+    <!--  
+          Please do not modified all of names, otherwise modify
+          javascript: hilightTopMenu(menuName) in all of menu.jsp
+    -->
+    <Menu name="MainMenu" title="Main.Menu.title">
+      <Item name="DeviceMenu"
+            title="Main.Menu.DeviceMenu.title"
+            action="DeviceMenu"
+            roles="dm.admin.devices,dm.operator.devices"/>
+      <Item name="JobMenu" 
+            title="Main.Menu.JobMenu.title" 
+            action="ProvisionMenu"
+            roles="dm.admin.jobs"/>
+      <Item name="ProfileMenu" 
+            title="Main.Menu.ProfileMenu.title" 
+            action="ProfileMenu"
+            roles="dm.admin.profiles,
+                   dm.operator.manufacturer"/>
+      <Item name="ModelMenu" 
+            title="Main.Menu.ModelMenu.title" 
+            action="ModelMenu"
+            roles="dm.admin.models,
+                   dm.operator.manufacturer"/>
+      <Item name="CarrierMenu" 
+            title="Main.Menu.CarrierMenu.title" 
+            action="CarrierMenu"
+            roles="dm.admin.carriers"/>
+      <Item name="SoftwareMenu" 
+            title="Main.Menu.SoftwareMenu.title" 
+            action="SoftwareMenu"
+            roles="dm.admin.softwares"/>
+      <Item name="SecurityMenu" 
+            title="Main.Menu.SecurityMenu.title" 
+            action="SecurityMenu"
+            roles="dm.admin.security"/>
+      <Item name="AuditMenu" 
+            title="Main.Menu.AuditMenu.title" 
+            action="AuditMenu"
+            roles="dm.admin.audit"/>
+    </Menu>
+    
+    <!-- Jobs Menus  -->
+    <Menu name="SubMenuJobs" title="Sub.Menu.Job.title">
+      <Item name="ItemJobQueuedManagement" 
+            title="Sub.Menu.Job.item.jobs.list.queued.title" 
+            action="/jobs/list/queued"/>
+      <Item name="ItemJobFinshedManagement" 
+            title="Sub.Menu.Job.item.jobs.list.finished.title" 
+            action="/jobs/list/finished"/>
+      <Item name="ItemJobAllManagement" 
+            title="Sub.Menu.Job.item.jobs.list.all.title" 
+            action="/jobs/list/all"/>
+      <Item name="ItemDevicesInProgressMenu" 
+            title="Sub.Menu.Job.item.DevicesInProgress.title" 
+            action="/jobs/DevicesInProgress"/>
+      <Item name="ItemSubmitAJobMenu" 
+            title="Sub.Menu.Job.item.SubmitAJobMenu.title" 
+            action="/jobs/SelectJobType"/>
+    </Menu>
+    
+    <!-- Profiles Menus  -->
+    <Menu name="SubMenuProfiles" title="Profile Management">
+      <Item name="ItemProfilesList" 
+            title="Sub.Menu.Profiles.item.ProfilesList.title" 
+            action="ProfileConfigs"
+            roles="dm.admin.profiles"/>
+      <Item name="ItemSubMenuCategories" 
+            title="Sub.Menu.Profiles.item.SubMenuCategories.title" 
+            action="Categories"
+            roles="dm.admin.profiles"/>
+      <Item name="ItemAttributeTypes" 
+            title="Sub.Menu.Profiles.item.AttributeTypes.title" 
+            action="ProfileAttributeTypes"
+            roles="dm.admin.profiles"/>
+      <Item name="ItemTemplates" 
+            title="Sub.Menu.Profiles.item.Templates.title" 
+            action="ProfileTemplates"
+            roles="dm.admin.profiles"/>
+      <Item name="ItemMappings" 
+            title="Sub.Menu.Profiles.item.Mappings.title" 
+            action="ProfileMappings"
+            roles="dm.admin.profiles,
+                   dm.operator.manufacturer"/>
+      <Item name="ItemCPTemplates" 
+            title="Sub.Menu.Profiles.item.CPTemplates.title" 
+            action="/profile/CPTemplates"
+            roles="dm.admin.profiles,
+                   dm.operator.manufacturer"/>
+      <Item name="ItemImport" 
+            title="Sub.Menu.Profiles.item.Import.title" 
+            action="ProfileImports"
+            roles="dm.admin.profiles,
+                   dm.operator.manufacturer"/>
+    </Menu>
+    
+    <!-- Devices Menus  -->
+    <Menu name="SubMenuDevices" title="Sub.Menu.Devices.title">
+      <Item name="ItemDevices" 
+            title="Sub.Menu.Profiles.item.Devices.title" 
+            action="Devices"/>
+      <Item name="ItemEnrollAdevice" 
+            title="Sub.Menu.Profiles.item.EnrollAdevice.title" 
+            action="EditDevice"
+            roles="dm.admin.devices"/>
+      <Item name="ItemNotification" 
+            title="Sub.Menu.Profiles.item.Notification.title" 
+            action="/notification/input"/>
+      <Item name="ItemBootstrap" 
+            title="Sub.Menu.Profiles.item.Bootstrap.title" 
+            action="/bootstrap/send"/>
+      <Item name="ItemDeviceChangeLogs" 
+            title="Sub.Menu.Devices.item.DeviceChangeLogs.title" 
+            action="/devices/changeLogs"/>
+      <Item name="ItemDeviceFavorites" 
+            title="Sub.Menu.Devices.item.DeviceFavorites.title" 
+            action="/favorite/favorites"/>
+    </Menu>
+    
+    <!-- Device Context Menus  -->
+    <Menu name="SubMenuDeviceContext" title="Sub.Menu.DeviceContext.title">
+      <Item name="Item_Device_View_Device" 
+            title="Sub.Menu.DeviceContext.item.ViewDevice.title" 
+            location="javascript: document.ContextMenuForm_ViewDevice.submit();"/>
+      <Item name="Item_Device_Edit_Device" 
+            title="Sub.Menu.DeviceContext.item.EditDevice.title" 
+            location="javascript: document.ContextMenuForm_EditDevice.submit();"
+            roles="dm.admin.devices"/>
+      <Item name="Item_Device_View_Device_Tree" 
+            title="page.device.button.viewDeviceTree" 
+            location="javascript: document.ContextMenuForm_ViewDeviceTree.submit();"/>
+      <Item name="Item_Device__Create_Job" 
+            title="page.device.button.createJob" 
+            location="javascript: document.ContextMenuForm_Create_Job.submit();"/>
+      <Item name="Item_Device_Job_Queue" 
+            title="page.device.button.viewJobs" 
+            location="javascript: document.ContextMenuForm_Job_Queue.submit();"/>
+      <Item name="Item_Device_View_Profiles" 
+            title="page.device.button.viewProfiles" 
+            location="javascript: document.ContextMenuForm_View_Profiles.submit();"/>
+      <Item name="Item_Device_Deployed_Softwares" 
+            title="page.device.button.view.deployed.softwares" 
+            location="javascript: document.ContextMenuForm_Deployed_Softwares.submit();"/>
+      <Item name="Item_Device_View_Subscriber" 
+            title="page.device.button.viewSubscriber" 
+            location="javascript: document.ContextMenuForm_View_Subscriber.submit();"/>
+      <Item name="Item_Device_Bootstrap" 
+            title="page.device.button.bootstrap" 
+            location="javascript: document.ContextMenuForm_Bootstrap.submit();"/>
+      <Item name="Item_Device_Notification" 
+            title="page.device.job.success.button.notification.label" 
+            location="javascript: document.ContextMenuForm_Notification.submit();"/>
+      <Item name="Item_Device_History" 
+            title="page.device.button.history" 
+            location="javascript: document.ContextMenuForm_History.submit();"/>
+    </Menu>
+    
+    <!-- Device Context Menus: Submit Job by job type  -->
+    <Menu name="SubMenuDeviceContext4SubmitJobByType" title="Sub.Menu.DeviceContext4SubmitJob.title">
+      <Item name="Item_Device_Job_Discovery" 
+            title="meta.job.type.Discovery.label" 
+            location="javascript: doSubmitAJob('doDiscovery');"/>
+      <Item name="Item_Device_Job_Assign_Profile" 
+            title="meta.job.type.Assign.http.label" 
+            location="javascript: doSubmitAJob('doAssignProfile4DM');"/>
+      <Item name="Item_Device_Job_Firmware" 
+            title="meta.job.type.Firmware.label" 
+            location="javascript: doSubmitAJob('doFirmware');"/>
+      <Item name="Item_Device_Job_Execute_Script" 
+            title="meta.job.type.Script.label" 
+            location="javascript: doSubmitAJob('doScript');"/>
+      <Item name="Item_Device_Job_ReSend_Profile" 
+            title="meta.job.type.Re-Send.label" 
+            location="javascript: document.ContextMenuForm_View_Profiles.submit();"/>
+      <Item name="Item_Device_Job_Delete_Profile" 
+            title="meta.job.type.DeleteProfile.label" 
+            location="javascript: document.ContextMenuForm_View_Profiles.submit();"/>
+    </Menu>
+
+    <!-- OMA CP Provision Menus  -->
+    <Menu name="SubMenuOMA_CP_OTAProvision" title="Sub.Menu.OMA_CP_OTAProvision.title">
+      <Item name="Item_OMA_CP_NAP" 
+            title="Sub.Menu.OMA_CP_OTAProvision.item.nap.title" 
+            action="/ota/omacp/generalInput?cp_type=nap"/>
+      <Item name="Item_OMA_CP_PROXY" 
+            title="Sub.Menu.OMA_CP_OTAProvision.item.proxy.title" 
+            action="/ota/omacp/generalInput?cp_type=proxy"/>
+      <Item name="Item_OMA_CP_MMS" 
+            title="Sub.Menu.OMA_CP_OTAProvision.item.mms.title" 
+            action="/ota/omacp/generalInput?cp_type=mms"/>
+      <Item name="Item_OMA_CP_SYNC_DS" 
+            title="Sub.Menu.OMA_CP_OTAProvision.item.syncds.title" 
+            action="/ota/omacp/generalInput?cp_type=syncds"/>
+      <Item name="Item_OMA_CP_EMAIL" 
+            title="Sub.Menu.OMA_CP_OTAProvision.item.email.title" 
+            action="/ota/omacp/generalInput?cp_type=email"/>
+      <Item name="Item_OMA_CP_IMPS" 
+            title="Sub.Menu.OMA_CP_OTAProvision.item.imps.title" 
+            action="/ota/omacp/generalInput?cp_type=imps"/>
+      <Item name="Item_OMA_CP_POC" 
+            title="Sub.Menu.OMA_CP_OTAProvision.item.poc.title" 
+            action="/ota/omacp/generalInput?cp_type=poc"/>
+      <Item name="Item_OMA_CP_DOCUMENT" 
+            title="Sub.Menu.OMA_CP_OTAProvision.item.document.title" 
+            action="/ota/omacp/generalInput?cp_type=document"/>
+            
+      <!--
+      <Item name="Item_OMA_CP_NowSMS_CP" 
+            title="OMA Client Prov" 
+            action="/ota/omacp/nowsms?url=http://sms.otas.cn:8800/Send%20OMA%20GPRS%20Settings.htm"/>
+      <Item name="Item_OMA_CP_NowSMS_CP_General" 
+            title="OMA Client Prov XML" 
+            action="/ota/omacp/nowsms?url=http://sms.otas.cn:8800/Send%20XML%20Settings.htm"/>
+      -->
+    </Menu>
+    <!-- Nokia OTA Provision Menus  -->
+    <Menu name="SubMenuNokiaOTA_Provision" title="Sub.Menu.Send.SMS.title">
+      <Item name="Item_Text_SMS" 
+            title="Sub.Menu.Send.SMS.item.sms.text.title" 
+            action="/sms/text/Input"/>
+      <Item name="Item_Text_SMS" 
+            title="Sub.Menu.Send.SMS.item.sms.wappushsi.title" 
+            action="/sms/wappushsi/Input"/>
+      <Item name="ItemNokia_OTA_Conn" 
+            title="Sub.Menu.Send.SMS.item.nokia.ota.connection.title" 
+            action="/ota/nokia/connectionInput"/>
+      <Item name="ItemNokia_OTA_Bookmark" 
+            title="Sub.Menu.Send.SMS.item.nokia.ota.bookmark.title" 
+            action="/ota/nokia/bookmarkInput"/>
+    </Menu>
+    
+    <!-- Models Menus  -->
+    <Menu name="SubMenuModels" title="Sub.Menu.Models.title">
+      <Item name="ItemModels" 
+            title="Sub.Menu.Models.item.Models.title" 
+            action="Models"
+            roles="dm.admin.manufacturers,
+                   dm.admin.models,
+                   dm.operator.manufacturer"/>
+      <Item name="ItemManufacturers" 
+            title="Sub.Menu.Models.item.Manufacturers.title" 
+            action="Manufacturers"
+            roles="dm.admin.manufacturers,
+                   dm.admin.models,
+                   dm.operator.manufacturer"/>
+      <Item name="ItemFotaUpdates" 
+            title="Sub.Menu.Models.item.FotaUpdates.title" 
+            action="/updates/updateimages"
+            roles="dm.admin.manufacturers,
+                   dm.admin.models,
+                   dm.operator.manufacturer"/>
+      <Item name="ItemCapabilitiesMatrix" 
+            title="Sub.Menu.Models.item.CapabilitiesMatrix.title" 
+            action="/model/Matrix.do?method=showMatrix"
+            roles="dm.admin.manufacturers,
+                   dm.admin.models,
+                   dm.operator.manufacturer"/>
+      <Item name="ItemModelClassification"
+            title="Sub.Menu.Models.item.Classification.title"
+            action="/model/modelClassifications"/>
+    </Menu>
+    
+    <!-- Carriers Menus  -->
+    <Menu name="SubMenuCarriers" title="Sub.Menu.Carriers.title">
+      <Item name="ItemCarriers" 
+            title="Sub.Menu.Carriers.item.Carriers.title" 
+            action="Carriers"/>
+      <Item name="ItemCountries" 
+            title="Sub.Menu.Carriers.item.Countries.title" 
+            action="Countries"/>
+    </Menu>
+    
+    <!-- Software Menus  -->
+    <Menu name="SubMenuSoftwares" title="Sub.Menu.Software.title">
+      <Item name="ItemSoftwares" 
+            title="Sub.Menu.Softwares.item.softwares.title" 
+            action="/software/softwares"/>
+      <Item name="ItemSoftwareVendors" 
+            title="Sub.Menu.Softwares.item.vendors.title" 
+            action="/software/vendors"/>
+      <Item name="ItemSoftwareCategories" 
+            title="Sub.Menu.Softwares.item.categories.title" 
+            action="/software/categories"/>
+      <Item name="ItemRecommendedSoftwares"
+            title="Sub.Menu.Softwares.item.recommended.title"
+            action="/software/recommends"/>
+      <Item name="ItemExportDate"
+            title="Sub.Menu.Softwares.item.exportdata.title"
+            action="/exportSoftwareForward"/>
+      <Item name="ItemUploadFile"
+            title="Sub.Menu.Softwares.item.uploadfile.title"
+            action="/uploadFileForward"/>      
+    </Menu>
+    
+    <!-- Security Menus  -->
+    <Menu name="SubMenuSecurity" title="Sub.Menu.Security.title">
+      <Item name="ItemSubscribers" 
+            title="Sub.Menu.Security.item.Subscribers.title" 
+            action="Subscribers"/>
+      <Item name="ItemUsers" 
+            title="Sub.Menu.Security.item.Users.title" 
+            action="Users"/>
+    </Menu>
+    
+    <!-- Monitor Menus  -->
+    <Menu name="SubMenuMonitor" title="Sub.Menu.Monitor.title">
+      <Item name="ItemOSMemoryInfo" 
+            title="Sub.Menu.Monitor.item.OSMemoryInfo.title" 
+            action="/monitor/OSMemoryInfo"/>
+      <Item name="ItemJvmMemoryInfo" 
+            title="Sub.Menu.Monitor.item.JvmMemoryInfo.title" 
+            action="/monitor/JvmMemoryInfo"/>
+      <Item name="ItemSystemInfo" 
+            title="Sub.Menu.Monitor.item.SystemInfo.title" 
+            action="SystemInfo"/>
+    </Menu>
+
+    <!-- Audit Menus  -->
+    <Menu name="SubMenuAudit" title="Sub.Menu.Audit.title">
+      <Item name="ItemLogsAudit" 
+            title="Sub.Menu.Audit.item.LogsAudit.title" 
+            action="/audit/Auditlogs"/>
+      <Item name="ItemDeviceAudit" 
+            title="Sub.Menu.Audit.item.DeviceAudit.title" 
+            action="/audit/Auditlogs?searchAuditActionType=Device"/>
+      <Item name="ItemSecurityAudit" 
+            title="Sub.Menu.Audit.item.SecurityAudit.title" 
+            action="/audit/Auditlogs?searchAuditActionType=Security"/>
+      <Item name="ItemManufacturerAudit" 
+            title="Sub.Menu.Audit.item.ManufacturerAudit.title" 
+            action="/audit/Auditlogs?searchAuditActionType=Manufacturer"/>
+      <Item name="ItemModelAudit" 
+            title="Sub.Menu.Audit.item.ModelAudit.title" 
+            action="/audit/Auditlogs?searchAuditActionType=Model"/>
+      <Item name="ItemProfileAudit" 
+            title="Sub.Menu.Audit.item.ProfileAudit.title" 
+            action="/audit/Auditlogs?searchAuditActionType=Profile"/>
+      <Item name="ItemProvisionAudit" 
+            title="Sub.Menu.Audit.item.ProvisionAudit.title" 
+            action="/audit/Auditlogs?searchAuditActionType=Provisioning"/>
+      <Item name="ItemClientProvLists" 
+            title="Sub.Menu.Report.item.ClientProvList.title" 
+            action="/audit/CPAuditlogs"/>
+      <Item name="ItemReportLists" 
+            title="Sub.Menu.Report.item.ReportList.title" 
+            action="/reports/list"/>            
+    </Menu>
+    
+    <!-- Errors Menus  -->
+    <Menu name="SubMenuErrors" title="Sub.Menu.Errors.title">
+      <Item name="ItemReportBugs" 
+            title="Sub.Menu.Errors.item.ReportBugs.title"/>
+    </Menu>
+    
+  </Menus>
+
+</MenuConfig>

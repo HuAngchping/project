@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC 
+	"-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" 
+	"http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+<!-- Definitions for Tiles  -->
+<tiles-definitions>
+	<definition name="tiles.base.help.html" path="/WEB-INF/jsp/common/templates/layout.jsp">
+    <put name="title">CHANGE_ME</put>
+		<put name="banner" value="/WEB-INF/jsp/common/templates/banner.jsp" />
+		<put name="footer" value="/WEB-INF/jsp/common/templates/footer.jsp" />
+		<put name="menu" value="Please Chang It" />
+		<put name="content" value="Please Chang It" />
+	</definition>
+	
+	<definition name="tiles.help.subjects.list.html" extends="tiles.base.help.html">
+    <put name="title">otas.help.admin.page.title</put>
+		<put name="menu" value="/WEB-INF/jsp/help/admin/subjects/tree.jsp" />
+		<put name="content" value="/WEB-INF/jsp/help/admin/subjects/subjects.jsp" />
+	</definition>
+	<definition name="tiles.help.forward.subject.edit.html" extends="tiles.base.help.html">
+    <put name="title">otas.help.admin.page.title</put>
+		<put name="menu" value="/WEB-INF/jsp/help/admin/subjects/tree.jsp" />
+		<put name="content" value="/WEB-INF/jsp/help/admin/subjects/edit4subject.jsp" />
+	</definition>
+	<definition name="tiles.help.forward.content.edit.html" extends="tiles.base.help.html">
+    <put name="title">otas.help.admin.page.title</put>
+		<put name="menu" value="/WEB-INF/jsp/help/admin/subjects/tree.jsp" />
+		<put name="content" value="/WEB-INF/jsp/help/admin/subjects/edit4content.jsp" />
+	</definition>
+	<definition name="tiles.help.select.locale.list.html" extends="tiles.base.help.html">
+    <put name="title">otas.help.admin.page.title</put>
+		<put name="menu" value="/WEB-INF/jsp/help/admin/subjects/tree.jsp" />
+		<put name="content" value="/WEB-INF/jsp/help/admin/subjects/select4locale.jsp" />
+	</definition>
+	<definition name="tiles.help.save.subject.success.html" extends="tiles.base.help.html">
+    <put name="title">otas.help.admin.page.title</put>
+		<put name="menu" value="/WEB-INF/jsp/help/admin/subjects/tree.jsp" />
+		<put name="content" value="/WEB-INF/jsp/help/admin/subjects/success4save_subject.jsp" />
+	</definition>
+	<definition name="tiles.help.save.content.success.html" extends="tiles.base.help.html">
+    <put name="title">otas.help.admin.page.title</put>
+		<put name="menu" value="/WEB-INF/jsp/help/admin/subjects/tree.jsp" />
+		<put name="content" value="/WEB-INF/jsp/help/admin/subjects/success4save_content.jsp" />
+	</definition>
+  <definition name="tiles.help.view.content.list.html" extends="tiles.base.help.html">
+    <put name="title">otas.help.admin.page.title</put>
+		<put name="menu" value="/WEB-INF/jsp/help/admin/subjects/tree.jsp" />
+		<put name="content" value="/WEB-INF/jsp/help/admin/subjects/view4content.jsp" />
+	</definition>
+  <definition name="tiles.help.delete.subject.success.html" extends="tiles.base.help.html">
+    <put name="title">otas.help.admin.page.title</put>
+		<put name="menu" value="/WEB-INF/jsp/help/admin/subjects/tree.jsp" />
+		<put name="content" value="/WEB-INF/jsp/help/admin/subjects/success4delete_subject.jsp" />
+	</definition>
+	<definition name="tiles.help.move.subjects.html" extends="tiles.base.help.html">
+    <put name="title">otas.help.admin.page.title</put>
+		<put name="menu" value="/WEB-INF/jsp/help/admin/subjects/tree.jsp" />
+		<put name="content" value="/WEB-INF/jsp/help/admin/subjects/move4subject.jsp" />
+	</definition>
+	<definition name="tiles.help.move.subjects.success.html" extends="tiles.base.help.html">
+    <put name="title">otas.help.admin.page.title</put>
+    <put name="menu" value="/WEB-INF/jsp/help/admin/subjects/tree.jsp" />
+    <put name="content" value="/WEB-INF/jsp/help/admin/subjects/success4move_subject.jsp" />
+  </definition>
+  
+  <definition name="tiles.help.showSubjects.list.html" extends="tiles.base.help.html">
+    <put name="title">otas.help.admin.page.title</put>
+    <put name="menu" value="/WEB-INF/jsp/help/admin/subjects/tree.jsp" />
+    <put name="content" value="/WEB-INF/jsp/help/show/subjects/showAllSubject.jsp" />
+  </definition>
+  <definition name="tiles.help.showSubjectContent.list.html" extends="tiles.base.help.html">
+    <put name="title">otas.help.admin.page.title</put>
+    <put name="menu" value="/WEB-INF/jsp/help/admin/subjects/tree.jsp" />
+    <put name="content" value="/WEB-INF/jsp/help/show/subjects/showSubjectContent.jsp" />
+  </definition>
+</tiles-definitions>

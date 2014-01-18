@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <!-- Map-backed ActionForm -->
+    <form-bean name="ClientProvForm4Wizard" type="com.npower.dm.myportal.cp.ClientProvWizardForm">
+    </form-bean>
+
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards >
+  </global-forwards>
+
+  <action-mappings >
+
+    <action
+      attribute="ClientProvForm4Wizard"
+      parameter="navigation"
+      name="ClientProvForm4Wizard"
+      path="/wizard/cp/intro"
+      scope="session"
+      type="com.npower.dm.myportal.cp.IntroAction">
+      <forward
+        name="view"
+        path="tile.html.cp.wizard.introduction"
+        contextRelative="true" />
+      <forward
+        name="next"
+        path="/wizard/cp/SelectCountry.do?navigation="
+        contextRelative="true" redirect="true"/>
+    </action>
+
+    <action
+      attribute="ClientProvForm4Wizard"
+      parameter="navigation"
+      name="ClientProvForm4Wizard"
+      path="/wizard/cp/SelectCountry"
+      scope="session"
+      type="com.npower.dm.myportal.cp.SelectCountryAction"
+      input="/wizard/cp/intro.do">
+      <forward
+        name="view"
+        path="tile.html.cp.wizard.select.country"
+        contextRelative="true" />
+      <forward
+        name="prev"
+        path="/wizard/cp/intro.do?navigation="
+        contextRelative="true" redirect="true"/>
+      <forward
+        name="next"
+        path="/wizard/cp/SelectCarrier.do?navigation="
+        contextRelative="true" redirect="true"/>
+    </action>
+
+    <action
+      attribute="ClientProvForm4Wizard"
+      parameter="navigation"
+      name="ClientProvForm4Wizard"
+      path="/wizard/cp/SelectCarrier"
+      scope="session"
+      type="com.npower.dm.myportal.cp.SelectCarrierAction"
+      input="/wizard/cp/intro.do">
+      <forward
+        name="view"
+        path="tile.html.cp.wizard.select.carrier"
+        contextRelative="true" />
+      <forward
+        name="prev"
+        path="/wizard/cp/SelectCountry.do?navigation="
+        contextRelative="true" redirect="true"/>
+      <forward
+        name="next"
+        path="/wizard/cp/SelectModel.do?navigation="
+        contextRelative="true" redirect="true"/>
+    </action>
+
+    <action
+      attribute="ClientProvForm4Wizard"
+      parameter="navigation"
+      name="ClientProvForm4Wizard"
+      path="/wizard/cp/SelectModel"
+      scope="session"
+      type="com.npower.dm.myportal.cp.SelectModelAction"
+      input="/wizard/cp/intro.do">
+      <forward
+        name="view"
+        path="tile.html.cp.wizard.select.model"
+        contextRelative="true" />
+      <forward
+        name="prev"
+        path="/wizard/cp/SelectCarrier.do?navigation="
+        contextRelative="true" redirect="true"/>
+      <forward
+        name="next"
+        path="/wizard/cp/SelectProfileCategory.do?navigation="
+        contextRelative="true" redirect="true"/>
+    </action>
+
+    <action
+      attribute="ClientProvForm4Wizard"
+      parameter="navigation"
+      name="ClientProvForm4Wizard"
+      path="/wizard/cp/SelectProfileCategory"
+      scope="session"
+      type="com.npower.dm.myportal.cp.SelectProfileCategoryAction"
+      input="/wizard/cp/intro.do">
+      <forward
+        name="view"
+        path="tile.html.cp.wizard.select.profileCategory"
+        contextRelative="true" />
+      <forward
+        name="prev"
+        path="/wizard/cp/SelectModel.do?navigation="
+        contextRelative="true" redirect="true"/>
+      <forward
+        name="next"
+        path="/wizard/cp/SelectProfile.do?navigation="
+        contextRelative="true" redirect="true"/>
+      <forward
+        name="next4SelectSoftware"
+        path="/wizard/dm/SelectSoftware.do?navigation="
+        contextRelative="true" redirect="true"/>
+    </action>
+
+    <action
+      attribute="ClientProvForm4Wizard"
+      parameter="navigation"
+      name="ClientProvForm4Wizard"
+      path="/wizard/cp/SelectProfile"
+      scope="session"
+      type="com.npower.dm.myportal.cp.SelectProfileAction"
+      input="/wizard/cp/intro.do">
+      <forward
+        name="view"
+        path="tile.html.cp.wizard.select.profile"
+        contextRelative="true" />
+      <forward
+        name="prev"
+        path="/wizard/cp/SelectProfileCategory.do?navigation="
+        contextRelative="true" redirect="true"/>
+      <forward
+        name="next4InputProfileParameters"
+        path="/wizard/cp/InputProfileAttribute.do?navigation="
+        contextRelative="true" redirect="true"/>
+      <forward
+        name="next4InputPhone"
+        path="/wizard/cp/InputPhone.do?navigation="
+        contextRelative="true" redirect="true"/>
+    </action>
+
+    <action
+      attribute="ClientProvForm4Wizard"
+      parameter="navigation"
+      name="ClientProvForm4Wizard"
+      path="/wizard/cp/InputProfileAttribute"
+      scope="session"
+      type="com.npower.dm.myportal.cp.InputProfileAttributeAction"
+      input="/wizard/cp/intro.do">
+      <forward
+        name="view"
+        path="tile.html.cp.wizard.input.profile.attribute"
+        contextRelative="true" />
+      <forward
+        name="prev"
+        path="/wizard/cp/SelectProfile.do?navigation="
+        contextRelative="true" redirect="true"/>
+      <forward
+        name="next"
+        path="/wizard/cp/InputPhone.do?navigation="
+        contextRelative="true" redirect="true"/>
+    </action>
+
+    <action
+      attribute="ClientProvForm4Wizard"
+      parameter="navigation"
+      name="ClientProvForm4Wizard"
+      path="/wizard/cp/InputPhone"
+      scope="session"
+      type="com.npower.dm.myportal.cp.InputPhoneAction"
+      input="/wizard/cp/intro.do">
+      <!-- 缺省输入页面, 输入电话号码 -->
+      <forward
+        name="view"
+        path="tile.html.cp.wizard.input.phone"
+        contextRelative="true" />
+      <forward
+        name="prev"
+        path="/wizard/cp/SelectProfile.do?navigation="
+        contextRelative="true" redirect="true"/>
+      <forward
+        name="next"
+        path="/wizard/cp/Sent.do?navigation="
+        contextRelative="true" redirect="true"/>
+    </action>
+
+    <action
+      attribute="ClientProvForm4Wizard"
+      parameter="navigation"
+      name="ClientProvForm4Wizard"
+      path="/wizard/cp/Sent"
+      scope="session"
+      type="com.npower.dm.myportal.cp.SendAction"
+      input="/wizard/cp/intro.do">
+      <forward
+        name="success"
+        path="tile.html.cp.wizard.completed"
+        contextRelative="true" />
+    </action>
+
+    <!--  MSM related actions -->
+    <action
+      attribute="ClientProvForm4Wizard"
+      parameter="navigation"
+      name="ClientProvForm4Wizard"
+      path="/wizard/dm/SelectSoftware"
+      scope="session"
+      type="com.npower.dm.myportal.dm.SelectSoftwareAction"
+      input="/wizard/cp/intro.do">
+      <forward
+        name="view"
+        path="tile.html.dm.wizard.select.software"
+        contextRelative="true" />
+      <forward
+        name="prev"
+        path="/wizard/cp/SelectProfileCategory.do?navigation="
+        contextRelative="true" redirect="true"/>
+      <forward
+        name="next"
+        path="/wizard/dm/InputPhone.do?navigation="
+        contextRelative="true" redirect="true"/>
+    </action>
+
+    <action
+      attribute="ClientProvForm4Wizard"
+      parameter="navigation"
+      name="ClientProvForm4Wizard"
+      path="/wizard/dm/InputPhone"
+      scope="session"
+      type="com.npower.dm.myportal.dm.InputPhoneAction"
+      input="/wizard/cp/intro.do">
+      <forward
+        name="view"
+        path="tile.html.dm.wizard.input.phone"
+        contextRelative="true" />
+      <forward
+        name="prev"
+        path="/wizard/dm/SelectSoftware.do?navigation="
+        contextRelative="true" redirect="true"/>
+      <forward
+        name="next4dm"
+        path="/wizard/dm/msm/install/job/submit4dm.do?navigation="
+        contextRelative="true" redirect="true"/>
+      <forward
+        name="next4wapush"
+        path="/wizard/dm/msm/install/job/choice_download_method.do?navigation="
+        contextRelative="true" redirect="true"/>
+      <forward
+        name="next4no_availiable_package"
+        path="tile.html.dm.wizard.software.install.no_availiable_package"
+        contextRelative="true" redirect="true"/>
+    </action>
+
+    <!-- Submit DM Job for MSM -->
+    <action
+      attribute="ClientProvForm4Wizard"
+      parameter="navigation"
+      name="ClientProvForm4Wizard"
+      path="/wizard/dm/msm/install/job/submit4dm"
+      scope="session"
+      type="com.npower.dm.myportal.dm.msm.SubmitDMJobAction"
+      input="/wizard/cp/intro.do">
+      <forward
+        name="success"
+        path="tile.html.dm.wizard.software.install.dm.completed"
+        contextRelative="true" />
+    </action>
+
+    <!-- Show Download method for Software Installation -->
+    <action
+      attribute="ClientProvForm4Wizard"
+      parameter="navigation"
+      name="ClientProvForm4Wizard"
+      path="/wizard/dm/msm/install/job/choice_download_method"
+      scope="session"
+      type="com.npower.dm.myportal.dm.msm.ChoiceDownloadMethodAction"
+      input="/wizard/cp/intro.do">
+      <forward
+        name="view"
+        path="tile.html.dm.wizard.software.install.wappush.view"
+        contextRelative="true" />
+      <forward
+        name="prev"
+        path="/wizard/dm/InputPhone.do?navigation="
+        contextRelative="true" />
+      <forward
+        name="next"
+        path="/wizard/dm/msm/install/job/submit4wappush.do"
+        contextRelative="true" />
+    </action>
+
+    <!-- Submit WapPush message for Software Installation -->
+    <action
+      attribute="ClientProvForm4Wizard"
+      parameter="navigation"
+      name="ClientProvForm4Wizard"
+      path="/wizard/dm/msm/install/job/submit4wappush"
+      scope="session"
+      type="com.npower.dm.myportal.dm.msm.SubmitWapPushAction"
+      input="/wizard/cp/intro.do">
+      <forward
+        name="success"
+        path="tile.html.dm.wizard.software.install.wappush.completed"
+        contextRelative="true" />
+    </action>
+
+    <action
+      attribute="ClientProvForm4Wizard"
+      parameter="navigation"
+      name="ClientProvForm4Wizard"
+      path="/wizard/dm/test"
+      scope="session"
+      type="com.npower.dm.myportal.dm.TestAction"
+      input="/wizard/cp/intro.do">
+      <forward
+        name="success"
+        path="tile.html.dm.wizard.software.install.completed"
+        contextRelative="true" />
+    </action>
+
+  </action-mappings>
+
+</struts-config>
+

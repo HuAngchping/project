@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/help/admin/fckeditor/connector.do" location="1550,1150" dimension="358,84" />
+  <StrutsActivity path="/help/admin/fckeditor/download.do" location="1250,1450" dimension="364,84" />
+  <StrutsActivity path="/help/admin/subjects/subjects.do" location="50,50" dimension="304,84" />
+  <StrutsActivity path="/help/admin/subjects/editSubject.do" location="1250,650" dimension="376,84" />
+  <StrutsActivity path="/help/admin/subjects/saveSubject.do" location="350,850" dimension="352,84" />
+  <StrutsActivity path="/help/admin/subjects/editContent.do" location="650,1250" dimension="376,84" />
+  <StrutsActivity path="/help/admin/subjects/saveContent.do" location="50,1350" dimension="376,84" />
+  <StrutsActivity path="/help/admin/subjects/selectLocal.do" location="950,950" dimension="376,84" />
+  <StrutsActivity path="/help/admin/subjects/viewContent.do" location="50,1550" dimension="376,84" />
+  <StrutsActivity path="/help/admin/subjects/deleteSubject.do" location="650,1650" dimension="388,84" />
+  <StrutsActivity path="/help/admin/subjects/moveSubject.do" location="1850,1350" dimension="376,84" />
+  <StrutsActivity path="/help/show/subjects/showAllSubject.do" location="1550,350" dimension="388,84" />
+  <StrutsActivity path="/help/show/subjects/showSubjectContent.do" location="50,1750" dimension="418,84" />
+  <StrutsActivity path="/WEB-INF/jsp/help/admin/fckeditor/FileUpload.jsp" location="950,250" dimension="328,48" />
+  <StrutsActivity path="/WEB-INF/jsp/help/admin/fckeditor/GetFoldersAndFiles.jsp" location="650,1450" dimension="376,48" />
+  <StrutsActivity path="tiles.help.subjects.list.html" location="1250,1150" dimension="214,48" />
+  <StrutsActivity path="tiles.help.forward.subject.edit.html" location="1550,850" dimension="256,48" />
+  <StrutsActivity path="tiles.help.save.subject.success.html" location="1550,1050" dimension="256,48" />
+  <StrutsActivity path="tiles.help.forward.content.edit.html" location="1550,950" dimension="256,48" />
+  <StrutsActivity path="tiles.help.save.content.success.html" location="1250,150" dimension="256,48" />
+  <StrutsActivity path="tiles.help.select.locale.list.html" location="1250,1250" dimension="244,48" />
+  <StrutsActivity path="tiles.help.view.content.list.html" location="50,950" dimension="238,48" />
+  <StrutsActivity path="tiles.help.delete.subject.success.html" location="1550,250" dimension="268,48" />
+  <StrutsActivity path="tiles.help.move.subjects.success.html" location="50,350" dimension="262,48" />
+  <StrutsActivity path="tiles.help.move.subjects.html" location="1850,750" dimension="214,48" />
+  <StrutsActivity path="tiles.help.showSubjects.list.html" location="1250,1850" dimension="238,48" />
+  <StrutsActivity path="tiles.help.showSubjectContent.list.html" location="650,1850" dimension="274,48" />
+  <StrutsActivity path="titles.help.subject.list.html" location="650,1550" dimension="214,48" />
+  <StrutsActivity path="tiles.help.forward.save.subject.list.html" location="1250,1350" dimension="286,48" />
+  <StrutsActivity path="tiles.help.save.subject.success.list.html" location="50,1250" dimension="286,48" />
+  <StrutsActivity path="tiles.help.forward.save.content.list.html" location="1550,550" dimension="286,48" />
+  <StrutsActivity path="tiles.help.save.content.success.list.html" location="350,750" dimension="286,48" />
+  <StrutsActivity path="tiles.help.subject.list.html" location="650,150" dimension="208,48" />
+  <StrutsActivity path="tiles.help.succeed.list.html" location="1250,450" dimension="208,48" />
+  <StrutsActivity path="tiles.help.add.locale.list.html" location="1250,550" dimension="226,48" />
+  <StrutsActivity path="tiles.help.add.list.html" location="50,750" dimension="184,48" />
+  <StrutsActivity path="tiles.help.add.subject.list.html" location="1250,350" dimension="232,48" />
+  <StrutsActivity path="tiles.help.add.content.list.html" location="650,1050" dimension="232,48" />
+  <StrutsActivity path="tiles.help.success.list.html" location="950,650" dimension="208,48" />
+  <StrutsActivity path="tiles.help.view.list.html" location="650,250" dimension="190,48" />
+  <StrutsActivity path="tiles.help.delete.list.html" location="50,650" dimension="202,48" />
+  <StrutsActivity path="tiles.help.addSubject.succeed.list.html" location="950,850" dimension="274,48" />
+  <StrutsActivity path="tiles.help.addSubject.list.html" location="50,850" dimension="226,48" />
+  <StrutsActivity path="tiles.help.view.subject.content.add.list.html" location="50,1050" dimension="310,48" />
+  <StrutsActivity path="tiles.help.view.subject.locale.add.list.html" location="650,1150" dimension="304,48" />
+  <StrutsActivity path="/WEB-INF/jsp/help/admin/subjects/deleteSubjectSuccess.jsp" location="650,550" dimension="382,48" />
+  <StrutsActivity path="tiles.help.subjectContent.list.html" location="350,250" dimension="250,48" />
+  <StrutsActivity path="/jsp/help/admin/subjects/subjets.jsp" location="650,50" dimension="256,48" />
+  <StrutsActivity path="" location="50,250" dimension="40,48" />
+  <StrutsActivity path="/jsp/help/admin/subjects/deleted.jsp" location="650,350" dimension="256,48" />
+  <StrutsActivity path="/jsp/help/admin/subjects/success.jsp" location="650,450" dimension="256,48" />
+  <StrutsActivity path="/WEB-INF/jsp/help/admin/subjects/success.jsp" location="50,550" dimension="304,48" />
+  <StrutsActivity path="tiles.help.success.html" location="950,750" dimension="178,48" />
+  <StrutsActivity path="tiles.help.forward.add.subject.list.html" location="350,650" dimension="280,48" />
+  <StrutsActivity path="tiles.help.add.subject.success.list.html" location="50,1150" dimension="280,48" />
+  <StrutsActivity path="tiles.help.delete.subject.html" location="950,1550" dimension="220,48" />
+  <StrutsActivity path="/help/admin/subjects/saveSubject" location="1850,1550" dimension="232,48" />
+  <StrutsActivity path="/help/admin/subjects/editSubject" location="1250,1650" dimension="232,48" />
+  <StrutsActivity path="/help/admin/subjects/editContent" location="1550,1650" dimension="232,48" />
+  <StrutsActivity path="tiles.help.show4subjects.list.html" location="1850,1650" dimension="244,48" />
+  <StrutsActivity path="tiles.help.show4subjectContent.list.html" location="1250,1750" dimension="280,48" />
+  <StrutsActivity path="tiles.help.showSubject4content.list.html" location="1850,1750" dimension="280,48" />
+  <StrutsTransition id="/help/admin/fckeditor/connector.do,GetFoldersAndFiles,/WEB-INF/jsp/help/admin/fckeditor/GetFoldersAndFiles.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1729,1234" />
+      <AbsolutePoint location="1729,1413" />
+      <AbsolutePoint location="838,1413" />
+      <AbsolutePoint location="838,1450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/help/admin/subjects/editContent.do,edit,tiles.help.forward.content.edit.html,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="838,1292" />
+      <AbsolutePoint location="1678,974" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/help/admin/subjects/moveSubject.do,success,tiles.help.move.subjects.success.html,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2038,1392" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/help/admin/subjects/subjects.do,list,tiles.help.subjects.list.html,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="50,92" />
+      <AbsolutePoint location="-45,92" />
+      <AbsolutePoint location="-45,813" />
+      <AbsolutePoint location="1357,813" />
+      <AbsolutePoint location="1357,1150" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/help/admin/subjects/editContent.do,null,/help/admin/subjects/saveContent.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="838,1334" />
+      <AbsolutePoint location="838,1383" />
+      <AbsolutePoint location="426,1383" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/help/admin/subjects/viewContent.do,view,tiles.help.view.content.list.html,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="238,1592" />
+      <AbsolutePoint location="169,974" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/help/show/subjects/showAllSubject.do,list,tiles.help.showSubjects.list.html,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1938,392" />
+      <AbsolutePoint location="2301,392" />
+      <AbsolutePoint location="2301,1874" />
+      <AbsolutePoint location="1488,1874" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/help/admin/subjects/saveContent.do,save,tiles.help.save.content.success.html,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="50,1392" />
+      <AbsolutePoint location="-120,1392" />
+      <AbsolutePoint location="-120,313" />
+      <AbsolutePoint location="1378,313" />
+      <AbsolutePoint location="1378,198" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/help/admin/subjects/deleteSubject.do,delete,tiles.help.delete.subject.success.html,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="844,1692" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/help/admin/subjects/selectLocal.do,view,tiles.help.select.locale.list.html,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1138,1034" />
+      <AbsolutePoint location="1138,1274" />
+      <AbsolutePoint location="1250,1274" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/help/admin/fckeditor/connector.do,FileUpload,/WEB-INF/jsp/help/admin/fckeditor/FileUpload.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1821,1150" />
+      <AbsolutePoint location="1821,613" />
+      <AbsolutePoint location="1114,613" />
+      <AbsolutePoint location="1114,298" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/help/admin/subjects/saveSubject.do,save,tiles.help.save.subject.success.html,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="526,934" />
+      <AbsolutePoint location="526,1113" />
+      <AbsolutePoint location="1678,1113" />
+      <AbsolutePoint location="1678,1098" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/help/admin/subjects/editSubject.do,null,/help/admin/subjects/saveSubject.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1438,734" />
+      <AbsolutePoint location="1438,913" />
+      <AbsolutePoint location="702,913" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/help/show/subjects/showSubjectContent.do,view,tiles.help.showSubjectContent.list.html,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="787,1874" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/help/admin/subjects/editSubject.do,edit,tiles.help.forward.subject.edit.html,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1438,692" />
+      <AbsolutePoint location="1678,874" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/help/admin/subjects/moveSubject.do,move,tiles.help.move.subjects.html,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2038,1350" />
+      <AbsolutePoint location="2038,798" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

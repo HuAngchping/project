@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<tiles-definitions>
+
+    <!-- Tiles: Device Management  -->
+    <definition name="baseSecurityManagement" extends="otas.dm.main.base">
+	    <put name="title">Change_Me</put>
+		<put name="SubMenus" value="/jsp/security/menus.jsp" />
+		<put name="MainContent" value="Change_Me" />
+        <putList name="LocationLabels">
+           <add value="Change_Me"></add>
+           <add value="Change_Me"></add>
+           <add value="Change_Me"></add>
+        </putList>
+    </definition>
+    
+	<definition name="tile.security.systemInfo" extends="baseSecurityManagement">
+	    <put name="title">tile.security.systemInfo.pageTitle</put>
+		<put name="MainContent" value="/jsp/common/sysinfo.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.security.systemInfo.location1.label"></add>
+        </putList>
+	</definition>
+
+	
+    <!-- Tiles: Subscriber Management  -->
+    <definition name="tile.subscriber.subscribers" extends="baseSecurityManagement">
+     <put name="title">tile.subscriber.subscribers.pageTitle</put>
+     <put name="MainContent" value="/jsp/subscriber/subscribers.jsp" />
+     <put name="SearchPannel" value="/jsp/subscriber/searchpannel.jsp" />
+     <putList name="LocationLabels">
+      <add value="tile.subscriber.subscribers.location1.label"></add>
+      <add value="tile.subscriber.subscribers.location2.label"></add>
+     </putList>
+    </definition>
+   
+    <definition name="tile.subscriber.subscriber.edit" extends="baseSecurityManagement">
+     <put name="title">tile.subscriber.subscriber.edit.pageTitle</put>
+     <put name="MainContent" value="/jsp/subscriber/edit4subscriber.jsp" />
+     <putList name="LocationLabels">
+      <add value="tile.subscriber.subscriber.edit.location1.label"></add>
+      <add value="tile.subscriber.subscriber.edit.location2.label"></add>
+     </putList>
+    </definition>
+
+    <definition name="tile.subscriber.subscriber.view" extends="baseSecurityManagement">
+     <put name="title">tile.subscriber.subscriber.view.pageTitle</put>
+     <put name="MainContent" value="/jsp/subscriber/view4subscriber.jsp" />
+     <put name="SearchPannel" value="/jsp/subscriber/searchpannel.jsp" />
+     <putList name="LocationLabels">
+      <add value="tile.subscriber.subscriber.view.location1.label"></add>
+      <add value="tile.subscriber.subscriber.view.location2.label"></add>
+     </putList>
+    </definition>
+    
+    <!-- Tiles: User Management  -->
+    <definition name="tile.security.users" extends="baseSecurityManagement">
+     <put name="title">tile.security.users.pageTitle</put>
+     <put name="MainContent" value="/jsp/security/users.jsp" />
+     <put name="SearchPannel" value="/jsp/security/searchpannel4users.jsp" />
+     <putList name="LocationLabels">
+      <add value="tile.security.users.location1.label"></add>
+      <add value="tile.security.users.location2.label"></add>
+     </putList>
+    </definition>
+   
+    <definition name="tile.security.user.edit" extends="baseSecurityManagement">
+     <put name="title">tile.security.user.edit.pageTitle</put>
+     <put name="MainContent" value="/jsp/security/edit4user.jsp" />
+     <putList name="LocationLabels">
+      <add value="tile.security.user.edit.location1.label"></add>
+      <add value="tile.security.user.edit.location2.label"></add>
+     </putList>
+    </definition>
+
+    <definition name="tile.security.user.view" extends="baseSecurityManagement">
+     <put name="title">tile.security.user.view.pageTitle</put>
+     <put name="MainContent" value="/jsp/security/view4user.jsp" />
+     <putList name="LocationLabels">
+      <add value="tile.security.user.view.location1.label"></add>
+      <add value="tile.security.user.view.location2.label"></add>
+     </putList>
+    </definition>
+    
+    <!-- Tiles: Monitor: OS Memory Information  -->
+    <definition name="tile.monitor.osMemoInfomation" extends="baseSecurityManagement">
+     <put name="title">tile.monitor.osMemoInfomation.pageTitle</put>
+     <put name="MainContent" value="/jsp/monitor/osmemoryinfo.jsp" />
+      <putList name="LocationLabels">
+      <add value="tile.monitor.osMemoInfomation.location1.label"></add>
+      <add value="tile.monitor.osMemoInfomation.location2.label"></add>
+     </putList>
+    </definition>
+   
+    <!-- Tiles: Monitor: OS Memory Information  -->
+    <definition name="tile.monitor.JvmMemoryInformation" extends="baseSecurityManagement">
+     <put name="title">tile.monitor.JvmMemoryInformation.pageTitle</put>
+     <put name="MainContent" value="/jsp/monitor/jvmmemory.jsp" />
+      <putList name="LocationLabels">
+      <add value="tile.monitor.JvmMemoryInformation.location1.label"></add>
+      <add value="tile.monitor.JvmMemoryInformation.location2.label"></add>
+     </putList>
+    </definition>
+   
+</tiles-definitions>

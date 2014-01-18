@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <!-- Subscriber Form -->
+    <form-bean name="SubscriberForm" type="org.apache.struts.validator.DynaValidatorForm">
+       <form-property name="ID" type="java.lang.String" />
+       <form-property name="carrierID" type="java.lang.String" />
+       <form-property name="serviceProviderID" type="java.lang.String" />
+       <form-property name="phoneNumber" type="java.lang.String" />
+       <form-property name="externalId" type="java.lang.String" />
+       <form-property name="password" type="java.lang.String" />
+       <form-property name="isActivated" type="java.lang.Boolean" />
+       <form-property name="IMSI" type="java.lang.String" />
+       <form-property name="state" type="java.lang.String" />
+       <form-property name="bootstrapPinType" type="java.lang.Byte" />
+       <form-property name="pin" type="java.lang.String" />
+       <form-property name="firstname" type="java.lang.String" />
+       <form-property name="lastname" type="java.lang.String" />
+       <form-property name="email" type="java.lang.String" />
+       
+       <!-- Hold the operation status: Create, Remove, Edit  -->
+       <form-property name="method" type="java.lang.String" />
+
+       <!-- For Search Panel in View Page, Struts 1.2 without extends -->
+       <form-property name="searchCarrierID" type="java.lang.String" />
+       <form-property name="searchExternalID" type="java.lang.String" />
+       <form-property name="searchPhoneNumber" type="java.lang.String" />
+       <form-property name="searchActivity" type="java.lang.String" />
+       <form-property name="searchManufacturerID" type="java.lang.String" />
+       <form-property name="searchModelID" type="java.lang.String" />
+       <form-property name="searchDeviceExternalID" type="java.lang.String" />
+       <form-property name="searchText" type="java.lang.String" />
+       <form-property name="recordsPerPage" type="java.lang.Integer" />
+    </form-bean>
+    
+    <!-- Subscriber Search Form -->
+    <form-bean name="SearchSubscribersForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="searchCarrierID" type="java.lang.String" />
+      <form-property name="searchServiceProviderID" type="java.lang.String" />
+      <form-property name="searchExternalID" type="java.lang.String" />
+      <form-property name="searchIMSI" type="java.lang.String" />
+      <form-property name="searchPhoneNumber" type="java.lang.String" />
+      <form-property name="searchActivity" type="java.lang.String" />
+      <form-property name="searchManufacturerID" type="java.lang.String" />
+      <form-property name="searchModelID" type="java.lang.String" />
+      <form-property name="searchDeviceExternalID" type="java.lang.String" />
+      <form-property name="searchText" type="java.lang.String" />
+      <form-property name="recordsPerPage" type="java.lang.Integer" />
+    </form-bean>
+        
+    <!-- User Form -->
+    <form-bean name="UserForm" type="org.apache.struts.validator.DynaValidatorForm">
+       <form-property name="username" type="java.lang.String" />
+       <form-property name="firstName" type="java.lang.String" />
+       <form-property name="lastName" type="java.lang.String" />
+       <form-property name="password" type="java.lang.String" />
+       <form-property name="confirmPassword" type="java.lang.String" />
+       <form-property name="formRoles" type="java.lang.String[]" />
+       <form-property name="formManufacturerExternalIDs" type="java.lang.String[]" />
+       <form-property name="formCarrierExternalIDs" type="java.lang.String[]" />
+       <form-property name="active" type="java.lang.Boolean" />
+    
+       <!-- Hold the operation status: Create, Remove, Edit  -->
+       <form-property name="method" type="java.lang.String" />
+    </form-bean>
+    
+    <!-- User Search Form -->
+    <form-bean name="SearchUsersForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="searchCarrierID" type="java.lang.String" />
+      <form-property name="searchManufacturerID" type="java.lang.String" />
+      <form-property name="searchActivity" type="java.lang.String" />
+      <form-property name="searchText" type="java.lang.String" />
+      <form-property name="searchRole" type="java.lang.String" />
+      <form-property name="recordsPerPage" type="java.lang.Integer" />
+    </form-bean>
+        
+  </form-beans>
+
+  <action-mappings >
+		<!--  Related with Subscriber  -->
+		<action
+			path="/SaveSubscriber" 
+            parameter="method" 
+			attribute="SubscriberForm" 
+			input="/EditSubscriber.do" 
+			name="SubscriberForm" 
+			scope="request" 
+			type="com.npower.dm.action.subscriber.SaveSubscriberAction"
+            validate="true"
+            roles="authenticated">
+			<forward name="list" path="/Subscribers.do" contextRelative="true" />
+			<forward name="cancel" path="/Subscribers.do" contextRelative="true" />
+      <forward name="view" path="/EditSubscriber.do?method=view" contextRelative="true" />
+		</action>
+
+		<action attribute="SubscriberForm" 
+                name="SubscriberForm" 
+                path="/EditSubscriber" 
+                parameter="method"
+                scope="request" 
+                type="com.npower.dm.action.subscriber.EditSubscriberAction" 
+                validate="false"
+                roles="authenticated">
+			<forward name="edit" path="tile.subscriber.subscriber.edit" contextRelative="true" />
+            <forward name="view" path="tile.subscriber.subscriber.view" contextRelative="true" />
+            <forward name="cancel" path="/Subscribers.do" contextRelative="true" />
+		</action>
+		<action 
+			path="/Subscribers"
+            attribute="SearchSubscribersForm"
+			name="SearchSubscribersForm"
+			scope="request"
+			type="com.npower.dm.action.subscriber.SubscribersAction"
+			validate="false"
+            roles="authenticated">
+			<forward name="multiple" path="tile.subscriber.subscribers" contextRelative="true" />
+      <forward name="single" path="/EditSubscriber.do?method=view" contextRelative="true" />
+		</action>
+		<action parameter="method" 
+                attribute="SubscriberForm" 
+                name="SubscriberForm" 
+                path="/RemoveSubscriber" 
+                scope="request" 
+                type="com.npower.dm.action.subscriber.RemoveSubscriberAction" 
+                validate="false"
+                roles="authenticated">
+			<forward name="success" path="/Subscribers.do" contextRelative="true" />
+		</action>
+        <!--  Related with Users  -->
+        <action
+         path="/SaveUser" 
+         parameter="method" 
+         attribute="UserForm" 
+         input="/EditUser.do" 
+         name="UserForm" 
+         scope="request" 
+         type="com.npower.dm.action.security.SaveUserAction"
+                  validate="true"
+                  roles="authenticated">
+         <forward name="success" path="/Users.do" contextRelative="true" />
+         <forward name="cancel" path="/Users.do" contextRelative="true" />
+        </action>
+      
+        <action attribute="UserForm" 
+                      name="UserForm" 
+                      path="/EditUser" 
+                      parameter="method"
+                      scope="request" 
+                      type="com.npower.dm.action.security.EditUserAction" 
+                      validate="false"
+                      roles="authenticated">
+           <forward name="edit" path="tile.security.user.edit" contextRelative="true" />
+           <forward name="view" path="tile.security.user.view" contextRelative="true" />
+           <forward name="cancel" path="/Users.do" contextRelative="true" />
+        </action>
+        <action 
+         path="/Users"
+         attribute="SearchUsersForm"
+         name="SearchUsersForm"
+         scope="request"
+         type="com.npower.dm.action.security.UsersAction"
+         validate="false"
+                  roles="authenticated">
+         <forward name="display" path="tile.security.users" contextRelative="true" />
+        </action>
+        <action parameter="method" 
+                      attribute="UserForm" 
+                      name="UserForm"
+                      path="/RemoveUser" 
+                      scope="request" 
+                      type="com.npower.dm.action.security.RemoveUserAction" 
+                      validate="false"
+                      roles="authenticated">
+         <forward name="success" path="/Users.do" contextRelative="true" />
+        </action>
+        
+        <!-- Monitor: OS memory information. -->
+        <action forward="tile.monitor.osMemoInfomation" path="/monitor/OSMemoryInfo" />
+        
+        <!-- Monitor: JVM memory information. -->
+        <action forward="tile.monitor.JvmMemoryInformation" path="/monitor/JvmMemoryInfo" />
+  </action-mappings>    
+    
+</struts-config>
+  

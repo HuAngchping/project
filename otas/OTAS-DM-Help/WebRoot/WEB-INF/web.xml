@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee   http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+  <servlet>
+    <servlet-name>action</servlet-name>
+    <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>/WEB-INF/struts-config.xml</param-value>
+    </init-param>
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>3</param-value>
+    </init-param>
+    <init-param>
+      <param-name>detail</param-name>
+      <param-value>3</param-value>
+    </init-param>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>action</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <filter-name>com.npower.servlet.I18nServletFilter</filter-name>
+    <filter-class>com.npower.servlet.I18nServletFilter</filter-class>
+    <init-param>
+      <param-name>charset</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>com.npower.servlet.I18nServletFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>com.npower.help.action.HelpDAOPersistentManager</filter-name>
+    <filter-class>com.npower.help.action.HelpDAOPersistentManager</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>com.npower.help.action.HelpDAOPersistentManager</filter-name>
+    <url-pattern>*.do</url-pattern>
+  </filter-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <jsp-config>
+    <taglib>
+      <taglib-uri>/WEB-INF/struts-tiles.tld</taglib-uri>
+      <taglib-location>/WEB-INF/struts-tiles.tld</taglib-location>
+    </taglib>
+    <taglib>
+      <taglib-uri>/WEB-INF/fmt</taglib-uri>
+      <taglib-location>/WEB-INF/fmt.tld</taglib-location>
+    </taglib>
+  </jsp-config>
+  
+</web-app>
+

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<tiles-definitions>
+
+    <definition name="tile.device.bootstrap.input" extends="baseDeviceManagement">
+        <put name="title">tile.device.bootstrap.input.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/bootstrap/input.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.bootstrap.input.location1.label"></add>
+           <add value="tile.device.bootstrap.input.location2.label"></add>
+           <add value="tile.device.bootstrap.input.location3.label"></add>
+        </putList>
+    </definition>
+ 
+    <definition name="tile.device.bootstrap.success" extends="baseDeviceManagement">
+        <put name="title">tile.device.bootstrap.success.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/bootstrap/success.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.bootstrap.success.location1.label"></add>
+           <add value="tile.device.bootstrap.success.location2.label"></add>
+           <add value="tile.device.bootstrap.success.location3.label"></add>
+           <add value="tile.device.bootstrap.success.location4.label"></add>
+        </putList>
+    </definition>
+
+    <definition name="tile.device.bootstrap.failure" extends="baseDeviceManagement">
+        <put name="title">tile.device.bootstrap.failure.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/bootstrap/failure.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.bootstrap.failure.location1.label"></add>
+           <add value="tile.device.bootstrap.failure.location2.label"></add>
+           <add value="tile.device.bootstrap.failure.location3.label"></add>
+           <add value="tile.device.bootstrap.failure.location4.label"></add>
+        </putList>
+    </definition>
+
+    <definition name="tile.bootstrap.input" extends="baseDeviceManagement">
+        <put name="title">tile.bootstrap.input.pageTitle</put>
+        <put name="MainContent" value="/jsp/bootstrap/input.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.bootstrap.input.location1.label"></add>
+           <add value="tile.bootstrap.input.location2.label"></add>
+        </putList>
+    </definition>
+ 
+    <definition name="tile.bootstrap.success" extends="baseDeviceManagement">
+        <put name="title">tile.bootstrap.success.pageTitle</put>
+        <put name="MainContent" value="/jsp/bootstrap/success.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.bootstrap.success.location1.label"></add>
+           <add value="tile.bootstrap.success.location2.label"></add>
+           <add value="tile.bootstrap.success.location3.label"></add>
+        </putList>
+    </definition>
+
+    <definition name="tile.bootstrap.failure" extends="baseDeviceManagement">
+        <put name="title">tile.bootstrap.failure.pageTitle</put>
+        <put name="MainContent" value="/jsp/bootstrap/failure.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.bootstrap.failure.location1.label"></add>
+           <add value="tile.bootstrap.failure.location2.label"></add>
+           <add value="tile.bootstrap.failure.location3.label"></add>
+        </putList>
+    </definition>
+    
+</tiles-definitions>

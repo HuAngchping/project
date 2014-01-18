@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<tiles-definitions>
+	<!-- Tiles: Software Management  -->
+	<definition name="baseSoftwareManagement"
+              extends="otas.dm.main.base">
+		<put name="title">Change_Me</put>
+		<put name="SubMenus" value="/jsp/software/menus.jsp" />
+		<put name="MainContent" value="Change_Me" />
+		<putList name="LocationLabels">
+			<add value="Change_Me"></add>
+			<add value="Change_Me"></add>
+			<add value="Change_Me"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.software.vendors" extends="baseSoftwareManagement">
+		<put name="title">tile.software.vendors.pageTitle</put>
+		<put name="MainContent" value="/jsp/software/vendors.jsp" />
+        <put name="SearchPannel" value="/jsp/software/searchpannel4vendor.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.software.vendors.location1.label"></add>
+			<add value="tile.software.vendors.location2.label"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.software.vendor.edit" extends="baseSoftwareManagement">
+		<put name="title">tile.software.vendors.pageTitle</put>
+		<put name="MainContent" value="/jsp/software/vendor.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.software.vendors.edit1.location1.label"></add>
+			<add value="tile.software.vendors.edit2.location1.label"></add>
+		</putList>
+	</definition>
+
+  <definition name="tile.software.vendor.view" extends="baseSoftwareManagement">
+    <put name="title">tile.software.vendors.pageTitle</put>
+    <put name="MainContent" value="/jsp/software/vendor4view.jsp" />
+    <putList name="LocationLabels">
+      <add value="tile.software.vendors.view1.location1.label"></add>
+      <add value="tile.software.vendors.view2.location1.label"></add>
+    </putList>
+  </definition>
+  <!-- recommend -->
+  <definition name="tile.software.recommend.categories.standalone" path="/jsp/software/recommend/layout.jsp">
+    <put name="recommendTree" value="/jsp/software/recommend/tree4recommend.jsp"/>
+    <put name="recommendContent" value="/jsp/software/recommend/recommends.jsp"/>
+  </definition>
+  <definition name="tile.software.recommends" extends="baseSoftwareManagement">
+    <put name="title">tile.software.recommends.pageTitle</put>
+    <put name="MainContent" value="/jsp/software/recommend/index4recommends.jsp" />
+    <putList name="LocationLabels">
+      <add value="tile.software.recommends.location1.label"></add>
+      <add value="tile.software.recommends.location2.label"></add>
+    </putList>
+  </definition>
+  
+  <definition name="tile.software.recommend.categories.edit.standalone" path="/jsp/software/recommend/layout.jsp">
+    <put name="recommendTree" value="/jsp/software/recommend/tree4recommend.jsp"/>
+    <put name="recommendContent" value="/jsp/software/recommend/recommends4edit.jsp"/>
+  </definition>
+  <definition name="tile.software.recommends.edit" extends="baseSoftwareManagement">
+    <put name="title">tile.software.recommends.pageTitle</put>
+    <put name="MainContent" value="/jsp/software/recommend/index4recommendsEdit.jsp" />
+    <putList name="LocationLabels">
+      <add value="tile.software.recommends.location1.label"></add>
+      <add value="tile.software.recommends.location2.label"></add>
+    </putList>
+  </definition>
+  
+  <definition name="tile.software.recommend.categories.view.standalone" path="/jsp/software/recommend/layout.jsp">
+    <put name="recommendTree" value="/jsp/software/recommend/tree4recommend.jsp"/>
+    <put name="recommendContent" value="/jsp/software/recommend/recommends4view.jsp"/>
+  </definition>
+  <definition name="tile.software.recommends.view" extends="baseSoftwareManagement">
+    <put name="title">tile.software.recommends.pageTitle</put>
+    <put name="MainContent" value="/jsp/software/recommend/index4recommendsView.jsp" />
+    <putList name="LocationLabels">
+      <add value="tile.software.recommends.location1.label"></add>
+      <add value="tile.software.recommends.location2.label"></add>
+    </putList>
+  </definition>
+  <!-- category -->
+  <definition name="tile.software.category.categories.standalone" path="/jsp/software/category/layout.jsp">
+    <put name="categoryTree" value="/jsp/software/category/tree4category.jsp" />
+    <put name="categoryContent" value="/jsp/software/category/categories.jsp" />    
+  </definition>
+  
+  <definition name="tile.software.categories" extends="baseSoftwareManagement">
+    <put name="title">tile.software.categories.pageTitle</put>
+    <put name="MainContent" value="/jsp/software/category/index4categories.jsp" />
+    <put name="SearchPannel" value="/jsp/software/category/searchpannel4category.jsp" />
+    <putList name="LocationLabels">
+      <add value="tile.software.categories.location1.label"></add>
+      <add value="tile.software.categories.location2.label"></add>
+    </putList>
+  </definition>
+
+  <definition name="tile.software.category.edit.standalone" path="/jsp/software/category/layout.jsp"> 
+    <put name="categoryTree" value="/jsp/software/category/tree4category.jsp" />
+    <put name="categoryContent" value="/jsp/software/category/category.jsp" />      
+  </definition>
+		
+  <definition name="tile.software.category.edit" extends="baseSoftwareManagement">
+    <put name="title">tile.software.category.edit.pageTitle</put>
+    <put name="MainContent" value="/jsp/software/category/index4edit.jsp" />        
+    <putList name="LocationLabels">
+      <add value="tile.software.category.location1.label"></add>
+      <add value="tile.software.category.edit.location2.label"></add>
+    </putList>
+  </definition>
+
+  <definition name="tile.software.category.view.standalone" path="/jsp/software/category/layout.jsp"> 
+    <put name="categoryTree" value="/jsp/software/category/tree4category.jsp" />
+    <put name="categoryContent" value="/jsp/software/category/category4view.jsp" />      
+  </definition>
+    
+  <definition name="tile.software.category.view" extends="baseSoftwareManagement">
+    <put name="title">tile.software.category.view.pageTitle</put>
+    <put name="MainContent" value="/jsp/software/category/index4view.jsp" />        
+    <putList name="LocationLabels">
+      <add value="tile.software.category.location1.label"></add>
+      <add value="tile.software.category.view.location2.label"></add>
+    </putList>
+  </definition>
+  
+	<definition name="tile.software.category.add" extends="baseSoftwareManagement">
+		<put name="title">tile.software.category.add.pageTitle</put>
+		<put name="MainContent" value="/jsp/software/category/category.jsp" />        
+		<putList name="LocationLabels">
+			<add value="tile.software.category.location1.label"></add>
+			<add value="tile.software.category.add.location2.label"></add>
+		</putList>
+	</definition>
+		
+    <!-- Software -->
+  <definition name="tile.software.softwares" extends="baseSoftwareManagement">
+		<put name="title">tile.software.softwares.pageTitle</put>
+		<put name="MainContent" value="/jsp/software/softwares.jsp" />
+        <put name="SearchPannel" value="/jsp/software/searchpannel4software.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.software.softwares.location1.label"></add>			
+		</putList>
+	</definition>
+	
+	<definition name="tile.software.software.add" extends="baseSoftwareManagement">
+		<put name="title">tile.software.software.add.pageTitle</put>
+		<put name="MainContent" value="/jsp/software/software.jsp" />        
+		<putList name="LocationLabels">
+			<add value="tile.software.softwares.location1.label"></add>
+			<add value="tile.software.software.add.location2.label"></add>
+		</putList>
+	</definition>
+	
+	<definition name="tile.software.software.edit" extends="baseSoftwareManagement">
+		<put name="title">tile.software.software.edit.pageTitle</put>
+		<put name="MainContent" value="/jsp/software/software.jsp" />        
+		<putList name="LocationLabels">
+			<add value="tile.software.softwares.location1.label"></add>
+			<add value="tile.software.software.edit.location2.label"></add>
+		</putList>
+	</definition>
+	
+	<definition name="tile.software.software.view" extends="baseSoftwareManagement">
+		<put name="title">tile.software.software.view.pageTitle</put>
+		<put name="MainContent" value="/jsp/software/software4view.jsp" />        
+		<putList name="LocationLabels">
+			<add value="tile.software.softwares.location1.label"></add>
+			<add value="tile.software.software.view.location2.label"></add>
+		</putList>
+	</definition>
+	
+	<!-- Software Tree -->
+	<definition name="tile.software.softwareTree" extends="baseSoftwareManagement">
+		<put name="title">tile.software.software.tree.pageTitle</put>
+		<put name="MainContent" value="/jsp/software/tree/software/index.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.software.softwares.location1.label"></add>
+			<add value="tile.software.software.tree.location2.label"></add>
+		</putList>
+	</definition>
+	
+	<definition name="tile.software.software.view.softwaretree.standalone" path="/jsp/software/tree/software/layout.jsp">
+		<put name="title">tile.software.software.view.softwaretree.standalone.pageTitle</put>
+		<put name="softwareTree" value="/jsp/software/tree/tree.jsp" />
+		<put name="softwareTreeNodes" value="/jsp/software/tree/software/node.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.software.softwares.location1.label"></add>
+			<add value="tile.software.software.view.softwaretree.standalone.location2.label"></add>
+			<add value="tile.software.software.view.softwaretree.standalone.location3.label"></add>
+		</putList>
+	</definition>	
+	 
+	<definition name="tile.software.package.add" extends="baseSoftwareManagement">
+		<put name="title">tile.software.package.add.pageTitle</put>
+		<put name="MainContent" value="/jsp/software/package.jsp" />        
+		<putList name="LocationLabels">
+			<add value="tile.software.softwares.location1.label"></add>
+			<add value="tile.software.package.add.location2.label"></add>
+		</putList>
+	</definition>
+	
+	<definition name="tile.software.package.edit" extends="baseSoftwareManagement">
+		<put name="title">tile.software.package.edit.pageTitle</put>
+		<put name="MainContent" value="/jsp/software/package.jsp" />        
+		<putList name="LocationLabels">
+			<add value="tile.software.softwares.location1.label"></add>
+			<add value="tile.software.package.edit.location2.label"></add>
+		</putList>
+	</definition>
+	
+	<definition name="tile.software.package.view" extends="baseSoftwareManagement">
+		<put name="title">tile.software.package.view.pageTitle</put>
+		<put name="MainContent" value="/jsp/software/package4view.jsp" />        
+		<putList name="LocationLabels">
+			<add value="tile.software.softwares.location1.label"></add>
+			<add value="tile.software.package.view.location2.label"></add>
+		</putList>
+	</definition>
+
+    <!-- Software Screen Shot -->
+	<definition name="tile.software.screenshot.add" extends="baseSoftwareManagement">
+		<put name="title">tile.software.screenshot.add.pageTitle</put>
+		<put name="MainContent" value="/jsp/software/screenshot.jsp" />        
+		<putList name="LocationLabels">
+			<add value="tile.software.screenshot.location1.label"></add>
+			<add value="tile.software.screenshot.add.location2.label"></add>
+		</putList>
+	</definition>
+	
+	<definition name="tile.software.screenshot.edit" extends="baseSoftwareManagement">
+		<put name="title">tile.software.screenshot.edit.pageTitle</put>
+		<put name="MainContent" value="/jsp/software/screenshot.jsp" />        
+		<putList name="LocationLabels">
+			<add value="tile.software.screenshot.location1.label"></add>
+			<add value="tile.software.screenshot.edit.location2.label"></add>
+		</putList>
+	</definition>
+	
+	<definition name="tile.software.screenshot.view" extends="baseSoftwareManagement">
+		<put name="title">tile.software.screenshot.view.pageTitle</put>
+		<put name="MainContent" value="/jsp/software/screenshot4view.jsp" />        
+		<putList name="LocationLabels">
+			<add value="tile.software.screenshot.location1.label"></add>
+			<add value="tile.software.screenshot.view.location2.label"></add>
+		</putList>
+	</definition>
+	
+  <definition name="tile.software.export" extends="baseSoftwareManagement">
+    <put name="title">tile.software.export.forward</put>
+    <put name="MainContent" value="/jsp/software/SoftwareExportPage.jsp" />        
+    <putList name="LocationLabels">
+      <add value="tile.software.export.location1.label"></add>
+      <add value="tile.software.export.view.location2.label"></add>
+    </putList>
+  </definition>	
+  
+  <definition name="tile.software.upload" extends="baseSoftwareManagement">
+    <put name="title">tile.software.upload.forward</put>
+    <put name="MainContent" value="/jsp/software/UploadFile.jsp" />        
+    <putList name="LocationLabels">
+      <add value="tile.software.upload.location1.label"></add>
+      <add value="tile.software.upload.location2.label"></add>
+    </putList>
+  </definition>  
+  
+  <definition name="tile.software.upload.view" extends="baseSoftwareManagement">
+    <put name="title">tile.software.upload.view</put>
+    <put name="MainContent" value="/jsp/software/viewuploadfile.jsp" />        
+    <putList name="LocationLabels">
+      <add value="tile.software.upload.location1.label"></add>
+      <add value="tile.software.upload.view.location2.label"></add>
+    </putList>
+  </definition> 
+  
+  <definition name="tile.software.upload.package.view" extends="baseSoftwareManagement">
+    <put name="title">tile.software.upload.view</put>
+    <put name="MainContent" value="/jsp/software/uploadsuccess.jsp" />        
+    <putList name="LocationLabels">
+      <add value="tile.software.upload.location1.label"></add>
+      <add value="tile.software.upload.package.view.location2.label"></add>
+    </putList>
+  </definition>   
+  
+</tiles-definitions>

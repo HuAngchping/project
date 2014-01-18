@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<tiles-definitions>
+	<!-- Tiles: Carrier Management  -->
+	<definition name="baseCarrierManagement" extends="otas.dm.main.base">
+		<put name="title">Change_Me</put>
+		<put name="SubMenus" value="/jsp/carrier/menus.jsp" />
+		<put name="MainContent" value="Change_Me" />
+		<putList name="LocationLabels">
+			<add value="Change_Me"></add>
+			<add value="Change_Me"></add>
+			<add value="Change_Me"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.carrier.carriers" extends="baseCarrierManagement">
+		<put name="title">tile.carrier.carriers.pageTitle</put>
+		<put name="MainContent" value="/jsp/carrier/carriers.jsp" />
+        <put name="SearchPannel" value="/jsp/carrier/searchpannel.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.carrier.carriers.location1.label"></add>
+			<add value="tile.carrier.carriers.location2.label"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.carrier.carrier.edit" extends="baseCarrierManagement">
+		<put name="title">tile.carrier.carrier.edit.pageTitle</put>
+		<put name="MainContent" value="/jsp/carrier/carrier.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.carrier.carrier.edit.location1.label"></add>
+			<add value="tile.carrier.carrier.edit.location2.label"></add>
+		</putList>
+	</definition>
+
+  <definition name="tile.carrier.carrier.view" extends="baseCarrierManagement">
+    <put name="title">tile.carrier.carrier.view.pageTitle</put>
+    <put name="MainContent" value="/jsp/carrier/carrier4view.jsp" />
+    <putList name="LocationLabels">
+     <add value="tile.carrier.carrier.view.location1.label"></add>
+     <add value="tile.carrier.carrier.view.location2.label"></add>
+    </putList>
+  </definition>
+
+	<definition name="tile.carrier.countries" extends="baseCarrierManagement">
+		<put name="title">tile.carrier.countries.pageTitle</put>
+		<put name="MainContent" value="/jsp/country/countries.jsp" />
+        <put name="SearchPannel" value="/jsp/country/searchpannel.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.carrier.countries.location1.label"></add>
+			<add value="tile.carrier.countries.location2.label"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.carrier.country.edit" extends="baseCarrierManagement">
+		<put name="title">tile.carrier.country.edit.pageTitle</put>
+		<put name="MainContent" value="/jsp/country/country.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.carrier.country.edit.location1.label"></add>
+			<add value="tile.carrier.country.edit.location2.label"></add>
+		</putList>
+	</definition>
+ 
+  <definition name="tile.carrier.country.view" extends="baseCarrierManagement">
+    <put name="title">tile.carrier.country.view.pageTitle</put>
+    <put name="MainContent" value="/jsp/country/country4view.jsp" />
+    <putList name="LocationLabels">
+     <add value="tile.carrier.country.view.location1.label"></add>
+     <add value="tile.carrier.country.view.location2.label"></add>
+    </putList>
+  </definition>
+</tiles-definitions>

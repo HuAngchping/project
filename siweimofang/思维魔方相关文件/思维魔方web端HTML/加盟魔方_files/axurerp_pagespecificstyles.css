@@ -1,0 +1,1277 @@
+﻿body {
+    margin: 0px;
+}
+
+div {
+    background-repeat: no-repeat;
+}
+
+.raw_image {
+    width: 100%;
+    height: 100%;
+}
+
+.preload {
+    display: none;
+}
+#main_container {
+}
+
+.form_sketch {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.u0_normal {
+    background-image: url('../加盟魔方_files/u0_normal.png');
+}
+
+.u0_container {
+    position:absolute;
+    left:12px;
+    top:7px;
+    width:907px;
+    height:617px;
+}
+
+#u0_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:913px;
+    height:623px;
+}
+
+.u1 {
+    position:absolute;
+    left:2px;
+    top:300px;
+    width:903px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+#u2 {
+    position:absolute;
+    left:12px;
+    top:117px;
+    width:881px;
+    height:25px
+}
+
+.u3_normal {
+    background-image: url('../加盟魔方_files/u3_normal.png');
+}
+
+.u3_container {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:100px;
+    height:20px;
+}
+
+#u3_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:106px;
+    height:26px;
+}
+
+.u4 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:96px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u5_normal {
+    background-image: url('../加盟魔方_files/u5_normal.png');
+}
+
+.u5_container {
+    position:absolute;
+    left:100px;
+    top:0px;
+    width:119px;
+    height:20px;
+}
+
+#u5_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:125px;
+    height:26px;
+}
+
+.u6 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:115px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u7_normal {
+    background-image: url('../加盟魔方_files/u7_normal.png');
+}
+
+.u7_container {
+    position:absolute;
+    left:219px;
+    top:0px;
+    width:128px;
+    height:20px;
+}
+
+#u7_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:134px;
+    height:26px;
+}
+
+.u8 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:124px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u9_normal {
+    background-image: url('../加盟魔方_files/u9_normal.png');
+}
+
+.u9_container {
+    position:absolute;
+    left:347px;
+    top:0px;
+    width:125px;
+    height:20px;
+}
+
+#u9_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:131px;
+    height:26px;
+}
+
+.u10 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:121px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u11_normal {
+    background-image: url('../加盟魔方_files/u11_normal.png');
+}
+
+.u11_container {
+    position:absolute;
+    left:472px;
+    top:0px;
+    width:142px;
+    height:20px;
+}
+
+#u11_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:148px;
+    height:26px;
+}
+
+.u12 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:138px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u13_normal {
+    background-image: url('../加盟魔方_files/u13_normal.png');
+}
+
+.u13_container {
+    position:absolute;
+    left:614px;
+    top:0px;
+    width:127px;
+    height:20px;
+}
+
+#u13_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:133px;
+    height:26px;
+}
+
+.u14 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:123px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u15_normal {
+    background-image: url('../加盟魔方_files/u15_normal.png');
+}
+
+.u15_container {
+    position:absolute;
+    left:741px;
+    top:0px;
+    width:135px;
+    height:20px;
+}
+
+#u15_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:141px;
+    height:26px;
+}
+
+.u16 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:131px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u17_normal {
+    background-image: url('../加盟魔方_files/u17_normal.png');
+}
+
+.u17_container {
+    position:absolute;
+    left:14px;
+    top:40px;
+    width:308px;
+    height:65px;
+}
+
+#u17_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:314px;
+    height:71px;
+}
+
+.u18 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:304px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u19_normal {
+    background-image: url('../加盟魔方_files/u19_normal.png');
+}
+
+.u19_container {
+    position:absolute;
+    left:12px;
+    top:147px;
+    width:876px;
+    height:257px;
+}
+
+#u19_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:882px;
+    height:263px;
+}
+
+.u20 {
+    position:absolute;
+    left:2px;
+    top:118px;
+    width:872px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u22 {
+    position:absolute;
+    left:16px;
+    top:0px;
+    width:1px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u24 {
+    position:absolute;
+    left:16px;
+    top:0px;
+    width:1px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u26 {
+    position:absolute;
+    left:16px;
+    top:0px;
+    width:1px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u28 {
+    position:absolute;
+    left:16px;
+    top:0px;
+    width:1px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u29 {
+    position:absolute;
+    left:725px;
+    top:42px;
+    width:163px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u30_normal {
+    background-image: url('../加盟魔方_files/u30_normal.png');
+}
+
+.u30_container {
+    position:absolute;
+    left:891px;
+    top:193px;
+    width:27px;
+    height:80px;
+}
+
+#u30_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:33px;
+    height:86px;
+}
+
+.u31 {
+    position:absolute;
+    left:2px;
+    top:14px;
+    width:23px;
+    height:51px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u32_normal {
+    background-image: url('../加盟魔方_files/u32_normal.png');
+}
+
+.u32_container {
+    position:absolute;
+    left:800px;
+    top:85px;
+    width:26px;
+    height:22px;
+}
+
+#u32_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:26px;
+    height:22px;
+}
+
+.u33 {
+    position:absolute;
+    left:2px;
+    top:3px;
+    width:22px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u34_normal {
+    background-image: url('../加盟魔方_files/u32_normal.png');
+}
+
+.u34_container {
+    position:absolute;
+    left:844px;
+    top:85px;
+    width:26px;
+    height:22px;
+}
+
+#u34_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:26px;
+    height:22px;
+}
+
+.u35 {
+    position:absolute;
+    left:2px;
+    top:3px;
+    width:22px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u36 {
+    position:absolute;
+    left:725px;
+    top:91px;
+    width:60px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u37_normal {
+    background-image: url('../加盟魔方_files/u37_normal.png');
+}
+
+.u37_container {
+    position:absolute;
+    left:12px;
+    top:7px;
+    width:907px;
+    height:23px;
+}
+
+#u37_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:913px;
+    height:29px;
+}
+
+.u38 {
+    position:absolute;
+    left:2px;
+    top:4px;
+    width:903px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u39 {
+    position:absolute;
+    left:725px;
+    top:65px;
+    width:163px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u40_normal {
+    background-image: url('../加盟魔方_files/u40_normal.png');
+}
+
+.u40_container {
+    position:absolute;
+    left:12px;
+    top:404px;
+    width:876px;
+    height:220px;
+}
+
+#u40_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:882px;
+    height:226px;
+}
+
+.u41 {
+    position:absolute;
+    left:2px;
+    top:-2px;
+    width:872px;
+    height:224px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u42 {
+    position:absolute;
+    left:137px;
+    top:11px;
+    width:42px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u43 {
+    position:absolute;
+    left:195px;
+    top:11px;
+    width:42px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+#u44 {
+    position:absolute;
+    left:241px;
+    top:159px;
+    width:458px;
+    height:441px;
+    overflow:hidden;
+}
+
+#pd1u44 {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:458px;
+    height:441px;
+    
+}
+
+.u45_normal {
+    background-image: url('../加盟魔方_files/u45_normal.png');
+}
+
+.u45_container {
+    position:absolute;
+    left:14px;
+    top:11px;
+    width:415px;
+    height:382px;
+}
+
+#u45_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:421px;
+    height:388px;
+}
+
+.u46 {
+    position:absolute;
+    left:2px;
+    top:183px;
+    width:411px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u47 {
+    position:absolute;
+    left:81px;
+    top:61px;
+    width:84px;
+    height:17px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u48 {
+    position:absolute;
+    left:80px;
+    top:109px;
+    width:84px;
+    height:17px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u49 {
+    position:absolute;
+    left:80px;
+    top:153px;
+    width:84px;
+    height:17px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u50 {
+    position:absolute;
+    left:169px;
+    top:58px;
+    width:180px;
+    height:25px;
+    ;
+    ;
+    text-align: left;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#D7D7D7;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u51 {
+    position:absolute;
+    left:168px;
+    top:106px;
+    width:180px;
+    height:25px;
+    ;
+    ;
+    text-align: left;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#D7D7D7;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u52 {
+    position:absolute;
+    left:168px;
+    top:150px;
+    width:180px;
+    height:25px;
+    ;
+    ;
+    text-align: left;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#D7D7D7;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u53 {
+    position:absolute;
+    left:80px;
+    top:200px;
+    width:84px;
+    height:17px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u54 {
+    position:absolute;
+    left:168px;
+    top:196px;
+    width:102px;
+    height:25px;
+    ;
+    ;
+    text-align: left;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#D7D7D7;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u55_normal {
+    background-image: url('../加盟魔方_files/u55_normal.png');
+}
+
+.u55_container {
+    position:absolute;
+    left:283px;
+    top:195px;
+    width:65px;
+    height:27px;
+}
+
+#u55_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:65px;
+    height:27px;
+}
+
+.u56 {
+    position:absolute;
+    left:2px;
+    top:6px;
+    width:61px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u57 {
+    position:absolute;
+    left:153px;
+    top:249px;
+    width:126px;
+    height:34px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 18px;
+    color:#000000;
+    font-style:normal;
+    font-weight:bold;
+    text-decoration:none;
+    
+}
+
+.u58 {
+    position:absolute;
+    left:287px;
+    top:267px;
+    width:118px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u59 {
+    position:absolute;
+    left:407px;
+    top:18px;
+    width:16px;
+    height:26px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+#pd0u44 {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:458px;
+    height:441px;
+    
+}
+
+.u60_normal {
+    background-image: url('../加盟魔方_files/u60_normal.png');
+}
+
+.u60_container {
+    position:absolute;
+    left:36px;
+    top:9px;
+    width:399px;
+    height:376px;
+}
+
+#u60_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:405px;
+    height:382px;
+}
+
+.u61 {
+    position:absolute;
+    left:2px;
+    top:180px;
+    width:395px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u62 {
+    position:absolute;
+    left:87px;
+    top:77px;
+    width:65px;
+    height:17px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u63 {
+    position:absolute;
+    left:87px;
+    top:113px;
+    width:65px;
+    height:17px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u64 {
+    position:absolute;
+    left:162px;
+    top:73px;
+    width:200px;
+    height:25px;
+    ;
+    ;
+    text-align: left;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#E4E4E4;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u65 {
+    position:absolute;
+    left:162px;
+    top:108px;
+    width:200px;
+    height:25px;
+    ;
+    ;
+    text-align: left;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u66 {
+    position:absolute;
+    left:87px;
+    top:147px;
+    width:65px;
+    height:17px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u67 {
+    position:absolute;
+    left:162px;
+    top:143px;
+    width:89px;
+    height:25px;
+    ;
+    ;
+    text-align: left;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u68_normal {
+    background-image: url('../加盟魔方_files/u68_normal.png');
+}
+
+.u68_container {
+    position:absolute;
+    left:267px;
+    top:145px;
+    width:95px;
+    height:20px;
+}
+
+#u68_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:95px;
+    height:20px;
+}
+
+.u69 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:91px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u70 {
+    position:absolute;
+    left:164px;
+    top:198px;
+    width:127px;
+    height:25px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 15px;
+    color:#000000;
+    font-style:normal;
+    font-weight:bold;
+    text-decoration:none;
+    
+}
+
+.u71 {
+    position:absolute;
+    left:312px;
+    top:175px;
+    width:60px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u72 {
+    position:absolute;
+    left:302px;
+    top:207px;
+    width:79px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u73 {
+    position:absolute;
+    left:87px;
+    top:253px;
+    width:265px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u74_normal {
+    background-image: url('../加盟魔方_files/u74_normal.png');
+}
+
+.u74_container {
+    position:absolute;
+    left:174px;
+    top:291px;
+    width:28px;
+    height:28px;
+}
+
+#u74_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:28px;
+    height:28px;
+}
+
+.u75 {
+    position:absolute;
+    left:2px;
+    top:6px;
+    width:24px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u76_normal {
+    background-image: url('../加盟魔方_files/u76_normal.png');
+}
+
+.u76_container {
+    position:absolute;
+    left:228px;
+    top:291px;
+    width:28px;
+    height:28px;
+}
+
+#u76_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:28px;
+    height:28px;
+}
+
+.u77 {
+    position:absolute;
+    left:2px;
+    top:6px;
+    width:24px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u78_normal {
+    background-image: url('../加盟魔方_files/u78_normal.png');
+}
+
+.u78_container {
+    position:absolute;
+    left:282px;
+    top:291px;
+    width:28px;
+    height:28px;
+}
+
+#u78_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:28px;
+    height:28px;
+}
+
+.u79 {
+    position:absolute;
+    left:2px;
+    top:6px;
+    width:24px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u80 {
+    position:absolute;
+    left:407px;
+    top:18px;
+    width:16px;
+    height:26px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+

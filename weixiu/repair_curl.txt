@@ -1,0 +1,470 @@
+curl -v -H 'Content-Type: application/json' -H 'Accept: application/json' -X POST -d '{
+    "repair_num":"wxd20130725123833",
+    "repair_type":"1",
+    "customer_name":"sddd",
+    "customer_gender":"man",
+    "customer_tel":"13436633722",
+    "customer_backup_tel":"13436633722",
+    "province":"吉林省",
+    "city":"jilinshi",
+    "county":"cangyi",
+    "address":"address",
+    "owner_name":"own",
+    "owner_tel":"12333",
+    "frame_num":"222",
+    "vehicle_type":"333",
+    "plate_num":"B",
+    "km":200,
+    "purchase_date":"20130731",
+    "failure_desc":"sdd",
+    "service_username":"uname",
+    "service_name":"sdd",	
+    "service_upload_at":1377932032854
+}' http://192.168.2.231:8181/repair/service/upload
+
+http://localhost:8181/repair/service/search?t=13436633722
+
+http://localhost:8181/repair/untreated/search?t=&page_index=1&page_size=2&order_by=create_at&order_type=a
+
+http://localhost:8181/repair/untreated?repair_num=wxd20130725123833
+
+curl -v -H 'Content-Type: application/json' -H 'Accept: application/json' -X POST -d'{
+    "repair_num":"wxd20130725123833",
+    "manager":"huang" 
+}' http://192.168.2.231:8181/repair/untreated/process
+
+http://localhost:8181/repair/n_sent/search?t=&page_index=1&page_size=2&order_by=create_at&order_type=a
+
+http://localhost:8181/repair/statistics
+
+curl -v -H 'Content-Type: application/json' -H 'Accept: application/json' -X POST -d '{
+    "repair_num":"wxd20130725123833",
+    "diagnosis":"dia", 
+    "analysis":"ana", 
+    "process_mode":"replace", 
+    "warranty":false, 
+    "person":"person", 
+    "cost":100
+}' http://localhost:8181/repair/n_sent/process
+
+curl -v -H 'Content-Type: application/json' -H 'Accept: application/json' -X POST -d '{
+    "repair_num":"wxd20130725123832",
+    "name":"username",
+    "price":"username",
+    "num":100
+}' http://localhost:8181/repair/n_sent/other/cost
+
+curl -v -H 'Content-Type: application/json' -H 'Accept: application/json' -X PUT -d '{
+    "id":2,
+    "repair_num":"wxd20131745163845",
+    "diagnosis":"username",
+    "analysis":"username",
+    "process_mode":"replace",
+    "warranty":true,
+    "person":"huang",
+    "cost":100
+}' http://localhost:8181/repair/n_sent/process/m
+
+http://localhost:8181/repair/n_sent/process/d?id=2&repair_num=wxd20131745163845
+
+curl -v -H 'Content-Type: application/json' -H 'Accept: application/json' -X POST -d '{
+    "repair_num":"wxd20130725123832",
+    "cost":200,
+    "vehicles":[{
+    	"name":"1",
+        "type":"1",
+        "tel":"1",
+        "plate_num":"1"
+    },
+    {
+    	"name":"2",
+        "type":"2",
+        "tel":"2",
+        "plate_num":"2"
+    }]
+}' http://localhost:8181/repair/n_sent/use/vehicle
+
+curl -v -H 'Content-Type: application/json' -H 'Accept: application/json' -X POST -d '{
+    "repair_num":"wxd20130725123832",
+    "workers":[{
+    	"name":"1",
+        "headman":false,
+        "tel":"1"
+    },
+    {
+    	"name":"2",
+        "headman":true,
+        "tel":"2"
+    }]
+}' http://localhost:8181/repair/n_sent/use/worker
+
+curl -v -H 'Content-Type: application/json' -H 'Accept: application/json' -X POST -d'{
+    "repair_num":"admin1385097692",
+    "manager":"admin" 
+}' http://192.168.2.231:8181/repair/n_sent/upload
+
+http://localhost:8181/repair/n_sent?repair_num=wxd20130725123832
+
+http://localhost:8181/repair/parts/search?t=&page_index=1&page_size=2&order_by=create_at&order_type=a
+
+curl -v -H 'Content-Type: application/json' -H 'Accept: application/json' -X POST -d '{
+    "repair_num":"wxd20130725123832",
+    "factory":"factory7", 
+    "brand":"brand7", 
+    "name":"name7", 
+    "picture_num":"picture_num7", 
+    "price":1.21, 
+    "code":"code7", 
+    "count":1
+}' http://localhost:8181/repair/parts/apply
+
+curl -v -H 'Content-Type: application/json' -H 'Accept: application/json' -X PUT -d '{
+    "repair_num":"wxd20130725123832",
+    "code":"code7", 
+    "count":1
+}' http://localhost:8181/repair/parts/revoke
+
+http://localhost:8181/repair/parts?repair_num=wxd20131745163849
+
+curl -v -H 'Content-Type: application/json' -H 'Accept: application/json' -X POST -d '{
+    "repair_num":"admin1384753973",
+    "parts":[{
+         "borrow_count": 100,
+         "picture_num": "dia",
+         "name": "dia",
+         "factory": "dia",
+         "code": "dia",
+         "brand": "dia",
+         "borrower":"test001",
+         "price": 10.12
+    },
+    {
+         "borrow_count": 100,
+         "picture_num": "dia",
+         "name": "dia",
+         "factory": "dia",
+         "code": "dia",
+         "brand": "dia",
+         "borrower":"test001",
+         "price": 10.1
+    }]
+}' http://localhost:8181/repair/parts
+
+http://localhost:8181/repair/parts/revoke/all?repair_num=wxd20131745163847
+
+curl -v -H 'Content-Type: application/json' -H 'Accept: application/json' -X POST -d'{
+    "repair_num":"wxd20130725123832",
+    "manager":"huang",
+    "reason":"username" 
+}' http://localhost:8181/repair/forgo
+
+http://localhost:8181/repair/sent?reapir_num=wxd20131745163847
+
+curl -v -H 'Content-Type: application/json' -H 'Accept: application/json' -X POST -d '{
+    "repair_num":"wxd20130725123832",
+    "name":"username",
+    "price":30,
+    "num":10
+}' http://localhost:8181/repair/other/cost/a
+
+curl -v -H 'Content-Type: application/json' -H 'Accept: application/json' -X PUT -d '{
+    "id":0,
+    "repair_num":"wxd20131745163849",
+    "engine_type":"engine_type",
+    "engine_num":"engine_num",
+    "engine_order_num":"engine_order_num",
+    "gearbox_type":"gearbox_type",
+    "gearbox_num":"gearbox_num",
+    "gearbox_user_num":"gearbox_user_num",
+    "radiators_num":"radiators_num",
+    "radiators_vendor_code":"radiators_vendor_code",
+    "laminated_spring_num":"laminated_spring_num",
+    "laminated_spring_vendor_code":"laminated_spring_vendor_code",
+    "first_drive_num":"first_drive_num",
+    "first_drive_vendor_code":"first_drive_vendor_code",
+    "second_drive_num":"second_drive_num",
+    "second_drive_vendor_code":"second_drive_vendor_code",
+    "third_drive_num":"third_drive_num",
+    "thrid_drive_vendor_code":"thrid_drive_vendor_code",
+    "first_axle":"first_axle",
+    "first_axle_vendor_code":"first_axle_vendor_code",
+    "second_axle":"second_axle",
+    "second_axle_vendor_code":"second_axle_vendor_code",
+    "third_axle":"third_axle",
+    "third_axle_vendor_code":"third_axle_vendor_code"
+}' http://localhost:8181/repair/sent/vehicle
+
+curl -v -H 'Content-Type: application/json' -H 'Accept: application/json' -X POST -d '{
+    "repair_num":"wxd20130725123832",
+    "describe":"describe",
+    "analysis":"analysis",
+    "failure_parts_name":"name8",
+    "failure_parts_factory":"factory8",
+    "failure_parts_num":"picture_num81",
+    "failure_parts_amount":10,
+    "warranty":true,
+    "process_mode":"adjust",
+    "worker":"huang",
+    "worker_cost":1000,
+    "process":{
+        "repair_num":"wxd20130725123832",
+        "describe":"describe"
+    },
+    "parts_cost":500,
+    "manager":"manager",
+    "indirect":true,
+    "indirect_failures":[{
+        "repair_num":"wxd20130725123832",
+        "describe":"describe",
+        "analysis":"analysis",
+        "failure_parts_name":"name8",
+        "failure_parts_factory":"factory8",
+        "failure_parts_num":"picture_num8",
+        "failure_parts_amount":10,
+        "warranty":true,
+        "process_mode":"replace",
+        "worker":"huang",
+    	"worker_cost":101,
+        "process":{
+            "repair_num":"wxd20130725123832",
+            "factory":"factory8",
+            "name":"name8",
+            "num":"picture_num8",
+            "amount":122222222222222222222,
+            "price":10
+        },
+        "parts_cost":102,
+        "manager":"manager"
+    },{
+        "repair_num":"wxd20130725123832",
+        "describe":"describe",
+        "analysis":"analysis",
+        "failure_parts_name":"name8",
+        "failure_parts_factory":"factory8",
+        "failure_parts_num":"picture_num82",
+        "failure_parts_amount":10,
+        "warranty":true,
+        "process_mode":"adjust",
+        "worker":"huang",
+    	"worker_cost":100,
+        "process":{
+            "repair_num":"wxd20130725123832",
+        	"describe":"describe"
+        },
+        "parts_cost":100,
+        "manager":"manager"
+    }]
+}' http://localhost:8181/repair/sent/failure
+
+curl -v -H 'Content-Type: application/json' -H 'Accept: application/json' -X PUT -d '{
+    "id":1,
+    "repair_num":"wxd20130725123832",
+    "describe":"describeaaaaaa",
+    "analysis":"analysisbbbbbbbb",
+    "failure_parts_name":"name9",
+    "failure_parts_factory":"factory9",
+    "failure_parts_num":"picture_num9",
+    "failure_parts_amount":10,
+    "warranty":true,
+    "process_mode":"adjust",
+    "worker":"huang",
+    "worker_cost":100,
+    "process":{
+        "id": 1,
+    	"scene_failure_id": 1,
+        "repair_num":"wxd20130725123832",
+        "describe":"describe"
+    },
+    "parts_cost":100,
+    "manager":"manager",
+    "indirect":true,
+    "indirect_failures":[{
+    	"id":1,
+    	"scene_failure_id":1,
+        "repair_num":"wxd20130725123832",
+        "describe":"new_describe",
+        "analysis":"new_analysis",
+        "failure_parts_name":"name8",
+        "failure_parts_factory":"factory8",
+        "failure_parts_num":"picture_num8",
+        "failure_parts_amount":10,
+        "warranty":true,
+        "process_mode":"adjust",
+        "worker":"huang",
+    	"worker_cost":100,
+        "process":{
+            "id": 1,
+			"indirect_failure_id": 1,
+            "repair_num":"wxd20130725123832",
+        	"describe":"delete_replace_create_adjust"
+        },
+        "parts_cost":100,
+        "manager":"manager"
+    },{
+    	"id":2,
+    	"scene_failure_id":1,
+        "repair_num":"wxd20130725123832",
+        "describe":"update_describe",
+        "analysis":"update_analysis",
+        "failure_parts_name":"name8",
+        "failure_parts_factory":"factory8",
+        "failure_parts_num":"picture_num8",
+        "failure_parts_amount":10,
+        "warranty":true,
+        "process_mode":"replace",
+        "worker":"huang",
+    	"worker_cost":100,
+        "process":{
+            "id": 1,
+			"indirect_failure_id": 2,
+            "repair_num":"wxd20131745163849",
+            "factory":"delete_adjust_create_replace",
+            "name":"name",
+            "num":111,
+            "amount":12,
+            "price":10
+        },
+        "parts_cost":100,
+        "manager":"manager"
+    },{
+    	"id":0,
+    	"scene_failure_id":0,
+        "repair_num":"wxd20130725123832",
+        "describe":"create_describe",
+        "analysis":"create_analysis",
+        "failure_parts_name":"name9",
+        "failure_parts_factory":"factory9",
+        "failure_parts_num":"picture_num9",
+        "failure_parts_amount":10,
+        "warranty":true,
+        "process_mode":"replace",
+        "worker":"huang",
+    	"worker_cost":100,
+        "process":{
+            "id": 0,
+			"indirect_failure_id": 0,
+            "repair_num":"wxd20130725123832",
+            "factory":"factory",
+            "name":"name",
+            "num":111,
+            "amount":12,
+            "price":10
+        },
+        "parts_cost":100,
+        "manager":"manager"
+    }]
+}' http://localhost:8181/repair/sent/failure
+
+http://localhost:8181/repair/sent/failure/d?id=1&repair_num=wxd20131745163849
+
+http://localhost:8181/repair/sent/failure/v?repair_num=wxd20131745163849
+
+curl -v -H 'Content-Type: application/json' -H 'Accept: application/json' -X POST -d'{
+    "repair_num":"wxd20130725123832",
+    "manager":"admin" 
+}' http://localhost:8181/repair/sent/upload
+
+http://localhost:8181/repair/finish/search?t=13436633722&page_index=1&page_size=2&order_by=create_at&order_type=a
+
+curl -v -H 'Content-Type: application/json' -H 'Accept: application/json' -X POST -d'{
+    "keyowrd":"*:*",
+    "page":1,
+	"size":2 
+}' http://192.168.2.231:7788/cars/api/search/car-info
+
+curl -v -H 'Content-Type: application/json' -H 'Accept: application/json' -X POST -d '{
+    "repair_num":"wxd20130725123834",
+    "repair_type":"1",
+    "customer_name":"test",
+    "customer_gender":"man",
+    "customer_tel":"13436633722",
+    "customer_backup_tel":"13436633722",
+    "province":"吉林省",
+    "city":"jilinshi",
+    "county":"cangyi",
+    "address":"address",
+    "owner_name":"own",
+    "owner_tel":"12333",
+    "frame_num":"222",
+    "vehicle_type":"333",
+    "plate_num":"B",
+    "km":200,
+    "purchase_date":"20130731",
+    "failure_desc":"sdd",
+    "service_username":"uname",
+    "service_name":"sdd",
+    "service_upload_at":1377932032854,
+    "engine_type":"",
+    "engine_num":"",
+    "engine_order_num":"",
+    "gearbox_type":"",
+    "gearbox_num":"",
+    "gearbox_user_num":"",
+    "radiators_num":"",
+    "radiators_vendor_code":"",
+    "laminated_spring_num":"",
+    "laminated_spring_vendor_code":"",
+    "first_drive_num":"first_drive_num",
+    "first_drive_vendor_code":"first_drive_vendor_code",
+    "second_drive_num":"second_drive_num",
+    "second_drive_vendor_code":"second_drive_vendor_code",
+    "third_drive_num":"third_drive_num",
+    "thrid_drive_vendor_code":"thrid_drive_vendor_code",
+    "first_axle":"first_axle",
+    "first_axle_vendor_code":"first_axle_vendor_code",
+    "second_axle":"second_axle",
+    "second_axle_vendor_code":"second_axle_vendor_code",
+    "third_axle":"third_axle",
+    "third_axle_vendor_code":"third_axle_vendor_code" 
+}' http://localhost:8181/repair/service/upload
+
+
+
+(defn save-failure
+  [params]
+  (transaction
+    (let [failure-id (:id (first (repair_scene_failure/create-scene-failure params)))
+          process-mode (:process_mode params)
+          indirect (:indirect params)
+          process (:process params)]
+      (let [err (create-process process-mode process failure-id)]
+        (if (false? (:success err))
+          err
+          (let [errs (check-indirect-parts indirect (:indirect_failures params))]
+            (if-not (nil? (first errs))
+              (msg/get-errors "scene_indirect_failure")
+              (if (true? indirect)
+                (let [indirect-failures (:indirect_failures params)]
+                  (doseq [indirect-failure indirect-failures]
+                    (let [indirect-failure-id (:id (first (repair_scene_failure/create-scene-indirect-failure failure-id indirect-failure)))
+                          indirect-process-mode (:process_mode indirect-failure)
+                          indirect-process (:process indirect-failure)]
+                      (if (= indirect-process-mode "replace")
+                        (create-indirect-replace indirect-failure-id indirect-process)
+                        (repair_scene_failure/create-indirect-process-other indirect-failure-id indirect-process))))
+                  (get-failure failure-id (:repair_num params)))))))))))
+                  
+                  
+curl -v -H 'Content-Type: application/json' -H 'Accept: application/json' -X POST -d '{
+    "repair_num":"wxd20130725123832",
+    "describe":"describe",
+    "analysis":"analysis",
+    "failure_parts_name":"name8",
+    "failure_parts_factory":"factory8",
+    "failure_parts_num":"picture_num81",
+    "failure_parts_amount":10,
+    "warranty":true,
+    "process_mode":"adjust",
+    "worker":"huang",
+    "worker_cost":1000,
+    "process":{
+        "repair_num":"wxd20130725123832",
+        "describe":"describe"
+    },
+    "parts_cost":500,
+    "manager":"manager",
+    "indirect":false
+}' http://localhost:8181/repair/sent/failure
+
+
+

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<tiles-definitions>
+
+    <!-- Tiles: Device Management  -->
+    <definition name="baseOTAProvision" extends="otas.dm.main.base">
+	    <put name="title">Change_Me</put>
+		<put name="SubMenus" value="/jsp/jobs/menus.jsp" />
+		<put name="MainContent" value="Change_Me" />
+        <putList name="LocationLabels">
+           <add value="Change_Me"></add>
+           <add value="Change_Me"></add>
+        </putList>
+    </definition>
+    
+    <!--  Related with Nokia OTA -->
+    <definition name="tile.ota.nokia.input.connection" extends="baseOTAProvision">
+        <put name="title">tile.ota.nokia.input.connection.pageTitle</put>
+        <put name="MainContent" value="/jsp/ota/nokiaota/connection.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.ota.nokia.input.connection.location1.label"></add>
+              <add value="tile.ota.nokia.input.connection.location2.label"></add>
+           </putList>
+    </definition>
+    <definition name="tile.ota.nokia.input.bookmark" extends="baseOTAProvision">
+        <put name="title">tile.ota.nokia.input.bookmark.pageTitle</put>
+        <put name="MainContent" value="/jsp/ota/nokiaota/bookmark.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.ota.nokia.input.bookmark.location1.label"></add>
+              <add value="tile.ota.nokia.input.bookmark.location2.label"></add>
+           </putList>
+    </definition>
+    <definition name="tile.ota.nokia.success" extends="baseOTAProvision">
+        <put name="title">tile.ota.nokia.success.pageTitle</put>
+        <put name="MainContent" value="/jsp/ota/nokiaota/success.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.ota.nokia.success.location1.label"></add>
+              <add value="tile.ota.nokia.success.location2.label"></add>
+           </putList>
+    </definition>
+
+    <!--  Related with OMA CP -->
+    <definition name="tile.ota.omacp.input.document" extends="baseOTAProvision">
+        <put name="title">tile.ota.omacp.input.pageTitle</put>
+        <put name="MainContent" value="/jsp/ota/omacp/document.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.ota.omacp.input.location1.label"></add>
+           <add value="tile.ota.omacp.input.location2.label"></add>
+        </putList>
+    </definition>
+    <definition name="tile.ota.omacp.input.nap" extends="baseOTAProvision">
+        <put name="title">tile.ota.omacp.input.nap.pageTitle</put>
+        <put name="MainContent" value="/jsp/ota/omacp/input4nap.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.ota.omacp.input.nap.location1.label"></add>
+           <add value="tile.ota.omacp.input.nap.location2.label"></add>
+        </putList>
+    </definition>
+    <definition name="tile.ota.omacp.input.proxy" extends="baseOTAProvision">
+        <put name="title">tile.ota.omacp.input.proxy.pageTitle</put>
+        <put name="MainContent" value="/jsp/ota/omacp/input4proxy.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.ota.omacp.input.proxy.location1.label"></add>
+           <add value="tile.ota.omacp.input.proxy.location2.label"></add>
+        </putList>
+    </definition>
+    <definition name="tile.ota.omacp.input.mms" extends="baseOTAProvision">
+        <put name="title">tile.ota.omacp.input.mms.pageTitle</put>
+        <put name="MainContent" value="/jsp/ota/omacp/input4mms.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.ota.omacp.input.mms.location1.label"></add>
+           <add value="tile.ota.omacp.input.mms.location2.label"></add>
+        </putList>
+    </definition>
+    <definition name="tile.ota.omacp.input.syncds" extends="baseOTAProvision">
+        <put name="title">tile.ota.omacp.input.syncds.pageTitle</put>
+        <put name="MainContent" value="/jsp/ota/omacp/input4syncds.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.ota.omacp.input.syncds.location1.label"></add>
+           <add value="tile.ota.omacp.input.syncds.location2.label"></add>
+        </putList>
+    </definition>
+    <definition name="tile.ota.omacp.input.email" extends="baseOTAProvision">
+        <put name="title">tile.ota.omacp.input.email.pageTitle</put>
+        <put name="MainContent" value="/jsp/ota/omacp/input4email.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.ota.omacp.input.email.location1.label"></add>
+           <add value="tile.ota.omacp.input.email.location2.label"></add>
+        </putList>
+    </definition>
+    <definition name="tile.ota.omacp.input.imps" extends="baseOTAProvision">
+        <put name="title">tile.ota.omacp.input.imps.pageTitle</put>
+        <put name="MainContent" value="/jsp/ota/omacp/input4imps.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.ota.omacp.input.imps.location1.label"></add>
+           <add value="tile.ota.omacp.input.imps.location2.label"></add>
+        </putList>
+    </definition>
+    <definition name="tile.ota.omacp.input.poc" extends="baseOTAProvision">
+        <put name="title">tile.ota.omacp.input.poc.pageTitle</put>
+        <put name="MainContent" value="/jsp/ota/omacp/input4poc.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.ota.omacp.input.poc.location1.label"></add>
+           <add value="tile.ota.omacp.input.poc.location2.label"></add>
+        </putList>
+    </definition>
+    
+    <definition name="tile.ota.omacp.success" extends="baseOTAProvision">
+        <put name="title">tile.ota.omacp.success.pageTitle</put>
+        <put name="MainContent" value="/jsp/ota/omacp/success.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.ota.omacp.success.location1.label"></add>
+              <add value="tile.ota.omacp.success.location2.label"></add>
+           </putList>
+    </definition>
+
+    <definition name="tile.ota.omacp.viewXML" extends="baseOTAProvision">
+        <put name="title">tile.ota.omacp.viewXML.pageTitle</put>
+        <put name="MainContent" value="/jsp/ota/omacp/viewXML.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.ota.omacp.viewXML.location1.label"></add>
+              <add value="tile.ota.omacp.viewXML.location2.label"></add>
+           </putList>
+    </definition>
+
+    <!-- Temp for NowSMS -->
+    <definition name="tile.ota.omacp.nowsms" extends="baseOTAProvision">
+        <put name="title">tile.ota.omacp.input.pageTitle</put>
+        <put name="MainContent" value="/jsp/ota/omacp/nowsms.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.ota.omacp.input.location1.label"></add>
+           <add value="tile.ota.omacp.input.location2.label"></add>
+        </putList>
+    </definition>
+
+</tiles-definitions>

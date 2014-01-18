@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	<form-beans>
+        <form-bean name="SearchAuditLogsForm" type="org.apache.struts.validator.DynaValidatorForm">
+            <form-property name="searchAuditActionType" type="java.lang.String" />
+            <form-property name="searchAuditActionValue" type="java.lang.String" />
+            <form-property name="searchUserName" type="java.lang.String" />
+            <form-property name="searchIPAddress" type="java.lang.String" />
+            <form-property name="searchBeginTime" type="java.lang.String" />
+            <form-property name="searchEndTime" type="java.lang.String" />            
+            <form-property name="searchDeviceExtID" type="java.lang.String" />
+            <form-property name="searchText" type="java.lang.String" />
+            <form-property name="recordsPerPage" type="java.lang.Integer" />
+        </form-bean>
+        <form-bean name="SearchCPAuditLogsForm" type="org.apache.struts.validator.DynaValidatorForm">
+            <form-property name="searchPhoneNumber" type="java.lang.String" />
+            <form-property name="searchManufacturer" type="java.lang.String" />
+            <form-property name="searchModel" type="java.lang.String" />
+            <form-property name="searchCarrier" type="java.lang.String" />
+            <form-property name="searchStatus" type="java.lang.String" />
+            <form-property name="searchProfileCategory" type="java.lang.String" />
+            <form-property name="searchProfileName" type="java.lang.String" />            
+            <form-property name="searchBeginTime" type="java.lang.String" />
+            <form-property name="searchEndTime" type="java.lang.String" />            
+            <form-property name="searchText" type="java.lang.String" />
+            <form-property name="recordsPerPage" type="java.lang.Integer" />
+        </form-bean>    
+        <form-bean name="ViewCPAuditLogsForm" type="org.apache.struts.validator.DynaValidatorForm">
+            <form-property name="ID" type="java.lang.String" />
+        </form-bean>  
+	</form-beans>
+
+	<action-mappings>
+		<action 
+			path="/audit/Auditlogs"
+            attribute="SearchAuditLogsForm"
+			name="SearchAuditLogsForm"
+			scope="request"
+			type="com.npower.dm.action.audit.AuditLogsAction"
+			validate="false"
+            roles="authenticated">
+			<forward name="display" path="tile.audit.auditLogs" contextRelative="true" />
+		</action>
+		
+		<action 
+			path="/audit/CPAuditlogs"
+            attribute="SearchCPAuditLogsForm"
+			name="SearchCPAuditLogsForm"
+			scope="request"
+			type="com.npower.dm.action.audit.CPAuditLogsAction"
+			validate="false"
+            roles="authenticated">
+			<forward name="display" path="tile.audit.CPAuditLogs" contextRelative="true" />
+		</action>	
+		
+		<action 
+			path="/audit/ViewCPAuditlog" 
+            attribute="ViewCPAuditLogsForm"
+			name="ViewCPAuditLogsForm"
+			scope="request"
+			type="com.npower.dm.action.audit.ViewCPAuditLogsAction"
+			validate="false"
+            roles="authenticated">
+			<forward name="view" path="tile.audit.viewCPAuditLog" contextRelative="true" />
+			<forward name="display" path="/audit/CPAuditlogs.do" contextRelative="true" />			
+		</action>			
+	</action-mappings>
+
+</struts-config>
+
+

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<tiles-definitions>
+	<!-- Tiles: Carrier Management  -->
+	<definition name="baseAuditManagement" extends="otas.dm.main.base">
+		<put name="title">Change_Me</put>
+		<put name="SubMenus" value="/jsp/audit/menus.jsp" />
+		<put name="MainContent" value="Change_Me" />
+		<putList name="LocationLabels">
+			<add value="Change_Me"></add>
+			<add value="Change_Me"></add>
+			<add value="Change_Me"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.audit.auditLogs" extends="baseAuditManagement">
+		<put name="title">tile.audit.auditLogs.pageTitle</put>
+		<put name="MainContent" value="/jsp/audit/auditlogs.jsp" />
+        <put name="SearchPannel" value="/jsp/audit/searchpannel.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.audit.auditLogs.location1.label"></add>
+			<add value="tile.audit.auditLogs.location2.label"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.audit.CPAuditLogs" extends="baseAuditManagement">
+		<put name="title">tile.audit.cpauditLogs.pageTitle</put>
+		<put name="MainContent" value="/jsp/audit/cpauditlogs.jsp" />
+    <put name="SearchPannel" value="/jsp/audit/cpsearchpannel.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.audit.cpauditLogs.location1.label"></add>
+			<add value="tile.audit.cpauditLogs.location2.label"></add>
+		</putList>
+	</definition>	
+
+	<definition name="tile.audit.viewCPAuditLog" extends="baseAuditManagement">
+		<put name="title">tile.audit.viewcpauditLogs.pageTitle</put>
+		<put name="MainContent" value="/jsp/audit/viewcpauditlog.jsp" />        
+		<putList name="LocationLabels">
+			<add value="tile.audit.viewcpauditLogs.location1.label"></add>
+			<add value="tile.audit.viewcpauditLogs.location2.label"></add>
+		</putList>
+	</definition>		
+	
+	
+	 <definition name="tile.audit.search4time" extends="baseAuditManagement">
+    <put name="title">tile.audit.viewcpauditLogs.pageTitle</put>
+    <put name="MainContent" value="/jsp/audit/cpsearchtime.jsp" />        
+    <putList name="LocationLabels">
+      <add value="tile.audit.viewcpauditLogs.location1.label"></add>
+      <add value="tile.audit.search4time.location1.label"></add>
+    </putList>
+  </definition> 
+  
+  <definition name="tile.audit.result4cpreport" extends="baseAuditManagement">
+    <put name="title">tile.audit.viewcpauditLogs.pageTitle</put>
+    <put name="MainContent" value="/jsp/audit/result4cpreport.jsp" />        
+    <putList name="LocationLabels">
+      <add value="tile.audit.viewcpauditLogs.location1.label"></add>
+      <add value="tile.audit.viewcdrLog.location2.label"></add>
+    </putList>
+  </definition> 
+  
+</tiles-definitions>

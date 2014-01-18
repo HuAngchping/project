@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="tile.dm.wizard.select.software" location="350,350" dimension="220,48" />
+  <StrutsActivity path="/wizard/cp/intro" location="594,0" dimension="268,84" />
+  <StrutsActivity path="tile.cp.wizard.introduction" location="96,312" dimension="202,48" />
+  <StrutsActivity path="tile.cp.wizard.select.country" location="1030,496" dimension="214,48" />
+  <StrutsActivity path="tile.cp.wizard.select.carrier" location="950,680" dimension="214,48" />
+  <StrutsActivity path="tile.cp.wizard.select.model" location="406,864" dimension="202,48" />
+  <StrutsActivity path="tile.cp.wizard.select.profileCategory" location="432,1048" dimension="262,48" />
+  <StrutsActivity path="tile.cp.wizard.select.profile" location="834,1232" dimension="214,48" />
+  <StrutsActivity path="tile.cp.wizard.input.profile.attribute" location="1490,1416" dimension="268,48" />
+  <StrutsActivity path="tile.cp.wizard.input.phone" location="1048,1600" dimension="196,48" />
+  <StrutsActivity path="tile.cp.wizard.completed" location="39,1766" dimension="184,48" />
+  <StrutsActivity path="/wizard/cp/SelectProfileCategory" location="723,846" dimension="364,84" />
+  <StrutsActivity path="/wizard/cp/InputPhone" location="923,1398" dimension="298,84" />
+  <StrutsActivity path="tile.dm.wizard.input.phone" location="350,650" dimension="196,48" />
+  <StrutsActivity path="tile.dm.wizard.completed" location="350,750" dimension="184,48" />
+</FlowViewLayout>
+

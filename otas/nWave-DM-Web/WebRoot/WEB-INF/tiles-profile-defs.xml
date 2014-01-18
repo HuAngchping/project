@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<tiles-definitions>
+
+	<!-- Tiles: Profile Management  -->
+	<definition name="baseProfileManagement" extends="otas.dm.main.base">
+		<put name="title">Change_Me</put>
+		<put name="SubMenus" value="/jsp/profile/menus.jsp" />
+		<put name="MainContent" value="Change_Me" />
+		<putList name="LocationLabels">
+			<add value="Change_Me"></add>
+			<add value="Change_Me"></add>
+			<add value="Change_Me"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.profile.categories" extends="baseProfileManagement">
+		<put name="title">tile.profile.categories.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/categories.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.profile.categories.location1.label"></add>
+			<add value="tile.profile.categories.location2.label"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.profile.attributeTypes" extends="baseProfileManagement">
+		<put name="title">tile.profile.attributeTypes.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/attributetypes.jsp" />
+		<put name="SearchPannel" value="/jsp/profile/searchpannel4attributetypes.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.profile.attributeTypes.location1.label"></add>
+			<add value="tile.profile.attributeTypes.location2.label"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.profile.edit.category" extends="baseProfileManagement">
+		<put name="title">tile.profile.edit.category.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/category.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.profile.edit.category.location1.label"></add>
+			<add value="tile.profile.edit.category.location2.label"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.profile.edit.attributeType" extends="baseProfileManagement">
+		<put name="title">tile.profile.edit.attributeType.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/attributetype.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.profile.edit.attributeType.location1.label"></add>
+			<add value="tile.profile.edit.attributeType.location2.label"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.profile.templates" extends="baseProfileManagement">
+		<put name="title">tile.profile.templates.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/templates.jsp" />
+        <put name="SearchPannel" value="/jsp/profile/searchpannel4templates.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.profile.templates.location1.label"></add>
+			<add value="tile.profile.templates.location2.label"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.profile.edit.template" extends="baseProfileManagement">
+		<put name="title">tile.profile.edit.template.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/template.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.profile.edit.template.location1.label"></add>
+			<add value="tile.profile.edit.template.location2.label"></add>
+		</putList>
+	</definition>
+
+  <definition name="tile.profile.view.template" extends="baseProfileManagement">
+    <put name="title">tile.profile.view.template.pageTitle</put>
+    <put name="MainContent" value="/jsp/profile/template4view.jsp" />
+    <putList name="LocationLabels">
+     <add value="tile.profile.view.template.location1.label"></add>
+     <add value="tile.profile.view.template.location2.label"></add>
+    </putList>
+  </definition>
+
+	<definition name="tile.profile.edit.attribute" extends="baseProfileManagement">
+		<put name="title">tile.profile.edit.attribute.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/attribute.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.profile.edit.attribute.location1.label"></add>
+			<add value="tile.profile.edit.attribute.location2.label"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.profile.edit.profileMapping" extends="baseProfileManagement">
+		<put name="title">tile.profile.edit.profileMapping.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/profilemapping.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.profile.edit.profileMapping.location1.label"></add>
+			<add value="tile.profile.edit.profileMapping.location2.label"></add>
+		</putList>
+	</definition>
+
+  <definition name="tile.profile.view.profileMapping" extends="baseProfileManagement">
+    <put name="title">tile.profile.view.profileMapping.pageTitle</put>
+    <put name="MainContent" value="/jsp/profile/profilemapping4view.jsp" />
+    <putList name="LocationLabels">
+     <add value="tile.profile.view.profileMapping.location1.label"></add>
+     <add value="tile.profile.view.profileMapping.location2.label"></add>
+    </putList>
+  </definition>
+
+	<definition name="tile.profile.create.profileMapping" extends="baseProfileManagement">
+		<put name="title">tile.profile.create.profileMapping.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/createmapping.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.profile.create.profileMapping.location1.label"></add>
+			<add value="tile.profile.create.profileMapping.location2.label"></add>
+			<add value="tile.profile.create.profileMapping.location3.label"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.profile.edit.nodeMapping" extends="baseProfileManagement">
+		<put name="title">tile.profile.edit.nodeMapping.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/nodemapping.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.profile.edit.nodeMapping.location1.label"></add>
+			<add value="tile.profile.edit.nodeMapping.location2.label"></add>
+			<add value="tile.profile.edit.nodeMapping.location3.label"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.profile.profileMappings" extends="baseProfileManagement">
+		<put name="title">tile.profile.profileMappings.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/profilemappings.jsp" />
+        <put name="SearchPannel" value="/jsp/profile/searchpannel4mappings.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.profile.profileMappings.location1.label"></add>
+			<add value="tile.profile.profileMappings.location2.label"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.profile.profileConfigs" extends="baseProfileManagement">
+		<put name="title">tile.profile.profileConfigs.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/profileconfigs.jsp" />
+        <put name="SearchPannel" value="/jsp/profile/searchpannel4profiles.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.profile.profileConfigs.location1.label"></add>
+			<add value="tile.profile.profileConfigs.location2.label"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.profile.edit.profileConfig" extends="baseProfileManagement">
+		<put name="title">tile.profile.edit.profileConfig.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/profileconfig.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.profile.edit.profileConfig.location1.label"></add>
+			<add value="tile.profile.edit.profileConfig.location2.label"></add>
+		</putList>
+	</definition>
+
+  <definition name="tile.profile.view.profileConfig" extends="baseProfileManagement">
+    <put name="title">tile.profile.view.profileConfig.pageTitle</put>
+    <put name="MainContent" value="/jsp/profile/profileconfig4view.jsp" />
+    <putList name="LocationLabels">
+      <add value="tile.profile.view.profileConfig.location1.label"></add>
+      <add value="tile.profile.view.profileConfig.location2.label"></add>
+    </putList>
+  </definition>
+
+
+
+
+	<!--  upload template-->
+	<definition name="tile.template.add.main" extends="baseProfileManagement">
+		<put name="title">tile.template.add.main.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/templateuploadfile.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.template.add.main.location1.label"></add>
+			<add value="tile.template.add.main.location2.label"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.template.upload.main" extends="baseProfileManagement">
+		<put name="title">tile.template.upload.main.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/templatevalidationfile.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.template.upload.main.location1.label"></add>
+			<add value="tile.template.upload.main.location2.label"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.template.display.main" extends="baseProfileManagement">
+		<put name="title">tile.template.display.main.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/templatedisplay.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.template.display.main.location1.label"></add>
+			<add value="tile.template.display.main.location2.label"></add>
+		</putList>
+	</definition>
+
+
+	<definition name="tile.template.import.main" extends="baseProfileManagement">
+		<put name="title">tile.template.import.main.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/templateimport.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.template.import.main.location1.label"></add>
+			<add value="tile.template.import.main.location2.label"></add>
+		</putList>
+	</definition>
+
+
+	<definition name="tile.template.err.main" extends="baseProfileManagement">
+		<put name="title">tile.template.err.main.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/templateerrpage.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.template.err.main.location1.label"></add>
+			<add value="tile.template.err.main.location2.label"></add>
+		</putList>
+	</definition>
+
+
+	<!--  upload mapping-->
+	<definition name="tile.mapping.add.main" extends="baseProfileManagement">
+		<put name="title">tile.mapping.add.main.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/mappinguploadfile.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.mapping.add.main.location1.label"></add>
+			<add value="tile.mapping.add.main.location2.label"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.mapping.upload.main" extends="baseProfileManagement">
+		<put name="title">tile.mapping.upload.main.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/mappingvalidationfile.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.mapping.upload.main.location1.label"></add>
+			<add value="tile.mapping.upload.main.location2.label"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.mapping.display.main" extends="baseProfileManagement">
+		<put name="title">tile.mapping.display.main.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/mappingdisplay.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.mapping.display.main.location1.label"></add>
+			<add value="tile.mapping.display.main.location2.label"></add>
+		</putList>
+	</definition>
+
+
+	<definition name="tile.mapping.import.main" extends="baseProfileManagement">
+		<put name="title">tile.mapping.import.main.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/mappingimport.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.mapping.import.main.location1.label"></add>
+			<add value="tile.mapping.import.main.location2.label"></add>
+		</putList>
+	</definition>
+
+
+	<definition name="tile.mapping.err.main" extends="baseProfileManagement">
+		<put name="title">tile.mapping.err.main.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/mappingerrpage.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.mapping.err.main.location1.label"></add>
+			<add value="tile.mapping.err.main.location2.label"></add>
+		</putList>
+	</definition>
+
+
+
+
+	<!--  upload category-->
+	<definition name="tile.category.add.main" extends="baseProfileManagement">
+		<put name="title">tile.category.add.main.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/categoryuploadfile.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.category.add.main.location1.label"></add>
+			<add value="tile.category.add.main.location2.label"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.category.upload.main" extends="baseProfileManagement">
+		<put name="title">tile.category.upload.main.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/categoryvalidationfile.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.category.upload.main.location1.label"></add>
+			<add value="tile.category.upload.main.location2.label"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.category.display.main" extends="baseProfileManagement">
+		<put name="title">tile.category.display.main.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/categorydisplay.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.category.display.main.location1.label"></add>
+			<add value="tile.category.display.main.location2.label"></add>
+		</putList>
+	</definition>
+
+
+	<definition name="tile.category.import.main" extends="baseProfileManagement">
+		<put name="title">tile.category.import.main.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/categoryimport.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.category.import.main.location1.label"></add>
+			<add value="tile.category.import.main.location2.label"></add>
+		</putList>
+	</definition>
+
+
+	<definition name="tile.category.err.main" extends="baseProfileManagement">
+		<put name="title">tile.category.err.main.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/categoryerrpage.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.category.err.main.location1.label"></add>
+			<add value="tile.category.err.main.location2.label"></add>
+		</putList>
+	</definition>
+
+	<!--  upload attributetype-->
+	<definition name="tile.attributetype.add.main" extends="baseProfileManagement">
+		<put name="title">tile.attributetype.add.main.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/attributeuploadfile.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.attributetype.add.main.location1.label"></add>
+			<add value="tile.attributetype.add.main.location2.label"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.attributetype.upload.main" extends="baseProfileManagement">
+		<put name="title">tile.attributetype.upload.main.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/attributetypevalidationfile.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.attributetype.upload.main.location1.label"></add>
+			<add value="tile.attributetype.upload.main.location2.label"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.attributetype.display.main" extends="baseProfileManagement">
+		<put name="title">tile.attributetype.display.main.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/attributetypedisplay.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.attributetype.display.main.location1.label"></add>
+			<add value="tile.attributetype.display.main.location2.label"></add>
+		</putList>
+	</definition>
+
+
+	<definition name="tile.attributetype.import.main" extends="baseProfileManagement">
+		<put name="title">tile.attributetype.import.main.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/attributetypeimport.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.attributetype.import.main.location1.label"></add>
+			<add value="tile.attributetype.import.main.location2.label"></add>
+		</putList>
+	</definition>
+
+
+	<definition name="tile.attributetype.err.main" extends="baseProfileManagement">
+		<put name="title">tile.attributetype.err.main.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/attributetypeerrpage.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.attributetype.err.main.location1.label"></add>
+			<add value="tile.attributetype.err.main.location2.label"></add>
+		</putList>
+	</definition>
+
+
+	<!-- Profile Import -->
+	<definition name="tile.import.page.main" extends="baseProfileManagement">
+		<put name="title">tile.import.page.main.pageTitle</put>
+		<put name="MainContent" value="/jsp/profile/ProfileImportPage.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.import.page.main.location1.label"></add>
+			<add value="tile.import.page.main.location2.label"></add>
+		</putList>
+	</definition>
+
+  <definition name="tile.profile.CPTemplates" extends="baseProfileManagement">
+    <put name="title">tile.profile.CPTemplates.pageTitle</put>
+    <put name="MainContent" value="/jsp/profile/cptemplates.jsp" />
+    <put name="SearchPannel" value="/jsp/profile/searchpannel4cptemplates.jsp" />
+    <putList name="LocationLabels">
+      <add value="tile.profile.CPTemplates.location1.label"></add>
+      <add value="tile.profile.CPTemplates.location2.label"></add>
+    </putList>
+  </definition>
+
+ <definition name="tile.profile.edit.CPTemplate" extends="baseProfileManagement">
+  <put name="title">tile.profile.edit.CPTemplate.pageTitle</put>
+  <put name="MainContent" value="/jsp/profile/cptemplate4edit.jsp" />
+  <putList name="LocationLabels">
+   <add value="tile.profile.edit.CPTemplate.location1.label"></add>
+   <add value="tile.profile.edit.CPTemplate.location2.label"></add>
+  </putList>
+ </definition>
+
+  <definition name="tile.profile.view.CPTemplate" extends="baseProfileManagement">
+    <put name="title">tile.profile.view.CPTemplate.pageTitle</put>
+    <put name="MainContent" value="/jsp/profile/cptemplate4view.jsp" />
+    <putList name="LocationLabels">
+     <add value="tile.profile.view.CPTemplate.location1.label"></add>
+     <add value="tile.profile.view.CPTemplate.location2.label"></add>
+    </putList>
+  </definition>
+
+</tiles-definitions>

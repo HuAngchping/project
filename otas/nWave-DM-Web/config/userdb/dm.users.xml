@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.5.0_06" class="java.beans.XMLDecoder"> 
+ <object class="java.util.TreeMap"> 
+  <void method="put"> 
+   <string>admin</string> 
+   <object class="com.npower.dm.security.DMWebPrincipalImpl"> 
+    <void property="firstName"> 
+     <string>DM</string> 
+    </void> 
+    <void property="lastName"> 
+     <string>Administrator</string> 
+    </void> 
+    <void property="roles"> 
+     <object class="java.util.ArrayList"> 
+      <void method="add"> 
+       <string>dm.admin.jobs</string> 
+      </void> 
+      <void method="add"> 
+       <string>dm.admin.devices</string> 
+      </void> 
+      <void method="add"> 
+       <string>dm.admin.profiles</string> 
+      </void> 
+      <void method="add"> 
+       <string>dm.admin.models</string> 
+      </void> 
+      <void method="add"> 
+       <string>dm.admin.carriers</string> 
+      </void> 
+      <void method="add"> 
+       <string>dm.admin.softwares</string> 
+      </void> 
+      <void method="add"> 
+       <string>dm.admin.security</string> 
+      </void> 
+      <void method="add"> 
+       <string>dm.admin.audit</string> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="username"> 
+     <string>admin</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="put"> 
+   <string>nokia</string> 
+   <object class="com.npower.dm.security.DMWebPrincipalImpl"> 
+    <void property="firstName"> 
+     <string>Nokia</string> 
+    </void> 
+    <void property="lastName"> 
+     <string></string> 
+    </void> 
+    <void property="ownedManufacturerExternalIDs"> 
+     <void method="add"> 
+      <string>NOKIA</string> 
+     </void> 
+     <void method="add"> 
+      <string>Motorola</string> 
+     </void> 
+     <void method="add"> 
+      <string>UNKNOWN</string> 
+     </void> 
+    </void> 
+    <void property="roles"> 
+     <object class="java.util.ArrayList"> 
+      <void method="add"> 
+       <string>dm.operator.manufacturer</string> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="username"> 
+     <string>nokia</string> 
+    </void> 
+   </object> 
+  </void> 
+ </object> 
+</java> 

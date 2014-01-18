@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	<form-beans>
+    <form-bean name="FavoriteForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="favoriteId" type="java.lang.String" />
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="description" type="java.lang.String" />
+      <form-property name="shared" type="java.lang.Boolean" />
+      <form-property name="owner" type="java.lang.String" />
+      <form-property name="deviceId" type="java.lang.String" />
+    </form-bean>
+    <form-bean name="SearchFavoriteForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="shared" type="java.lang.Boolean" />
+      <form-property name="searchText" type="java.lang.String" />
+    </form-bean>
+	</form-beans>
+	<global-exceptions />
+	<global-forwards />
+	<action-mappings >
+    <action path="/favorite/favorites" 
+            type="com.npower.dm.action.favorite.FavoritesAction"
+            attribute="FavoriteForm"
+            name="FavoriteForm"
+            validate="false"
+            roles="authenticated"
+            scope="request" >
+      <forward name="list" path="tiles.favorites.list.html" contextRelative="true" />
+    </action>
+    <action path="/favorite/viewFavorite" 
+            type="com.npower.dm.action.favorite.ViewFavoriteAction" 
+            attribute="FavoriteForm"
+            name="FavoriteForm"
+            parameter="action"
+            validate="false"
+            roles="authenticated"
+            scope="request">
+      <forward name="view" path="tiles.favorite.view.html" contextRelative="true" />
+    </action>
+    <action path="/favorite/editFavorite" 
+            type="com.npower.dm.action.favorite.EditFavoriteAction"
+            attribute="FavoriteForm"
+            name="FavoriteForm"
+            parameter="action"
+            validate="false"
+            roles="authenticated"
+            scope="request">
+      <forward name="edit" path="tiles.favorite.edit.html" contextRelative="true" />
+    </action>
+    <action path="/favorite/saveFavorite" 
+            type="com.npower.dm.action.favorite.EditFavoriteAction"
+            input="/favorite/editFavorite.do?action=edit"
+            attribute="FavoriteForm"
+            name="FavoriteForm"
+            parameter="action"
+            validate="true"
+            roles="authenticated"
+            scope="request">
+      <forward name="save" path="/favorite/favorites.do" contextRelative="true" />
+    </action>
+    <action path="/favorite/deleteFavorite" 
+            type="com.npower.dm.action.favorite.DeleteFavoriteAction" 
+            attribute="FavoriteForm"
+            name="FavoriteForm"
+            parameter="action"
+            validate="false"
+            roles="authenticated"
+            scope="request">
+      <forward name="delete" path="/favorite/favorites.do" contextRelative="true" />
+    </action>
+    <action path="/favorite/searchFavorites" 
+            type="com.npower.dm.action.favorite.SearchFavoriteAction" 
+            attribute="SearchFavoriteForm" 
+            name="SearchFavoriteForm"
+            validate="false" 
+            roles="authenticated"
+            scope="request">
+      <forward name="list" path="tiles.favorites.list.html" contextRelative="true" />
+	  </action>
+    <action path="/favorite/removeDevice" 
+            type="com.npower.dm.action.favorite.RemoveDeviceAction" 
+            attribute="FavoriteForm"
+            name="FavoriteForm"
+            parameter="action"
+            validate="false"
+            roles="authenticated"
+            scope="request">
+      <forward name="remove" path="/favorite/viewFavorite.do?action=view" />
+    </action>
+    <action path="/postAddFavorite" 
+            type="com.npower.dm.action.favorite.Device4FavoriteAction" 
+            parameter="method" 
+            validate="false" 
+            scope="request">
+    </action>
+	</action-mappings>
+</struts-config>
+

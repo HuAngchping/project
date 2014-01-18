@@ -1,0 +1,78 @@
+/*$Id: main_menu.css,v 1.4 2009/02/12 06:49:20 zhao Exp $*/
+.main_menu_header {
+	background-color: #468ed5;
+	background-image: url(./images/otas_dm_logo.png);
+	background-repeat: no-repeat;
+	background-position: top, left;
+	margin: 0;
+}
+
+.MainMenu tr th.selected a {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11.5px;
+	font-weight: bold;
+	color: #283e59;
+	text-decoration: none;
+}
+
+.MainMenu tr th.selected a:visited {
+	color: #283e59;
+	text-decoration: none;
+}
+
+.MainMenu tr th.selected a:hover {
+	color: #283e59;
+	text-decoration: underline;
+}
+
+.MainMenu tr th a {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11.5px;
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.MainMenu tr th a:visited {
+	color: white;
+}
+
+.MainMenu tr th a:hover {
+	color: white;
+	text-decoration: underline;
+}
+
+.MainMenu tr th.selected {
+    background-image: url(./images/bg_mnu_highlight.gif); 	 
+    background-repeat: repeat-x; 	 
+}
+
+.MainMenu tr th {
+    background-image: url(./images/bg_mnu_normal.gif); 	 
+    background-repeat: repeat-x; 	 
+    text-align: center;
+}
+
+.MainMenu tr td.selected {
+    background-image: url(./images/bg_mnu_highlight.gif); 	 
+    background-repeat: repeat-x; 	 
+}
+
+.MainMenu tr td {
+    background-image: url(./images/bg_mnu_normal.gif); 	 
+    background-repeat: repeat-x; 	 
+}
+
+.top_menu_black_link {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: yellow;
+}
+
+.top_menu_black_link:hover {
+	color: yellow;
+}
+
+.top_menu_black_link:visited {
+	color: yellow;
+}

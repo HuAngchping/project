@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  
+  <form-beans >
+  </form-beans>
+
+  <global-exceptions />
+  
+  <global-forwards >
+    <forward
+      name="welcome"
+      path="/wizard/cp/intro.do"
+      redirect="true"
+      contextRelative="true" />
+
+  </global-forwards>
+
+  
+  <action-mappings >
+    <!--  Ajax Action -->
+    <action 
+            parameter="method" 
+            path="/ajax" 
+            type="com.npower.dm.myportal.AjaxAction">
+    </action>
+
+    <!--  CheckCode Action -->
+    <action path="/common/checkcode" type="com.npower.dm.myportal.CheckCodeAction"></action>
+
+    <!-- Download Action -->
+    <action
+      parameter="method"
+      path="/download"
+      type="com.npower.dm.myportal.DownloadAction">
+      <forward name="DefaultIcon" path="/common/images/icons/default_model_icon.jpg" contextRelative="true" redirect="true"/>
+    </action>
+    
+    <!-- Service Entrance -->
+    <!--
+      CP 配置下发服务入口: 
+      参数表:
+        ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+          Name                   |  Required  |   Description
+        ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+          brand                        No          Phone Manufacturer ExternalID
+          model                        No          Phone Model ExternalID
+          carrierID                    Yes         Carrier External ID
+          countryID                    Yes         Country ID
+          profileCategoryID            Yes         Profile Category Name
+          profileID                    Yes         Profile External ID
+        ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        For example:
+        1. 提供型号
+           http://127.0.0.1:8080/OTAS-DM-MyPortal/cp/config/send.do?brand=NOKIA&model=6681&carrierID=ChinaMobile&countryID=1086&profileCategoryID=MMS&profileID=ChinaMobile.MMS.CMCC_MMS
+        2. 不提供型号
+           http://127.0.0.1:8080/OTAS-DM-MyPortal/cp/config/send.do?carrierID=ChinaMobile&countryID=1086&profileCategoryID=MMS&profileID=ChinaMobile.MMS.CMCC_MMS
+     -->
+    <action path="/cp/config/send" forward="/wizard/cp/InputPhone.do"></action>
+    
+    <!--
+      DM 自动安装软件服务入口: 
+      参数表:
+        ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+          Name                   |  Required  |   Description
+        ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+          brand                      No          Phone Manufacturer ExternalID
+          model                      No          Phone Model ExternalID
+          carrierID                  Yes         Carrier External ID
+          countryID                  Yes         Country ID
+          softwareID                 Yes         Software External ID
+        ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        For example:
+        1. 提供型号
+           http://127.0.0.1:8080/OTAS-DM-MyPortal/dm/software/install.do?brand=NOKIA&model=6120c&carrierID=ChinaMobile&countryID=1086&softwareID=MSN
+        2. 不提供型号
+           http://127.0.0.1:8080/OTAS-DM-MyPortal/dm/software/install.do?carrierID=ChinaMobile&countryID=1086&softwareID=MSN
+     -->
+    <action path="/dm/software/install" forward="/wizard/dm/InputPhone.do"></action>
+    <action path="/wap/dm/software/install" forward="/wap/wizard/dm/software/view.do?carrierID=ChinaMobile&amp;countryID=1086"></action>
+    
+    <!--
+      DM 自动安装软件, 查找软件服务入口: 
+      参数表:
+        ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+          Name                   |  Required  |   Description
+        ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+          brand                      No          Phone Manufacturer ExternalID
+          model                      No          Phone Model ExternalID
+          carrierID                  Yes         Carrier External ID
+          countryID                  Yes         Country ID
+        ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        For example:
+        1. 提供型号
+           http://127.0.0.1:8080/OTAS-DM-MyPortal/dm/software/find.do?brand=NOKIA&model=6120c&carrierID=ChinaMobile&countryID=1086
+        2. 不提供型号
+           http://127.0.0.1:8080/OTAS-DM-MyPortal/dm/software/find.do?carrierID=ChinaMobile&countryID=1086
+     -->
+    <action path="/dm/software/find" forward="/wizard/dm/SelectSoftware.do"></action>
+    <action path="/wap/dm/software/find" forward="/wap/wizard/dm/softwares.do?carrierID=ChinaMobile&amp;countryID=1086"></action>
+  </action-mappings>
+
+  
+  <!-- DM Security Extention, Tiles Processor -->
+  <controller processorClass="com.npower.dm.myportal.SecurityRequestProcessor"  />
+
+  <message-resources parameter="com.npower.dm.myportal.struts.ApplicationResources" />
+  
+  <!-- Struts Validator -->
+  <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+    <set-property property="pathnames" value="/WEB-INF/validator-rules.xml,
+                                              /WEB-INF/validation.xml" />
+  </plug-in>
+
+  <!-- Struts Menus -->
+  <plug-in className="net.sf.navigator.menu.MenuPlugIn">
+    <set-property property="menuConfig" value="/WEB-INF/menu-config.xml" />
+  </plug-in>
+    
+  <!-- Struts Tiles -->
+  <plug-in className="org.apache.struts.tiles.TilesPlugin">
+    <set-property property="definitions-parser-validate" value="false" />
+    <set-property property="definitions-parser-details" value="0" />
+    <set-property property="definitions-debug" value="0" />
+    <set-property property="definitions-config" value="/WEB-INF/tiles-defs-html.xml,
+                                                       /WEB-INF/tiles-defs-wml.xml" />
+  </plug-in>
+
+  <!-- Start-up Persistent Manager -->
+  <plug-in className="com.npower.dm.action.PersistentManagerPlugIn">
+  </plug-in>
+ 
+</struts-config>
+

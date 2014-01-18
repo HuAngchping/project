@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<tiles-definitions>
+
+    <!--                                                    -->
+    <!--  Base tile for Main page                           -->
+    <!--  +++++++++++++++++++++++++++++++++++++++++++++++   -->
+    <!--  |                                             |   -->
+    <!--  |       banner                                |   -->
+    <!--  |                                             |   -->
+    <!--  |   +++++++++++++++++++++++++++++++++++++++   |   -->
+    <!--  |   |                                     |   |   -->
+    <!--  |   |                                     |   |   -->
+    <!--  |   |                                     |   |   -->
+    <!--  |   |                                     |   |   -->
+    <!--  |   |                                     |   |   -->
+    <!--  |   |                                     |   |   -->
+    <!--  |   |                                     |   |   -->
+    <!--  |   |             MainContent             |   |   -->
+    <!--  |   |                                     |   |   -->
+    <!--  |   |                                     |   |   -->
+    <!--  |   |                                     |   |   -->
+    <!--  |   |                                     |   |   -->
+    <!--  |   |                                     |   |   -->
+    <!--  |   |                                     |   |   -->
+    <!--  |   |                                     |   |   -->
+    <!--  |   |                                     |   |   -->
+    <!--  |   |                                     |   |   -->
+    <!--  |   +++++++++++++++++++++++++++++++++++++++   |   -->
+    <!--  |                                             |   -->
+    <!--  |    footer                                   |   -->
+    <!--  +++++++++++++++++++++++++++++++++++++++++++++++   -->
+    
+    <definition name="otas.dm.myportal.main.base.html" path="/WEB-INF/jsp/html/common/layout.jsp">
+		<put name="title">Change_Me</put>
+        <put name="banner" value="Change_Me" />
+        <put name="footer" value="Change_Me" />
+        <put name="MainContent" value="Change_Me" />
+    </definition>
+    
+    <!-- Error page -->
+    <definition name="tile.html.global.error" extends="otas.dm.myportal.main.base.html">
+        <put name="title">tile.global.error.pageTitle</put>
+        <put name="MainContent" value="/WEB-INF/jsp/html/common/error.jsp" />
+    </definition>
+    
+    <!-- ClientProv Wizards -->
+    <!-- Introduction page -->
+    <definition name="tile.html.cp.wizard.introduction" extends="otas.dm.myportal.main.base.html">
+        <put name="title">tile.cp.wizard.introduction.page.title</put>
+        <put name="MainContent" value="/WEB-INF/jsp/html/cp/wizard/introduction.jsp" />
+    </definition>
+    <!-- Select carrier page -->
+    <definition name="tile.html.cp.wizard.select.carrier" extends="otas.dm.myportal.main.base.html">
+        <put name="title">tile.cp.wizard.select.carrier.page.title</put>
+        <put name="MainContent" value="/WEB-INF/jsp/html/cp/wizard/selectCarrier.jsp" />
+    </definition>
+    <!-- Select country page -->
+    <definition name="tile.html.cp.wizard.select.country" extends="otas.dm.myportal.main.base.html">
+        <put name="title">tile.cp.wizard.select.country.page.title</put>
+        <put name="MainContent" value="/WEB-INF/jsp/html/cp/wizard/selectCountry.jsp" />
+    </definition>
+    <!-- Select device model page -->
+    <definition name="tile.html.cp.wizard.select.model" extends="otas.dm.myportal.main.base.html">
+        <put name="title">tile.cp.wizard.select.model.page.title</put>
+        <put name="MainContent" value="/WEB-INF/jsp/html/cp/wizard/selectModel.jsp" />
+    </definition>
+    <!-- Select category page -->
+    <definition name="tile.html.cp.wizard.select.profileCategory" extends="otas.dm.myportal.main.base.html">
+        <put name="title">tile.cp.wizard.select.profileCategory.page.title</put>
+        <put name="MainContent" value="/WEB-INF/jsp/html/cp/wizard/selectProfileCategory.jsp" />
+    </definition>
+    <!-- Select profile page -->
+    <definition name="tile.html.cp.wizard.select.profile" extends="otas.dm.myportal.main.base.html">
+        <put name="title">tile.cp.wizard.select.profile.page.title</put>
+        <put name="MainContent" value="/WEB-INF/jsp/html/cp/wizard/selectProfile.jsp" />
+    </definition>
+    <!-- Set attributes for profile page -->
+    <definition name="tile.html.cp.wizard.input.profile.attribute" extends="otas.dm.myportal.main.base.html">
+        <put name="title">tile.cp.wizard.input.profile.attribute.page.title</put>
+        <put name="MainContent" value="/WEB-INF/jsp/html/cp/wizard/profile.jsp" />
+    </definition>
+    <!-- Input mobile phone number page -->
+    <definition name="tile.html.cp.wizard.input.phone" extends="otas.dm.myportal.main.base.html">
+        <put name="title">tile.cp.wizard.input.phone.page.title</put>
+        <put name="MainContent" value="/WEB-INF/jsp/html/cp/wizard/inputPhone.jsp" />
+    </definition>
+    <!-- CP submit page -->
+    <definition name="tile.html.cp.wizard.completed" extends="otas.dm.myportal.main.base.html">
+        <put name="title">tile.cp.wizard.success.page.title</put>
+        <put name="MainContent" value="/WEB-INF/jsp/html/cp/wizard/success.jsp" />
+    </definition>
+    
+    <!-- MSM Related definitions -->
+    <!-- Page: select software -->
+    <definition name="tile.html.dm.wizard.select.software" extends="otas.dm.myportal.main.base.html">
+        <put name="title">tile.dm.wizard.select.software.page.title</put>
+        <put name="MainContent" value="/WEB-INF/jsp/html/dm/wizard/selectSoftware.jsp" />
+    </definition>
+    <!-- Page: input mobile phone number -->
+    <definition name="tile.html.dm.wizard.input.phone" extends="otas.dm.myportal.main.base.html">
+        <put name="title">tile.dm.wizard.input.phone.page.title</put>
+        <put name="MainContent" value="/WEB-INF/jsp/html/dm/wizard/inputPhone.jsp" />
+    </definition>
+    <!-- Page: DM job submitted -->
+    <definition name="tile.html.dm.wizard.software.install.dm.completed" extends="otas.dm.myportal.main.base.html">
+        <put name="title">tile.dm.wizard.success.page.title</put>
+        <put name="MainContent" value="/WEB-INF/jsp/html/dm/wizard/success4software_install.jsp" />
+    </definition>
+    <!-- Page: Select download method  -->
+    <definition name="tile.html.dm.wizard.software.install.wappush.view" extends="otas.dm.myportal.main.base.html">
+        <put name="title">tile.dm.wizard.success.page.title</put>
+        <put name="MainContent" value="/WEB-INF/jsp/html/dm/wizard/wappush4software_install.jsp" />
+    </definition>
+    <!-- Page: WapPush message sent -->
+    <definition name="tile.html.dm.wizard.software.install.wappush.completed" extends="otas.dm.myportal.main.base.html">
+        <put name="title">tile.dm.wizard.success.page.title</put>
+        <put name="MainContent" value="/WEB-INF/jsp/html/dm/wizard/success4wappush.jsp" />
+    </definition>
+    <!-- Page: No Avail software for current device model -->
+    <definition name="tile.html.dm.wizard.software.install.no_availiable_package" extends="otas.dm.myportal.main.base.html">
+        <put name="title">tile.dm.wizard.no_availiable_package.page.title</put>
+        <put name="MainContent" value="/WEB-INF/jsp/html/dm/wizard/no_availiable_package.jsp" />
+    </definition>
+    <!-- Page: Unkown software -->
+    <definition name="tile.html.dm.wizard.software.install.invalid_software" extends="otas.dm.myportal.main.base.html">
+        <put name="title">tile.dm.wizard.invalid_software.page.title</put>
+        <put name="MainContent" value="/WEB-INF/jsp/html/dm/wizard/invalid_software.jsp" />
+    </definition>
+    
+</tiles-definitions>

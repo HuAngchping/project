@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<daemons>
+
+  <!-- Start-up JobDispatcher Daemon -->
+  <plug-in className="com.npower.dm.daemon.JobDispatcherDaemon">
+    <!-- Flag for disable this plugin -->
+    <set-property property="disabled" value="true" />
+    
+    <!-- Interval for heart bet in milleseconds -->
+    <set-property property="interval" value="60000" />
+    <!-- Delay for start daemon in milleseconds -->
+    <set-property property="delay" value="60000" />
+  </plug-in>
+  
+  <!-- Start-up JobEventListener Daemon -->
+  <plug-in className="com.npower.dm.daemon.JobEventListenerDaemon">
+    <!-- Flag for disable this plugin -->
+    <set-property property="disabled" value="false" />
+  </plug-in>
+  
+  <!-- Start-up SMS Event Observer Daemon in JMS mode -->
+  <plug-in className="com.npower.dm.daemon.JmsSmsSenderObserverDaemon">
+    <!-- Flag for disable this plugin -->
+    <set-property property="disabled" value="false" />
+  </plug-in>
+  
+  <!-- Start-up SMS Multiplexor Daemon -->
+  <plug-in className="com.npower.dm.multiplexor.Multiplexor">
+    <!-- Flag for disable this plugin -->
+    <set-property property="disabled" value="true" />
+    <set-property property="mappingFile" value="./config/daemons/multiplexor.mapping.xml" />
+    <set-property property="incomingQueueName" value="Multiplexor_Incomming" />
+  </plug-in>
+  
+  <!-- Start-up SMS Simple Responder#1 -->
+  <plug-in className="com.npower.dm.responder.SimpleResponderDaemon">
+    <!-- Flag for disable this plugin -->
+    <set-property property="disabled" value="true" />
+    <set-property property="incomingQueueName" value="A" />
+    <set-property property="name" value="A" />
+  </plug-in>
+
+  <!-- Start-up SMS Simple Responder#2 -->
+  <plug-in className="com.npower.dm.responder.SimpleResponderDaemon">
+    <!-- Flag for disable this plugin -->
+    <set-property property="disabled" value="true" />
+    <set-property property="incomingQueueName" value="B" />
+    <set-property property="name" value="B" />
+  </plug-in>
+
+  <!-- Start-up SMS Simple Responder#3 -->
+  <plug-in className="com.npower.dm.responder.SimpleResponderDaemon">
+    <!-- Flag for disable this plugin -->
+    <set-property property="disabled" value="true" />
+    <set-property property="name" value="C" />
+    <!-- Queue name for incoming message -->
+    <set-property property="incomingQueueName" value="C" />
+  </plug-in>
+
+  <!-- Start-up SMS Incomming listener in JMS mode -->
+  <plug-in className="com.npower.dm.daemon.DeviceAutoEnrollmentListenerDaemon">
+    <!-- Flag for disable this plugin -->
+    <set-property property="disabled" value="false" />
+    <set-property property="name" value="DeviceAutoEnrollment" />
+    <!-- Queue name for incoming message -->
+    <set-property property="incomingQueueName" value="OTAS_DM_DEVICE_ENROLL_QUEUE"/>
+
+    <set-property property="defaultCarrierExtId" value="ChinaMobile" />
+    <set-property property="defaultClientUsername" value="otasdm" />
+    <set-property property="defaultClientPassword" value="otasdm" />
+    <set-property property="defaultServerPassword" value="otasdm" />
+  </plug-in>
+   
+  <plug-in className="com.npower.dm.responder.OtaResponderDaemon">
+    <!-- Flag for disable this plugin -->
+    <set-property property="disabled" value="false" />
+    <set-property property="name" value="OtaResponder" />
+    <!-- Queue name for incoming message -->
+    <set-property property="incomingQueueName" value="OTAS_DM_OTA_RESPONDER_QUEUE"/>
+
+    <set-property property="defaultTargetCarrier" value="OTA_Test_Sudan" />
+    <set-property property="defaultLanguage" value="en" />
+    <!-- Values: NETWPIN, USERPIN  -->
+    <set-property property="defaultPinTypeByString" value="USERPIN" />
+    <set-property property="defaultUserPin" value="1234" />
+    <set-property property="alwaysCPMode" value="true" />
+    <!-- true - 表示去除来源终端MSISDN前缀中包含的国家前缀号码 -->
+    <set-property property="eraseCountryCode" value="false" />
+  </plug-in>
+
+  <!-- Start-up SGSN File Monitor Daemon -->
+  <plug-in className="com.npower.add.sgsn.SGSNDaemonPlugIn">
+    <!-- Flag for disable this plugin -->
+    <set-property property="disabled" value="false" />
+    
+    <set-property property="directory" value="./incoming/sgsn" />
+    <!-- 扫描目录, 发现新文件的间隔时间(秒) -->
+    <set-property property="intervalInSeconds" value="2" />
+    <set-property property="enable" value="true" />
+    <set-property property="carrierExternalID" value="ChinaMobile" />
+    <set-property property="profileConfigExternalID" value="ChinaMobile.Proxy.CMWAP" />
+    <!-- 对于重复出现的设备, 避免重复发送的延迟时间间隔, 即在该时间间隔内, 重复出现的设备不再重复发送配置信息 -->
+    <set-property property="sendIntervalInMinutes" value="10" />
+    <!-- 提取上一次发送时间的任务标志, 当任务标志为下面定义的标志时, 被认为已经发送过配置信息 -->
+    <set-property property="successFlags" value="queued,sent,received,success"/> 
+  </plug-in>
+  
+  <!-- Start-up CDR File Monitor Daemon -->
+  <plug-in className="com.npower.unicom.CDRsCollectDaemonPlugIn">
+    <!-- Flag for disable this plugin -->
+    <set-property property="disabled" value="false" />
+    
+    <set-property property="directory4req" value="./incoming/cdr/request" />
+    <set-property property="intervalInSeconds" value="2" />
+    <set-property property="enable" value="true" />
+    <set-property property="carrierExternalID" value="ChinaMobile" />
+    <set-property property="directory4ResRight" value="./incoming/cdr/response/right" />
+    <set-property property="directory4ResBad" value="./incoming/cdr/response/bad" />
+    <set-property property="directory4ResSemiwrong" value="./incoming/cdr/response/semiwrong" />    
+  </plug-in>
+  
+  <!-- Daemon for Unicom Sync Service: Model Export -->
+  <plug-in className="com.npower.unicom.sync.model.ModelExportDaemonPlugIn">
+    <!-- Flag for disable this plugin -->
+    <set-property property="disabled" value="false" />
+    
+    <set-property property="directory" value="./output/unicom/model" />
+    <!-- Time pattern: yyyy-MM-dd HH:mm:ss -->
+    <set-property property="timePattern" value="*-*-* *:*0:00,*-*-* *:*5:00" />
+  </plug-in>
+  
+  <!-- Daemon for Unicom Sync Service: Model Import -->
+  <plug-in className="com.npower.unicom.sync.model.ImportModelPlugIn">
+    <!-- Flag for disable this plugin -->
+    <set-property property="disabled" value="false" />
+    
+    <set-property property="directory" value="./incoming/unicom/model" />
+    <set-property property="intervalInSeconds" value="10" />
+  </plug-in>
+  
+  <!-- Daemon for Unicom Sync Service: Firmware Export -->
+  <plug-in className="com.npower.unicom.sync.firmware.FirmwareExportDaemonPlugIn">
+    <!-- Flag for disable this plugin -->
+    <set-property property="disabled" value="false" />
+    
+    <set-property property="directory" value="./output/unicom/firmware" />
+    <!-- Time pattern: yyyy-MM-dd HH:mm:ss -->
+    <set-property property="timePattern" value="*-*-* *:*0:00,*-*-* *:*5:00" />
+  </plug-in>
+  
+  <!-- Daemon for Unicom Sync Service: Firmware Import -->
+  <plug-in className="com.npower.unicom.sync.firmware.FirmwareImportDaemonPlugIn">
+    <!-- Flag for disable this plugin -->
+    <set-property property="disabled" value="false" />
+    
+    <set-property property="directory" value="./incoming/unicom/firmware" />
+    <set-property property="intervalInSeconds" value="10" />
+  </plug-in>
+
+  <!-- Daemon for Unicom Sync Service: Device Export -->
+  <plug-in className="com.npower.unicom.sync.device.DeviceExportDaemonPlugIn">
+    <!-- Flag for disable this plugin -->
+    <set-property property="disabled" value="false" />
+    
+    <set-property property="directory" value="./output/unicom/device" />
+    <!-- Time pattern: yyyy-MM-dd HH:mm:ss -->
+    <set-property property="timePattern" value="*-*-* *:*0:00,*-*-* *:*5:00" />
+  </plug-in>
+  
+  
+  <!-- Daemon for Unicom Sync Service: Device Import -->
+  <plug-in className="com.npower.unicom.sync.device.DeviceImportDaemonPlugIn">
+    <!-- Flag for disable this plugin -->
+    <set-property property="disabled" value="false" />
+    
+    <set-property property="directory" value="./incoming/unicom/device" />
+    <set-property property="intervalInSeconds" value="10" />
+  </plug-in>
+
+</daemons>

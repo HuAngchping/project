@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans>
+    <form-bean name="SearchSoftwareVendorsForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="searchName" type="java.lang.String" />
+      <form-property name="searchText" type="java.lang.String" />
+      <form-property name="recordsPerPage" type="java.lang.Integer" />
+    </form-bean>
+    
+    <form-bean name="VendorForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="description" type="java.lang.String" />
+      <form-property name="webSite" type="java.lang.String" />
+      <form-property name="id" type="java.lang.String" />
+      <form-property name="action" type="java.lang.String" />
+    </form-bean>  
+    
+    <form-bean name="RecommendsForm" 
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="id" type="java.lang.String"/>
+    </form-bean>
+    
+    <form-bean name="RecommendForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="software" type="java.lang.String"/>
+      <form-property name="categoryId" type="java.lang.String"/>
+      <form-property name="recommendIds" type="java.lang.String[]"/>
+    </form-bean>
+    
+    <form-bean name="SearchSoftwareCategoriesForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="searchName" type="java.lang.String" />
+      <form-property name="searchText" type="java.lang.String" />
+      <form-property name="recordsPerPage" type="java.lang.Integer" />
+      <form-property name="nodeID" type="java.lang.String" /> 
+    </form-bean>
+    
+    <form-bean name="CategoryForm"
+      type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="description" type="java.lang.String" />
+      <form-property name="parentId" type="java.lang.String" />     
+      <form-property name="id" type="java.lang.String" />
+    </form-bean>
+    
+    <form-bean name="CategoryTreeForm" type="org.apache.struts.validator.DynaValidatorForm">
+         <form-property name="nodeID" type="java.lang.String" />
+    </form-bean>
+    
+    <form-bean name="SoftwareForm" type="org.apache.struts.validator.DynaValidatorForm"> 
+        <form-property name="id" type="java.lang.String"/>
+        <form-property name="externalId" type="java.lang.String"/>
+        <form-property name="name" type="java.lang.String"/>
+        <form-property name="version" type="java.lang.String"/>
+        <form-property name="status" type="java.lang.String"/>
+        <form-property name="licenseType" type="java.lang.String"/>
+        <form-property name="description" type="java.lang.String"/>
+        <form-property name="categoryID" type="java.lang.String[]"/>
+        <form-property name="vendorID" type="java.lang.String"/>
+    </form-bean>
+    
+    <form-bean name="SoftwarePackageForm" type="org.apache.struts.validator.DynaValidatorForm"> 
+        <form-property name="action" type="java.lang.String"/>
+        <!-- Software ID -->
+        <form-property name="softwareID" type="java.lang.String"/>
+        <!-- SoftwarePackage ID -->
+        <form-property name="packageID" type="java.lang.String"/>
+        <form-property name="manufacturerID" type="java.lang.String"/>
+        <form-property name="modelID" type="java.lang.String[]"/>
+        <form-property name="targetModelIDs" type="java.lang.String[]"/>
+        <form-property name="modelFamilyID" type="java.lang.String[]"/>
+        <form-property name="targetModelFamilyIDs" type="java.lang.String[]"/>
+        <form-property name="modelClassificationID" type="java.lang.Long"/>
+        <form-property name="targetModelClassificationIDs" type="java.lang.Long[]"/>
+        <form-property name="language" type="java.lang.String"/>
+        <form-property name="mimeType" type="java.lang.String"/>
+        <form-property name="url" type="java.lang.String"/>
+        <form-property name="binaryFile" type="org.apache.struts.upload.FormFile"/>
+        <form-property name="installationOptions" type="java.lang.String"/>
+        <form-property name="status" type="java.lang.String"/>
+        <form-property name="name" type="java.lang.String"/>
+        <form-property name="description" type="java.lang.String"/>
+        <!-- remote or local mode -->
+        <form-property name="storeMode" type="java.lang.String"/>
+    </form-bean>
+
+    <form-bean name="SearchSoftwareForm" type="org.apache.struts.validator.DynaValidatorForm">
+        <form-property name="name" type="java.lang.String" /> 
+        <form-property name="searchVendor" type="java.lang.String"/>
+      <form-property name="searchCategory" type="java.lang.String" /> 
+      <form-property name="searchName" type="java.lang.String" />
+      <form-property name="searchStatus" type="java.lang.String" />
+      <form-property name="searchText" type="java.lang.String" />
+      <form-property name="recordsPerPage" type="java.lang.Integer" />
+    </form-bean>
+
+    <form-bean name="SoftwareTreeForm" type="org.apache.struts.validator.DynaValidatorForm">
+         <form-property name="nodeID" type="java.lang.String" />
+    </form-bean>
+
+    <form-bean name="ScreenShotForm" type="org.apache.struts.validator.DynaValidatorForm">
+        <form-property name="screenShotID" type="java.lang.String" /> 
+        <form-property name="softwareID" type="java.lang.String"/>
+        <form-property name="description" type="java.lang.String"/>     
+        <form-property name="binaryFile" type="org.apache.struts.upload.FormFile"/>               
+    </form-bean>
+    
+    <form-bean name="UploadFileForm" type="org.apache.struts.validator.DynaValidatorForm">
+        <form-property name="binaryFile" type="org.apache.struts.upload.FormFile"/>
+        <form-property name="installationOptions" type="java.lang.String"/>
+    </form-bean>
+    <form-bean name="CreateUploadFileForm" type="org.apache.struts.validator.DynaValidatorForm">
+        <form-property name="externalId" type="java.lang.String"/>
+        <form-property name="categoryID" type="java.lang.String[]"/>
+        <form-property name="status" type="java.lang.String"/>
+        <form-property name="licenseType" type="java.lang.String"/>
+        <form-property name="description" type="java.lang.String"/>
+        <form-property name="language" type="java.lang.String"/>
+        <form-property name="mimeType" type="java.lang.String"/>
+        <form-property name="installationOptions" type="java.lang.String"/>
+        <form-property name="classification" type="java.lang.String"/>
+        <form-property name="vendor" type="java.lang.String"/>
+        <form-property name="name" type="java.lang.String"/>
+        <form-property name="version" type="java.lang.String"/>
+    </form-bean>
+    
+        
+  </form-beans>
+
+  <action-mappings>
+    <action attribute="SearchSoftwareVendorsForm"
+      name="SearchSoftwareVendorsForm" path="/software/vendors"
+      scope="request" type="com.npower.dm.action.software.VendorsAction"
+      validate="false" roles="authenticated">
+      <forward name="display" path="tile.software.vendors"
+        contextRelative="true" />
+    </action>
+
+    <action attribute="VendorForm" name="VendorForm"
+      path="/software/EditVendor" scope="request"
+      type="com.npower.dm.action.software.EditVendorAction" validate="false"
+      roles="authenticated">
+      <forward name="edit" path="tile.software.vendor.edit"
+        contextRelative="true" />
+    </action>
+
+    <action path="/software/SaveVendor" parameter="action"
+      attribute="VendorForm" input="/software/EditVendor.do" name="VendorForm"
+      scope="request" type="com.npower.dm.action.software.SaveVendorAction"
+      validate="true" roles="authenticated">
+      <forward name="success" path="/software/vendors.do"
+        contextRelative="true" />
+      <forward name="cancel" path="/software/vendors.do"
+        contextRelative="true" />
+    </action>
+
+    <action attribute="VendorForm" name="VendorForm"
+      path="/software/ViewVendor" scope="request"
+      type="com.npower.dm.action.software.ViewVendorAction" validate="false"
+      roles="authenticated">
+      <forward name="view" path="tile.software.vendor.view"
+        contextRelative="true" />
+    </action>
+
+    <action parameter="action" attribute="VendorForm"
+      input="/software/vendors.do" name="VendorForm"
+      path="/software/RemoveVendor" scope="request"
+      type="com.npower.dm.action.software.RemoveVendorAction"
+      validate="false" roles="authenticated">
+      <forward name="success" path="/software/vendors.do"
+        contextRelative="true" />
+    </action>
+    <!-- recommend -->
+    <action path="/software/recommends"
+            validate="false" roles="authenticated"
+            name="RecommendsForm" attribute="RecommendsForm"
+            type="com.npower.dm.action.software.RecommendsAction" scope="request">
+      <forward name="display" path="tile.software.recommends"/>
+      <forward name="view" path="tile.software.recommends.view"/>
+    </action>
+    
+    <action path="/software/recommendEdit"
+            validate="false" roles="authenticated"
+            name="RecommendForm" attribute="RecommendForm"
+            type="com.npower.dm.action.software.RecommendEditAction" scope="request">
+      <forward name="edit" path="tile.software.recommends.edit"/>
+    </action>
+    
+    <action path="/software/recommendSave"
+            validate="false" roles="authenticated"
+            name="RecommendForm" attribute="RecommendForm"
+            type="com.npower.dm.action.software.RecommendSaveAction" scope="request">
+      <forward name="view" path="tile.software.recommends.view"/>
+      <forward name="viewroot" path="/software/recommends.do"/>
+    </action>
+    
+    <!-- category -->
+    <action attribute="SearchSoftwareCategoriesForm"
+      name="SearchSoftwareCategoriesForm"
+      path="/software/categories" scope="request"
+      type="com.npower.dm.action.software.CategoriesAction"
+      validate="false" roles="authenticated">
+      <forward name="display" path="tile.software.categories" contextRelative="true" />
+    </action>
+
+    <action parameter="action" attribute="CategoryForm" name="CategoryForm"
+      path="/software/category" scope="request"
+      type="com.npower.dm.action.software.CategoryAction"
+      validate="false" roles="authenticated">
+      <forward name="view" path="tile.software.category.view" contextRelative="true" />
+      <forward name="display" path="/software/categories.do" contextRelative="true" />
+      <forward name="edit" path="tile.software.category.edit" contextRelative="true" />     
+    </action>
+
+    <action attribute="CategoryForm" name="CategoryForm"
+      path="/software/categoryEdit" scope="request"
+      type="com.npower.dm.action.software.CategoryEditAction"
+      validate="false" roles="authenticated">
+      <forward name="edit" path="tile.software.category.edit" contextRelative="true" />
+      <forward name="display" path="/software/categories.do" contextRelative="true" />      
+    </action> 
+    
+    <action attribute="CategoryForm" name="CategoryForm"
+      path="/software/categorySave" input="/software/categoryEdit.do" scope="request"
+      type="com.npower.dm.action.software.CategorySavaAction"
+      validate="true" roles="authenticated">
+      <forward name="view" path="tile.software.category.view" contextRelative="true" />
+    </action>
+
+    <!-- Software -->   
+    <action 
+      attribute="SearchSoftwareForm"
+      name="SearchSoftwareForm"
+      path="/software/softwares" scope="request"
+      type="com.npower.dm.action.software.SoftwaresAction"
+      validate="false" roles="authenticated">
+      <forward name="display" path="tile.software.softwares" contextRelative="true" />
+    </action>
+
+    <action parameter="action" attribute="SoftwareForm" name="SoftwareForm"
+      path="/software/software" scope="request"
+      type="com.npower.dm.action.software.SoftwareAction"
+      validate="false" roles="authenticated">
+      <forward name="view" path="tile.software.software.view" contextRelative="true" />
+      <forward name="display" path="/software/softwares.do" contextRelative="true" />     
+    </action>
+
+    <action attribute="SoftwareForm" name="SoftwareForm"
+      path="/software/editSoftware" scope="request"
+      type="com.npower.dm.action.software.EditSoftwareAction"
+      validate="false" roles="authenticated">
+      <forward name="edit" path="tile.software.software.edit" contextRelative="true" />
+      <forward name="display" path="/software/softwares.do" contextRelative="true" />     
+    </action> 
+    
+    <action attribute="SoftwareForm" name="SoftwareForm"
+      path="/software/savaSoftware" input="/software/editSoftware.do" scope="request"
+      type="com.npower.dm.action.software.SavaSoftwareAction"
+      validate="true" roles="authenticated">
+      <forward name="display" path="/software/software.do" contextRelative="true" />      
+    </action>
+    
+    <action attribute="SoftwareTreeForm"
+      name="SoftwareTreeForm"
+      path="/software/softwareTree" scope="request"
+      parameter="action"
+      type="com.npower.dm.action.software.SoftwareTreeAction"
+      validate="false" roles="authenticated">
+      <forward name="display" path="tile.software.softwareTree" contextRelative="true" />     
+    </action>
+            
+    <action attribute="SoftwarePackageForm" 
+        name="SoftwarePackageForm"
+      path="/software/package/edit" scope="request"
+      type="com.npower.dm.action.software.EditPackageAction" validate="false"
+      roles="authenticated">
+      <forward name="edit" path="tile.software.package.edit" contextRelative="true" />
+    </action>
+
+    <action path="/software/package/save" 
+        parameter="action"
+      attribute="SoftwarePackageForm"
+        name="SoftwarePackageForm"
+            input="/software/package/edit.do"
+      scope="request" type="com.npower.dm.action.software.SavePackageAction"
+      validate="true"
+            roles="authenticated">
+      <forward name="success" path="/software/package/view.do" contextRelative="true" />
+      <forward name="cancel" path="/software/software.do" contextRelative="true" />
+    </action>
+
+    <action attribute="SoftwarePackageForm" 
+        name="SoftwarePackageForm"
+      path="/software/package/view"
+            scope="request"
+      type="com.npower.dm.action.software.ViewPackageAction"
+            validate="false"
+      roles="authenticated">
+      <forward name="view" path="tile.software.package.view" contextRelative="true" />
+    </action>
+
+    <action attribute="SoftwarePackageForm"
+            name="SoftwarePackageForm"
+      input="/software/softwares.do"
+      path="/software/package/remove"
+      scope="request"
+      type="com.npower.dm.action.software.RemovePackageAction"
+      validate="false" roles="authenticated">
+      <forward name="success" path="/software/software.do" contextRelative="true" />
+    </action>   
+
+    <action parameter="action" 
+        attribute="ScreenShotForm" 
+        name="ScreenShotForm"
+      path="/software/screenShot" 
+      scope="request"
+      type="com.npower.dm.action.software.ScreenShotAction"
+      validate="false" roles="authenticated">
+      <forward name="view" path="tile.software.screenshot.view" contextRelative="true" />
+      <forward name="success" path="/software/software.do?action=view" contextRelative="true" />      
+    </action>
+
+    <action attribute="ScreenShotForm" 
+        name="ScreenShotForm"
+      path="/software/editScreenShot" 
+      scope="request"
+      type="com.npower.dm.action.software.EditScreenShotAction"
+      validate="false" roles="authenticated">
+      <forward name="edit" path="tile.software.screenshot.edit" contextRelative="true" />
+      <forward name="cancel" path="/software/software.do" contextRelative="true" />     
+    </action> 
+    
+    <action attribute="ScreenShotForm" 
+        name="ScreenShotForm"
+      path="/software/savaScreenShot" 
+      input="/software/editScreenShot.do" 
+      scope="request"
+      type="com.npower.dm.action.software.SavaScreenShotAction"
+      validate="true" roles="authenticated">
+      <forward name="display" path="/software/software.do" contextRelative="true" />
+    </action>
+    
+    <!-- Export Software Date -->
+    <action 
+      path="/exportSoftware"
+      type="com.npower.dm.action.software.ExportSoftwareAction"
+      parameter="action" 
+      attribute="SoftwareForm" name="SoftwareForm"
+      scope="request"
+      validate="false" roles="authenticated">
+    </action>
+    <action 
+      path="/exportSoftwareForward"       
+      type="com.npower.dm.action.software.ExportSoftwareForwardAction" 
+      attribute="SoftwareForm" name="SoftwareForm"
+      scope="request"
+      validate="false" roles="authenticated">
+      <forward name="forward" path="tile.software.export" />
+    </action>
+    <action 
+      path="/uploadFileForward" 
+      type="com.npower.dm.action.software.UploadFileForwardAction" >
+      <forward name="forward" path="tile.software.upload" />
+    </action>
+
+      
+    <action 
+      path="/uploadFile" 
+      type="com.npower.dm.action.software.UploadFileAction" 
+      attribute="UploadFileForm"
+      name="UploadFileForm"
+      input="/uploadFileForward.do"
+      scope="request"
+      validate="true" 
+      roles="authenticated">
+      <forward name="viewSoftwareInfo" path="tile.software.upload.view"/>
+    </action>
+    <action 
+      path="/createUploadFile" 
+      type="com.npower.dm.action.software.CreateUploadFileAction" 
+      attribute="CreateUploadFileForm"
+      name="CreateUploadFileForm"
+      scope="request"
+      roles="authenticated">
+      <forward name="success" path="tile.software.upload.package.view" />
+    </action>   
+
+    
+  </action-mappings>
+
+</struts-config>
+
+

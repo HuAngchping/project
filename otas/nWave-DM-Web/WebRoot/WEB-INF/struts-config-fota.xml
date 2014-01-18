@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans>
+	  <form-bean name="ModelUpdatesForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="modelID" type="java.lang.String" />
+    </form-bean>
+    <form-bean name="ModelUpdateForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="updateID" type="java.lang.String" />
+      <form-property name="modelID" type="java.lang.String" />
+      <form-property name="fromVersion" type="java.lang.String" />
+      <form-property name="toVersion" type="java.lang.String" />
+      <form-property name="status" type="java.lang.String" />
+      <form-property name="description" type="java.lang.String" />
+      <form-property name="imageFile" type="org.apache.struts.upload.FormFile" />
+      <!-- <form-property name="imageFile" type="java.lang.String" /> -->
+    </form-bean>
+    <form-bean name="FotaUpdateForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="updateID" type="java.lang.String" />
+      <form-property name="manufacturerID" type="java.lang.String" />
+      <form-property name="modelID" type="java.lang.String" />
+      <form-property name="fromVersion" type="java.lang.String" />
+      <form-property name="toVersion" type="java.lang.String" />
+      <form-property name="status" type="java.lang.String" />
+      <form-property name="description" type="java.lang.String" />
+      <form-property name="imageFile" type="org.apache.struts.upload.FormFile" />
+      <!-- <form-property name="imageFile" type="java.lang.String" /> -->
+    </form-bean>
+  <form-bean name="SearchFOTAUpdatesForm" type="org.apache.struts.validator.DynaValidatorForm">
+    <form-property name="searchManufacturerID" type="java.lang.String" />
+    <form-property name="searchModelID" type="java.lang.String" />
+    <form-property name="searchFromVersion" type="java.lang.String" />
+    <form-property name="searchToVersion" type="java.lang.String" />
+    <form-property name="searchStatus" type="java.lang.String" />
+    <form-property name="searchText" type="java.lang.String" />
+    <form-property name="recordsPerPage" type="java.lang.Integer" />
+  </form-bean>
+  </form-beans>
+
+  <action-mappings>
+	<!--  Related with Model Updates  -->
+    <action
+      attribute="ModelUpdatesForm"
+      name="ModelUpdatesForm"
+      path="/model/updateimages"
+      scope="request"
+      type="com.npower.dm.action.model.ModelUpdateImagesAction"
+      roles="authenticated">
+      <forward
+        name="list"
+        path="tile.model.fota.updates"
+        contextRelative="true" />
+    </action>
+    <!-- Edit Firmware Update -->
+    <action
+      attribute="ModelUpdateForm"
+      name="ModelUpdateForm"
+      path="/model/editUpdate"
+      scope="request"
+      type="com.npower.dm.action.model.ModelEditFirmwareAction"
+      roles="authenticated">
+      <forward
+        name="edit"
+        path="tile.model.fota.update.edit"
+        contextRelative="true" />
+    </action>
+    <!-- View Firmware Update -->
+    <action
+      attribute="ModelUpdateForm"
+      name="ModelUpdateForm"
+      path="/model/viewUpdate"
+      scope="request"
+      type="com.npower.dm.action.model.ModelViewFirmwareAction"
+      roles="authenticated">
+      <forward
+        name="view"
+        path="tile.model.fota.update.view"
+        contextRelative="true" />
+    </action>
+    <action
+      attribute="ModelUpdateForm"
+      name="ModelUpdateForm"
+      path="/model/removeUpdate"
+      scope="request"
+      type="com.npower.dm.action.model.ModelRemoveFirmwareAction"
+      roles="authenticated">
+      <forward
+        name="list"
+        path="/model/updateimages.do"
+        contextRelative="true" />
+    </action>
+    <action
+      attribute="ModelUpdateForm"
+      name="ModelUpdateForm"
+      path="/model/saveUpdate"
+      scope="request"
+      type="com.npower.dm.action.model.ModelSaveFirmwareAction"
+      roles="authenticated">
+      <forward
+        name="success"
+        path="tile.model.fota.update.success"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/model/updateimages.do"
+        contextRelative="true" />
+    </action>
+    
+    <!-- Related with FOTA Updates -->
+    <action
+      attribute="SearchFOTAUpdatesForm"
+      name="SearchFOTAUpdatesForm"
+      path="/updates/updateimages"
+      scope="request"
+      type="com.npower.dm.action.updates.UpdateImagesAction"
+      roles="authenticated">
+      <forward
+        name="list"
+        path="tile.fota.updates"
+        contextRelative="true" />
+    </action>
+    <action
+      attribute="FotaUpdateForm"
+      name="FotaUpdateForm"
+      path="/updates/editUpdate"
+      scope="request"
+      type="com.npower.dm.action.updates.EditFirmwareAction"
+      roles="authenticated">
+      <forward
+        name="edit"
+        path="tile.fota.update.edit"
+        contextRelative="true" />
+    </action>
+    <action
+      attribute="FotaUpdateForm"
+      name="FotaUpdateForm"
+      path="/updates/viewUpdate"
+      scope="request"
+      type="com.npower.dm.action.updates.ViewFirmwareAction"
+      roles="authenticated">
+      <forward
+        name="view"
+        path="tile.fota.update.view"
+        contextRelative="true" />
+    </action>
+    <action
+      attribute="FotaUpdateForm"
+      name="FotaUpdateForm"
+      path="/updates/removeUpdate"
+      scope="request"
+      type="com.npower.dm.action.updates.RemoveFirmwareAction"
+      roles="authenticated">
+      <forward
+        name="list"
+        path="/updates/updateimages.do"
+        contextRelative="true" />
+    </action>
+    <action
+      attribute="FotaUpdateForm"
+      name="FotaUpdateForm"
+      path="/updates/saveUpdate"
+      scope="request"
+      input="/updates/editUpdate.do"
+      type="com.npower.dm.action.updates.SaveFirmwareAction"
+      roles="authenticated">
+      <forward
+        name="success"
+        path="tile.fota.update.success"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/updates/updateimages.do"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/updates/downloadfirmware"
+      scope="request"
+      parameter="method"
+      type="com.npower.dm.action.updates.DownloadFirmwareAction"
+      roles="authenticated">
+    </action>
+  </action-mappings>
+</struts-config>
+

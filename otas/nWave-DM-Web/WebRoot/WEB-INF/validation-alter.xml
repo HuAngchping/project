@@ -1,0 +1,169 @@
+<!DOCTYPE form-validation PUBLIC
+          "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.0//EN"
+          "http://jakarta.apache.org/commons/dtds/validator_1_0.dtd">
+<form-validation>
+  <formset>
+    <form name="ProfileCategoryForm">
+      <field property="name" depends="required">
+        <arg0 key="profilecategory.title.name"/>
+      </field>
+    </form>
+    
+    <form name="ProfileAttributeTypeForm">
+      <field property="name" depends="required">
+        <arg0 key="attributetype.title.name"/>
+      </field>
+    </form>
+    
+    <form name="ProfileTemplateForm">
+      <field property="name" depends="required">
+        <arg0 key="profiletemplate.title.name"/>
+      </field>
+      <field property="profileCategoryID" depends="required">
+        <arg0 key="profiletemplate.title.category"/>
+      </field>
+    </form>
+    
+    <form name="ProfileAttributeForm">
+      <field property="name" depends="required">
+        <arg0 key="profile.attribute.name.label"/>
+      </field>
+      <field property="attributeTypeID" depends="required">
+        <arg0 key="profile.attribute.attributeType.label"/>
+      </field>
+    </form>
+    
+    <form name="ProfileMappingForm">
+      <field property="modelID" depends="required">
+        <arg0 key="profilemapping.title.model"/>
+      </field>
+      <field property="templateID" depends="required">
+        <arg0 key="profilemapping.title.template"/>
+      </field>
+      <field property="rootDDFNodeID" depends="required">
+        <arg0 key="profilemapping.title.rootDDFNodePath"/>
+      </field>
+    </form>
+    
+    <form name="ProfileNodeMappingForm">
+      <field property="modelID" depends="required">
+        <arg0 key="profilemapping.title.model"/>
+      </field>
+      <field property="templateID" depends="required">
+        <arg0 key="profilemapping.title.template"/>
+      </field>
+      <field property="mappingType" depends="required">
+        <arg0 key="profileNodeMapping.title.mappingType"/>
+      </field>
+      <field property="nodeRelativePath" depends="required">
+        <arg0 key="profileNodeMapping.title.ddfNodePath"/>
+      </field>
+      <field property="paramIndex" depends="integer">
+        <arg0 key="profileNodeMapping.title.paramIndex"/>
+      </field>
+    </form>
+    
+    <form name="DeviceJobDiscoveryForm">
+      <field property="deviceID" depends="required">
+        <arg0 key="page.device.job.assignment.label.deviceID"/>
+      </field>
+      <field property="nodeURIs" depends="required">
+        <arg0 key="page.device.job.discovery.nodeURI.label"/>
+      </field>
+    </form>
+    
+    <form name="Form4SoftwareInstallation">
+      <field property="softwareID" depends="required">
+        <arg0 key="page.device.job.software.install.schedule.target.software.label"/>
+      </field>
+    </form>
+    
+    <form name="DeviceJobScriptForm">
+      <field property="deviceID" depends="required">
+        <arg0 key="page.device.job.assignment.label.deviceID"/>
+      </field>
+      <field property="commandScript" depends="required">
+        <arg0 key="page.device.job.script.label"/>
+      </field>
+    </form>
+    
+    <form name="JobsCreateJobForm">
+      <field property="jobType" depends="required">
+        <arg0 key="page.Jobs.jobtypes.job.type.label"/>
+      </field>
+      <!-- 
+      <field property="deviceExternalIDs" depends="required">
+        <arg0 key="page.Jobs.jobtypes.targetDevice.externalIDs.label"/>
+      </field>
+       -->
+       
+    </form>
+
+    <form name="JobsJobDiscoveryForm">
+      <field property="nodeURIs" depends="required">
+        <arg0 key="page.device.job.discovery.nodeURI.label"/>
+      </field>
+    </form>
+    
+    <form name="JobsJobSoftwareInstallForm">
+      <field property="softwareID" depends="required">
+        <arg0 key="page.device.job.software.install.schedule.target.software.label"/>
+      </field>
+    </form>
+    
+    <form name="JobsJobScriptForm">
+      <field property="commandScript" depends="required">
+        <arg0 key="page.device.job.script.label"/>
+      </field>
+    </form>
+    
+    <form name="SubscriberForm">
+      <field property="carrierID" depends="required">
+        <arg0 key="page.subscriber.carrier.title"/>
+      </field>
+      <field property="phoneNumber" depends="required">
+        <arg0 key="page.subscriber.phoneNumber.title"/>
+      </field>
+      <field property="externalId" depends="required">
+        <arg0 key="page.subscriber.externalId.title"/>
+      </field>
+      <field property="password" depends="required">
+        <arg0 key="page.subscriber.password.title"/>
+      </field>
+    </form>
+    
+    <form name="UserForm">
+      <field property="username" depends="required">
+        <arg0 key="page.user.username.title"/>
+      </field>
+      <field property="firstName" depends="required">
+        <arg0 key="page.user.firstname.title"/>
+      </field>
+      <field property="lastName" depends="required">
+        <arg0 key="page.user.lastname.title"/>
+      </field>
+      <field property="formRoles" depends="required">
+        <arg0 key="page.user.roles.title"/>
+      </field>
+    </form>
+    
+    <form name="CPTemplateForm">
+      <field property="name" depends="required">
+        <arg0 key="CPTemplate.title.name"/>
+      </field>
+      <field property="content" depends="required">
+        <arg0 key="CPTemplate.title.content"/>
+      </field>
+      <field property="categoryID" depends="required">
+        <arg0 key="CPTemplate.title.category"/>
+      </field>
+      <field property="modelID" depends="required">
+        <arg0 key="CPTemplate.title.model"/>
+      </field>
+      <field property="encoder" depends="required">
+        <arg0 key="CPTemplate.title.encoder"/>
+      </field>
+    </form>
+    
+  </formset>
+</form-validation>

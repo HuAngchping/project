@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans>
+    <!-- For known device -->
+	<form-bean name="DeviceNotificationForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="deviceID" type="java.lang.String" />
+      <form-property name="jobID" type="java.lang.String" />
+      <form-property name="uiMode" type="java.lang.String" />
+      <form-property name="initiator" type="java.lang.String" />
+    </form-bean>
+    <!-- For unknown device -->
+    <form-bean name="NotificationForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="phoneNumbers" type="java.lang.String" />
+      <form-property name="uiMode" type="java.lang.String" />
+      <form-property name="initiator" type="java.lang.String" />
+    </form-bean>
+  </form-beans>
+
+  <action-mappings>
+	<!--  Related with Notification for known devices -->
+    <action
+      attribute="DeviceNotificationForm"
+      name="DeviceNotificationForm"
+      path="/device/notification/input"
+      scope="request"
+      type="com.npower.dm.action.device.NotificationInputAction"
+      roles="authenticated">
+      <forward
+        name="input"
+        path="tile.device.notification.input"
+        contextRelative="true" />
+    </action>
+    <action
+      attribute="DeviceNotificationForm"
+      input="/device/notification/input"
+      name="DeviceNotificationForm"
+      path="/device/notification/send"
+      scope="request"
+      type="com.npower.dm.action.device.SendNotificationAction"
+      roles="authenticated">
+      <forward
+        name="success"
+        path="tile.device.notification.success"
+        contextRelative="true" />
+      <forward
+        name="failure"
+        path="tile.device.notification.failure"
+        contextRelative="true" />
+    </action>
+    
+ <!--  Related with Notification for Unknown devices -->
+    <action
+      attribute="NotificationForm"
+      name="NotificationForm"
+      path="/notification/input"
+      scope="request"
+      type="com.npower.dm.action.notification.InputAction"
+      roles="authenticated"
+      validate="false">
+      <forward
+        name="input"
+        path="tile.notification.input"
+        contextRelative="true" />
+    </action>
+    <action
+      attribute="NotificationForm"
+      input="/notification/input.do"
+      name="NotificationForm"
+      path="/notification/send"
+      scope="request"
+      type="com.npower.dm.action.notification.SendAction"
+      roles="authenticated">
+      <forward
+        name="success"
+        path="tile.notification.success"
+        contextRelative="true" />
+      <forward
+        name="failure"
+        path="tile.notification.failure"
+        contextRelative="true" />
+    </action>
+    
+  </action-mappings>
+</struts-config>
+

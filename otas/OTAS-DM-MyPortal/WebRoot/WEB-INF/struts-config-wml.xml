@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <!-- Map-backed ActionForm -->
+    <form-bean name="ClientProvForm4Wizard" type="com.npower.dm.myportal.cp.ClientProvWizardForm">
+    </form-bean>
+
+    <form-bean name="TaskForm4MSM" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="imei" type="java.lang.String" />
+      <form-property name="softwareID" type="java.lang.String" />
+    </form-bean>
+  
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards >
+  </global-forwards>
+
+  <action-mappings >
+    <!-- Search Softwares and List software -->
+    <action
+      attribute="ClientProvForm4Wizard"
+      parameter="navigation"
+      name="ClientProvForm4Wizard"
+      path="/wap/wizard/dm/softwares"
+      scope="request"
+      type="com.npower.dm.myportal.wap.msm.SoftwaresAction"
+      input="/wizard/cp/intro.do">
+      <forward
+        name="view"
+        path="tile.wml.dm.wizard.view.softwares"
+        contextRelative="true" />
+    </action>
+  
+    <!-- Show Software Information -->
+    <action
+      attribute="ClientProvForm4Wizard"
+      parameter="navigation"
+      name="ClientProvForm4Wizard"
+      path="/wap/wizard/dm/software/view"
+      scope="request"
+      type="com.npower.dm.myportal.wap.msm.ShowSoftwareAction"
+      input="/wizard/cp/intro.do">
+      <forward
+        name="view"
+        path="tile.wml.dm.wizard.view.software"
+        contextRelative="true" />
+      <forward
+        name="next4dm"
+        path="/wap/wizard/dm/software/msm/input.do?navigation="
+        contextRelative="true" redirect="true"/>
+      <forward
+        name="next4dl"
+        path="/wap/wizard/dm/software/download.do?navigation="
+        contextRelative="true" redirect="true"/>
+    </action>
+    
+    <!-- Select Model and Input Phone Number -->
+    <action
+      attribute="ClientProvForm4Wizard"
+      parameter="navigation"
+      name="ClientProvForm4Wizard"
+      path="/wap/wizard/dm/software/msm/input"
+      scope="request"
+      type="com.npower.dm.myportal.wap.msm.InputAction"
+      input="/wizard/cp/intro.do">
+      <forward
+        name="view"
+        path="tile.wml.dm.wizard.msm.input"
+        contextRelative="true" />
+    </action>
+
+    <!-- Submit DM Job for MSM -->
+    <action
+      attribute="ClientProvForm4Wizard"
+      parameter="navigation"
+      name="ClientProvForm4Wizard"
+      path="/wap/wizard/dm/msm/install/job/submit4dm"
+      scope="request"
+      type="com.npower.dm.myportal.wap.msm.SubmitDMJobAction"
+      input="/wizard/cp/intro.do">
+      <forward
+        name="success"
+        path="tile.wml.dm.wizard.msm.install.job.success"
+        contextRelative="true" />
+    </action>
+
+    <!-- Action for MSM Task entrance -->
+    <action
+      attribute="TaskForm4MSM"
+      parameter="navigation"
+      name="TaskForm4MSM"
+      path="/wap/msmtask/view"
+      scope="request"
+      type="com.npower.dm.myportal.wap.msm.TaskAction">
+      <forward
+        name="failure"
+        path="tile.wml.dm.task.view.failure"
+        contextRelative="true" />
+      <forward
+        name="msm.install"
+        path="/wap/wizard/dm/software/msm/input.do"
+        contextRelative="true" />
+      <forward
+        name="wap.install"
+        path="/wap/wizard/dm/software/msm/input.do"
+        contextRelative="true" />
+    </action>
+  
+    <action
+      attribute="TaskForm4MSM"
+      parameter="navigation"
+      name="TaskForm4MSM"
+      path="/wap/msmtask/submit"
+      scope="request"
+      type="com.npower.dm.myportal.wap.msm.TaskAction">
+      <forward
+        name="failure"
+        path="tile.wml.dm.task.view.failure"
+        contextRelative="true" />
+      <forward
+        name="msm.install"
+        path="/wap/wizard/dm/msm/install/job/submit4dm.do"
+        contextRelative="true" />
+      <forward
+        name="wap.install"
+        path="/wap/wizard/dm/software/msm/input.do"
+        contextRelative="true" />
+    </action>
+  
+  </action-mappings>
+
+</struts-config>
+

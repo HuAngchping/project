@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE form-validation PUBLIC
+          "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.0//EN"
+          "http://jakarta.apache.org/commons/dtds/validator_1_0.dtd">
+<form-validation>
+  <formset>
+    <form name="SubjectForm4admin">
+      <field property="externalId" depends="required">
+        <arg0 key="page.error.subject.externalId.label"/>
+      </field>
+    </form>
+    <form name="ContentForm4admin">
+      <field property="name" depends="required">
+        <arg0 key="page.error.content.name.label"/>
+      </field>
+    </form>
+  </formset>
+</form-validation>

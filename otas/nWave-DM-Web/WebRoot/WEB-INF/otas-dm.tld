@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE taglib
+        PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+	"http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>1.2</jsp-version>
+	<short-name>otasdm</short-name>
+	<uri>http://otas.cn/otasdm-taglib</uri>
+	<description>Tag library for OTAS DM</description>
+
+	<tag>
+		<name>box</name>
+		<tag-class>com.npower.dm.tags.BoxTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>title</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>styleClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>boxedList</name>
+		<tag-class>com.npower.dm.tags.BoxedListTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>title</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>styleClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>keyValues</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+    <tag>
+        <name>volume</name>
+        <tag-class>com.npower.dm.tags.VolumeTag</tag-class>
+        <body-content>JSP</body-content>
+
+        <description>
+            Displays volume of data in bytes, KBytes, MBytes, GBytes or TBytes depending on the value.
+        </description>
+
+        <attribute>
+            <name>value</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+
+        <attribute>
+            <name>fractions</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+
+        <attribute>
+            <name>unit</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>xmlPretty</name>
+        <tag-class>com.npower.dm.tags.XMLPrettyOutputTag</tag-class>
+        <body-content>JSP</body-content>
+
+        <description>
+            Pretty XML content and displays on the content.
+        </description>
+
+        <attribute>
+            <name>content</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>permission</name>
+        <tag-class>com.npower.dm.tags.PermissionTag</tag-class>
+        <body-content>JSP</body-content>
+
+        <description>Detect permission.</description>
+
+        <attribute>
+            <name>roles</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    
+    <tag>
+        <name>time</name>
+        <tag-class>com.npower.dm.tags.TimeTag</tag-class>
+        <body-content>JSP</body-content>
+
+        <description>    
+        </description>
+
+        <attribute>
+            <name>value</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        
+        <attribute>
+            <name>milliSecond</name>
+            <required>false</required>
+            <rtexprvalue>false</rtexprvalue>
+        </attribute>
+        
+    </tag>
+        
+</taglib>
+

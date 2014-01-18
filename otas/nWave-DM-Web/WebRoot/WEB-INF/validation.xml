@@ -1,0 +1,424 @@
+<!DOCTYPE form-validation PUBLIC
+          "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.0//EN"
+          "http://jakarta.apache.org/commons/dtds/validator_1_0.dtd">
+<form-validation>
+  <formset>
+    <form name="LoginForm">
+      <field property="username" depends="required">
+        <arg0 key="page.login.username.label"/>
+      </field>
+      <field property="password" depends="required">
+        <arg0 key="page.login.password.label"/>
+      </field>
+    </form>
+    <form name="CountryForm">
+      <field property="ISOCode" depends="required">
+        <arg0 key="country.title.ISOCode"/>
+      </field>
+      <field property="name" depends="required">
+        <arg0 key="country.title.name"/>
+      </field>
+      <field property="countryCode" depends="required,integer">
+        <arg0 key="country.title.countryCode"/>
+      </field>
+    </form>
+    <form name="DeviceForm">
+      <field property="externalId" depends="required,minlength">
+        <arg0 key="device.title.externalId"/>
+        <arg1 name="minlength" key="${var:minlength}" resource="false"/>
+        <var>
+          <var-name>minlength</var-name>
+          <var-value>14</var-value>
+        </var>
+      </field>
+      <field property="subscriberPhoneNumber" depends="required">
+        <arg0 key="device.title.phonenumber"/>
+      </field>
+      <field property="OMAClientAuthScheme" depends="required">
+        <arg0 key="device.title.OMAClientAuthScheme"/>
+      </field>
+      <field property="OMAClientUsername" depends="required">
+        <arg0 key="device.title.OMAClientUsername"/>
+      </field>
+      <field property="OMAClientPassword" depends="required">
+        <arg0 key="device.title.OMAClientPassword"/>
+      </field>
+      <field property="OMAServerPassword" depends="required">
+        <arg0 key="device.title.OMAServerPassword"/>
+      </field>
+      <!-- 
+      <field property="modelID" depends="required">
+        <arg0 key="device.title.model"/>
+      </field>
+       -->
+      <field property="carrierID" depends="required">
+        <arg0 key="device.title.carrier"/>
+      </field>
+    </form>
+    
+    <!-- Carrier Form validation-->
+    <form name="CarrierForm">
+      <field property="externalID" depends="required">
+        <arg0 key="carrier.title.externalID"/>
+      </field>
+      <field property="name" depends="required">
+        <arg0 key="carrier.title.name"/>
+      </field>      
+      <field property="countryID" depends="required">
+        <arg0 key="carrier.title.countryID"/>
+      </field>
+      <field property="serverAuthType" depends="required">
+        <arg0 key="carrier.title.serverAuthType"/>
+      </field>
+      <field property="notificationType" depends="required">
+        <arg0 key="carrier.title.notificationType"/>
+      </field>
+      <field property="notificationProperties">
+        <arg0 key="carrier.title.notificationProperties"/>
+      </field>
+      <field property="notificationStateTimeout" depends="required,integer">
+        <arg0 key="carrier.title.notificationStateTimeout"/>
+      </field>
+      <field property="bootstrapTimeout" depends="required,integer">
+        <arg0 key="carrier.title.bootstrapTimeout"/>
+      </field>
+      <field property="notificationMaxNumRetries" depends="required">
+        <arg0 key="carrier.title.notificationMaxNumRetries"/>
+      </field>
+    </form>
+    
+    <!-- Manufacturer Form validation-->
+    <form name="ManufacturerForm">
+      <field property="name">
+        <arg0 key="manufacturer.title.name"/>
+      </field>
+      <field property="description">
+        <arg0 key="manufacturer.title.description"/>
+      </field>
+      <field property="externalId" depends="required">
+        <arg0 key="manufacturer.title.externalId"/>
+      </field>
+    </form>
+    
+    
+    <!-- Model Form validation-->
+    <form name="ModelForm">
+      <field property="name" depends="required">
+        <arg0 key="model.title.name"/>
+      </field>
+      <field property="manufacturerID" depends="required">
+        <arg0 key="model.title.manufacturer"/>
+      </field>
+      <field property="description">
+        <arg0 key="model.title.description"/>
+      </field>
+      <field property="manufacturerModelId" depends="required">
+        <arg0 key="model.title.manufacturerModelId"/>
+      </field>
+      <field property="supportedDownloadMethods">
+        <arg0 key="model.title.supportedDownloadMethods"/>
+      </field>
+      <field property="isOmaDmEnabled">
+        <arg0 key="model.title.isOmaDmEnabled"/>
+      </field>
+      <field property="serverAuthType">
+        <arg0 key="model.title.serverAuthType"/>
+      </field>
+      <field property="isPlainProfile">
+        <arg0 key="model.title.isPlainProfile"/>
+      </field>
+      <field property="isUseEncForOmaMsg">
+        <arg0 key="model.title.isUseEncForOmaMsg"/>
+      </field>
+      <field property="isUseNextNoncePerPkg">
+        <arg0 key="model.title.isUseNextNoncePerPkg"/>
+      </field>
+      <field property="firmwareNode">
+        <arg0 key="model.title.firmwareNode"/>
+      </field>
+      <field property="firmwareUpdateNode">
+        <arg0 key="model.title.firmwareUpdateNode"/>
+      </field>
+      <field property="firmwareUpdateReplaceNode">
+        <arg0 key="model.title.firmwareUpdateReplaceNode"/>
+      </field>
+       <field property="firmwareUpdateExecNode">
+        <arg0 key="model.title.firmwareUpdateExecNode"/>
+      </field>
+       <field property="firmwareUpdateStatusNode">
+        <arg0 key="model.title.firmwareUpdateStatusNode"/>
+      </field>
+       <field property="changeVersion" depends="integer">
+        <arg0 key="model.title.changeVersion"/>
+      </field>
+    </form>
+    
+    <!-- Bootstrap Form validation-->
+    <form name="BootstrapForm">
+      <field property="msisdn" depends="required">
+        <arg0 key="page.bootstrap.label.phoneNumbers"/>
+      </field>
+      <field property="pin" depends="required">
+        <arg0 key="device.title.bootstrap.pin"/>
+      </field>
+      <field property="serverPassword" depends="required">
+        <arg0 key="bootstrap.label.serverPassword"/>
+      </field>
+      <field property="clientUsername" depends="required">
+        <arg0 key="bootstrap.label.clientUsername"/>
+      </field>
+      <field property="clientPassword" depends="required">
+        <arg0 key="bootstrap.label.clientPassword"/>
+      </field>
+    </form>
+
+    <!-- Notification Form validation-->
+    <form name="NotificationForm">
+      <field property="phoneNumbers" depends="required">
+        <arg0 key="page.notification.label.phoneNumbers"/>
+      </field>
+    </form>
+
+    <!-- OTAS OMA CP Form validation-->
+    <!-- Validator for: NAP -->
+    <form name="/ota/omacp/send4nap">
+      <field property="msisdn" depends="required">
+        <arg0 key="ota.omacp.label.targets.msisdn"/>
+      </field>
+      <field property="OTAOMA_NAME" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_NAME"/>
+      </field>
+      <field property="OTAOMA_NAPDEF_NAP-ADDRESS" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_NAPDEF_NAP-ADDRESS"/>
+      </field>
+      <field property="OTAOMA_PXLOGICAL_STARTPAGE" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_PXLOGICAL_STARTPAGE"/>
+      </field>
+    </form>
+    <!-- Validator for: Proxy -->
+    <form name="/ota/omacp/send4proxy">
+      <field property="msisdn" depends="required">
+        <arg0 key="ota.omacp.label.targets.msisdn"/>
+      </field>
+      <field property="OTAOMA_NAME" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_NAME"/>
+      </field>
+      <field property="OTAOMA_NAPDEF_NAP-ADDRESS" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_NAPDEF_NAP-ADDRESS"/>
+      </field>
+      <field property="OTAOMA_PXLOGICAL_STARTPAGE" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_PXLOGICAL_STARTPAGE"/>
+      </field>
+    </form>
+    <!-- Validator for: MMS -->
+    <form name="/ota/omacp/send4mms">
+      <field property="msisdn" depends="required">
+        <arg0 key="ota.omacp.label.targets.msisdn"/>
+      </field>
+      <field property="OTAOMA_NAME" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_NAME"/>
+      </field>
+      <field property="OTAOMA_NAPDEF_NAP-ADDRESS" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_NAPDEF_NAP-ADDRESS"/>
+      </field>
+      <field property="OTAOMA_MMSCURL" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_MMSCURL"/>
+      </field>
+    </form>
+    <!-- Validator for: Sync DS -->
+    <form name="/ota/omacp/send4syncds">
+      <field property="msisdn" depends="required">
+        <arg0 key="ota.omacp.label.targets.msisdn"/>
+      </field>
+      <field property="OTAOMA_NAME" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_NAME"/>
+      </field>
+      <field property="OTAOMA_NAPDEF_NAP-ADDRESS" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_NAPDEF_NAP-ADDRESS"/>
+      </field>
+      <field property="OTAOMA_SYNCML_HOSTADDR" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_SYNCML_HOSTADDR"/>
+      </field>
+      <field property="OTAOMA_SYNCML_AAUTHNAME" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_SYNCML_AAUTHNAME"/>
+      </field>
+      <field property="OTAOMA_SYNCML_AAUTHSECRET" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_SYNCML_AAUTHSECRET"/>
+      </field>
+    </form>
+    <!-- Validator for: Email -->
+    <form name="/ota/omacp/send4email">
+      <field property="msisdn" depends="required">
+        <arg0 key="ota.omacp.label.targets.msisdn"/>
+      </field>
+      <field property="OTAOMA_NAME" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_NAME"/>
+      </field>
+      <field property="OTAOMA_NAPDEF_NAP-ADDRESS" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_NAPDEF_NAP-ADDRESS"/>
+      </field>
+      <field property="OTAOMA_EMAIL_AAUTHNAME" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_EMAIL_AAUTHNAME"/>
+      </field>
+      <field property="OTAOMA_EMAIL_AAUTHSECRET" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_EMAIL_AAUTHSECRET"/>
+      </field>
+      <field property="OTAOMA_EMAIL_FROM" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_EMAIL_FROM"/>
+      </field>
+      <field property="OTAOMA_EMAIL_INADDR" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_EMAIL_INADDR"/>
+      </field>
+      <field property="OTAOMA_EMAIL_INADDR_PORTNBR" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_EMAIL_INADDR_PORTNBR"/>
+      </field>
+      <field property="OTAOMA_EMAIL_OUTADDR" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_EMAIL_OUTADDR"/>
+      </field>
+      <field property="OTAOMA_EMAIL_OUTADDR_PORTNBR" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_EMAIL_OUTADDR_PORTNBR"/>
+      </field>
+    </form>
+    <!-- Validator for: IMPS -->
+    <form name="/ota/omacp/send4imps">
+      <field property="msisdn" depends="required">
+        <arg0 key="ota.omacp.label.targets.msisdn"/>
+      </field>
+      <field property="OTAOMA_NAME" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_NAME"/>
+      </field>
+      <field property="OTAOMA_NAPDEF_NAP-ADDRESS" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_NAPDEF_NAP-ADDRESS"/>
+      </field>
+      <field property="OTAOMA_IMPS_HOSTADDR" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_IMPS_HOSTADDR"/>
+      </field>
+      <field property="OTAOMA_IMPS_USERNAME" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_IMPS_USERNAME"/>
+      </field>
+      <field property="OTAOMA_IMPS_PASSWORD" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_IMPS_PASSWORD"/>
+      </field>
+    </form>
+    <!-- Validator for: POC -->
+    <form name="/ota/omacp/send4poc">
+      <field property="msisdn" depends="required">
+        <arg0 key="ota.omacp.label.targets.msisdn"/>
+      </field>
+      <field property="OTAOMA_NAME" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_NAME"/>
+      </field>
+      <field property="OTAOMA_NAPDEF_NAP-ADDRESS" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_NAPDEF_NAP-ADDRESS"/>
+      </field>
+      <field property="OTAOMA_POC_ADDR" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_POC_ADDR"/>
+      </field>
+      <field property="OTAOMA_POC_PORT" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_POC_PORT"/>
+      </field>
+      <field property="OTAOMA_POC_AUTH_DATA" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_POC_AUTH_DATA"/>
+      </field>
+      <field property="OTAOMA_POC_AUTH_NAME" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_POC_AUTH_NAME"/>
+      </field>
+      <field property="OTAOMA_POC_AUTH_SECRET" depends="required">
+        <arg0 key="ota.omacp.label.OTAOMA_POC_AUTH_SECRET"/>
+      </field>
+    </form>
+    <!-- Validator for: CP Document -->
+    <form name="/ota/omacp/send4cpdocument">
+      <field property="msisdn" depends="required">
+        <arg0 key="ota.omacp.label.targets.msisdn"/>
+      </field>
+      <field property="document" depends="required">
+        <arg0 key="ota.omacp.label.OTAS_CP_DOCUMENT"/>
+      </field>
+    </form>
+    <!-- Validator for: Send Text SMS -->
+    <form name="TextSmsForm">
+      <field property="msisdn" depends="required">
+        <arg0 key="ota.omacp.label.targets.msisdn"/>
+      </field>
+      <field property="content" depends="required">
+        <arg0 key="sms.text.content.label"/>
+      </field>
+    </form>
+    <!-- Validator for: Send WapPush SI SMS -->
+    <form name="WapPushSmsSiForm">
+      <field property="msisdn" depends="required">
+        <arg0 key="ota.omacp.label.targets.msisdn"/>
+      </field>
+      <field property="url" depends="required">
+        <arg0 key="sms.wappushsi.url.label"/>
+      </field>
+      <field property="content" depends="required">
+        <arg0 key="sms.wappushsi.content.label"/>
+      </field>
+    </form>
+  
+    <!-- Validator software vendor -->  
+    <form name="VendorForm">
+      <field property="name" depends="required">
+        <arg0 key="entity.software.vendor.name.label"/>
+      </field>
+    </form>
+    
+    <!-- Validator software category --> 
+    <form name="CategoryForm">
+      <field property="name" depends="required">
+        <arg0 key="entity.software.category.name.label"/>
+      </field>
+    </form>
+    
+    <!-- Validator software --> 
+    <form name="SoftwareForm">
+      <field property="name" depends="required">
+        <arg0 key="entity.software.software.name.label"/>
+      </field>
+      <field property="externalId" depends="required">
+        <arg0 key="entity.software.software.externalId.label"/>
+      </field>
+      <field property="vendorID" depends="required">
+        <arg0 key="entity.software.vendor.label"/>
+      </field>
+      <field property="categoryID" depends="required">
+        <arg0 key="entity.software.category.label"/>
+      </field>
+    </form>
+    
+    <form name="UploadFileForm">
+      <field property="binaryFile" depends="required">
+        <arg0 key="entity.software.uploadfile.label"/>
+      </field>
+    </form>
+    
+    <form name="ScreenShotForm">
+      <field property="softwareID" depends="required">
+        <arg0 key="entity.software.screenshot.software.label"/>
+      </field>
+      <field property="binaryFile" depends="required">
+        <arg0 key="entity.software.screenshot.file.label"/>
+      </field>
+      <field property="description" depends="required">
+        <arg0 key="entity.software.screenshot.description.label"/>
+      </field>
+    </form>
+    
+    <form name="ModelClassificationForm">
+      <field property="name" depends="required">
+        <arg0 key="entity.model.classification.save.name.label"/>
+      </field>
+      <field property="externalID" depends="required">
+        <arg0 key="entity.model.classification.save.externalID.label"/>
+      </field>
+    </form>    
+
+    <form name="FavoriteForm">
+      <field property="name" depends="required">
+        <arg0 key="entity.device.favorite.name.label"/>
+      </field>
+    </form>    
+  </formset>
+</form-validation>

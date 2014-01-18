@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans>
+	  <form-bean name="TextSmsForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="carrierID" type="java.lang.String" />
+      <form-property name="msisdn" type="java.lang.String" />
+      <form-property name="imei" type="java.lang.String" />
+      <form-property name="content" type="java.lang.String" />
+      <form-property name="scheduleTime" type="java.lang.String" />
+      <form-property name="minDuration" type="java.lang.Integer" />
+      <form-property name="maxDuration" type="java.lang.Integer" />
+    </form-bean>
+    
+   <form-bean name="WapPushSmsSiForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="carrierID" type="java.lang.String" />
+      <form-property name="msisdn" type="java.lang.String" />
+      <form-property name="imei" type="java.lang.String" />
+      <form-property name="url" type="java.lang.String" />
+      <form-property name="content" type="java.lang.String" />
+      <form-property name="scheduleTime" type="java.lang.String" />
+      <form-property name="minDuration" type="java.lang.Integer" />
+      <form-property name="maxDuration" type="java.lang.Integer" />
+    </form-bean>
+    
+  </form-beans>
+
+  <action-mappings>
+    <!-- Input Text SMS parameters -->
+    <action
+      attribute="TextSmsForm"
+      name="TextSmsForm"
+      path="/sms/text/Input"
+      scope="request"
+      type="com.npower.dm.action.sms.text.InputAction"
+      validate="false"
+      roles="authenticated">
+      <forward
+        name="input"
+        path="tile.sms.text.input"
+        contextRelative="true" />
+    </action>
+    <!-- Send Text SMS -->
+    <action
+      attribute="TextSmsForm"
+      name="TextSmsForm"
+      path="/sms/text/send"
+      input="/sms/text/Input.do"
+      scope="request"
+      parameter="method"
+      type="com.npower.dm.action.sms.text.SendAction"
+      validate="true"
+      roles="authenticated">
+      <forward
+        name="success"
+        path="tile.sms.text.success"
+        contextRelative="true" />
+    </action>
+ 
+    <!-- Input WapPushSi SMS parameters -->
+    <action
+      attribute="WapPushSmsSiForm"
+      name="WapPushSmsSiForm"
+      path="/sms/wappushsi/Input"
+      scope="request"
+      type="com.npower.dm.action.sms.wappushsi.InputAction"
+      validate="false"
+      roles="authenticated">
+      <forward
+        name="input"
+        path="tile.sms.wappushsi.input"
+        contextRelative="true" />
+    </action>
+    <!-- Send WapPushSi SMS -->
+    <action
+      attribute="WapPushSmsSiForm"
+      name="WapPushSmsSiForm"
+      path="/sms/wappushsi/send"
+      input="/sms/wappushsi/Input.do"
+      scope="request"
+      parameter="method"
+      type="com.npower.dm.action.sms.wappushsi.SendAction"
+      validate="true"
+      roles="authenticated">
+      <forward
+        name="success"
+        path="tile.sms.wappushsi.success"
+        contextRelative="true" />
+    </action>
+ 
+  </action-mappings>
+</struts-config>
+

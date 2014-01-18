@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	<form-beans>
+		<form-bean name="ManufacturerForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="ID" type="java.lang.String" />
+			<form-property name="name" type="java.lang.String" />
+			<form-property name="description" type="java.lang.String" />
+			<form-property name="externalId" type="java.lang.String" />
+			<form-property name="changeVersion" type="java.lang.String" />
+
+			<!-- Hold the operation status: Create, Remove, Edit  -->
+			<form-property name="action" type="java.lang.String" />
+		</form-bean>
+
+
+		<form-bean name="ModelForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="ID" type="java.lang.String" />
+			<form-property name="name" type="java.lang.String" />
+			<form-property name="taclist" type="java.lang.String" />
+      <form-property name="description" type="java.lang.String" />
+			<form-property name="manufacturerModelId" type="java.lang.String" />
+			<form-property name="supportedDownloadMethods" type="java.lang.Boolean" />
+			<form-property name="lastUpdatedBy" type="java.lang.String" />
+			<form-property name="lastUpdatedTime" type="java.util.Date" />
+			<form-property name="isOmaDmEnabled" type="java.lang.Boolean" />
+      <form-property name="omaDmVersion" type="java.lang.String" />
+      <form-property name="isOmaCpEnabled" type="java.lang.Boolean" />
+      <form-property name="omaCpVersion" type="java.lang.String" />
+      <form-property name="isNokiaOtaEnabled" type="java.lang.Boolean" />
+      <form-property name="nokiaOtaVersion" type="java.lang.String" />
+			<form-property name="serverAuthType" type="java.lang.String" />
+			<form-property name="isPlainProfile" type="java.lang.Boolean" />
+			<form-property name="isUseEncForOmaMsg" type="java.lang.Boolean" />
+			<form-property name="isUseNextNoncePerPkg" type="java.lang.Boolean" />
+			<form-property name="firmwareVersionNode" type="java.lang.String" />
+			<form-property name="firmwareUpdateNode" type="java.lang.String" />
+			<form-property name="firmwareDownloadNode" type="java.lang.String" />
+			<form-property name="firmwareDownloadAndUpdateNode" type="java.lang.String" />
+			<form-property name="firmwareStatusNode" type="java.lang.String" />
+			<form-property name="changeVersion" type="java.lang.String" />
+
+			<form-property name="manufacturerID" type="java.lang.String" />
+
+			<!-- Hold the operation status: Create, Remove, Edit  -->
+			<form-property name="action" type="java.lang.String" />
+
+      <!-- For Search Panel   --> 
+      <form-property name="searchManufacturerID" type="java.lang.String" />
+      <form-property name="searchModelID" type="java.lang.String" />
+      <form-property name="searchIsOmaDmEnabled" type="java.lang.String" />
+      <form-property name="searchIsOmaCpEnabled" type="java.lang.String" />
+      <form-property name="searchIsNokiaOtaEnabled" type="java.lang.String" />
+      <form-property name="searchOmaDmVersion" type="java.lang.String" />
+      <form-property name="searchOmaCpVersion" type="java.lang.String" />
+      <form-property name="searchNokiaOtaVersion" type="java.lang.String" />
+      <form-property name="searchText" type="java.lang.String" />
+      <form-property name="recordsPerPage" type="java.lang.Integer" />
+		</form-bean>
+
+		<form-bean name="SearchMoldesForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="searchManufacturerID" type="java.lang.String" />
+      <form-property name="searchModelID" type="java.lang.String" />
+      <form-property name="searchIsOmaDmEnabled" type="java.lang.String" />
+      <form-property name="searchIsOmaCpEnabled" type="java.lang.String" />
+      <form-property name="searchIsNokiaOtaEnabled" type="java.lang.String" />
+      <form-property name="searchOmaDmVersion" type="java.lang.String" />
+      <form-property name="searchOmaCpVersion" type="java.lang.String" />
+      <form-property name="searchNokiaOtaVersion" type="java.lang.String" />
+      <form-property name="searchTAC" type="java.lang.String" />
+      <form-property name="searchText" type="java.lang.String" />
+      <form-property name="searchPlatform" type="java.lang.String" />
+      <form-property name="recordsPerPage" type="java.lang.Integer" />
+		</form-bean>
+
+    <form-bean name="SearchManufacturersForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="searchManufacturerID" type="java.lang.String" />
+      <form-property name="searchText" type="java.lang.String" />
+      <form-property name="recordsPerPage" type="java.lang.Integer" />
+    </form-bean>
+    
+    <form-bean name="ModelClassificationForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="id" type="java.lang.String"/>
+      <form-property name="name" type="java.lang.String"/>
+      <form-property name="externalID" type="java.lang.String"/>
+      <form-property name="description" type="java.lang.String"/>
+      <form-property name="recordsPerPage" type="java.lang.Integer" />
+    </form-bean>
+    
+    <form-bean name="SearchModelClassificationForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="searchText" type="java.lang.String"/>
+      <form-property name="recordsPerPage" type="java.lang.Integer"/>
+    </form-bean>
+	</form-beans>
+
+	<action-mappings>
+		<!--  Related with Manufacturer  -->
+		<action parameter="action" 
+                attribute="ManufacturerForm" 
+                input="/EditManufacturer.do" 
+                name="ManufacturerForm" 
+                path="/SaveManufacturer" 
+                scope="request" 
+                type="com.npower.dm.action.manufacturer.SaveManufacturerAction" 
+                validate="true"
+                roles="authenticated">
+			<forward name="success" path="/Manufacturers.do" contextRelative="true" />
+			<forward name="cancel" path="/Manufacturers.do" contextRelative="true" />
+		</action>
+    <!-- Edit Manufacturer -->
+		<action attribute="ManufacturerForm"
+                name="ManufacturerForm"
+                 path="/EditManufacturer" 
+                 scope="request" 
+                 type="com.npower.dm.action.manufacturer.EditManufacturerAction" 
+                 validate="false" 
+                 roles="authenticated">
+			<forward name="edit" path="tile.model.manufacturer.edit" contextRelative="true" />
+		</action>
+    <!-- View Manufacturer -->
+    <action attribute="ManufacturerForm"
+                  name="ManufacturerForm"
+                   path="/ViewManufacturer" 
+                   scope="request" 
+                   type="com.npower.dm.action.manufacturer.ViewManufacturerAction" 
+                   validate="false" 
+                   roles="authenticated">
+      <forward name="view" path="tile.model.manufacturer.view" contextRelative="true" />
+    </action>
+		<action attribute="SearchManufacturersForm" 
+                name="SearchManufacturersForm" 
+                path="/Manufacturers" 
+                scope="request" 
+                type="com.npower.dm.action.manufacturer.ManufacturersAction" 
+                validate="false" 
+                roles="authenticated">
+			<forward name="display" path="tile.model.manufacturers" contextRelative="true" />
+		</action>
+		<action parameter="action" 
+                attribute="ManufacturerForm" 
+                input="/Manufacturers.do" 
+                name="ManufacturerForm" 
+                path="/RemoveManufacturer" 
+                scope="request" 
+                type="com.npower.dm.action.manufacturer.RemoveManufacturerAction" 
+                validate="false" 
+                roles="authenticated">
+			<forward name="success" path="/Manufacturers.do" contextRelative="true" />
+		</action>
+
+		<!--  Related with Model  -->
+		<action parameter="action" 
+                attribute="ModelForm" 
+                input="/EditModel.do" 
+                name="ModelForm" 
+                path="/SaveModel" 
+                scope="request" 
+                type="com.npower.dm.action.model.SaveModelAction" 
+                validate="true" 
+                roles="authenticated">
+			<forward name="success" path="/Models.do" contextRelative="true" />
+			<forward name="cancel" path="/Models.do" contextRelative="true" />
+		</action>
+    <!-- Edit Model -->
+		<action attribute="ModelForm" 
+                name="ModelForm" 
+                path="/EditModel" 
+                scope="request" 
+                type="com.npower.dm.action.model.EditModelAction" 
+                validate="false" 
+                roles="authenticated">
+			<forward name="edit" path="tile.model.model.edit" contextRelative="true" />
+		</action>
+    <!-- View Model -->
+    <action attribute="ModelForm" 
+                  name="ModelForm" 
+                  path="/ViewModel" 
+                  scope="request" 
+                  type="com.npower.dm.action.model.ViewModelAction" 
+                  validate="false" 
+                  roles="authenticated">
+      <forward name="view" path="tile.model.model.view" contextRelative="true" />
+    </action>
+		<action attribute="SearchMoldesForm" 
+                name="SearchMoldesForm" 
+                path="/Models" 
+                scope="request" 
+                type="com.npower.dm.action.model.ModelsAction" 
+                validate="false" 
+                roles="authenticated">
+			<forward name="ModelList" path="tile.model.models" contextRelative="true" />
+      <forward name="ViewModel" path="/ViewModel.do" contextRelative="true" />
+		</action>
+		<action parameter="action" 
+                attribute="ModelForm" 
+                input="/models.do" 
+                name="ModelForm" 
+                path="/RemoveModel" 
+                scope="request" 
+                type="com.npower.dm.action.model.RemoveModelAction" 
+                validate="false" 
+                roles="authenticated">
+			<forward name="success" path="/Models.do" contextRelative="true" />
+		</action>
+  
+    <!-- View Model Spec -->
+    <action path="/ViewModelSpec"
+                  parameter="method" 
+                  scope="request" 
+                  type="com.npower.dm.action.model.ViewModelSpecAction" 
+                  validate="false" 
+                  roles="authenticated">
+      <forward name="capability4view" path="tile.model.model.capability.view" contextRelative="true" />
+      <forward name="DefaultIcon" path="/common/images/icons/default_model_icon.jpg" contextRelative="true" redirect="true"/>
+    </action>
+  
+    <!-- View Model Matrix -->
+    <action path="/model/Matrix"
+                  parameter="method" 
+                  scope="request" 
+                  type="com.npower.dm.action.model.MatrixAction" 
+                  validate="false" 
+                  roles="authenticated">
+      <forward name="view4matrix" path="tile.model.models.matrix.view" contextRelative="true" />
+    </action>
+    
+    <!-- View Model Classification -->
+    <action path="/model/modelClassifications" 
+            type="com.npower.dm.action.model.ModelClassificationsAction" 
+            attribute="SearchModelClassificationForm"
+            name="SearchModelClassificationForm"
+            scope="request"
+            validate="false"
+            roles="authenticated">
+      <forward name="view" path="tile.ModelClassification.list" contextRelative="true"/>
+    </action>
+    <action path="/model/modelClassification4view"
+            type="com.npower.dm.action.model.ModelClassification4ViewAction"
+            attribute="ModelClassificationForm"
+            name="ModelClassificationForm"
+            scope="request"
+            validate="false"
+            roles="authenticated">
+      <forward name="view" path="tile.ModelClassification.model.list" contextRelative="true"/>
+    </action>
+    <action path="/model/modelClassificaion4edit"
+            type="com.npower.dm.action.model.ModelClassification4EditAction"
+            attribute="ModelClassificationForm"
+            name="ModelClassificationForm"
+            scope="request" 
+            validate="false"
+            roles="authenticated">
+      <forward name="edit" path="tile.ModelClassification.model.edit" contextRelative="true"/>
+    </action>
+    <action path="/model/modelClassification4Save" 
+            type="com.npower.dm.action.model.ModelClassification4SaveAction" 
+            attribute="ModelClassificationForm"
+            name="ModelClassificationForm"
+            input="/model/modelClassificaion4edit.do"
+            scope="request" 
+            validate="true"
+            roles="authenticated">
+      <forward name="edit" path="/model/modelClassifications.do" contextRelative="true"/>
+    </action>
+    <action path="/model/modelClassification4delete" 
+            type="com.npower.dm.action.model.ModelClassification4DeleteAction" 
+            attribute="ModelClassificationForm"
+            name="ModelClassificationForm"
+            scope="request"
+            validate="false"
+            roles="authenticated"> 
+      <forward name="delete" path="/model/modelClassifications.do" contextRelative="true"/>
+    </action>   
+	</action-mappings>
+
+</struts-config>
+
+

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	<form-beans>
+		<form-bean name="CountryForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="ID" type="java.lang.String" />
+			<form-property name="ISOCode" type="java.lang.String" />
+			<form-property name="name" type="java.lang.String" />
+			<form-property name="countryCode" type="java.lang.String" />
+			<form-property name="trunkCode" type="java.lang.String" />
+			<form-property name="displayTrunkCode" type="java.lang.Boolean" />
+			<form-property name="displayPrefix" type="java.lang.Boolean" />
+			<form-property name="displayCountryCode" type="java.lang.Boolean" />
+
+			<!-- Hold the operation status: Create, Remove, Edit  -->
+			<form-property name="action" type="java.lang.String" />
+		</form-bean>
+
+		<form-bean name="CarrierForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="ID" type="java.lang.String" />
+			<form-property name="name" type="java.lang.String" />
+			<form-property name="externalID" type="java.lang.String" />
+            <form-property name="phoneNumberPolicy" type="java.lang.String" />
+			<form-property name="notificationMaxNumRetries" type="java.lang.String" />
+			<form-property name="serverAuthType" type="java.lang.String" />
+			<form-property name="notificationType" type="java.lang.String" />
+			<form-property name="notificationProperties" type="java.lang.String" />
+			<form-property name="notificationStateTimeout" type="java.lang.String" />
+			<form-property name="bootstrapTimeout" type="java.lang.String" />
+			<form-property name="changeVersion" type="java.lang.String" />
+
+            <form-property name="bootstrapMaxRetries" type="java.lang.String" />
+            <form-property name="defaultBootstrapPinType" type="java.lang.String" />
+            <form-property name="defaultBootstrapUserPin" type="java.lang.String" />
+
+			<form-property name="countryID" type="java.lang.String" />
+			<form-property name="profileID4NAP" type="java.lang.String" />
+			<form-property name="profileID4DM" type="java.lang.String" />
+
+      <form-property name="defaultJobExpiredTimeInSeconds" type="java.lang.Long" />
+
+			<!-- Hold the operation status: Create, Remove, Edit  -->
+			<form-property name="action" type="java.lang.String" />
+		</form-bean>
+
+        <form-bean name="SearchCarriersForm" type="org.apache.struts.validator.DynaValidatorForm">
+            <form-property name="searchCountryID" type="java.lang.String" />
+            <form-property name="searchText" type="java.lang.String" />
+            <form-property name="recordsPerPage" type="java.lang.Integer" />
+        </form-bean>
+        
+        <form-bean name="SearchCountriesForm" type="org.apache.struts.validator.DynaValidatorForm">
+            <form-property name="searchText" type="java.lang.String" />
+            <form-property name="recordsPerPage" type="java.lang.Integer" />
+        </form-bean>
+	</form-beans>
+
+	<action-mappings>
+		<!--  Related with Country  -->
+		<action
+			path="/SaveCountry" 
+            parameter="action" 
+			attribute="CountryForm" 
+			input="/EditCountry.do" 
+			name="CountryForm" 
+			scope="request" 
+			type="com.npower.dm.action.country.SaveCountryAction"
+            validate="true"
+            roles="authenticated">
+			<forward name="success" path="/Countries.do" contextRelative="true" />
+			<forward name="cancel" path="/Countries.do" contextRelative="true" />
+		</action>
+    <!-- Edit Country -->
+		<action attribute="CountryForm" 
+                name="CountryForm" 
+                path="/EditCountry" 
+                scope="request" 
+                type="com.npower.dm.action.country.EditCountryAction" 
+                validate="false"
+                roles="authenticated">
+			<forward name="edit" path="tile.carrier.country.edit" contextRelative="true" />
+		</action>
+    <!-- View Country -->
+    <action attribute="CountryForm" 
+                  name="CountryForm" 
+                  path="/ViewCountry" 
+                  scope="request" 
+                  type="com.npower.dm.action.country.ViewCountryAction" 
+                  validate="false"
+                  roles="authenticated">
+     <forward name="view" path="tile.carrier.country.view" contextRelative="true" />
+    </action>
+		<action 
+			path="/Countries"
+            attribute="SearchCountriesForm"
+			name="SearchCountriesForm"
+			scope="request"
+			type="com.npower.dm.action.country.CountriesAction"
+			validate="false"
+            roles="authenticated">
+			<forward name="display" path="tile.carrier.countries" contextRelative="true" />
+		</action>
+		<action parameter="action" 
+                attribute="CountryForm" 
+                input="/countries.do" 
+                name="CountryForm" 
+                path="/RemoveCountry" 
+                scope="request" 
+                type="com.npower.dm.action.country.RemoveCountryAction" 
+                validate="false"
+                roles="authenticated">
+			<forward name="success" path="/Countries.do" contextRelative="true" />
+		</action>
+
+		<!--  Related with Carrier  -->
+		<action parameter="action" 
+                attribute="CarrierForm" 
+                input="/EditCarrier.do" 
+                name="CarrierForm" 
+                path="/SaveCarrier" 
+                scope="request" 
+                type="com.npower.dm.action.carrier.SaveCarrierAction" 
+                validate="true"
+                roles="authenticated">
+			<forward name="success" path="/Carriers.do" contextRelative="true" />
+			<forward name="cancel" path="/Carriers.do" contextRelative="true" />
+		</action>
+    <!-- Edit Carrier -->
+		<action attribute="CarrierForm" 
+                name="CarrierForm" 
+                path="/EditCarrier" 
+                scope="request" 
+                type="com.npower.dm.action.carrier.EditCarrierAction" 
+                validate="false"
+                roles="authenticated">
+			<forward name="edit" path="tile.carrier.carrier.edit" contextRelative="true" />
+		</action>
+    <!-- View Carrier -->
+    <action attribute="CarrierForm" 
+                  name="CarrierForm" 
+                  path="/ViewCarrier" 
+                  scope="request" 
+                  type="com.npower.dm.action.carrier.ViewCarrierAction" 
+                  validate="false"
+                  roles="authenticated">
+     <forward name="view" path="tile.carrier.carrier.view" contextRelative="true" />
+    </action>
+		<action attribute="SearchCarriersForm" 
+                name="SearchCarriersForm" 
+                path="/Carriers" 
+                scope="request" 
+                type="com.npower.dm.action.carrier.CarriersAction" 
+                validate="false"
+                roles="authenticated">
+			<forward name="display" path="tile.carrier.carriers" contextRelative="true" />
+		</action>
+		<action parameter="action" 
+                attribute="CarrierForm" 
+                input="/carriers.do" 
+                name="CarrierForm" 
+                path="/RemoveCarrier" 
+                scope="request" 
+                type="com.npower.dm.action.carrier.RemoveCarrierAction" 
+                validate="false"
+                roles="authenticated">
+			<forward name="success" path="/Carriers.do" contextRelative="true" />
+		</action>
+	</action-mappings>
+
+</struts-config>
+
+

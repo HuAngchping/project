@@ -1,0 +1,1204 @@
+﻿body {
+    margin: 0px;
+}
+
+div {
+    background-repeat: no-repeat;
+}
+
+.raw_image {
+    width: 100%;
+    height: 100%;
+}
+
+.preload {
+    display: none;
+}
+#main_container {
+}
+
+.form_sketch {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.u0_normal {
+    background-image: url('../关系训练课程_files/u0_normal.png');
+}
+
+.u0_container {
+    position:absolute;
+    left:9px;
+    top:9px;
+    width:910px;
+    height:768px;
+}
+
+#u0_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:916px;
+    height:774px;
+}
+
+.u1 {
+    position:absolute;
+    left:2px;
+    top:376px;
+    width:906px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+#u2 {
+    position:absolute;
+    left:12px;
+    top:117px;
+    width:881px;
+    height:25px
+}
+
+.u3_normal {
+    background-image: url('../关系训练课程_files/u3_normal.png');
+}
+
+.u3_container {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:100px;
+    height:20px;
+}
+
+#u3_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:106px;
+    height:26px;
+}
+
+.u4 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:96px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u5_normal {
+    background-image: url('../关系训练课程_files/u5_normal.png');
+}
+
+.u5_container {
+    position:absolute;
+    left:100px;
+    top:0px;
+    width:119px;
+    height:20px;
+}
+
+#u5_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:125px;
+    height:26px;
+}
+
+.u6 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:115px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u7_normal {
+    background-image: url('../关系训练课程_files/u7_normal.png');
+}
+
+.u7_container {
+    position:absolute;
+    left:219px;
+    top:0px;
+    width:128px;
+    height:20px;
+}
+
+#u7_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:134px;
+    height:26px;
+}
+
+.u8 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:124px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u9_normal {
+    background-image: url('../关系训练课程_files/u9_normal.png');
+}
+
+.u9_container {
+    position:absolute;
+    left:347px;
+    top:0px;
+    width:125px;
+    height:20px;
+}
+
+#u9_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:131px;
+    height:26px;
+}
+
+.u10 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:121px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u11_normal {
+    background-image: url('../关系训练课程_files/u11_normal.png');
+}
+
+.u11_container {
+    position:absolute;
+    left:472px;
+    top:0px;
+    width:142px;
+    height:20px;
+}
+
+#u11_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:148px;
+    height:26px;
+}
+
+.u12 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:138px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u13_normal {
+    background-image: url('../关系训练课程_files/u13_normal.png');
+}
+
+.u13_container {
+    position:absolute;
+    left:614px;
+    top:0px;
+    width:127px;
+    height:20px;
+}
+
+#u13_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:133px;
+    height:26px;
+}
+
+.u14 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:123px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u15_normal {
+    background-image: url('../关系训练课程_files/u15_normal.png');
+}
+
+.u15_container {
+    position:absolute;
+    left:741px;
+    top:0px;
+    width:135px;
+    height:20px;
+}
+
+#u15_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:141px;
+    height:26px;
+}
+
+.u16 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:131px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u17_normal {
+    background-image: url('../关系训练课程_files/u17_normal.png');
+}
+
+.u17_container {
+    position:absolute;
+    left:14px;
+    top:40px;
+    width:308px;
+    height:65px;
+}
+
+#u17_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:314px;
+    height:71px;
+}
+
+.u18 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:304px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u19 {
+    position:absolute;
+    left:725px;
+    top:42px;
+    width:163px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u20_normal {
+    background-image: url('../关系训练课程_files/u20_normal.png');
+}
+
+.u20_container {
+    position:absolute;
+    left:800px;
+    top:85px;
+    width:26px;
+    height:22px;
+}
+
+#u20_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:26px;
+    height:22px;
+}
+
+.u21 {
+    position:absolute;
+    left:2px;
+    top:3px;
+    width:22px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u22_normal {
+    background-image: url('../关系训练课程_files/u20_normal.png');
+}
+
+.u22_container {
+    position:absolute;
+    left:844px;
+    top:85px;
+    width:26px;
+    height:22px;
+}
+
+#u22_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:26px;
+    height:22px;
+}
+
+.u23 {
+    position:absolute;
+    left:2px;
+    top:3px;
+    width:22px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u24 {
+    position:absolute;
+    left:725px;
+    top:91px;
+    width:60px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u25_normal {
+    background-image: url('../关系训练课程_files/u25_normal.png');
+}
+
+.u25_container {
+    position:absolute;
+    left:12px;
+    top:7px;
+    width:907px;
+    height:23px;
+}
+
+#u25_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:913px;
+    height:29px;
+}
+
+.u26 {
+    position:absolute;
+    left:2px;
+    top:4px;
+    width:903px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u27 {
+    position:absolute;
+    left:725px;
+    top:65px;
+    width:163px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u28 {
+    position:absolute;
+    left:137px;
+    top:11px;
+    width:42px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u29 {
+    position:absolute;
+    left:195px;
+    top:11px;
+    width:42px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u30 {
+    position:absolute;
+    left:195px;
+    top:165px;
+    width:683px;
+    height:112px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u31_normal {
+    background-image: url('../关系训练课程_files/u31_normal.png');
+}
+
+.u31_container {
+    position:absolute;
+    left:218px;
+    top:302px;
+    width:50px;
+    height:50px;
+}
+
+#u31_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:50px;
+    height:50px;
+}
+
+.u32 {
+    position:absolute;
+    left:2px;
+    top:17px;
+    width:46px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u33 {
+    position:absolute;
+    left:219px;
+    top:362px;
+    width:51px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u34_line {
+    background-image: url('../关系训练课程_files/u34_line.png');
+}
+
+.u34_line {
+    position:absolute;
+    left:0px;
+    top:4px;
+    width:645px;
+    height:3px;
+}
+
+.u34 {
+    position:absolute;
+    left:204px;
+    top:282px;
+    width:645px;
+    height:10px;
+    
+}
+
+.u35_normal {
+    background-image: url('../关系训练课程_files/u31_normal.png');
+}
+
+.u35_container {
+    position:absolute;
+    left:332px;
+    top:302px;
+    width:50px;
+    height:50px;
+}
+
+#u35_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:50px;
+    height:50px;
+}
+
+.u36 {
+    position:absolute;
+    left:2px;
+    top:17px;
+    width:46px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u37 {
+    position:absolute;
+    left:333px;
+    top:362px;
+    width:51px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u38_normal {
+    background-image: url('../关系训练课程_files/u31_normal.png');
+}
+
+.u38_container {
+    position:absolute;
+    left:446px;
+    top:302px;
+    width:50px;
+    height:50px;
+}
+
+#u38_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:50px;
+    height:50px;
+}
+
+.u39 {
+    position:absolute;
+    left:2px;
+    top:17px;
+    width:46px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u40 {
+    position:absolute;
+    left:447px;
+    top:362px;
+    width:51px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u41_normal {
+    background-image: url('../关系训练课程_files/u31_normal.png');
+}
+
+.u41_container {
+    position:absolute;
+    left:559px;
+    top:302px;
+    width:50px;
+    height:50px;
+}
+
+#u41_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:50px;
+    height:50px;
+}
+
+.u42 {
+    position:absolute;
+    left:2px;
+    top:17px;
+    width:46px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u43 {
+    position:absolute;
+    left:560px;
+    top:362px;
+    width:51px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u44_normal {
+    background-image: url('../关系训练课程_files/u31_normal.png');
+}
+
+.u44_container {
+    position:absolute;
+    left:673px;
+    top:302px;
+    width:50px;
+    height:50px;
+}
+
+#u44_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:50px;
+    height:50px;
+}
+
+.u45 {
+    position:absolute;
+    left:2px;
+    top:17px;
+    width:46px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u46 {
+    position:absolute;
+    left:674px;
+    top:362px;
+    width:51px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u47_normal {
+    background-image: url('../关系训练课程_files/u31_normal.png');
+}
+
+.u47_container {
+    position:absolute;
+    left:787px;
+    top:302px;
+    width:50px;
+    height:50px;
+}
+
+#u47_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:50px;
+    height:50px;
+}
+
+.u48 {
+    position:absolute;
+    left:2px;
+    top:17px;
+    width:46px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u49 {
+    position:absolute;
+    left:788px;
+    top:362px;
+    width:51px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u50_normal {
+    background-image: url('../关系训练课程_files/u31_normal.png');
+}
+
+.u50_container {
+    position:absolute;
+    left:218px;
+    top:397px;
+    width:50px;
+    height:50px;
+}
+
+#u50_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:50px;
+    height:50px;
+}
+
+.u51 {
+    position:absolute;
+    left:2px;
+    top:17px;
+    width:46px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u52 {
+    position:absolute;
+    left:219px;
+    top:457px;
+    width:51px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u53_normal {
+    background-image: url('../关系训练课程_files/u31_normal.png');
+}
+
+.u53_container {
+    position:absolute;
+    left:332px;
+    top:397px;
+    width:50px;
+    height:50px;
+}
+
+#u53_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:50px;
+    height:50px;
+}
+
+.u54 {
+    position:absolute;
+    left:2px;
+    top:17px;
+    width:46px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u55 {
+    position:absolute;
+    left:333px;
+    top:457px;
+    width:51px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u56_normal {
+    background-image: url('../关系训练课程_files/u31_normal.png');
+}
+
+.u56_container {
+    position:absolute;
+    left:446px;
+    top:397px;
+    width:50px;
+    height:50px;
+}
+
+#u56_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:50px;
+    height:50px;
+}
+
+.u57 {
+    position:absolute;
+    left:2px;
+    top:17px;
+    width:46px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u58 {
+    position:absolute;
+    left:447px;
+    top:457px;
+    width:51px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u59_normal {
+    background-image: url('../关系训练课程_files/u31_normal.png');
+}
+
+.u59_container {
+    position:absolute;
+    left:559px;
+    top:397px;
+    width:50px;
+    height:50px;
+}
+
+#u59_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:50px;
+    height:50px;
+}
+
+.u60 {
+    position:absolute;
+    left:2px;
+    top:17px;
+    width:46px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u61 {
+    position:absolute;
+    left:560px;
+    top:457px;
+    width:51px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u62_normal {
+    background-image: url('../关系训练课程_files/u31_normal.png');
+}
+
+.u62_container {
+    position:absolute;
+    left:673px;
+    top:397px;
+    width:50px;
+    height:50px;
+}
+
+#u62_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:50px;
+    height:50px;
+}
+
+.u63 {
+    position:absolute;
+    left:2px;
+    top:17px;
+    width:46px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u64 {
+    position:absolute;
+    left:674px;
+    top:457px;
+    width:51px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u65_normal {
+    background-image: url('../关系训练课程_files/u31_normal.png');
+}
+
+.u65_container {
+    position:absolute;
+    left:787px;
+    top:397px;
+    width:50px;
+    height:50px;
+}
+
+#u65_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:50px;
+    height:50px;
+}
+
+.u66 {
+    position:absolute;
+    left:2px;
+    top:17px;
+    width:46px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u67 {
+    position:absolute;
+    left:788px;
+    top:457px;
+    width:51px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u68_normal {
+    background-image: url('../关系训练课程_files/u68_normal.png');
+}
+
+.u68_container {
+    position:absolute;
+    left:249px;
+    top:164px;
+    width:88px;
+    height:19px;
+}
+
+#u68_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:94px;
+    height:25px;
+}
+
+.u69 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:84px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u70 {
+    position:absolute;
+    left:601px;
+    top:498px;
+    width:277px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u71 {
+    position:absolute;
+    left:70px;
+    top:595px;
+    width:833px;
+    height:144px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u72_line {
+    background-image: url('../关系训练课程_files/u72_line.png');
+}
+
+.u72_line {
+    position:absolute;
+    left:0px;
+    top:4px;
+    width:645px;
+    height:3px;
+}
+
+.u72 {
+    position:absolute;
+    left:159px;
+    top:564px;
+    width:645px;
+    height:10px;
+    
+}
+

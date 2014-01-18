@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee   http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+  <!-- WURFL Init -->
+  <servlet>
+    <servlet-name>com.npower.wurfl.WurflServletInit</servlet-name>
+    <servlet-class>com.npower.wurfl.WurflServletInit</servlet-class>
+    <init-param>
+      <param-name>WurflSourceClass</param-name>
+      <param-value>com.npower.wurfl.OTASDMWurflSource</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <!-- Struts Servlet -->
+  <servlet>
+    <servlet-name>action</servlet-name>
+    <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>
+      /WEB-INF/struts-config.xml,
+      /WEB-INF/struts-config-client-prov.xml,
+      /WEB-INF/struts-config-wml.xml
+      </param-value>
+    </init-param>
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>3</param-value>
+    </init-param>
+    <init-param>
+      <param-name>detail</param-name>
+      <param-value>3</param-value>
+    </init-param>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>action</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <filter-name>com.npower.dm.action.PersistentManager</filter-name>
+    <filter-class>com.npower.dm.action.PersistentManager</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>com.npower.dm.action.PersistentManager</filter-name>
+    <url-pattern>*.do</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>com.npower.servlet.I18nServletFilter</filter-name>
+    <filter-class>com.npower.servlet.I18nServletFilter</filter-class>
+    <init-param>
+      <param-name>charset</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>com.npower.servlet.I18nServletFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>com.npower.dm.myportal.UserServiceDataFilter</filter-name>
+    <filter-class>com.npower.dm.myportal.UserServiceDataFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>com.npower.dm.myportal.UserServiceDataFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>com.npower.dm.tracking.servlet.AccessTrackingFilter</filter-name>
+    <filter-class>com.npower.dm.tracking.servlet.AccessTrackingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>com.npower.dm.tracking.servlet.AccessTrackingFilter</filter-name>
+    <url-pattern>*.do</url-pattern>
+  </filter-mapping>
+  <welcome-file-list>
+    <welcome-file>/WEB-INF/jsp/index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
+

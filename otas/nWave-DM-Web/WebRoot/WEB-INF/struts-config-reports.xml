@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	<form-beans>
+	</form-beans>
+
+	<action-mappings>
+		<action 
+			path="/reports/list"
+			scope="request"
+			type="com.npower.dm.action.reports.ReportListAction"
+			validate="false"
+      roles="authenticated">
+			<forward name="list" path="tile.reports.reportList" contextRelative="true" />
+		</action>
+	</action-mappings>
+
+</struts-config>
+
+

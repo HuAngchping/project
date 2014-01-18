@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans>
+	<form-bean name="NokiaOTAConnectionForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="carrierID" type="java.lang.String" />
+      <form-property name="msisdn" type="java.lang.String" />
+      <form-property name="OTA_NAME" type="java.lang.String" />
+      <form-property name="OTA_BEARER" type="java.lang.String" />
+      <form-property name="OTA_GPRS_ACCESSPOINTNAME" type="java.lang.String" />
+      <form-property name="OTA_PPP_AUTHNAME" type="java.lang.String" />
+      <form-property name="OTA_PPP_AUTHSECRET" type="java.lang.String" />
+      <form-property name="OTA_PPP_AUTHTYPE" type="java.lang.String" />
+      <form-property name="OTA_PPP_LOGINTYPE" type="java.lang.String" />
+      <form-property name="OTA_PROXY" type="java.lang.String" />
+      <form-property name="OTA_PROXY_AUTHNAME" type="java.lang.String" />
+      <form-property name="OTA_PROXY_AUTHSECRET" type="java.lang.String" />
+      <form-property name="OTA_PROXY_LOGINTYPE" type="java.lang.String" />
+      <form-property name="OTA_PORT" type="java.lang.String" />
+      <form-property name="OTA_URL" type="java.lang.String" />
+      <form-property name="OTA_MMSURL" type="java.lang.String" />
+    </form-bean>
+    
+    <form-bean name="NokiaOTABookmarkForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="carrierID" type="java.lang.String" />
+      <form-property name="msisdn" type="java.lang.String" />
+      <form-property name="Text" type="java.lang.String" />
+      <form-property name="WAPBookmark" type="java.lang.String" />
+    </form-bean>
+    
+    <form-bean name="OMAClientProvForm" type="org.apache.struts.validator.DynaValidatorActionForm">
+      <form-property name="carrierID" type="java.lang.String" />
+      <form-property name="msisdn" type="java.lang.String" />
+      <form-property name="cp_type" type="java.lang.String"></form-property>
+      
+      <form-property name="OTAOMA_NAME" type="java.lang.String" />
+
+      <form-property name="OTAOMA_NAPDEF_BEARER" type="java.lang.String" />
+      <form-property name="OTAOMA_NAPDEF_NAP-ADDRESS" type="java.lang.String" />
+      <form-property name="OTAOMA_NAPDEF_NAPAUTHINFO_AUTHNAME" type="java.lang.String" />
+      <form-property name="OTAOMA_NAPDEF_NAPAUTHINFO_AUTHSECRET" type="java.lang.String" />
+      <form-property name="OTAOMA_NAPDEF_NAPAUTHINFO_AUTHTYPE" type="java.lang.String" />
+
+      <form-property name="OTAOMA_PXLOGICAL_PXPHYSICAL_PXADDR" type="java.lang.String" />
+      <form-property name="OTAOMA_PXLOGICAL_PXAUTHINFO_PXAUTH" type="java.lang.String" />
+      <form-property name="OTAOMA_PXLOGICAL_PXAUTHINFO_PXAUTH-PW" type="java.lang.String" />
+      <form-property name="OTAOMA_PXLOGICAL_PXPHYSICAL_PORT_PORTNBR" type="java.lang.String" />
+      <form-property name="OTAOMA_PXLOGICAL_STARTPAGE" type="java.lang.String" />
+
+      <form-property name="OTAOMA_MMSCURL" type="java.lang.String" />
+
+      <form-property name="OTAOMA_IMPS_HOSTADDR" type="java.lang.String" />
+      <form-property name="OTAOMA_IMPS_USERNAME" type="java.lang.String" />
+      <form-property name="OTAOMA_IMPS_PASSWORD" type="java.lang.String" />
+
+      <form-property name="OTAOMA_POC_ADDR" type="java.lang.String" />
+      <form-property name="OTAOMA_POC_ADDR_TYPE" type="java.lang.String" />
+      <form-property name="OTAOMA_POC_PORT" type="java.lang.String" />
+      <form-property name="OTAOMA_POC_AUTH_DATA" type="java.lang.String" />
+      <form-property name="OTAOMA_POC_AUTH_NAME" type="java.lang.String" />
+      <form-property name="OTAOMA_POC_AUTH_SECRET" type="java.lang.String" />
+      
+      <form-property name="OTAOMA_SYNCML_HOSTADDR" type="java.lang.String" />
+      <form-property name="OTAOMA_SYNCML_AAUTHNAME" type="java.lang.String" />
+      <form-property name="OTAOMA_SYNCML_AAUTHSECRET" type="java.lang.String" />
+      <form-property name="OTAOMA_SYNCML_CONTACTS_URI" type="java.lang.String" />
+      <form-property name="OTAOMA_SYNCML_CONTACTS_NAME" type="java.lang.String" />
+      <form-property name="OTAOMA_SYNCML_CALENDAR_URI" type="java.lang.String" />
+      <form-property name="OTAOMA_SYNCML_CALENDAR_NAME" type="java.lang.String" />
+      <form-property name="OTAOMA_SYNCML_NOTES_URI" type="java.lang.String" />
+      <form-property name="OTAOMA_SYNCML_NOTES_NAME" type="java.lang.String" />
+
+      <form-property name="OTAOMA_EMAIL_APPID" type="java.lang.String" />
+      <form-property name="OTAOMA_EMAIL_AAUTHNAME" type="java.lang.String" />
+      <form-property name="OTAOMA_EMAIL_AAUTHSECRET" type="java.lang.String" />
+      <form-property name="OTAOMA_EMAIL_FROM" type="java.lang.String" />
+      <form-property name="OTAOMA_EMAIL_INADDR" type="java.lang.String" />
+      <form-property name="OTAOMA_EMAIL_INADDR_PORTNBR" type="java.lang.String" />
+      <form-property name="OTAOMA_EMAIL_OUTADDR" type="java.lang.String" />
+      <form-property name="OTAOMA_EMAIL_OUTADDR_PORTNBR" type="java.lang.String" />
+      <form-property name="OTAOMA_EMAIL_SMTPAUTH" type="java.lang.Boolean" />
+      <form-property name="OTAOMA_EMAIL_STARTTLS" type="java.lang.Boolean" />
+
+      <form-property name="OTAPIN" type="java.lang.String" />
+      <form-property name="OTAPINTYPE" type="java.lang.String" />
+    </form-bean>
+    
+    <form-bean name="OMAClientProvDocumentForm" type="org.apache.struts.validator.DynaValidatorActionForm">
+      <form-property name="carrierID" type="java.lang.String" />
+      <form-property name="msisdn" type="java.lang.String" />
+
+      <form-property name="document" type="java.lang.String" />
+
+      <form-property name="OTAPIN" type="java.lang.String" />
+      <form-property name="OTAPINTYPE" type="java.lang.String" />
+    </form-bean>
+  </form-beans>
+
+  <action-mappings>
+    <action
+      attribute="NokiaOTAConnectionForm"
+      name="NokiaOTAConnectionForm"
+      path="/ota/nokia/connectionInput"
+      scope="request"
+      parameter="method"
+      type="com.npower.dm.action.ota.nokia.ConnectionInputAction"
+      validate="false"
+      roles="authenticated">
+      <forward
+        name="input"
+        path="tile.ota.nokia.input.connection"
+        contextRelative="true" />
+    </action>
+
+    <action
+      attribute="NokiaOTAConnectionForm"
+      name="NokiaOTAConnectionForm"
+      path="/ota/nokia/sendConnection"
+      scope="request"
+      parameter="method"
+      type="com.npower.dm.action.ota.nokia.SendConnectionAction"
+      validate="false"
+      roles="authenticated">
+      <forward
+        name="success"
+        path="tile.ota.nokia.success"
+        contextRelative="true" />
+    </action>
+
+    <action
+      attribute="NokiaOTABookmarkForm"
+      name="NokiaOTABookmarkForm"
+      path="/ota/nokia/bookmarkInput"
+      scope="request"
+      parameter="method"
+      type="com.npower.dm.action.ota.nokia.BookmarkInputAction"
+      validate="false"
+      roles="authenticated">
+      <forward
+        name="input"
+        path="tile.ota.nokia.input.bookmark"
+        contextRelative="true" />
+    </action>
+
+    <action
+      attribute="NokiaOTABookmarkForm"
+      name="NokiaOTABookmarkForm"
+      path="/ota/nokia/sendBookmark"
+      scope="request"
+      parameter="method"
+      type="com.npower.dm.action.ota.nokia.SendBookmarkAction"
+      validate="false"
+      roles="authenticated">
+      <forward
+        name="success"
+        path="tile.ota.nokia.success"
+        contextRelative="true" />
+    </action>
+
+
+    <action
+      attribute="OMAClientProvForm"
+      name="OMAClientProvForm"
+      path="/ota/omacp/generalInput"
+      scope="request"
+      type="com.npower.dm.action.ota.omacp.InputAction"
+      validate="false"
+      roles="authenticated">
+      <forward
+        name="input"
+        path="tile.ota.omacp.input"
+        contextRelative="true" />
+      <forward
+        name="nap"
+        path="tile.ota.omacp.input.nap"
+        contextRelative="true" />
+    </action>
+    <!-- Send NAP CP SMS -->
+    <action
+      attribute="OMAClientProvForm"
+      name="OMAClientProvForm"
+      path="/ota/omacp/send4nap"
+      input="/ota/omacp/generalInput.do"
+      scope="request"
+      parameter="method"
+      type="com.npower.dm.action.ota.omacp.SendAction4NAP"
+      validate="true"
+      roles="authenticated">
+      <forward
+        name="success"
+        path="tile.ota.omacp.success"
+        contextRelative="true" />
+      <forward
+        name="viewXML"
+        path="tile.ota.omacp.viewXML"
+        contextRelative="true" />
+    </action>
+    <!-- Send NAP CP Proxy -->
+    <action
+      attribute="OMAClientProvForm"
+      name="OMAClientProvForm"
+      path="/ota/omacp/send4proxy"
+      input="/ota/omacp/generalInput.do"
+      scope="request"
+      parameter="method"
+      type="com.npower.dm.action.ota.omacp.SendAction4Proxy"
+      validate="true"
+      roles="authenticated">
+      <forward
+        name="success"
+        path="tile.ota.omacp.success"
+        contextRelative="true" />
+      <forward
+        name="viewXML"
+        path="tile.ota.omacp.viewXML"
+        contextRelative="true" />
+    </action>
+    <!-- Send NAP CP MMS -->
+    <action
+      attribute="OMAClientProvForm"
+      name="OMAClientProvForm"
+      path="/ota/omacp/send4mms"
+      input="/ota/omacp/generalInput.do"
+      scope="request"
+      parameter="method"
+      type="com.npower.dm.action.ota.omacp.SendAction4MMS"
+      validate="true"
+      roles="authenticated">
+      <forward
+        name="success"
+        path="tile.ota.omacp.success"
+        contextRelative="true" />
+      <forward
+        name="viewXML"
+        path="tile.ota.omacp.viewXML"
+        contextRelative="true" />
+    </action>
+    <!-- Send NAP CP email -->
+    <action
+      attribute="OMAClientProvForm"
+      name="OMAClientProvForm"
+      path="/ota/omacp/send4email"
+      input="/ota/omacp/generalInput.do"
+      scope="request"
+      parameter="method"
+      type="com.npower.dm.action.ota.omacp.SendAction4Email"
+      validate="true"
+      roles="authenticated">
+      <forward
+        name="success"
+        path="tile.ota.omacp.success"
+        contextRelative="true" />
+      <forward
+        name="viewXML"
+        path="tile.ota.omacp.viewXML"
+        contextRelative="true" />
+    </action>
+    <!-- Send NAP CP syncds -->
+    <action
+      attribute="OMAClientProvForm"
+      name="OMAClientProvForm"
+      path="/ota/omacp/send4syncds"
+      input="/ota/omacp/generalInput.do"
+      scope="request"
+      parameter="method"
+      type="com.npower.dm.action.ota.omacp.SendAction4SyncDS"
+      validate="true"
+      roles="authenticated">
+      <forward
+        name="success"
+        path="tile.ota.omacp.success"
+        contextRelative="true" />
+      <forward
+        name="viewXML"
+        path="tile.ota.omacp.viewXML"
+        contextRelative="true" />
+    </action>
+    <!-- Send NAP CP IMPS -->
+    <action
+      attribute="OMAClientProvForm"
+      name="OMAClientProvForm"
+      path="/ota/omacp/send4imps"
+      input="/ota/omacp/generalInput.do"
+      scope="request"
+      parameter="method"
+      type="com.npower.dm.action.ota.omacp.SendAction4IMPS"
+      validate="true"
+      roles="authenticated">
+      <forward
+        name="success"
+        path="tile.ota.omacp.success"
+        contextRelative="true" />
+      <forward
+        name="viewXML"
+        path="tile.ota.omacp.viewXML"
+        contextRelative="true" />
+    </action>
+    <!-- Send NAP CP POC -->
+    <action
+      attribute="OMAClientProvForm"
+      name="OMAClientProvForm"
+      path="/ota/omacp/send4poc"
+      input="/ota/omacp/generalInput.do"
+      scope="request"
+      parameter="method"
+      type="com.npower.dm.action.ota.omacp.SendAction4POC"
+      validate="true"
+      roles="authenticated">
+      <forward
+        name="success"
+        path="tile.ota.omacp.success"
+        contextRelative="true" />
+      <forward
+        name="viewXML"
+        path="tile.ota.omacp.viewXML"
+        contextRelative="true" />
+    </action>
+    <!-- Send NAP CP Document -->
+    <action
+      attribute="OMAClientProvDocumentForm"
+      name="OMAClientProvDocumentForm"
+      path="/ota/omacp/send4cpdocument"
+      input="/ota/omacp/generalInput.do?cp_type=document"
+      scope="request"
+      parameter="method"
+      type="com.npower.dm.action.ota.omacp.SendAction4Document"
+      validate="true"
+      roles="authenticated">
+      <forward
+        name="success"
+        path="tile.ota.omacp.success"
+        contextRelative="true" />
+    </action>
+
+    <!-- Temp for NowSMS -->
+    <action
+      path="/ota/omacp/nowsms"
+      type="com.npower.dm.action.ota.omacp.NowSMSAction"
+      validate="false">
+      <forward
+        name="success"
+        path="tile.ota.omacp.nowsms"
+        contextRelative="true" />
+    </action>
+
+  </action-mappings>
+</struts-config>
+

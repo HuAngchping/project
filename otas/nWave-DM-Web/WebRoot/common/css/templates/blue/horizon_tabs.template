@@ -1,0 +1,57 @@
+## displayMenu is defined in WEB-INF/classes/globalMacros.vm
+
+## Evaluates other macros.
+#macro(eval $_macro)$_macro#end
+
+#macro( displayMenuItem $menu $index $numItems)
+  ## set title
+  #set ($title = $displayer.getMessage($menu.title))
+  #if ($numItems == 1) 
+      ## Single menu 
+					<td width="35" id="first"><img src="${ctxPath}/common/css/templates/blue/images/mnu_normal_begin.gif"></td>
+					<th align="center" width="55" nowrap="nowrap" id="$menu.name"><a href="$menu.url" title="$title"#if($menu.target)target="$menu.target"#end>${title}</a></th>
+					<td width="21" id="last"><img src="${ctxPath}/common/css/templates/blue/images/mnu_normal_end.gif" ></td>
+  #elseif ($index == 1) 
+      ## Begin 
+					<td width="35" id="first"><img src="${ctxPath}/common/css/templates/blue/images/mnu_normal_begin.gif"></td>
+					<th align="center" width="55" nowrap="nowrap" id="$menu.name"><a href="$menu.url" title="$title"#if($menu.target)target="$menu.target"#end>${title}</a></th>
+  #elseif ($index == $numItems) 
+      ## End 
+					<td width="35"><img src="${ctxPath}/common/css/templates/blue/images/mnu_normalbeg_end.gif" ></td>
+					<th align="center" width="55" nowrap="nowrap" id="$menu.name"><a href="$menu.url" title="$title"#if($menu.target)target="$menu.target"#end>${title}</a></th>
+					<td width="21" id="last"><img src="${ctxPath}/common/css/templates/blue/images/mnu_normal_end.gif" ></td>
+  #else 
+      ## Middle menu
+					<td width="35"><img src="${ctxPath}/common/css/templates/blue/images/mnu_normalbeg_end.gif" ></td>
+					<th align="center" width="55" nowrap="nowrap" id="$menu.name"><a href="$menu.url" title="$title"#if($menu.target)target="$menu.target"#end>${title}</a></th>
+  #end
+#end
+
+#macro( displayMainMenu $menu )
+  #if ($displayer.isAllowed($menu))
+    #if ($menu.components.size() > 0)
+        ## Generate Menu based on roles
+        #set ($numItems = 0)
+        #foreach ($menu in $menu.components)
+            #local ($menu)
+                 #if ($displayer.isAllowed($menu))
+                     #set ($numItems = $numItems + 1)
+                 #end
+            #end
+        #end
+      
+        #set ($index = 0)
+        #foreach ($menu in $menu.components)
+            #local ($menu)
+                 #if ($displayer.isAllowed($menu))
+                     #set ($index = $index + 1)
+                     #displayMenuItem($menu $index $numItems)
+                 #end
+            #end
+        #end
+    #end
+  #end
+#end
+
+<!-- Top Main Menu -->
+<table class="MainMenu" id="MainMenu" border="0" cellspacing="0" cellpadding="0"><tr>#displayMainMenu($menu)</tr></table>

@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib
+  PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+  "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+
+
+<taglib>
+  <tlib-version>1.0</tlib-version>
+  <jsp-version>1.2</jsp-version>
+  <short-name>wall</short-name>
+  
+  <uri></uri>
+  
+ <tag>
+    <name>document</name>
+    <tag-class>com.npower.wall.WallDocument</tag-class>
+    <body-content>JSP</body-content> 
+    <description>Container Tag</description>
+    <attribute>
+		<name>disable_wml_extensions</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>disable_xhtml_extensions</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>disable_cache</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>disable_content_type_generation</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+ </tag>
+
+  
+ <tag>
+    <name>xmlpidtd</name>
+    <tag-class>com.npower.wall.WallXmlpidtd</tag-class>
+    <description>Generate appropriate XML Processing Instruction and DTD</description>
+    <attribute>
+    		<name>encoding</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+ </tag>
+
+
+ <tag>
+    <name>head</name>
+    <tag-class>com.npower.wall.WallHead</tag-class>
+    <body-content>JSP</body-content>  
+    <description>Multiserve Head Description</description>
+
+
+    <attribute>
+		<name>title</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>enforce_title</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+ </tag>
+
+ <tag>
+    <name>title</name>
+    <tag-class>com.npower.wall.WallTitle</tag-class>
+    <body-content>JSP</body-content>  
+    <description>Multiserve Title Attribute</description>
+
+    <attribute>
+		<name>enforce_title</name>
+		<required>false</required>
+    </attribute>
+ </tag>
+
+
+
+ <tag>
+    <name>body</name>
+    <tag-class>com.npower.wall.WallBody</tag-class>
+    <body-content>JSP</body-content> 
+    <description>Multiserve BODY tag</description> 
+
+    <attribute>
+		<name>bgcolor</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>text</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>wml_back_button_label</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>disable_wml_template</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>newcontext</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+ </tag>
+
+
+ <tag>
+    <name>block</name>
+    <tag-class>com.npower.wall.WallBlock</tag-class>
+    <body-content>JSP</body-content> 
+    <description>Multiserve p tag</description> 
+    <attribute>
+		<name>align</name>
+		<required>false</required>
+    </attribute>
+ </tag>
+
+ <tag>
+    <name>br</name>
+    <tag-class>com.npower.wall.WallBr</tag-class>
+    <description>Multiserve br tag to fix trailing slash</description>
+ </tag>
+
+ <tag>
+    <name>hr</name>
+    <tag-class>com.npower.wall.WallHr</tag-class>
+    <description>Multiserve horizontal-rule</description>
+    <attribute>
+		<name>color</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+ </tag>
+
+ <tag>
+    <name>h1</name>
+    <tag-class>com.npower.wall.WallH1</tag-class>
+    <description>Header level 1</description>
+ </tag>
+ <tag>
+    <name>h2</name>
+    <tag-class>com.npower.wall.WallH2</tag-class>
+    <description>Header level 2</description>
+ </tag>
+ <tag>
+    <name>h3</name>
+    <tag-class>com.npower.wall.WallH3</tag-class>
+    <description>Header level 3</description>
+ </tag>
+ <tag>
+    <name>h4</name>
+    <tag-class>com.npower.wall.WallH4</tag-class>
+    <description>Header level 4</description>
+ </tag>
+ <tag>
+    <name>h5</name>
+    <tag-class>com.npower.wall.WallH5</tag-class>
+    <description>Header level 5</description>
+ </tag>
+ <tag>
+    <name>h6</name>
+    <tag-class>com.npower.wall.WallH6</tag-class>
+    <description>Header level 6</description>
+ </tag>
+
+ <tag>
+    <name>menu_css</name>
+    <tag-class>com.npower.wall.WallMenu_css</tag-class>
+    <description>Serve some CSS to 'good' XHTML browsers to embelish menus</description>
+
+    <attribute>
+		<name>bgcolor1</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>bgcolor2</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+ </tag>
+
+
+ <tag>
+    <name>menu</name>
+    <tag-class>com.npower.wall.WallMenu</tag-class>
+    <body-content>JSP</body-content>  
+    <description>Multiserve Menu</description>
+    <attribute>
+		<name>colorize</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>autonumber</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+ </tag>
+
+
+<tag>
+    <name>cool_menu</name>
+    <tag-class>com.npower.wall.WallCool_menu</tag-class>
+    <body-content>JSP</body-content>  
+    <description>Cool graphical Menu</description>
+    <attribute>
+		<name>colnum</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>tabularize</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+</tag>
+
+<tag>
+    <name>cool_menu_css</name>
+    <tag-class>com.npower.wall.WallCool_menu_css</tag-class>
+    <description>Serve CSS to optimize coolmenus for XHTML devices</description>
+    <attribute>
+		<name>colnum</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>tabularize</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+</tag>
+
+<tag>
+    <name>cell</name>
+    <tag-class>com.npower.wall.WallCell</tag-class>
+    <body-content>JSP</body-content>  
+    <description>Cool Menu Cell</description>
+</tag>
+
+
+ <tag>
+    <name>a</name>
+    <tag-class>com.npower.wall.WallA</tag-class>
+    <body-content>JSP</body-content>  
+    <description>Multiserve Link and Menu Item</description>
+    <attribute>
+		<name>href</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>accesskey</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>title</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>opwv_icon</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+ </tag>
+
+ <tag>
+    <name>form</name>
+    <tag-class>com.npower.wall.WallForm</tag-class>
+    <body-content>JSP</body-content>  
+    <description>Multiserve Forms</description>
+    <attribute>
+		<name>enable_wml</name>
+		<required>false</required>
+    </attribute>
+    <attribute>
+		<name>action</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>method</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+ </tag>
+
+
+ <tag>
+    <name>input</name>
+    <tag-class>com.npower.wall.WallInput</tag-class>
+    <description>Multiserve Input element</description>
+    <attribute>
+		<name>accesskey</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>format</name>
+		<required>false</required>
+    </attribute>
+    <attribute>
+		<name>checked</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>disabled</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>emptyok</name>
+		<required>false</required>
+    </attribute>
+    <attribute>
+		<name>maxlength</name>
+		<required>false</required>
+    </attribute>
+    <attribute>
+		<name>name</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>size</name>
+		<required>false</required>
+    </attribute>
+    <attribute>
+		<name>type</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>title</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>type</name>
+		<required>true</required>
+    </attribute>
+    <attribute>
+		<name>value</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+ </tag>
+
+
+ <tag>
+    <name>select</name>
+    <tag-class>com.npower.wall.WallSelect</tag-class>
+    <description>Multiserve Select element</description>
+    <attribute>
+		<name>name</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>disabled</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>size</name>
+		<required>false</required>
+    </attribute>
+    <attribute>
+		<name>title</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>multiple</name>
+		<required>false</required>
+    </attribute>
+</tag>
+
+
+ <tag>
+    <name>option</name>
+    <tag-class>com.npower.wall.WallOption</tag-class>
+    <description>Option element</description>
+    <attribute>
+		<name>value</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+
+    <attribute>
+		<name>selected</name>
+		<required>false</required>
+    </attribute>
+
+ </tag>
+
+
+ <tag>
+    <name>img</name>
+    <tag-class>com.npower.wall.WallImg</tag-class>
+    <description>img element</description>
+    <attribute>
+		<name>src</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>alt</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+ </tag>
+
+
+ <tag>
+    <name>alternate_img</name>
+    <tag-class>com.npower.wall.WallAlternate_img</tag-class>
+    <description>alternate_img element</description>
+    <attribute>
+		<name>test</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>src</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>nopicture</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>opwv_icon</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>eu_imode_icon</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>ja_imode_icon</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+ </tag>
+
+
+
+ <tag>
+    <name>b</name>
+    <tag-class>com.npower.wall.WallB</tag-class>
+    <description>b bold element for WML compatibility</description>
+ </tag>
+
+ <tag>
+    <name>i</name>
+    <tag-class>com.npower.wall.WallI</tag-class>
+    <description>i italics element for WML compatibility</description>
+ </tag>
+
+
+ <tag>
+    <name>font</name>
+    <tag-class>com.npower.wall.WallFont</tag-class>
+    <description>Time-honored font-tag :)</description>
+    <attribute>
+		<name>color</name>
+		<required>false</required>
+    </attribute>
+    <attribute>
+		<name>size</name>
+		<required>false</required>
+    </attribute>
+    <attribute>
+		<name>face</name>
+		<required>false</required>
+    </attribute>
+ </tag>
+
+
+ <tag>
+    <name>marquee</name>
+    <tag-class>com.npower.wall.WallMarquee</tag-class>
+    <description>Scrolling horizontally</description>
+    <attribute>
+		<name>direction</name>
+		<required>false</required>
+    </attribute>
+    <attribute>
+		<name>behavior</name>
+		<required>false</required>
+    </attribute>
+    <attribute>
+		<name>loop</name>
+		<required>false</required>
+    </attribute>
+    <attribute>
+		<name>bgcolor</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+ </tag>
+
+ <tag>
+    <name>caller</name>
+    <tag-class>com.npower.wall.WallCaller</tag-class>
+    <description>Making WAP/Imode phone calls</description>
+    <attribute>
+		<name>tel</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>cti</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>alt</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>opwv_icon</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+		<name>accesskey</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+    </attribute>
+ </tag>
+
+ <tag>
+    <name>load_capabilities</name>
+    <tag-class>com.npower.wall.WallLoad_capabilities</tag-class>
+    <description>Create the hashmap that integrates with JSTL</description>
+ </tag>
+
+ <tag>
+    <name>wurfl_device_id</name>
+    <tag-class>com.npower.wall.WallWurfl_device_id</tag-class>
+    <description>print out the wurfl ID found for this device (debugging utility)</description>
+    <attribute>
+		<name>ua</name>
+		<required>false</required>
+    </attribute>
+ </tag>
+
+
+</taglib>

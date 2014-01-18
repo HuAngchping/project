@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	<form-beans>
+		<form-bean name="DDFTreeForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="modelID" type="java.lang.String" />
+			<form-property name="nodeID" type="java.lang.String" />
+            <form-property name="deleteNodeID" type="java.lang.String" />
+		</form-bean>
+
+		<form-bean name="ProfileCategoryForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="action" type="java.lang.String" />
+			<form-property name="description" type="java.lang.String" />
+			<form-property name="name" type="java.lang.String" />
+			<form-property name="ID" type="java.lang.String" />
+		</form-bean>
+
+		<form-bean name="ProfileAttributeTypeForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<!-- Look up dispatch parameter  -->
+			<form-property name="action" type="java.lang.String" />
+			<!--  description of AttributeType -->
+			<form-property name="description" type="java.lang.String" />
+			<!--  name of AttributeType -->
+			<form-property name="name" type="java.lang.String" />
+			<!--  ID of AttributeType -->
+			<form-property name="ID" type="java.lang.String" />
+
+		</form-bean>
+
+		<form-bean name="ProfileAttributeTypeValueForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<!-- Look up dispatch parameter  -->
+			<form-property name="action" type="java.lang.String" />
+			<!--  ID of AttributeType -->
+			<form-property name="ID" type="java.lang.String" />
+			<!-- ID of AttributeTypeValue for update or remove -->
+			<form-property name="valueID" type="java.lang.String" />
+			<!-- value of AttributeTypeValue for update or add -->
+			<form-property name="value" type="java.lang.String" />
+		</form-bean>
+
+		<form-bean name="ProfileTemplateForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="action" type="java.lang.String" />
+			<form-property name="needsProxy" type="java.lang.Boolean" />
+			<form-property name="needsNap" type="java.lang.Boolean" />
+			<form-property name="profileCategoryID" type="java.lang.String" />
+			<form-property name="name" type="java.lang.String" />
+			<form-property name="ID" type="java.lang.String" />
+		</form-bean>
+
+		<form-bean name="ProfileAttributeForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<!--  Template ID which include this attribue -->
+			<form-property name="templateID" type="java.lang.String" />
+			<!--  Attribute ID -->
+			<form-property name="attributeID" type="java.lang.String" />
+			<form-property name="name" type="java.lang.String" />
+            <form-property name="displayName" type="java.lang.String" />
+            <form-property name="description" type="java.lang.String" />
+			<form-property name="attributeTypeID" type="java.lang.String" />
+			<form-property name="attributeIndex" type="java.lang.String" />
+			<form-property name="defaultValue" type="java.lang.String" />
+			<form-property name="isMultivalued" type="java.lang.Boolean" />
+			<form-property name="isValueUnique" type="java.lang.Boolean" />
+			<form-property name="isUserAttribute" type="java.lang.Boolean" />
+			<form-property name="isRequired" type="java.lang.Boolean" />
+			<form-property name="displayValue" type="java.lang.Boolean" />
+		</form-bean>
+
+		<form-bean name="ProfileMappingForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<!--  Model ID which include this ProfileMapping -->
+			<form-property name="modelID" type="java.lang.String" />
+			<!--  Template ID which include this ProfileMapping -->
+			<form-property name="templateID" type="java.lang.String" />
+            <form-property name="rootDDFNodeID" type="java.lang.String" />
+			<!--  RootNodePath -->
+			<form-property name="rootNodePath" type="java.lang.String" />
+
+			<form-property name="shareRootNode" type="java.lang.Boolean" />
+			<form-property name="assignToDevice" type="java.lang.Boolean" />
+			<form-property name="linkedProfileType" type="java.lang.String" />
+
+      <form-property name="needToDiscovery" type="java.lang.Boolean" />
+      <form-property name="discoveryNodePaths" type="java.lang.String" />
+		</form-bean>
+
+    <form-bean name="CPTemplateForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="templateID" type="java.lang.String" />
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="encoder" type="java.lang.String" />
+      <form-property name="content" type="java.lang.String" />
+      <form-property name="modelID" type="java.lang.String" />
+      <form-property name="manufacturerID" type="java.lang.String" />
+      <form-property name="categoryID" type="java.lang.String" />
+      <form-property name="description" type="java.lang.String" />
+    </form-bean>
+
+		<form-bean name="ProfileNodeMappingForm" type="org.apache.struts.validator.DynaValidatorForm">
+            <form-property name="ID" type="java.lang.String" />
+			<form-property name="value" type="java.lang.String" />
+			<form-property name="ddfNodeID" type="java.lang.String" />
+            <form-property name="nodeRelativePath" type="java.lang.String" />
+			<form-property name="profileAttributeID" type="java.lang.String" />
+			<form-property name="categoryName" type="java.lang.String" />
+			<form-property name="paramIndex" type="java.lang.String" />
+			<form-property name="mappingType" type="java.lang.String" />
+			<form-property name="displayName" type="java.lang.String" />
+			<!--  Model ID which include this ProfileMapping -->
+			<form-property name="modelID" type="java.lang.String" />
+			<!--  Template ID which include this ProfileMapping -->
+			<form-property name="templateID" type="java.lang.String" />
+			<form-property name="command" type="java.lang.String" />
+			<form-property name="valueFormat" type="java.lang.String" />
+			<form-property name="valueFormatText" type="java.lang.String" />
+		</form-bean>
+
+		<form-bean name="ProfileConfigForm4Remove" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="ID" type="java.lang.String" />
+		</form-bean>
+
+    <!-- Map-backed ActionForm -->
+    <form-bean name="ProfileConfigForm4Save" type="com.npower.dm.action.config.ProfileConfigForm4Save">
+    </form-bean>
+
+		<form-bean name="uploadsForm" type="com.npower.dm.form.UpLoadForm" />
+  
+        <form-bean name="SearchTemplatesForm" type="org.apache.struts.validator.DynaValidatorForm">
+          <form-property name="searchCategoryID" type="java.lang.String" />
+          <form-property name="searchNeedNap" type="java.lang.String" />
+          <form-property name="searchNeedProxy" type="java.lang.String" />
+          <form-property name="searchText" type="java.lang.String" />
+          <form-property name="recordsPerPage" type="java.lang.Integer" />
+        </form-bean>
+        
+        <form-bean name="SearchProfilesForm" type="org.apache.struts.validator.DynaValidatorForm">
+          <form-property name="searchCategoryID" type="java.lang.String" />
+          <form-property name="searchCarrierID" type="java.lang.String" />
+          <form-property name="searchText" type="java.lang.String" />
+          <form-property name="searchIsUserProfile" type="java.lang.String" />
+          <form-property name="recordsPerPage" type="java.lang.Integer" />
+        </form-bean>
+        
+        <form-bean name="SearchMappingsForm" type="org.apache.struts.validator.DynaValidatorForm">
+          <form-property name="searchManufacturerID" type="java.lang.String" />
+          <form-property name="searchModelID" type="java.lang.String" />
+          <form-property name="searchTemplateID" type="java.lang.String" />
+          <form-property name="searchCategoryID" type="java.lang.String" />
+          <form-property name="searchText" type="java.lang.String" />
+          <form-property name="recordsPerPage" type="java.lang.Integer" />
+        </form-bean>
+        
+        <form-bean name="SearchCPTemplatesForm" type="org.apache.struts.validator.DynaValidatorForm">
+          <form-property name="searchManufacturerID" type="java.lang.String" />
+          <form-property name="searchModelID" type="java.lang.String" />
+          <form-property name="searchCategoryID" type="java.lang.String" />
+          <form-property name="searchText" type="java.lang.String" />
+          <form-property name="recordsPerPage" type="java.lang.Integer" />
+        </form-bean>
+        
+		<form-bean name="SearchProfileAttributeTypeForm" type="org.apache.struts.validator.DynaValidatorForm">
+          <form-property name="searchText" type="java.lang.String" />
+          <form-property name="recordsPerPage" type="java.lang.Integer" />
+		</form-bean>
+        
+	</form-beans>
+
+	<action-mappings>
+
+		<!--  Related with DDFTree and DDFNode -->
+		<action attribute="DDFTreeForm" 
+                name="DDFTreeForm" 
+                path="/DDFTree" 
+                scope="request" 
+                type="com.npower.dm.action.ddf.DDFTreeAction" 
+                parameter="method"
+                roles="authenticated">
+			<forward name="success" path="tile.ddfTree.view.main" contextRelative="true" />
+		</action>
+
+		<action attribute="DDFTreeFormAdd" name="DDFTreeForm" path="/ADDTree" scope="request" type="com.npower.dm.action.ddf.ADDTreeAction" roles="authenticated">
+			<forward name="uploadfile" path="tile.ddfTree.add.main" contextRelative="true" />
+		</action>
+
+		<action attribute="uploadsForm" name="uploadsForm" type="com.npower.dm.action.ddf.UpLoadAction" path="/uploadsAction" input="/jsp/ddf/errpage.jsp" scope="session" roles="authenticated">
+			<forward name="validation" path="tile.ddfTree.upload.main" redirect="false" contextRelative="true" />
+			<forward name="returnmodeledit" path="/Models.do" contextRelative="true" />
+			<forward name="fileerr" path="tile.ddfTree.add.main" contextRelative="true" />
+		</action>
+
+		<action attribute="uploadsForm" name="uploadsForm" type="com.npower.dm.action.ddf.ImportAction" path="/importsAction" input="/jsp/ddf/errpage.jsp" scope="session" roles="authenticated">
+			<forward name="returnmodeledit" path="/Models.do" contextRelative="true" />
+			<forward name="display" path="tile.ddfTree.display.main" redirect="false" contextRelative="true" />
+		</action>
+
+		<action attribute="uploadsForm" name="uploadsForm" type="com.npower.dm.action.ddf.ValidationAction" path="/validationAction" input="/jsp/ddf/errpage.jsp" scope="session" roles="authenticated">
+			<forward name="returnmodeledit" path="/Models.do" contextRelative="true" />
+			<forward name="import" path="tile.ddfTree.import.main" redirect="false" />
+			<forward name="err" path="tile.ddfTree.err.main" redirect="false" contextRelative="true" />
+		</action>
+
+
+		<!-- Upload Template -->
+
+		<action attribute="ProfileTemplateFormAdd" name="ProfileTemplateForm" path="/ADDTemplate" scope="request" type="com.npower.dm.action.profile.ImportTemplateAction" roles="authenticated">
+			<forward name="uploadfile" path="tile.template.add.main" contextRelative="true" />
+		</action>
+
+		<action attribute="uploadsForm" name="uploadsForm" type="com.npower.dm.action.profile.TemplateUpLoadAction" path="/templateuploadsAction" input="/jsp/profile/templateerrpage.jsp" scope="session" roles="authenticated">
+			<forward name="validation" path="tile.template.upload.main" redirect="false" contextRelative="true" />
+			<forward name="returnTemplateedit" path="/ProfileTemplates.do" contextRelative="true" />
+			<forward name="fileerr" path="tile.template.add.main" contextRelative="true" />
+		</action>
+
+		<action attribute="uploadsForm" name="uploadsForm" type="com.npower.dm.action.profile.TemplateImportAction" path="/templateimportsAction" input="/jsp/profile/templateerrpage.jsp" scope="session" roles="authenticated">
+			<forward name="returnTemplateedit" path="/ProfileTemplates.do" contextRelative="true" />
+			<forward name="display" path="tile.template.display.main" redirect="false" contextRelative="true" />
+			<forward name="err" path="tile.template.err.main" redirect="false" contextRelative="true" />
+		</action>
+
+		<action attribute="uploadsForm" name="uploadsForm" type="com.npower.dm.action.profile.TemplateValidationAction" path="/templatevalidationAction" scope="session" roles="authenticated">
+			<forward name="returnTemplateedit" path="/ProfileTemplates.do" contextRelative="true" />
+			<forward name="import" path="tile.template.import.main" redirect="false" />
+			<forward name="err" path="tile.template.err.main" redirect="false" contextRelative="true" />
+		</action>
+
+
+        <!-- Profile Import -->
+		<action path="/ProfileImports" scope="request" type="com.npower.dm.action.profile.ProfileImportPage" roles="authenticated">
+			<forward name="importpage" path="tile.import.page.main" contextRelative="true" />
+		</action>
+
+		<!-- upload mapping -->
+		<action attribute="ProfileMappingFormAdd" name="ProfileMappingForm" path="/ADDMapping" scope="request" type="com.npower.dm.action.profile.ImportMappingAction" roles="authenticated">
+			<forward name="uploadfile" path="tile.mapping.add.main" contextRelative="true" />
+		</action>
+		<action attribute="uploadsForm" name="uploadsForm" type="com.npower.dm.action.profile.MappingUploadAction" path="/mappinguploadsAction" scope="session" roles="authenticated">
+			<forward name="validation" path="tile.mapping.upload.main" redirect="false" contextRelative="true" />
+			<forward name="returnMappingedit" path="/ProfileMappings.do" contextRelative="true" />
+			<forward name="fileerr" path="tile.mapping.add.main" contextRelative="true" />
+		</action>
+		<action attribute="uploadsForm" name="uploadsForm" type="com.npower.dm.action.profile.MappingImportAction" path="/mappingimportsAction" input="/jsp/profile/mappingerrpage.jsp" scope="session" roles="authenticated">
+			<forward name="returnMappingedit" path="/ProfileMappings.do" contextRelative="true" />
+			<forward name="display" path="tile.mapping.display.main" redirect="false" contextRelative="true" />
+			<forward name="err" path="tile.mapping.err.main" redirect="false" contextRelative="true" />
+		</action>
+
+		<action attribute="uploadsForm" name="uploadsForm" type="com.npower.dm.action.profile.MappingValidationAction" path="/mappingvalidationAction" scope="session" roles="authenticated">
+			<forward name="returnMappingedit" path="/ProfileMappings.do" contextRelative="true" />
+			<forward name="import" path="tile.mapping.import.main" redirect="false" />
+			<forward name="err" path="tile.mapping.err.main" redirect="false" contextRelative="true" />
+		</action>
+
+
+		<!-- Upload Category -->
+		<action attribute="ProfileCategoryFormAdd" name="ProfileCategoryForm" path="/ADDCategory" scope="request" type="com.npower.dm.action.profile.ImportCategoryAction" roles="authenticated">
+			<forward name="uploadfile" path="tile.category.add.main" contextRelative="true" />
+		</action>
+		<action attribute="uploadsForm" name="uploadsForm" type="com.npower.dm.action.profile.CategoryUploadAction" path="/categoryuploadsAction" scope="session" roles="authenticated">
+			<forward name="validation" path="tile.category.upload.main" redirect="false" contextRelative="true" />
+			<forward name="returnCategoryedit" path="/Categories.do" contextRelative="true" />
+			<forward name="fileerr" path="tile.category.add.main" contextRelative="true" />
+		</action>
+		<action attribute="uploadsForm" name="uploadsForm" type="com.npower.dm.action.profile.CategoryImportAction" path="/categoryimportsAction" input="/jsp/profile/categoryerrpage.jsp" scope="session" roles="authenticated">
+			<forward name="returnCategoryedit" path="/Categories.do" contextRelative="true" />
+			<forward name="display" path="tile.category.display.main" redirect="false" contextRelative="true" />
+			<forward name="err" path="tile.category.err.main" redirect="false" contextRelative="true" />
+		</action>
+
+		<action attribute="uploadsForm" name="uploadsForm" type="com.npower.dm.action.profile.CategoryValidationAction" path="/categoryvalidationAction" scope="session" roles="authenticated">
+			<forward name="returnCategoryedit" path="/Categories.do" contextRelative="true" />
+			<forward name="import" path="tile.category.import.main" redirect="false" />
+			<forward name="err" path="tile.category.err.main" redirect="false" contextRelative="true" />
+		</action>
+
+
+
+
+
+		<!-- Upload AttributeType -->
+		<action attribute="ProfileAttributeTypeFormAdd" name="ProfileAttributeTypeForm" path="/ADDAttributeType" scope="request" type="com.npower.dm.action.profile.ImportAttributeTypeAction" roles="authenticated">
+			<forward name="uploadfile" path="tile.attributetype.add.main" contextRelative="true" />
+		</action>
+		<action attribute="uploadsForm" name="uploadsForm" type="com.npower.dm.action.profile.AttributeTypeUploadAction" path="/attributetypeuploadsAction" scope="session" roles="authenticated">
+			<forward name="validation" path="tile.attributetype.upload.main" redirect="false" contextRelative="true" />
+			<forward name="returnAttributeTypeedit" path="/ProfileAttributeTypes.do" contextRelative="true" />
+			<forward name="fileerr" path="tile.attributetype.add.main" contextRelative="true" />
+		</action>
+		<action attribute="uploadsForm" name="uploadsForm" type="com.npower.dm.action.profile.AttributeTypeImportAction" path="/attributetypeimportsAction" input="/jsp/profile/attributetypeerrpage.jsp" scope="session" roles="authenticated">
+			<forward name="returnAttributeTypeedit" path="/ProfileAttributeTypes.do" contextRelative="true" />
+			<forward name="display" path="tile.attributetype.display.main" redirect="false" contextRelative="true" />
+			<forward name="err" path="tile.attributetype.err.main" redirect="false" contextRelative="true" />
+		</action>
+
+		<action attribute="uploadsForm" name="uploadsForm" type="com.npower.dm.action.profile.AttributeTypeValidationAction" path="/attributetypevalidationAction" scope="session" roles="authenticated">
+			<forward name="returnAttributeTypeedit" path="/ProfileAttributeTypes.do" contextRelative="true" />
+			<forward name="import" path="tile.attributetype.import.main" redirect="false" />
+			<forward name="err" path="tile.attributetype.err.main" redirect="false" contextRelative="true" />
+		</action>
+
+
+
+
+
+		<!--  Related with ProfileCategory -->
+		<action path="/Categories" type="com.npower.dm.action.profile.CategoriesAction" roles="authenticated">
+			<forward name="categories" path="tile.profile.categories" contextRelative="true" />
+		</action>
+
+		<action
+          attribute="SearchTemplatesForm"
+          name="SearchTemplatesForm"
+          path="/ProfileTemplates"
+          scope="request"
+          type="com.npower.dm.action.profile.TemplatesAction">
+          <forward
+            name="templates"
+            path="tile.profile.templates"
+            contextRelative="true" />
+        </action>
+
+		<action attribute="SearchProfileAttributeTypeForm" name="SearchProfileAttributeTypeForm" path="/ProfileAttributeTypes" type="com.npower.dm.action.profile.AttributeTypesAction" scope="request" roles="authenticated">
+			<forward name="attributeTypes" path="tile.profile.attributeTypes" contextRelative="true" />
+		</action>
+
+		<action path="/EditProfileCategory" attribute="ProfileCategoryForm" name="ProfileCategoryForm" scope="request" validate="false" type="com.npower.dm.action.profile.EditCategoryAction" roles="authenticated">
+			<forward name="success" path="tile.profile.edit.category" contextRelative="true" />
+		</action>
+		<action attribute="ProfileCategoryForm" input="/EditProfileCategory.do" name="ProfileCategoryForm" parameter="action" path="/SaveProfileCategory" scope="request" type="com.npower.dm.action.profile.SaveCategoryAction" roles="authenticated">
+			<forward name="success" path="/Categories.do" contextRelative="true" />
+			<forward name="cancel" path="/Categories.do" contextRelative="true" />
+		</action>
+		<action attribute="ProfileCategoryForm" name="ProfileCategoryForm" parameter="action" path="/RemoveProfileCategory" scope="request" type="com.npower.dm.action.profile.RemoveProfileCategoryAction" validate="false" roles="authenticated">
+			<forward name="success" path="/Categories.do" contextRelative="true" />
+		</action>
+
+		<action attribute="ProfileAttributeTypeForm" name="ProfileAttributeTypeForm" path="/EditProfileAttributeType" scope="request" type="com.npower.dm.action.profile.EditAttributeTypeAction" validate="false" roles="authenticated">
+			<forward name="success" path="tile.profile.edit.attributeType" contextRelative="true" />
+		</action>
+		<action attribute="ProfileAttributeTypeForm" input="/EditProfileAttributeType.do" name="ProfileAttributeTypeForm" parameter="action" path="/SaveProfileAttributeType" scope="request" type="com.npower.dm.action.profile.SaveAttributeTypeAction" roles="authenticated">
+			<forward name="success" path="/ProfileAttributeTypes.do" contextRelative="true" />
+			<forward name="cancel" path="/ProfileAttributeTypes.do" contextRelative="true" />
+		</action>
+		<action attribute="ProfileAttributeTypeForm" name="ProfileAttributeTypeForm" parameter="action" path="/RemoveProfileAttributeType" scope="request" type="com.npower.dm.action.profile.RemoveAttributeTypeAction" validate="false" roles="authenticated">
+			<forward name="success" path="/ProfileAttributeTypes.do" contextRelative="true" />
+		</action>
+		<action path="/SaveProfileAttributeTypeValue" attribute="ProfileAttributeTypeValueForm" name="ProfileAttributeTypeValueForm" parameter="action" scope="request" type="com.npower.dm.action.profile.SaveProfileAttributeTypeValue" roles="authenticated">
+			<forward name="edit" path="/EditProfileAttributeType.do" contextRelative="true" />
+		</action>
+    <!-- Edit Profile Template -->
+		<action attribute="ProfileTemplateForm" 
+            name="ProfileTemplateForm" 
+            path="/EditProfileTemplate" 
+            scope="request" 
+            type="com.npower.dm.action.profile.EditProfileTemplateAction" 
+            validate="false" 
+            roles="authenticated">
+			<forward name="edit" path="tile.profile.edit.template" contextRelative="true" />
+		</action>
+    <!-- Edit Profile Template -->
+    <action attribute="ProfileTemplateForm" 
+              name="ProfileTemplateForm" 
+              path="/ViewProfileTemplate" 
+              scope="request" 
+              type="com.npower.dm.action.profile.ViewProfileTemplateAction" 
+              validate="false" 
+              roles="authenticated">
+      <forward name="view" path="tile.profile.view.template" contextRelative="true" />
+    </action>
+  
+		<action attribute="ProfileTemplateForm" input="/EditProfileTemplate.do" name="ProfileTemplateForm" parameter="action" path="/SaveProfileTemplate" scope="request" type="com.npower.dm.action.profile.SaveProfileTemplateAction" roles="authenticated">
+			<forward name="success" path="/ProfileTemplates.do" contextRelative="true" />
+			<forward name="cancel" path="/ProfileTemplates.do" contextRelative="true" />
+		</action>
+		<action attribute="ProfileTemplateForm" name="ProfileTemplateForm" parameter="action" path="/RemoveProfileTemplate" scope="request" type="com.npower.dm.action.profile.RemoveProfileTemplateAction" validate="false" roles="authenticated">
+			<forward name="success" path="/ProfileTemplates.do" contextRelative="true" />
+		</action>
+		<action attribute="ProfileAttributeForm" name="ProfileAttributeForm" path="/EditProfileAttribute" scope="request" type="com.npower.dm.action.profile.EditProfileAttributeAction" validate="false" roles="authenticated">
+			<forward name="success" path="tile.profile.edit.attribute" contextRelative="true" />
+		</action>
+
+		<action attribute="ProfileAttributeForm" input="/EditProfileAttribute.do" name="ProfileAttributeForm" parameter="action" path="/SaveProfileAttribute" scope="request" type="com.npower.dm.action.profile.SaveProfileAttributeAction" roles="authenticated">
+			<forward name="success" path="/EditProfileTemplate.do" contextRelative="true" />
+			<forward name="cancel" path="/EditProfileTemplate.do" contextRelative="true" />
+		</action>
+
+		<action attribute="ProfileAttributeForm" name="ProfileAttributeForm" parameter="action" path="/RemoveProfileAttribute" scope="request" type="com.npower.dm.action.profile.RemoveProfileAttributeAction" validate="false" roles="authenticated">
+			<forward name="success" path="/EditProfileTemplate.do" contextRelative="true" />
+		</action>
+    <!-- Edit Profile Mapping -->
+		<action path="/EditProfileMapping" 
+            name="ProfileMappingForm" 
+            attribute="ProfileMappingForm" 
+            scope="request" 
+            type="com.npower.dm.action.profile.EditProfileMappingAction" 
+            validate="false" 
+            roles="authenticated">
+			<forward name="edit" path="tile.profile.edit.profileMapping" contextRelative="true" />
+		</action>
+    <!-- View Profile Mapping -->
+    <action path="/ViewProfileMapping" 
+              name="ProfileMappingForm" 
+              attribute="ProfileMappingForm" 
+              scope="request" 
+              type="com.npower.dm.action.profile.ViewProfileMappingAction" 
+              validate="false" 
+              roles="authenticated">
+     <forward name="view" path="tile.profile.view.profileMapping" contextRelative="true" />
+    </action>
+
+		<action path="/CreateProfileMapping" name="ProfileMappingForm" attribute="ProfileMappingForm" scope="request" type="com.npower.dm.action.profile.CreateProfileMappingAction" validate="false" roles="authenticated">
+			<forward name="create" path="tile.profile.create.profileMapping" contextRelative="true" />
+		</action>
+
+		<action attribute="ProfileMappingForm" input="/EditProfileMapping.do" name="ProfileMappingForm" parameter="action" path="/SaveProfileMapping" scope="request" type="com.npower.dm.action.profile.SaveProfileMappingAction" roles="authenticated">
+			<forward name="continue" path="/EditProfileMapping.do" contextRelative="true" />
+			<forward name="success" path="/ProfileMappings.do" contextRelative="true" />
+			<forward name="cancel" path="/ProfileMappings.do" contextRelative="true" />
+		</action>
+
+		<action path="/AddProfileMapping" attribute="ProfileMappingForm" input="/CreateProfileMapping.do" name="ProfileMappingForm" parameter="action" scope="request" type="com.npower.dm.action.profile.AddProfileMappingAction" roles="authenticated">
+			<forward name="continue" path="/EditProfileMapping.do" contextRelative="true" />
+			<forward name="success" path="/ProfileMappings.do" contextRelative="true" />
+			<forward name="cancel" path="/ProfileMappings.do" contextRelative="true" />
+		</action>
+
+		<action attribute="ProfileMappingForm" name="ProfileMappingForm" path="/RemoveProfileMapping" scope="request" type="com.npower.dm.action.profile.RemoveProfileMappingAction" validate="false" roles="authenticated">
+			<forward name="success" path="/ProfileMappings.do" contextRelative="true" />
+		</action>
+
+		<action attribute="ProfileNodeMappingForm" name="ProfileNodeMappingForm" path="/EditProfileNodeMapping" scope="request" type="com.npower.dm.action.profile.EditProfileNodeMappingAction" validate="false" roles="authenticated">
+			<forward name="success" path="tile.profile.edit.nodeMapping" contextRelative="true" />
+		</action>
+		<action attribute="ProfileNodeMappingForm" input="/EditProfileNodeMapping.do" name="ProfileNodeMappingForm" parameter="action" path="/SaveProfileNodeMapping" scope="request" type="com.npower.dm.action.profile.SaveProfileNodeMappingAction" roles="authenticated">
+			<forward name="success" path="/EditProfileMapping.do" contextRelative="true" />
+			<forward name="cancel" path="/EditProfileMapping.do" contextRelative="true" />
+		</action>
+		<action attribute="ProfileNodeMappingForm" name="ProfileNodeMappingForm" path="/RemoveProfileNodeMapping" scope="request" type="com.npower.dm.action.profile.RemoveProfileNodeMappingAction" validate="false" roles="authenticated">
+			<forward name="success" path="/EditProfileMapping.do" contextRelative="true" />
+		</action>
+		<action path="/ProfileMappings" attribute="SearchMappingsForm" name="SearchMappingsForm" scope="request" type="com.npower.dm.action.profile.ProfileMappingsAction" validate="false" roles="authenticated">
+			<forward name="display" path="tile.profile.profileMappings" contextRelative="true" />
+		</action>
+
+		<!-- Related with ProfileConfig    -->
+		<action path="/ProfileConfigs" attribute="SearchProfilesForm" name="SearchProfilesForm" scope="request" type="com.npower.dm.action.config.ProfilesAction" validate="false" roles="authenticated">
+			<forward name="success" path="tile.profile.profileConfigs" contextRelative="true" />
+		</action>
+		<action path="/EditProfileConfig" 
+            attribute="ProfileConfigForm" 
+            name="ProfileConfigForm4Save" 
+            scope="request" 
+            type="com.npower.dm.action.config.EditProfileAction" 
+            validate="false" 
+            roles="authenticated">
+			<forward name="edit" path="tile.profile.edit.profileConfig" contextRelative="true" />
+		</action>
+    <action path="/ViewProfileConfig" 
+              attribute="ProfileConfigForm" 
+              name="ProfileConfigForm4Save" 
+              scope="request" 
+              type="com.npower.dm.action.config.ViewProfileAction" 
+              validate="false" 
+              roles="authenticated">
+     <forward name="view" path="tile.profile.view.profileConfig" contextRelative="true" />
+    </action>
+
+		<action path="/SaveProfileConfig" 
+            attribute="ProfileConfigForm" 
+            input="/EditProfileConfig.do" 
+            name="ProfileConfigForm4Save" 
+            parameter="action" 
+            scope="request" 
+            type="com.npower.dm.action.config.SaveProfileAction" 
+            roles="authenticated">
+			<forward name="success" path="/ProfileConfigs.do" contextRelative="true" />
+			<forward name="cancel" path="/ProfileConfigs.do" contextRelative="true" />
+			<forward name="continue" path="/EditProfileConfig.do" contextRelative="true" />
+		</action>
+
+		<action path="/RemoveProfileConfig" attribute="ProfileConfigForm" name="ProfileConfigForm4Remove" scope="request" type="com.npower.dm.action.config.RemoveProfileAction" validate="false" roles="authenticated">
+			<forward name="success" path="/ProfileConfigs.do" contextRelative="true" />
+		</action>
+  
+    <action
+      path="/profile/downloadAttributeValue"
+      scope="request"
+      parameter="method"
+      type="com.npower.dm.action.config.DownloadAttributeValueAction"
+      roles="authenticated">
+    </action>
+    
+    <!-- List Client Prov Templates -->
+    <action 
+      path="/profile/CPTemplates" 
+      attribute="SearchCPTemplatesForm" 
+      name="SearchCPTemplatesForm" 
+      scope="request" 
+      type="com.npower.dm.action.profile.CPTemplatesAction" 
+      validate="false" 
+      roles="authenticated">
+      <forward name="display" path="tile.profile.CPTemplates" contextRelative="true" />
+    </action>
+    <!-- Edit Client Prov Template -->
+    <action path="/profile/EditCPTemplate" 
+            name="CPTemplateForm" 
+            attribute="CPTemplateForm" 
+            scope="request" 
+            type="com.npower.dm.action.profile.EditCPTemplateAction" 
+            validate="false" 
+            roles="authenticated">
+      <forward name="edit" path="tile.profile.edit.CPTemplate" contextRelative="true" />
+    </action>
+    <!-- View Client Prov Template -->
+    <action path="/profile/ViewCPTemplate" 
+              name="CPTemplateForm" 
+              attribute="CPTemplateForm" 
+              scope="request" 
+              type="com.npower.dm.action.profile.ViewCPTemplateAction" 
+              validate="false" 
+              roles="authenticated">
+      <forward name="view" path="tile.profile.view.CPTemplate" contextRelative="true" />
+    </action>
+    <!-- Save Client Prov Template -->
+    <action attribute="CPTemplateForm" 
+            input="/profile/EditCPTemplate.do" 
+            name="CPTemplateForm" 
+            parameter="method" 
+            path="/profile/SaveCPTemplate" 
+            scope="request" 
+            type="com.npower.dm.action.profile.SaveCPTemplateAction" 
+            validate="true"
+            roles="authenticated">
+       <forward name="success" path="/profile/CPTemplates.do" contextRelative="true" />
+       <forward name="cancel" path="/profile/CPTemplates.do" contextRelative="true" />
+    </action>
+    <!-- Remove Client Prov Template -->
+    <action attribute="CPTemplateForm" 
+            name="CPTemplateForm" 
+            path="/profile/RemoveCPTemplate" 
+            scope="request" 
+            type="com.npower.dm.action.profile.RemoveCPTemplateAction" 
+            validate="false" 
+            roles="authenticated">
+      <forward name="success" path="/profile/CPTemplates.do" contextRelative="true" />
+    </action>
+    
+	</action-mappings>
+
+</struts-config>
+

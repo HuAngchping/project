@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans>
+    <form-bean name="DeviceBootstrapForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="deviceID" type="java.lang.String" />
+      <form-property name="pinType" type="java.lang.Byte" />
+      <form-property name="pin" type="java.lang.String" />
+      <form-property name="jobSchedule" type="java.lang.String" />
+    </form-bean>
+    
+    <!-- For unknown device -->
+    <form-bean name="BootstrapForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="msisdn" type="java.lang.String" />
+      <form-property name="pinType" type="java.lang.Byte" />
+      <form-property name="pin" type="java.lang.String" />
+      <form-property name="serverURL" type="java.lang.String" />
+      <form-property name="serverID" type="java.lang.String" />
+      <form-property name="serverPassword" type="java.lang.String" />
+      <form-property name="clientUsername" type="java.lang.String" />
+      <form-property name="clientPassword" type="java.lang.String" />
+      <form-property name="jobSchedule" type="java.lang.String" />
+    </form-bean>
+  </form-beans>
+
+  <action-mappings>
+    <!--  Related with Bootstrap for known devices -->
+    <action
+      attribute="DeviceBootstrapForm"
+      name="DeviceBootstrapForm"
+      path="/device/bootstrap"
+      scope="request"
+      parameter="method"
+      type="com.npower.dm.action.device.BootstrapAction"
+      validate="false"
+      roles="authenticated">
+      <forward
+        name="input"
+        path="tile.device.bootstrap.input"
+        contextRelative="true" />
+      <forward
+        name="success"
+        path="tile.device.bootstrap.success"
+        contextRelative="true" />
+      <forward
+        name="failure"
+        path="tile.device.bootstrap.failure"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/ViewDevice.do"
+        contextRelative="true" />
+    </action>
+    
+    <!--  Related with Bootstrap for unknown devices -->
+    <action
+      attribute="BootstrapForm"
+      name="BootstrapForm"
+      path="/bootstrap/send"
+      scope="request"
+      parameter="method"
+      type="com.npower.dm.action.bootstrap.BootstrapAction"
+      validate="false"
+      roles="authenticated">
+      <forward
+        name="input"
+        path="tile.bootstrap.input"
+        contextRelative="true" />
+      <forward
+        name="success"
+        path="tile.bootstrap.success"
+        contextRelative="true" />
+      <forward
+        name="failure"
+        path="tile.bootstrap.failure"
+        contextRelative="true" />
+    </action>
+    
+  </action-mappings>
+</struts-config>
+

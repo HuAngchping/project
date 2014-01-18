@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<tiles-definitions>
+
+    <!-- Tiles: Device Management  -->
+    <definition name="baseDeviceManagement" extends="otas.dm.main.base">
+	    <put name="title">Change_Me</put>
+		<put name="SubMenus" value="/jsp/device/menus.jsp" />
+		<put name="MainContent" value="Change_Me" />
+        <putList name="LocationLabels">
+           <add value="Change_Me"></add>
+           <add value="Change_Me"></add>
+           <add value="Change_Me"></add>
+        </putList>
+    </definition>
+    
+	<definition name="tile.device.devices" extends="baseDeviceManagement">
+	    <put name="title">tile.device.devices.pageTitle</put>
+		  <put name="MainContent" value="/jsp/device/devices.jsp" />
+      <put name="SearchPannel" value="/jsp/device/searchpannel.jsp" />
+      <putList name="LocationLabels">
+           <add value="tile.device.devices.location1.label"></add>
+           <add value="tile.device.devices.location2.label"></add>
+      </putList>
+	</definition>
+
+	<definition name="tile.device.edit.device" extends="baseDeviceManagement">
+	    <put name="title">tile.device.edit.device.pageTitle</put>
+		<put name="MainContent" value="/jsp/device/editdevice.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.edit.device.location1.label"></add>
+           <add value="tile.device.edit.device.location2.label"></add>
+           <add value="tile.device.edit.device.location3.label"></add>
+        </putList>
+	</definition>
+
+	<definition name="tile.device.view.device" extends="baseDeviceManagement">
+	    <put name="title">tile.device.view.device.pageTitle</put>
+		  <put name="MainContent" value="/jsp/device/viewdevice.jsp" />
+      <put name="SearchPannel" value="/jsp/device/searchpannel.jsp" />
+      <putList name="LocationLabels">
+           <add value="tile.device.view.device.location1.label"></add>
+           <add value="tile.device.view.device.location2.label"></add>
+      </putList>
+	</definition>
+
+	<definition name="tile.device.view.deviceTree.main" extends="baseDeviceManagement">
+		<put name="title">tile.device.view.deviceTree.main.pageTitle</put>
+		<put name="MainContent" value="/jsp/device/tree/index.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.device.view.deviceTree.main.location1.label"></add>
+			<add value="tile.device.view.deviceTree.main.location2.label"></add>
+			<add value="tile.device.view.deviceTree.main.location3.label"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.device.view.deviceTree.standalone" path="/jsp/device/tree/layout.jsp">
+		<put name="title">tile.device.view.deviceTree.standalone.pageTitle</put>
+		<put name="deviceTree" value="/jsp/device/tree/tree.jsp" />
+		<put name="deviceTreeNodes" value="/jsp/device/tree/node.jsp" />
+		<putList name="LocationLabels">
+			<add value="tile.device.view.deviceTree.standalone.location1.label"></add>
+			<add value="tile.device.view.deviceTree.standalone.location2.label"></add>
+			<add value="tile.device.view.deviceTree.standalone.location3.label"></add>
+		</putList>
+	</definition>
+
+	<definition name="tile.device.edit.jobType" extends="baseDeviceManagement">
+	    <put name="title">tile.device.edit.jobType.pageTitle</put>
+		<put name="MainContent" value="/jsp/device/jobtypes.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.edit.jobType.location1.label"></add>
+           <add value="tile.device.edit.jobType.location2.label"></add>
+           <add value="tile.device.edit.jobType.location3.label"></add>
+        </putList>
+	</definition>
+
+    <!-- Edit Script Job -->
+	<definition name="tile.device.edit.jobScript" extends="baseDeviceManagement">
+	    <put name="title">tile.device.edit.jobScript.pageTitle</put>
+		<put name="MainContent" value="/jsp/device/job/script/script.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.edit.jobScript.location1.label"></add>
+           <add value="tile.device.edit.jobScript.location2.label"></add>
+           <add value="tile.device.edit.jobScript.location3.label"></add>
+        </putList>
+	</definition>
+
+    <!-- View Script Job -->
+	<definition name="tile.device.view.jobScript" extends="baseDeviceManagement">
+	    <put name="title">tile.device.view.jobScript.pageTitle</put>
+		<put name="MainContent" value="/jsp/device/job/script/viewscript.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.view.jobScript.location1.label"></add>
+           <add value="tile.device.view.jobScript.location2.label"></add>
+           <add value="tile.device.view.jobScript.location3.label"></add>
+           <add value="tile.device.view.jobScript.location4.label"></add>
+        </putList>
+	</definition>
+
+    <definition name="tile.device.view.jobScript.schedule" extends="baseDeviceManagement">
+        <put name="title">tile.device.view.jobScript.schedule.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/job/script/schedule.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.device.view.jobScript.schedule.location1.label"></add>
+              <add value="tile.device.view.jobScript.schedule.location2.label"></add>
+              <add value="tile.device.view.jobScript.schedule.location3.label"></add>
+           </putList>
+    </definition>
+
+    <!-- Select Firmwares for Device -->
+    <definition name="tile.device.job.edit.firmwares" extends="baseDeviceManagement">
+        <put name="title">tile.device.job.edit.firmwares.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/job/updates/firmwares.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.device.job.edit.firmwares.location1.label"></add>
+              <add value="tile.device.job.edit.firmwares.location2.label"></add>
+              <add value="tile.device.job.edit.firmwares.location3.label"></add>
+           </putList>
+    </definition>
+   
+    <!-- Select Firmwares for Device -->
+    <definition name="tile.device.job.edit.firmwares.schedule" extends="baseDeviceManagement">
+        <put name="title">tile.device.job.edit.firmwares.schedule.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/job/updates/schedule.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.device.job.edit.firmwares.schedule.location1.label"></add>
+              <add value="tile.device.job.edit.firmwares.schedule.location2.label"></add>
+              <add value="tile.device.job.edit.firmwares.schedule.location3.label"></add>
+              <add value="tile.device.job.edit.firmwares.schedule.location4.label"></add>
+           </putList>
+    </definition>
+   
+	<definition name="tile.device.success.jobScript" extends="baseDeviceManagement">
+	    <put name="title">tile.device.success.jobScript.pageTitle</put>
+		<put name="MainContent" value="/jsp/device/job/success.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.success.jobScript.location1.label"></add>
+           <add value="tile.device.success.jobScript.location2.label"></add>
+           <add value="tile.device.success.jobScript.location3.label"></add>
+           <add value="tile.device.success.jobScript.location4.label"></add>
+        </putList>
+	</definition>
+
+	<definition name="tile.device.jobs" extends="baseDeviceManagement">
+	    <put name="title">tile.device.jobs.pageTitle</put>
+		<put name="MainContent" value="/jsp/device/jobs.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.jobs.location1.label"></add>
+           <add value="tile.device.jobs.location2.label"></add>
+           <add value="tile.device.jobs.location3.label"></add>
+        </putList>
+	</definition>
+
+	<definition name="tile.device.job.view.dm.assign.profile" extends="baseDeviceManagement">
+	    <put name="title">tile.device.jobView.pageTitle</put>
+		<put name="MainContent" value="/jsp/device/job/view/dm/assign_profile.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.jobView.location1.label"></add>
+           <add value="tile.device.jobView.location2.label"></add>
+           <add value="tile.device.jobView.location3.label"></add>
+        </putList>
+	</definition>
+
+	<definition name="tile.device.job.view.dm.re_assign.profile" extends="baseDeviceManagement">
+	    <put name="title">tile.device.jobView.pageTitle</put>
+		<put name="MainContent" value="/jsp/device/job/view/dm/re_assign_profile.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.jobView.location1.label"></add>
+           <add value="tile.device.jobView.location2.label"></add>
+           <add value="tile.device.jobView.location3.label"></add>
+        </putList>
+	</definition>
+
+	<definition name="tile.device.job.view.dm.discovery" extends="baseDeviceManagement">
+	    <put name="title">tile.device.jobView.pageTitle</put>
+		<put name="MainContent" value="/jsp/device/job/view/dm/discovery.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.jobView.location1.label"></add>
+           <add value="tile.device.jobView.location2.label"></add>
+           <add value="tile.device.jobView.location3.label"></add>
+        </putList>
+	</definition>
+
+	<definition name="tile.device.job.view.dm.command.script" extends="baseDeviceManagement">
+	    <put name="title">tile.device.jobView.pageTitle</put>
+		<put name="MainContent" value="/jsp/device/job/view/dm/command_script.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.jobView.location1.label"></add>
+           <add value="tile.device.jobView.location2.label"></add>
+           <add value="tile.device.jobView.location3.label"></add>
+        </putList>
+	</definition>
+
+	<definition name="tile.device.job.view.dm.firmware.update" extends="baseDeviceManagement">
+	    <put name="title">tile.device.jobView.pageTitle</put>
+		<put name="MainContent" value="/jsp/device/job/view/dm/firmware_update.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.jobView.location1.label"></add>
+           <add value="tile.device.jobView.location2.label"></add>
+           <add value="tile.device.jobView.location3.label"></add>
+        </putList>
+	</definition>
+
+    <definition name="tile.device.job.view.dm.software.install" extends="baseDeviceManagement">
+        <put name="title">tile.device.jobView.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/job/view/dm/software_install.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.jobView.location1.label"></add>
+           <add value="tile.device.jobView.location2.label"></add>
+           <add value="tile.device.jobView.location3.label"></add>
+        </putList>
+    </definition>
+
+    <definition name="tile.device.job.view.dm.software.uninstall" extends="baseDeviceManagement">
+        <put name="title">tile.device.jobView.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/job/view/dm/software_uninstall.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.jobView.location1.label"></add>
+           <add value="tile.device.jobView.location2.label"></add>
+           <add value="tile.device.jobView.location3.label"></add>
+        </putList>
+    </definition>
+
+    <definition name="tile.device.job.view.dm.software.active" extends="baseDeviceManagement">
+        <put name="title">tile.device.jobView.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/job/view/dm/software_active.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.jobView.location1.label"></add>
+           <add value="tile.device.jobView.location2.label"></add>
+           <add value="tile.device.jobView.location3.label"></add>
+        </putList>
+    </definition>
+
+    <definition name="tile.device.job.view.dm.software.deactive" extends="baseDeviceManagement">
+        <put name="title">tile.device.jobView.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/job/view/dm/software_deactive.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.jobView.location1.label"></add>
+           <add value="tile.device.jobView.location2.label"></add>
+           <add value="tile.device.jobView.location3.label"></add>
+        </putList>
+    </definition>
+
+    <definition name="tile.device.job.view.dm.software.upgrade" extends="baseDeviceManagement">
+        <put name="title">tile.device.jobView.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/job/view/dm/software_upgrade.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.jobView.location1.label"></add>
+           <add value="tile.device.jobView.location2.label"></add>
+           <add value="tile.device.jobView.location3.label"></add>
+        </putList>
+    </definition>
+
+    <definition name="tile.device.job.view.dm.software.discovery" extends="baseDeviceManagement">
+        <put name="title">tile.device.jobView.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/job/view/dm/software_discovery.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.jobView.location1.label"></add>
+           <add value="tile.device.jobView.location2.label"></add>
+           <add value="tile.device.jobView.location3.label"></add>
+        </putList>
+    </definition>
+
+	<definition name="tile.device.job.view.cp.assign.profile" extends="baseDeviceManagement">
+	    <put name="title">tile.device.jobView.pageTitle</put>
+		<put name="MainContent" value="/jsp/device/job/view//cp/assign_profile.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.jobView.location1.label"></add>
+           <add value="tile.device.jobView.location2.label"></add>
+           <add value="tile.device.jobView.location3.label"></add>
+        </putList>
+	</definition>
+
+	<definition name="tile.device.job.dm.select.profileconfigs" extends="baseDeviceManagement">
+	    <put name="title">tile.device.job.select.profileconfigs.pageTitle</put>
+      <put name="SearchPannel" value="/jsp/device/job/assignment/searchpannel4dm.jsp" />
+		  <put name="MainContent" value="/jsp/device/job/assignment/profileconfigs4dm.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.job.select.profileconfigs.location1.label"></add>
+           <add value="tile.device.job.select.profileconfigs.location2.label"></add>
+           <add value="tile.device.job.select.profileconfigs.location3.label"></add>
+           <add value="tile.device.job.select.profileconfigs.location4.label"></add>
+        </putList>
+	</definition>
+	
+  <definition name="tile.device.job.cp.select.profileconfigs" extends="baseDeviceManagement">
+      <put name="title">tile.device.job.select.profileconfigs.pageTitle</put>
+      <put name="SearchPannel" value="/jsp/device/job/assignment/searchpannel4cp.jsp" />
+      <put name="MainContent" value="/jsp/device/job/assignment/profileconfigs4cp.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.job.select.profileconfigs.location1.label"></add>
+           <add value="tile.device.job.select.profileconfigs.location2.label"></add>
+           <add value="tile.device.job.select.profileconfigs.location3.label"></add>
+           <add value="tile.device.job.select.profileconfigs.location4.label"></add>
+        </putList>
+  </definition>
+  
+    <!-- Profile Job Form page for DM mode -->
+	<definition name="tile.device.job.dm.edit.profileAssignment" extends="baseDeviceManagement">
+	    <put name="title">tile.device.job.edit.profileAssignment.pageTitle</put>
+		<put name="MainContent" value="/jsp/device/job/assignment/profileassignment4dm.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.job.edit.profileAssignment.location1.label"></add>
+           <add value="tile.device.job.edit.profileAssignment.location2.label"></add>
+           <add value="tile.device.job.edit.profileAssignment.location3.label"></add>
+        </putList>
+	</definition>
+
+    <!-- Profile Job Form page for CP mode -->
+  <definition name="tile.device.job.cp.edit.profileAssignment" extends="baseDeviceManagement">
+      <put name="title">tile.device.job.edit.profileAssignment.pageTitle</put>
+    <put name="MainContent" value="/jsp/device/job/assignment/profileassignment4cp.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.job.edit.profileAssignment.location1.label"></add>
+           <add value="tile.device.job.edit.profileAssignment.location2.label"></add>
+           <add value="tile.device.job.edit.profileAssignment.location3.label"></add>
+        </putList>
+  </definition>
+
+    <!-- Profile Job schedule page -->
+    <definition name="tile.device.job.edit.profileAssignment.schedule4dm" extends="baseDeviceManagement">
+        <put name="title">tile.device.job.edit.profileAssignment.schedule.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/job/assignment/schedule4dm.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.job.edit.profileAssignment.schedule.location1.label"></add>
+           <add value="tile.device.job.edit.profileAssignment.schedule.location2.label"></add>
+           <add value="tile.device.job.edit.profileAssignment.schedule.location3.label"></add>
+        </putList>
+    </definition>
+
+    <!-- Profile Job schedule page -->
+    <definition name="tile.device.job.edit.profileAssignment.schedule4cp" extends="baseDeviceManagement">
+        <put name="title">tile.device.job.edit.profileAssignment.schedule.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/job/assignment/schedule4cp.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.job.edit.profileAssignment.schedule.location1.label"></add>
+           <add value="tile.device.job.edit.profileAssignment.schedule.location2.label"></add>
+           <add value="tile.device.job.edit.profileAssignment.schedule.location3.label"></add>
+        </putList>
+    </definition>
+
+	<definition name="tile.device.job.edit.profileReAssignment" extends="baseDeviceManagement">
+	    <put name="title">tile.device.job.edit.profileReAssignment.pageTitle</put>
+		<put name="MainContent" value="/jsp/device/job/assignment/profileassignment4dm.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.job.edit.profileReAssignment.location1.label"></add>
+           <add value="tile.device.job.edit.profileReAssignment.location2.label"></add>
+           <add value="tile.device.job.edit.profileReAssignment.location3.label"></add>
+        </putList>
+	</definition>
+
+	<definition name="tile.device.success.jobAssign" extends="baseDeviceManagement">
+	    <put name="title">tile.device.success.jobAssign.pageTitle</put>
+		<put name="MainContent" value="/jsp/device/job/success.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.success.jobAssign.location1.label"></add>
+           <add value="tile.device.success.jobAssign.location2.label"></add>
+           <add value="tile.device.success.jobAssign.location3.label"></add>
+           <add value="tile.device.success.jobAssign.location4.label"></add>
+        </putList>
+	</definition>
+	
+	<definition name="tile.device.profileassignments" extends="baseDeviceManagement">
+	    <put name="title">tile.device.profileassignments.pageTitle</put>
+		<put name="MainContent" value="/jsp/device/profileassignments.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.profileassignments.location1.label"></add>
+           <add value="tile.device.profileassignments.location2.label"></add>
+           <add value="tile.device.profileassignments.location3.label"></add>
+        </putList>
+	</definition>
+
+    <!-- Display Softwares installation status -->
+    <definition name="tile.device.softwares" extends="baseDeviceManagement">
+        <put name="title">tile.device.softwares.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/softwares.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.softwares.location1.label"></add>
+           <add value="tile.device.softwares.location2.label"></add>
+           <add value="tile.device.softwares.location3.label"></add>
+        </putList>
+    </definition>
+
+    <!-- Discovery Job form page -->
+	<definition name="tile.device.job.edit.discovery" extends="baseDeviceManagement">
+	    <put name="title">tile.device.job.edit.discovery.pageTitle</put>
+		<put name="MainContent" value="/jsp/device/job/discovery/selectdiscoverynode.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.job.edit.discovery.location1.label"></add>
+           <add value="tile.device.job.edit.discovery.location2.label"></add>
+           <add value="tile.device.job.edit.discovery.location3.label"></add>
+           <add value="tile.device.job.edit.discovery.location4.label"></add>
+        </putList>
+	</definition>
+
+    <!-- Discovery Job schedule -->
+    <definition name="tile.device.job.edit.jobDiscovery.schedule" extends="baseDeviceManagement">
+        <put name="title">tile.device.job.edit.jobDiscovery.schedule.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/job/discovery/schedule.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.device.job.edit.jobDiscovery.schedule.location1.label"></add>
+              <add value="tile.device.job.edit.jobDiscovery.schedule.location2.label"></add>
+              <add value="tile.device.job.edit.jobDiscovery.schedule.location3.label"></add>
+           </putList>
+    </definition>
+
+	<definition name="tile.device.success.jobDiscovery" extends="baseDeviceManagement">
+	    <put name="title">tile.device.success.jobDiscovery.pageTitle</put>
+		<put name="MainContent" value="/jsp/device/job/success.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.success.jobDiscovery.location1.label"></add>
+           <add value="tile.device.success.jobDiscovery.location2.label"></add>
+           <add value="tile.device.success.jobDiscovery.location3.label"></add>
+           <add value="tile.device.success.jobDiscovery.location4.label"></add>
+        </putList>
+	</definition>
+	    
+    <definition name="tile.device.success.jobFirmware" extends="baseDeviceManagement">
+        <put name="title">tile.device.success.jobFirmware.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/job/success.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.device.success.jobFirmware.location1.label"></add>
+              <add value="tile.device.success.jobFirmware.location2.label"></add>
+              <add value="tile.device.success.jobFirmware.location3.label"></add>
+              <add value="tile.device.success.jobFirmware.location4.label"></add>
+           </putList>
+    </definition>
+     
+    <!-- Job of remove profile schedule page -->
+    <definition name="tile.device.job.edit.removeProfileAssignment.schedule" extends="baseDeviceManagement">
+        <put name="title">tile.device.job.edit.removeProfileAssignment.schedule.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/job/deleteAssignment/schedule.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.job.edit.removeProfileAssignment.schedule.location1.label"></add>
+           <add value="tile.device.job.edit.removeProfileAssignment.schedule.location2.label"></add>
+           <add value="tile.device.job.edit.removeProfileAssignment.schedule.location3.label"></add>
+        </putList>
+    </definition>
+
+    <definition name="tile.device.success.jobRemoveAssign" extends="baseDeviceManagement">
+        <put name="title">tile.device.success.jobRemoveAssign.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/job/success.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.device.success.jobRemoveAssign.location1.label"></add>
+              <add value="tile.device.success.jobRemoveAssign.location2.label"></add>
+              <add value="tile.device.success.jobRemoveAssign.location3.label"></add>
+              <add value="tile.device.success.jobRemoveAssign.location4.label"></add>
+           </putList>
+    </definition>
+     
+    <definition name="tile.device.history" extends="baseDeviceManagement">
+        <put name="title">tile.device.history.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/history.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.history.location1.label"></add>
+           <add value="tile.device.history.location2.label"></add>
+           <add value="tile.device.history.location3.label"></add>
+        </putList>
+    </definition>
+
+    <!-- Select softwares for installation -->
+    <definition name="tile.device.job.edit.select.softwares4install" extends="baseDeviceManagement">
+        <put name="title">tile.device.job.edit.software.installation.select.software.pageTitle</put>
+        <put name="SearchPannel" value="/jsp/device/job/software/searchpannel.jsp" />
+        <put name="MainContent" value="/jsp/device/job/software/softwares4installation.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.device.job.edit.software.installation.select.software.location1.label"></add>
+              <add value="tile.device.job.edit.software.installation.select.software.location2.label"></add>
+              <add value="tile.device.job.edit.software.installation.select.software.location3.label"></add>
+              <add value="tile.device.job.edit.software.installation.select.software.location4.label"></add>
+           </putList>
+    </definition>
+   
+    <!-- Set schedule parameters softwares for installation -->
+    <definition name="tile.device.job.edit.software.installation.schedule" extends="baseDeviceManagement">
+        <put name="title">tile.device.job.edit.software.installation.schedule.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/job/software/schedule4installation.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.device.job.edit.software.installation.schedule.location1.label"></add>
+              <add value="tile.device.job.edit.software.installation.schedule.location2.label"></add>
+              <add value="tile.device.job.edit.software.installation.schedule.location3.label"></add>
+              <add value="tile.device.job.edit.software.installation.schedule.location4.label"></add>
+           </putList>
+    </definition>
+    
+    <definition name="tile.device.job.edit.software.installation.success" extends="baseDeviceManagement">
+        <put name="title">tile.device.job.edit.software.installation.success.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/job/success.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.device.job.edit.software.installation.success.location1.label"></add>
+              <add value="tile.device.job.edit.software.installation.success.location2.label"></add>
+              <add value="tile.device.job.edit.software.installation.success.location3.label"></add>
+              <add value="tile.device.job.edit.software.installation.success.location4.label"></add>
+           </putList>
+    </definition>
+     
+    <!-- Set schedule parameters softwares discovery -->
+    <definition name="tile.device.job.edit.software.discovery.schedule" extends="baseDeviceManagement">
+        <put name="title">tile.device.job.edit.software.discovery.schedule.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/job/software/schedule4discovery.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.device.job.edit.software.discovery.schedule.location1.label"></add>
+              <add value="tile.device.job.edit.software.discovery.schedule.location2.label"></add>
+              <add value="tile.device.job.edit.software.discovery.schedule.location3.label"></add>
+              <add value="tile.device.job.edit.software.discovery.schedule.location4.label"></add>
+           </putList>
+    </definition>
+    
+    <definition name="tile.device.job.edit.software.discovery.success" extends="baseDeviceManagement">
+        <put name="title">tile.device.job.edit.software.discovery.success.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/job/success.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.device.job.edit.software.discovery.success.location1.label"></add>
+              <add value="tile.device.job.edit.software.discovery.success.location2.label"></add>
+              <add value="tile.device.job.edit.software.discovery.success.location3.label"></add>
+              <add value="tile.device.job.edit.software.discovery.success.location4.label"></add>
+           </putList>
+    </definition>
+     
+    <!-- Select softwares for uninstallation -->
+    <definition name="tile.device.job.edit.select.softwares4uninstall" extends="baseDeviceManagement">
+        <put name="title">tile.device.job.edit.software.uninstallation.select.software.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/job/software/softwares4uninstallation.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.device.job.edit.software.uninstallation.select.software.location1.label"></add>
+              <add value="tile.device.job.edit.software.uninstallation.select.software.location2.label"></add>
+              <add value="tile.device.job.edit.software.uninstallation.select.software.location3.label"></add>
+              <add value="tile.device.job.edit.software.uninstallation.select.software.location4.label"></add>
+           </putList>
+    </definition>
+   
+    <!-- Set schedule parameters softwares for uninstallation -->
+    <definition name="tile.device.job.edit.software.uninstallation.schedule" extends="baseDeviceManagement">
+        <put name="title">tile.device.job.edit.software.uninstallation.schedule.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/job/software/schedule4uninstallation.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.device.job.edit.software.uninstallation.schedule.location1.label"></add>
+              <add value="tile.device.job.edit.software.uninstallation.schedule.location2.label"></add>
+              <add value="tile.device.job.edit.software.uninstallation.schedule.location3.label"></add>
+              <add value="tile.device.job.edit.software.uninstallation.schedule.location4.label"></add>
+           </putList>
+    </definition>
+    
+    <definition name="tile.device.job.edit.software.uninstallation.success" extends="baseDeviceManagement">
+        <put name="title">tile.device.job.edit.software.uninstallation.success.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/job/success.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.device.job.edit.software.uninstallation.success.location1.label"></add>
+              <add value="tile.device.job.edit.software.uninstallation.success.location2.label"></add>
+              <add value="tile.device.job.edit.software.uninstallation.success.location3.label"></add>
+              <add value="tile.device.job.edit.software.uninstallation.success.location4.label"></add>
+           </putList>
+    </definition>
+     
+    <!-- Select softwares for upgrade -->
+    <definition name="tile.device.job.edit.select.softwares4upgrade" extends="baseDeviceManagement">
+        <put name="title">tile.device.job.edit.software.upgrade.select.software.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/job/software/softwares4upgrade.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.device.job.edit.software.upgrade.select.software.location1.label"></add>
+              <add value="tile.device.job.edit.software.upgrade.select.software.location2.label"></add>
+              <add value="tile.device.job.edit.software.upgrade.select.software.location3.label"></add>
+              <add value="tile.device.job.edit.software.upgrade.select.software.location4.label"></add>
+           </putList>
+    </definition>
+   
+    <!-- Set schedule parameters softwares for upgrade -->
+    <definition name="tile.device.job.edit.software.upgrade.schedule" extends="baseDeviceManagement">
+        <put name="title">tile.device.job.edit.software.upgrade.schedule.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/job/software/schedule4upgrade.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.device.job.edit.software.upgrade.schedule.location1.label"></add>
+              <add value="tile.device.job.edit.software.upgrade.schedule.location2.label"></add>
+              <add value="tile.device.job.edit.software.upgrade.schedule.location3.label"></add>
+              <add value="tile.device.job.edit.software.upgrade.schedule.location4.label"></add>
+           </putList>
+    </definition>
+    
+    <definition name="tile.device.job.edit.software.upgrade.success" extends="baseDeviceManagement">
+        <put name="title">tile.device.job.edit.software.upgrade.success.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/job/success.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.device.job.edit.software.upgrade.success.location1.label"></add>
+              <add value="tile.device.job.edit.software.upgrade.success.location2.label"></add>
+              <add value="tile.device.job.edit.software.upgrade.success.location3.label"></add>
+              <add value="tile.device.job.edit.software.upgrade.success.location4.label"></add>
+           </putList>
+    </definition>
+     
+    <!-- Select softwares for active -->
+    <definition name="tile.device.job.edit.select.softwares4active" extends="baseDeviceManagement">
+        <put name="title">tile.device.job.edit.software.active.select.software.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/job/software/softwares4active.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.device.job.edit.software.active.select.software.location1.label"></add>
+              <add value="tile.device.job.edit.software.active.select.software.location2.label"></add>
+              <add value="tile.device.job.edit.software.active.select.software.location3.label"></add>
+              <add value="tile.device.job.edit.software.active.select.software.location4.label"></add>
+           </putList>
+    </definition>
+   
+    <!-- Set schedule parameters softwares for active -->
+    <definition name="tile.device.job.edit.software.active.schedule" extends="baseDeviceManagement">
+        <put name="title">tile.device.job.edit.software.active.schedule.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/job/software/schedule4active.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.device.job.edit.software.active.schedule.location1.label"></add>
+              <add value="tile.device.job.edit.software.active.schedule.location2.label"></add>
+              <add value="tile.device.job.edit.software.active.schedule.location3.label"></add>
+              <add value="tile.device.job.edit.software.active.schedule.location4.label"></add>
+           </putList>
+    </definition>
+    
+    <definition name="tile.device.job.edit.software.active.success" extends="baseDeviceManagement">
+        <put name="title">tile.device.job.edit.software.active.success.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/job/success.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.device.job.edit.software.active.success.location1.label"></add>
+              <add value="tile.device.job.edit.software.active.success.location2.label"></add>
+              <add value="tile.device.job.edit.software.active.success.location3.label"></add>
+              <add value="tile.device.job.edit.software.active.success.location4.label"></add>
+           </putList>
+    </definition>
+     
+    <!-- Select softwares for deactive -->
+    <definition name="tile.device.job.edit.select.softwares4deactive" extends="baseDeviceManagement">
+        <put name="title">tile.device.job.edit.software.deactive.select.software.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/job/software/softwares4deactive.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.device.job.edit.software.deactive.select.software.location1.label"></add>
+              <add value="tile.device.job.edit.software.deactive.select.software.location2.label"></add>
+              <add value="tile.device.job.edit.software.deactive.select.software.location3.label"></add>
+              <add value="tile.device.job.edit.software.deactive.select.software.location4.label"></add>
+           </putList>
+    </definition>
+   
+    <!-- Set schedule parameters softwares for deactive -->
+    <definition name="tile.device.job.edit.software.deactive.schedule" extends="baseDeviceManagement">
+        <put name="title">tile.device.job.edit.software.deactive.schedule.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/job/software/schedule4deactive.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.device.job.edit.software.deactive.schedule.location1.label"></add>
+              <add value="tile.device.job.edit.software.deactive.schedule.location2.label"></add>
+              <add value="tile.device.job.edit.software.deactive.schedule.location3.label"></add>
+              <add value="tile.device.job.edit.software.deactive.schedule.location4.label"></add>
+           </putList>
+    </definition>
+    
+    <definition name="tile.device.job.edit.software.deactive.success" extends="baseDeviceManagement">
+        <put name="title">tile.device.job.edit.software.deactive.success.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/job/success.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.device.job.edit.software.deactive.success.location1.label"></add>
+              <add value="tile.device.job.edit.software.deactive.success.location2.label"></add>
+              <add value="tile.device.job.edit.software.deactive.success.location3.label"></add>
+              <add value="tile.device.job.edit.software.deactive.success.location4.label"></add>
+           </putList>
+    </definition>
+     
+    <definition name="tile.device.device_changeLogs" extends="baseDeviceManagement">
+        <put name="title">tile.device.device_changeLogs.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/device_change_logs.jsp" />
+        <put name="SearchPannel" value="/jsp/device/searchpannel4device_change_logs.jsp" />
+        <putList name="LocationLabels">
+             <add value="tile.device.device_changeLogs.location1.label"></add>
+             <add value="tile.device.device_changeLogs.location2.label"></add>
+        </putList>
+    </definition>
+
+</tiles-definitions>

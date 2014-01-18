@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <NumberMappings>
+    <NumberMapping>
+      <NumberPattern>8{3}[1]</NumberPattern>
+      <QueueName>A</QueueName>
+    </NumberMapping>
+    <NumberMapping>
+      <NumberPattern>8{3}[2]</NumberPattern>
+      <QueueName>B</QueueName>
+    </NumberMapping>
+    <NumberMapping>
+      <NumberPattern>8{3}[3]</NumberPattern>
+      <QueueName>C</QueueName>
+    </NumberMapping>
+  </NumberMappings>
+  
+  
+  
+  

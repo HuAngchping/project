@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<tiles-definitions>
+
+    <!--  Related with Notification for Known devices -->
+	<definition name="tile.device.notification.input" extends="baseDeviceManagement">
+	    <put name="title">tile.device.notification.input.pageTitle</put>
+		<put name="MainContent" value="/jsp/device/notification/input.jsp" />
+        <putList name="LocationLabels">
+           <add value="tile.device.notification.input.location1.label"></add>
+           <add value="tile.device.notification.input.location2.label"></add>
+           <add value="tile.device.notification.input.location3.label"></add>
+        </putList>
+	</definition>
+
+    <definition name="tile.device.notification.success" extends="baseDeviceManagement">
+        <put name="title">tile.device.notification.success.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/notification/success.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.device.notification.success.location1.label"></add>
+              <add value="tile.device.notification.success.location2.label"></add>
+              <add value="tile.device.notification.success.location3.label"></add>
+           </putList>
+    </definition>
+
+    <definition name="tile.device.notification.failure" extends="baseDeviceManagement">
+        <put name="title">tile.device.notification.failure.pageTitle</put>
+        <put name="MainContent" value="/jsp/device/notification/failure.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.device.notification.failure.location1.label"></add>
+              <add value="tile.device.notification.failure.location2.label"></add>
+              <add value="tile.device.notification.failure.location3.label"></add>
+           </putList>
+    </definition>
+
+    <!--  Related with Notification for Unknown devices -->
+    <definition name="tile.notification.input" extends="baseDeviceManagement">
+        <put name="title">tile.notification.input.pageTitle</put>
+        <put name="MainContent" value="/jsp/notification/input.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.notification.input.location1.label"></add>
+              <add value="tile.notification.input.location2.label"></add>
+           </putList>
+    </definition>
+
+    <definition name="tile.notification.success" extends="baseDeviceManagement">
+        <put name="title">tile.notification.success.pageTitle</put>
+        <put name="MainContent" value="/jsp/notification/success.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.notification.success.location1.label"></add>
+              <add value="tile.notification.success.location2.label"></add>
+           </putList>
+    </definition>
+
+    <definition name="tile.notification.failure" extends="baseDeviceManagement">
+        <put name="title">tile.notification.failure.pageTitle</put>
+        <put name="MainContent" value="/jsp/notification/failure.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.notification.failure.location1.label"></add>
+              <add value="tile.notification.failure.location2.label"></add>
+           </putList>
+    </definition>
+
+</tiles-definitions>

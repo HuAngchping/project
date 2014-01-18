@@ -1,0 +1,82 @@
+/*
+ * Licensed under the GPL License. You may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://probe.jstripe.com/d/license.shtml
+ *
+ * THIS PACKAGE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR
+ * IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+ * WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ */
+
+.shadow {
+    background-color: #E6E6E6;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    clear: left;
+}
+
+.info {
+    position: relative;
+    top: -3px;
+    left: -3px;
+    background-color: #FFF8EA;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid #aaa;
+}
+
+.info p {
+    margin: 0;
+    padding: 0;
+}
+
+.value {
+    color: #40659B;
+}
+
+.info:hover .value {
+    color: rgb( 0, 51, 102 );
+}
+
+.value a:link, .value a:visited {
+    color: #40659B;
+    text-decoration: none;
+    border-bottom: 1px none;
+}
+
+.value a:hover {
+    color: #003366;
+    border-bottom: 1px dashed #bbb;
+}
+
+.chartContainer {
+    float: left;
+}
+
+.chartContainer dd, .chartContainer dt {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.chartContainer dt {
+    font-size: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.chartContainer dd {
+    font-size: 92%;
+    letter-spacing: 0.1em;
+}
+
+dd.image {
+    margin: 0;
+    padding: 11px 11px 1px 11px;
+    cursor: pointer;
+}
+
+dd.image:hover {
+    padding: 10px 10px 0 10px;
+    border: 1px dashed #ff7f2f;
+}

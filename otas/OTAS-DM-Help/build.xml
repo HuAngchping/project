@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+
+<project name="MyProj" default="war" basedir=".">
+
+	<property file="build.local.properties" />
+	<property file="build.properties" />
+
+	<property name="src" value="src" />
+	<property name="output" value="output" />
+	<property name="java.output" value="${output}/classes" />
+	<property name="dist.output" value="${output}" />
+	<property name="WEB_DOT_XML_file" value="WebRoot/WEB-INF/web.xml" />
+
+	<path id="Hibernate.3.lib.classpath">
+		<!-- Hibernate 3.2 -->
+		<pathelement location="${otas.dm.library.dir}/hibernate-3.2/lib/antlr-2.7.6.jar" />
+		<pathelement location="${otas.dm.library.dir}/hibernate-3.2/lib/asm.jar" />
+		<pathelement location="${otas.dm.library.dir}/hibernate-3.2/lib/asm-attrs.jar" />
+		<pathelement location="${otas.dm.library.dir}/hibernate-3.2/lib/c3p0-0.9.1.jar" />
+		<pathelement location="${otas.dm.library.dir}/hibernate-3.2/lib/cglib-2.1.3.jar" />
+		<pathelement location="${otas.dm.library.dir}/hibernate-3.2/lib/checkstyle-all.jar" />
+		<pathelement location="${otas.dm.library.dir}/hibernate-3.2/lib/cleanimports.jar" />
+		<pathelement location="${otas.dm.library.dir}/hibernate-3.2/lib/concurrent-1.3.2.jar" />
+		<pathelement location="${otas.dm.library.dir}/hibernate-3.2/lib/connector.jar" />
+		<pathelement location="${otas.dm.library.dir}/hibernate-3.2/lib/dom4j-1.6.1.jar" />
+		<pathelement location="${otas.dm.library.dir}/hibernate-3.2/lib/ehcache-1.2.3.jar" />
+		<pathelement location="${otas.dm.library.dir}/hibernate-3.2/lib/hibernate3.jar" />
+		<pathelement location="${otas.dm.library.dir}/hibernate-3.2/lib/jaas.jar" />
+		<pathelement location="${otas.dm.library.dir}/hibernate-3.2/lib/jacc-1_0-fr.jar" />
+		<pathelement location="${otas.dm.library.dir}/hibernate-3.2/lib/javassist.jar" />
+		<pathelement location="${otas.dm.library.dir}/hibernate-3.2/lib/jaxen-1.1-beta-7.jar" />
+		<pathelement location="${otas.dm.library.dir}/hibernate-3.2/lib/jdbc2_0-stdext.jar" />
+		<pathelement location="${otas.dm.library.dir}/hibernate-3.2/lib/jgroups-2.2.8.jar" />
+		<pathelement location="${otas.dm.library.dir}/hibernate-3.2/lib/jta.jar" />
+		<pathelement location="${otas.dm.library.dir}/hibernate-3.2/lib/log4j-1.2.11.jar" />
+		<pathelement location="${otas.dm.library.dir}/hibernate-3.2/lib/oscache-2.1.jar" />
+		<pathelement location="${otas.dm.library.dir}/hibernate-3.2/lib/proxool-0.8.3.jar" />
+		<pathelement location="${otas.dm.library.dir}/hibernate-3.2/lib/swarmcache-1.0rc2.jar" />
+		<pathelement location="${otas.dm.library.dir}/hibernate-3.2/lib/xerces-2.6.2.jar" />
+		<pathelement location="${otas.dm.library.dir}/hibernate-3.2/lib/xml-apis.jar" />
+	</path>
+
+	<path id="Oracle.JDBC.lib.classpath">
+		<pathelement location="${otas.dm.library.dir}/oracle10g/nls_charset12.jar" />
+		<pathelement location="${otas.dm.library.dir}/oracle10g/ojdbc14.jar" />
+		<pathelement location="${otas.dm.library.dir}/oracle10g/orai18n.jar" />
+	</path>
+
+	<path id="j2ee.lib.classpath">
+		<pathelement location="${otas.dm.library.dir}/J2EE 1.4/1.4/activation.jar" />
+		<pathelement location="${otas.dm.library.dir}/J2EE 1.4/1.4/javax.servlet.jar" />
+		<pathelement location="${otas.dm.library.dir}/J2EE 1.4/1.4/javax.servlet.jsp.jar" />
+		<pathelement location="${otas.dm.library.dir}/J2EE 1.4/1.4/jboss-j2ee.jar" />
+		<pathelement location="${otas.dm.library.dir}/J2EE 1.4/1.4/jboss-jaxrpc.jar" />
+		<pathelement location="${otas.dm.library.dir}/J2EE 1.4/1.4/jboss-jsr77.jar" />
+		<pathelement location="${otas.dm.library.dir}/J2EE 1.4/1.4/jboss-saaj.jar" />
+		<pathelement location="${otas.dm.library.dir}/J2EE 1.4/1.4/mail.jar" />
+		<pathelement location="${otas.dm.library.dir}/J2EE 1.4/1.4/namespace.jar" />
+		<pathelement location="${otas.dm.library.dir}/J2EE 1.4/1.4/xml-apis.jar" />
+	</path>
+
+	<path id="jstl.lib.classpath">
+		<pathelement location="${otas.dm.library.dir}/J2EE 1.4/JSTL1.1/lib/jstl.jar" />
+		<pathelement location="${otas.dm.library.dir}/J2EE 1.4/JSTL1.1/lib/standard.jar" />
+	</path>
+
+	<path id="JUnit.lib.classpath">
+		<pathelement location="${otas.dm.library.dir}/JUnit-3.8.1/junit.jar" />
+	</path>
+
+	<path id="DisplayTag.lib.classpath">
+		<pathelement location="${otas.dm.library.dir}/displaytag-1.1/itext-1.3.jar" />
+		<pathelement location="${otas.dm.library.dir}/displaytag-1.1/displaytag-1.1.jar" />
+		<pathelement location="${otas.dm.library.dir}/displaytag-1.1/displaytag-export-poi-1.1.jar" />
+	</path>
+
+	<path id="Jakarta.Common.lib.classpath">
+		<pathelement location="${otas.dm.library.dir}/commons-beanutils-1.7.0/commons-beanutils.jar" />
+		<pathelement location="${otas.dm.library.dir}/commons-beanutils-1.7.0/commons-beanutils-bean-collections.jar" />
+		<pathelement location="${otas.dm.library.dir}/commons-beanutils-1.7.0/commons-beanutils-core.jar" />
+		<pathelement location="${otas.dm.library.dir}/commons-collections-3.2/commons-collections-3.2.jar" />
+		<pathelement location="${otas.dm.library.dir}/commons-digester-1.7/commons-digester-1.7.jar" />
+		<pathelement location="${otas.dm.library.dir}/commons-fileupload-1.1/commons-fileupload-1.1.jar" />
+		<pathelement location="${otas.dm.library.dir}/commons-lang-2.1/commons-lang-2.1.jar" />
+		<pathelement location="${otas.dm.library.dir}/commons-logging-1.1/commons-logging-1.1.jar" />
+		<pathelement location="${otas.dm.library.dir}/commons-logging-1.1/commons-logging-adapters-1.1.jar" />
+		<pathelement location="${otas.dm.library.dir}/commons-logging-1.1/commons-logging-api-1.1.jar" />
+		<pathelement location="${otas.dm.library.dir}/commons-modeler-1.1/commons-modeler.jar" />
+	</path>
+
+	<path id="Jakarta.ORO.lib.classpath">
+		<pathelement location="${otas.dm.library.dir}/jakarta-oro-2.0.8/jakarta-oro-2.0.8.jar" />
+	</path>
+
+	<path id="Velocity.1.4.lib.classpath">
+		<pathelement location="${otas.dm.library.dir}/velocity-1.4/velocity-1.4.jar" />
+	</path>
+
+	<path id="Struts.Menu.lib.classpath">
+		<pathelement location="${otas.dm.library.dir}/struts-menu-2.4.2/avalon-logkit-2.1.jar" />
+		<pathelement location="${otas.dm.library.dir}/struts-menu-2.4.2/struts-menu-2.4.2.jar" />
+		<pathelement location="${otas.dm.library.dir}/struts-menu-2.4.2/velocity-1.4.jar" />
+		<pathelement location="${otas.dm.library.dir}/struts-menu-2.4.2/velocity-tools-view-1.0.jar" />
+	</path>
+
+	<path id="otas.dm.help.classpath">
+		<path refid="jstl.lib.classpath" />
+		<path refid="DisplayTag.lib.classpath" />
+		<path refid="Hibernate.3.lib.classpath" />
+		<path refid="Jakarta.Common.lib.classpath" />
+		<path refid="Jakarta.ORO.lib.classpath" />
+		<path refid="Oracle.JDBC.lib.classpath" />
+		<path refid="Struts.Menu.lib.classpath" />
+		<path refid="JUnit.lib.classpath" />
+		<path refid="Velocity.1.4.lib.classpath" />
+
+    <pathelement location="WebRoot/WEB-INF/lib/FCK2.6.jar" />
+		<pathelement location="WebRoot/WEB-INF/lib/commons-validator.jar" />
+
+		<pathelement location="WebRoot/WEB-INF/lib/log4j-1.2.13.jar" />
+		<pathelement location="WebRoot/WEB-INF/lib/struts.jar" />
+		<pathelement location="WebRoot/WEB-INF/lib/poi-3.0-FINAL.jar" />
+		<pathelement location="WebRoot/WEB-INF/lib/ant-1.6.5.jar" />
+		<pathelement location="WebRoot/WEB-INF/lib/ant-antlr-1.6.5.jar" />
+		<pathelement location="WebRoot/WEB-INF/lib/ant-junit-1.6.5.jar" />
+		<pathelement location="WebRoot/WEB-INF/lib/ant-launcher-1.6.5.jar" />
+		<pathelement location="WebRoot/WEB-INF/lib/ant-swing-1.6.5.jar" />
+		<pathelement location="WebRoot/WEB-INF/lib/jboss-system.jar" />
+		<pathelement location="WebRoot/WEB-INF/lib/jboss-cache.jar" />
+		<pathelement location="WebRoot/WEB-INF/lib/jboss-common.jar" />
+		<pathelement location="WebRoot/WEB-INF/lib/jboss-jmx.jar" />
+		<pathelement location="WebRoot/WEB-INF/lib/junit-3.8.1.jar" />
+		<pathelement location="WebRoot/WEB-INF/lib/syndiag2.jar" />
+		<pathelement location="WebRoot/WEB-INF/lib/versioncheck.jar" />
+		<pathelement location="library/otas-ds-core.jar" />
+		<pathelement location="library/otas-ds-web.jar" />
+	</path>
+
+	<target name="init">
+		<mkdir dir="${output}" />
+		<mkdir dir="${java.output}" />
+		<mkdir dir="${dist.output}" />
+	</target>
+
+	<target name="build" depends="init">
+		<javac srcdir="${src}" destdir="${java.output}" debug="true">
+			<classpath>
+				<path refid="otas.dm.help.classpath" />
+				<path refid="j2ee.lib.classpath" />
+			</classpath>
+		</javac>
+		<copy todir="${java.output}">
+			<fileset dir="${src}">
+				<include name="**/*.xml" />
+				<include name="**/*.dtd" />
+				<include name="**/*.properties" />
+				<exclude name="**/log4j.*" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="jar" depends="build">
+		<jar jarfile="${dist.output}/${otas.dm.help.output.jar.filename}" basedir="${java.output}" />
+	</target>
+
+	<!-- jarring web archive file -->
+	<target name="war" depends="init, build, jar">
+		<delete file="${dist.output}/${otas.dm.help.output.war.filename}" />
+		<mkdir dir="${dist.output}/weblib" />
+		<copy todir="${dist.output}/weblib" flatten="true">
+			<path refid="otas.dm.help.classpath">
+			</path>
+		</copy>
+		<war warfile="${dist.output}/${otas.dm.help.output.war.filename}" webxml="${WEB_DOT_XML_file}">
+			<lib dir="${dist.output}">
+				<include name="${otas.dm.help.output.jar.filename}" />
+			</lib>
+			<lib dir="${dist.output}/weblib">
+				<include name="*.jar" />
+			</lib>
+			<fileset dir="WebRoot">
+				<exclude name="**/WEB-INF/classes/**/*" />
+				<exclude name="**/WEB-INF/lib/**/*" />
+			</fileset>
+		</war>
+	</target>
+
+	<target name="clean" description="clean up">
+		<delete dir="${output}" />
+		<delete dir="${java.output}" />
+		<delete dir="${dist.output}" />
+	</target>
+</project>
+

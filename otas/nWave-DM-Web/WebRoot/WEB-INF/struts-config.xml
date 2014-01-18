@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	<form-beans>
+	    <form-bean name="LoginForm" type="org.apache.struts.validator.DynaValidatorForm">
+	      <form-property name="password" type="java.lang.String" />
+	      <form-property name="username" type="java.lang.String" />
+	    </form-bean>
+
+		<form-bean name="ErrorFormBeanForm" type="com.npower.dm.struts.form.ErrorFormBean" />
+		<form-bean name="CreateCPReportForm" type="org.apache.struts.validator.DynaValidatorForm">
+		  <form-property name="startTime" type="java.lang.String"/>
+		  <form-property name="endTime" type="java.lang.String"/>
+		</form-bean>
+	</form-beans>
+
+	<global-exceptions>
+		<exception handler="com.npower.dm.handler.GlobalExceptionHandler" key="REALLY.BIG.ERROR" path="/jsp/error.jsp" type="java.lang.Throwable" />
+	</global-exceptions>
+
+	<global-forwards>
+		<forward name="Error" path="tile.global.error" contextRelative="true" />
+	  <forward name="Welcome"
+		         path="/jsp/common/login.jsp"
+		         contextRelative="true" />
+
+	</global-forwards>
+
+	<action-mappings>
+		<!--  Ajax Action -->
+		<action 
+            parameter="method" 
+            path="/ajax" 
+            type="com.npower.dm.action.AjaxAction">
+			<forward name="osMemoInfo" path="/jsp/monitor/osinfo.jsp" 
+                     contextRelative="true" redirect="false"/>
+        </action>
+		
+		<!--  Login Action -->
+		<action 
+		    path="/Login"
+		    type="com.npower.dm.action.LoginAction"
+		    name="LoginForm"
+		    attribute="LoginForm"
+			input="/jsp/common/login.jsp"
+			validate="true"
+		    >
+			<forward name="success" path="/Devices.do" contextRelative="true" redirect="true"/>
+			<forward name="failure" path="/jsp/common/login.jsp" contextRelative="true" />
+		</action>
+
+		<!--  Logout Action -->
+		<action 
+		    path="/Logout"
+		    type="com.npower.dm.action.LogoutAction"
+		    >
+		</action>
+
+		<!--  Process Locale Action -->
+		<action 
+		    path="/ChangeLocale"
+		    type="com.npower.dm.action.LocaleAction"
+		    >
+        <!-- Using redirect mode for return locale cookies to browser. -->
+        <forward name="login" path="/jsp/common/login.jsp" redirect="true" contextRelative="true"/>
+		</action>
+
+        <!-- System information action -->
+        <action path="/SystemInfo" type="com.npower.dm.action.help.SystemInfoAction">
+	        <forward name="success" path="tile.security.systemInfo"/>
+	    </action>
+
+        <!-- Reload tiles definition files, please disable this action in production and release mode -->
+        <action path="/admin/tiles/reload" 
+                type="org.apache.struts.tiles.actions.ReloadDefinitionsAction"/> 
+        <!-- View tiles definition -->
+        <action path="/admin/tiles/view" 
+                type="org.apache.struts.tiles.actions.ViewDefinitionsAction"/>
+
+        <!--  Menus Action -->
+        <action 
+            path="/DeviceMenu"
+            type="com.npower.dm.action.menu.DeviceMenuAction"
+            roles="authenticated">
+        </action>
+        <action 
+            path="/ProvisionMenu"
+            type="com.npower.dm.action.menu.ProvisionMenuAction"
+            roles="authenticated">
+        </action>
+        <action 
+            path="/ProfileMenu"
+            type="com.npower.dm.action.menu.ProfileMenuAction"
+            roles="authenticated">
+        </action>
+        <action 
+            path="/ModelMenu"
+            type="com.npower.dm.action.menu.ModelMenuAction"
+            roles="authenticated">
+        </action>
+        <action 
+            path="/CarrierMenu"
+            type="com.npower.dm.action.menu.CarrierMenuAction"
+            roles="authenticated">
+        </action>
+        <action 
+            path="/SoftwareMenu"
+            type="com.npower.dm.action.menu.SoftwareMenuAction"
+            roles="authenticated">
+        </action>
+        <action 
+            path="/SecurityMenu"
+            type="com.npower.dm.action.menu.SecurityMenuAction"
+            roles="authenticated">
+        </action>
+        <action 
+            path="/AuditMenu"
+            type="com.npower.dm.action.menu.AuditMenuAction"
+            roles="authenticated">
+        </action>
+        
+        <!-- Draw chart -->
+        <action 
+            path="/monitor/chart"
+            type="com.npower.dm.action.ChartAction"
+            roles="authenticated">
+        </action>
+        <action 
+            name="CreateCPReportForm"
+            path="/createReport" 
+            parameter="method"
+            type="com.npower.unicom.action.CreateReportAction" >
+            <forward name="time" path="tile.audit.search4time" />
+            <forward name="dateTime" path="tile.audit.result4cpreport" />
+        </action>
+   
+
+	</action-mappings>
+
+  <!-- DM Security Extention, Tiles Processor -->
+	<controller processorClass="com.npower.dm.action.SecurityRequestProcessor"  />
+
+	<message-resources parameter="com.npower.dm.struts.ApplicationResources" null="true"/>
+
+  <!-- Struts Validator -->
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames" value="/WEB-INF/validator-rules.xml,
+                                              /WEB-INF/validation.xml,
+                                              /WEB-INF/validation-alter.xml" />
+	</plug-in>
+
+  <!-- Struts Menus -->
+	<plug-in className="net.sf.navigator.menu.MenuPlugIn">
+		<set-property property="menuConfig" value="/WEB-INF/menu-config.xml" />
+	</plug-in>
+    
+  <!-- Struts Tiles -->
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-parser-validate" value="false" />
+		<set-property property="definitions-parser-details" value="0" />
+		<set-property property="definitions-debug" value="0" />
+		<set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml,
+                                                           /WEB-INF/tiles-model-defs.xml,
+                                                           /WEB-INF/tiles-carrier-defs.xml,
+                                                           /WEB-INF/tiles-profile-defs.xml,
+                                                           /WEB-INF/tiles-device-defs.xml,
+                                                           /WEB-INF/tiles-jobs-defs.xml,
+                                                           /WEB-INF/tiles-security-defs.xml,
+                                                           /WEB-INF/tiles-bootstrap-defs.xml,
+                                                           /WEB-INF/tiles-notification-defs.xml,
+                                                           /WEB-INF/tiles-fota-defs.xml,
+                                                           /WEB-INF/tiles-ota-defs.xml,
+                                                           /WEB-INF/tiles-sms-defs.xml,
+                                                           /WEB-INF/tiles-audit-defs.xml,
+                                                           /WEB-INF/tiles-software-defs.xml,
+                                                           /WEB-INF/tiles-reports-defs.xml, 
+                                                           /WEB-INF/tiles-favorite-defs.xml"/>
+	</plug-in>
+
+  <!-- Start-up Persistent Manager -->
+	<plug-in className="com.npower.dm.action.PersistentManagerPlugIn">
+	</plug-in>
+	
+  <!-- Start-up Data Collectors for Chart -->
+  <plug-in className="com.npower.dm.chart.ChartCollectorsPlugIn">
+  </plug-in>
+ 
+  <!-- 
+    Start-up Daemon Controller:
+    Please define your PlugIns into config/daemons/webadmin.xml
+   -->
+  <plug-in className="com.npower.common.plugins.DaemonControllerPlugIn">
+    <set-property property="push" value="false"/>
+    <set-property property="key" value="daemons"/>
+
+    <!-- set-property property="digesterSource" value="classpath"/>
+    <set-property property="digesterPath" value="/com/npower/common/plugins/daemons-digester-rules.xml"/ -->
+
+    <!-- Source: servlet, file, classpath -->
+    <set-property property="configSource" value="file"/>
+    <set-property property="configPath" value="${otas.dm.home}/config/daemons/webadmin.xml"/>
+  </plug-in>
+  
+</struts-config>
+
+

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC 
+	"-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" 
+	"http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+<!-- Definitions for Tiles  -->
+<tiles-definitions>
+  <!-- Tiles: Device Favorite  -->
+  <definition name="baseDeviceFavoriteManagement" extends="otas.dm.main.base">
+    <put name="title">Change_Me</put>
+    <put name="SubMenus" value="/jsp/device/menus.jsp" />
+    <put name="MainContent" value="Change_Me" />
+      <putList name="LocationLabels">
+         <add value="Change_Me"></add>
+         <add value="Change_Me"></add>
+         <add value="Change_Me"></add>
+      </putList>
+  </definition>
+	<definition name="tiles.favorites.list.html" extends="baseDeviceFavoriteManagement">
+	  <put name="title">page.title.favorite.list.label</put>
+	  <put name="SearchPannel" value="/jsp/favorite/device/searchpannel.jsp" />
+	  <put name="MainContent" value="/jsp/favorite/device/favorites.jsp" />
+	  <putList name="LocationLabels">
+	    <add value="page.message.favorite.location.label" />
+	    <add value="page.message.location.favorite.management.label" />
+	  </putList>
+	</definition>
+  <definition name="tiles.favorite.view.html" extends="baseDeviceFavoriteManagement">
+    <put name="title">page.title.favorite.view.label</put>
+    <put name="SearchPannel" value="/jsp/favorite/device/searchpannel.jsp" />
+    <put name="MainContent" value="/jsp/favorite/device/favorite4view.jsp" />
+    <putList name="LocationLabels">
+      <add value="page.message.favorite.location.label" />
+      <add value="page.message.location.favorite.management.label" />
+      <add value="page.message.location.favorite.view.label" />
+    </putList>
+  </definition>
+  <definition name="tiles.favorite.edit.html" extends="baseDeviceFavoriteManagement">
+    <put name="title">page.title.favorite.edit.label</put>
+    <put name="SearchPannel" value="/jsp/favorite/device/searchpannel.jsp" />
+    <put name="MainContent" value="/jsp/favorite/device/favorite4edit.jsp" />
+    <putList name="LocationLabels">
+      <add value="page.message.favorite.location.label" />
+      <add value="page.message.location.favorite.management.label" />
+    </putList>
+  </definition>
+</tiles-definitions>

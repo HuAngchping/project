@@ -1,0 +1,4 @@
+/* 此文件用来解决ext2.2与OTAS-DM-Web/common/css/common.css中的form{float: left;}冲突问题 */
+.x-form {
+  float:none;
+}

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	<form-beans>
+		<form-bean name="SubjectsForm4Admin"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="subjectId" type="java.lang.String" />
+			<form-property name="searchText" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="ViewSubjectForm4Admin"
+			type="org.apache.struts.action.DynaActionForm">
+			<form-property name="subjectId" type="java.lang.String" />
+			<form-property name="localeId" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="MoveSubjectForm4admin"
+			type="org.apache.struts.action.DynaActionForm">
+			<form-property name="move4subjectId" type="java.lang.String[]" />
+			<form-property name="subjectId" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="SubjectForm4admin" 
+		  type="org.apache.struts.validator.DynaValidatorForm">
+		  <form-property name="subjectId" type="java.lang.String" />
+		  <form-property name="externalId" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="ContentForm4admin"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="subjectId" type="java.lang.String" />
+			<form-property name="localeId" type="java.lang.String" />
+			<form-property name="subjectLocale" type="java.lang.String" />
+			<form-property name="keywords" type="java.lang.String" />
+			<form-property name="description" type="java.lang.String" />
+			<form-property name="image" type="java.lang.String" />
+			<form-property name="content" type="java.lang.String" />
+			<form-property name="lastUpdatedTime" type="java.lang.String" />
+			<form-property name="name" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="FckEditorConnectorForm"
+			type="org.apache.struts.action.DynaActionForm">
+			<form-property name="subjectId" type="java.lang.String" />
+			<form-property name="localeId" type="java.lang.String" />
+			<form-property name="Command" type="java.lang.String" />
+			<form-property name="Type" type="java.lang.String" />
+			<form-property name="CurrentFolder" type="java.lang.String" />
+			<form-property name="NewFile" type="org.apache.struts.upload.FormFile" />
+		</form-bean>
+		
+		<form-bean name="ShowAllSubjectForm" 
+		  type="org.apache.struts.action.DynaActionForm">
+		  <form-property name="subjectId" type="java.lang.String" />
+      <form-property name="searchText" type="java.lang.String" />		
+		</form-bean>
+		<form-bean name="ShowSubjectContentForm" 
+		  type="org.apache.struts.action.DynaActionForm">		
+      <form-property name="subjectId" type="java.lang.String" />
+      <form-property name="localeId" type="java.lang.String" />
+      <form-property name="subjectLocale" type="java.lang.String" />
+      <form-property name="keywords" type="java.lang.String" />
+      <form-property name="description" type="java.lang.String" />
+      <form-property name="image" type="java.lang.String" />
+      <form-property name="content" type="java.lang.String" />
+      <form-property name="lastUpdatedTime" type="java.lang.String" />
+      <form-property name="name" type="java.lang.String" />
+		</form-bean>
+	</form-beans>
+
+	<global-exceptions />
+	<global-forwards />
+
+	<action-mappings>
+		<action path="/help/admin/fckeditor/connector"
+			parameter="Command"
+			type="com.npower.help.action.admin.fckeditor.ConnectorAction"
+			attribute="FckEditorConnectorForm" name="FckEditorConnectorForm"
+			scope="request">
+			<forward name="GetFoldersAndFiles"
+				path="/WEB-INF/jsp/help/admin/fckeditor/GetFoldersAndFiles.jsp" />
+			<forward name="FileUpload"
+				path="/WEB-INF/jsp/help/admin/fckeditor/FileUpload.jsp" />
+		</action>
+		<action path="/help/admin/fckeditor/download"
+			type="com.npower.help.action.admin.fckeditor.DownloadAction"
+			attribute="ImageForm" name="ImageForm">
+		</action>
+		<action path="/help/admin/subjects/subjects"
+			type="com.npower.help.action.admin.subjects.SubjectsAction"
+			attribute="SubjectsForm4Admin" name="SubjectsForm4Admin" 
+			scope="request">
+			<forward name="list" path="tiles.help.subjects.list.html" />
+		</action>
+		<action path="/help/admin/subjects/editSubject"
+			type="com.npower.help.action.admin.subjects.EditSubjectAction"
+			attribute="SubjectForm4admin" name="SubjectForm4admin" 
+			validate="false" scope="request" parameter="method">
+			<forward name="edit"
+				path="tiles.help.forward.subject.edit.html" />
+		</action>
+		<action path="/help/admin/subjects/saveSubject"
+			type="com.npower.help.action.admin.subjects.SaveSubjectAction"
+			attribute="SubjectForm4admin" name="SubjectForm4admin" 
+			input="/help/admin/subjects/editSubject.do?method=forword"
+			scope="request"	parameter="method">
+			<forward name="save"
+				path="tiles.help.save.subject.success.html" />
+		</action>
+		<action path="/help/admin/subjects/editContent"
+			type="com.npower.help.action.admin.subjects.EditContentAction"
+			attribute="ContentForm4admin" name="ContentForm4admin" 
+			validate="false" scope="request">
+			<forward name="edit"
+				path="tiles.help.forward.content.edit.html" />
+		</action>
+		<action path="/help/admin/subjects/saveContent"
+			type="com.npower.help.action.admin.subjects.SaveContentAction"
+			attribute="ContentForm4admin" name="ContentForm4admin" 
+			input="/help/admin/subjects/editContent.do"
+			scope="request" parameter="method">
+			<forward name="save"
+				path="tiles.help.save.content.success.html" />
+		</action>
+		<action path="/help/admin/subjects/selectLocal"
+			type="com.npower.help.action.admin.subjects.SelectLocalAction"
+			attribute="ViewSubjectForm4Admin" name="ViewSubjectForm4Admin"
+			scope="request">
+			<forward name="view"
+				path="tiles.help.select.locale.list.html">
+			</forward>
+		</action>
+		<action path="/help/admin/subjects/viewContent"
+			type="com.npower.help.action.admin.subjects.ViewContentAction"
+			attribute="ConetntForm4admin" name="ContentForm4admin" 
+			validate="false" scope="request">
+			<forward name="view"
+				path="tiles.help.view.content.list.html" />
+		</action>
+		<action path="/help/admin/subjects/deleteSubject"
+			type="com.npower.help.action.admin.subjects.DeleteSubjectAction"
+			attribute="ViewSubjectForm4Admin" name="ViewSubjectForm4Admin"
+			scope="request">
+			<forward name="delete"
+				path="tiles.help.delete.subject.success.html" />
+		</action>
+		<action path="/help/admin/subjects/moveSubject"
+			type="com.npower.help.action.admin.subjects.MoveSubjectAction"
+			attribute="MoveSubjectForm4admin" name="MoveSubjectForm4admin"
+			scope="request" parameter="method">
+            <forward name="move" path="tiles.help.move.subjects.html" />
+            <forward name="success" path="tiles.help.move.subjects.success.html" />
+		</action>
+		
+		<action path="/help/show/subjects/showAllSubject"
+		  type="com.npower.help.action.show.subjects.ShowAllSubjectAction"
+		  attribute="ShowAllSubjectForm" name="ShowAllSubjectForm"
+		  scope="request">
+		  <forward name="list" path="tiles.help.showSubjects.list.html" />
+		</action>
+		<action path="/help/show/subjects/showSubjectContent"
+		  type="com.npower.help.action.show.subjects.ShowSubject4ContentAction"
+      attribute="ShowSubjectContentForm" name="ShowSubjectContentForm" 
+      scope="request">
+      <forward name="view" path="tiles.help.showSubjectContent.list.html" />		  
+		</action>
+	</action-mappings>
+	<message-resources
+		parameter="com.npower.help.struts.ApplicationResources" />
+		  <!-- Struts Validator -->
+  <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property property="pathnames" value="/WEB-INF/validator-rules.xml,
+                                                  /WEB-INF/validation.xml"/>
+  </plug-in>
+
+	<!-- Struts Tiles -->
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="/WEB-INF/tiles-defs.xml" />
+		<set-property property="definitions-parser-validate"
+			value="true" />
+	</plug-in>
+
+	<!-- Struts Menus -->
+	<plug-in className="net.sf.navigator.menu.MenuPlugIn">
+		<set-property property="menuConfig"
+			value="/WEB-INF/menu-config.xml" />
+	</plug-in>
+
+  <!-- Subject Tree Auto load Daemon -->
+  <plug-in className="com.npower.help.tree.SubjectTreeServicePlugIn">
+    <set-property property="expiredTime"
+      value="60000" />
+  </plug-in>
+
+</struts-config>
+

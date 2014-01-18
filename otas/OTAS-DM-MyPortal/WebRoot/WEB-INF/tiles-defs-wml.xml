@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<tiles-definitions>
+
+    <!--                                                    -->
+    <!--  Base tile for Main page                           -->
+    <!--  +++++++++++++++++++++++++++++++++++++++++++++++   -->
+    <!--  |                                             |   -->
+    <!--  |       banner                                |   -->
+    <!--  |                                             |   -->
+    <!--  |   +++++++++++++++++++++++++++++++++++++++   |   -->
+    <!--  |   |                                     |   |   -->
+    <!--  |   |                                     |   |   -->
+    <!--  |   |                                     |   |   -->
+    <!--  |   |                                     |   |   -->
+    <!--  |   |                                     |   |   -->
+    <!--  |   |                                     |   |   -->
+    <!--  |   |                                     |   |   -->
+    <!--  |   |             MainContent             |   |   -->
+    <!--  |   |                                     |   |   -->
+    <!--  |   |                                     |   |   -->
+    <!--  |   |                                     |   |   -->
+    <!--  |   |                                     |   |   -->
+    <!--  |   |                                     |   |   -->
+    <!--  |   |                                     |   |   -->
+    <!--  |   |                                     |   |   -->
+    <!--  |   |                                     |   |   -->
+    <!--  |   |                                     |   |   -->
+    <!--  |   +++++++++++++++++++++++++++++++++++++++   |   -->
+    <!--  |                                             |   -->
+    <!--  |    footer                                   |   -->
+    <!--  +++++++++++++++++++++++++++++++++++++++++++++++   -->
+    
+    <definition name="otas.dm.myportal.main.base.wml" path="/WEB-INF/jsp/wml/common/layout.jsp">
+    <put name="title">Change_Me</put>
+        <put name="banner" value="Change_Me" />
+        <put name="footer" value="Change_Me" />
+        <put name="MainContent" value="Change_Me" />
+    </definition>
+    
+    <!-- MSM Related definitions -->
+    <!-- Page: Search Softwares -->
+    <definition name="tile.wml.dm.wizard.view.softwares" extends="otas.dm.myportal.main.base.wml">
+        <put name="title">tile.wml.dm.wizard.view.softwares.page.title</put>
+        <put name="MainContent" value="/WEB-INF/jsp/wml/dm/wizard/softwares.jsp" />
+    </definition>
+    
+    <!-- Page: View software information -->
+    <definition name="tile.wml.dm.wizard.view.software" extends="otas.dm.myportal.main.base.wml">
+        <put name="title">tile.wml.dm.wizard.view.software.page.title</put>
+        <put name="MainContent" value="/WEB-INF/jsp/wml/dm/wizard/software.jsp" />
+    </definition>
+    
+    <!-- Page: Input for MSM Software Install -->
+    <definition name="tile.wml.dm.wizard.msm.input" extends="otas.dm.myportal.main.base.wml">
+        <put name="title">tile.wml.dm.wizard.msm.input.page.title</put>
+        <put name="MainContent" value="/WEB-INF/jsp/wml/dm/wizard/input4msm.jsp" />
+    </definition>
+    
+    <!-- Page: Success for MSM Job submitted -->
+    <definition name="tile.wml.dm.wizard.msm.install.job.success" extends="otas.dm.myportal.main.base.wml">
+        <put name="title">tile.wml.dm.wizard.msm.success.page.title</put>
+        <put name="MainContent" value="/WEB-INF/jsp/wml/dm/wizard/success4software_install.jsp" />
+    </definition>
+    
+</tiles-definitions>

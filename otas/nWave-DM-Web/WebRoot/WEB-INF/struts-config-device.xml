@@ -1,0 +1,1017 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans>
+	<form-bean name="DeviceForm" type="org.apache.struts.validator.DynaValidatorForm">
+	    <form-property name="ID" type="java.lang.String" />
+  		<form-property name="externalId" type="java.lang.String" />
+  		<form-property name="description" type="java.lang.String" />
+  		<form-property name="isActivated" type="java.lang.Boolean" />
+  		<form-property name="OMAServerNonce" type="java.lang.String" />
+  		<form-property name="OMAClientNonce" type="java.lang.String" />
+  		<form-property name="OMAServerPassword" type="java.lang.String" />
+  		<form-property name="OMAClientUsername" type="java.lang.String" />
+  		<form-property name="OMAClientPassword" type="java.lang.String" />
+  		<form-property name="OMAClientAuthScheme" type="java.lang.String" />
+  		<form-property name="subscriberPhoneNumber" type="java.lang.String" />
+
+      <form-property name="bootstrapPinType" type="java.lang.Byte" />
+      <form-property name="bootstrapUserPin" type="java.lang.String" />
+  		<form-property name="manufacturerID" type="java.lang.String" />
+		  <form-property name="modelID" type="java.lang.String" />
+		  <form-property name="carrierID" type="java.lang.String" />
+
+		  <!-- Hold the operation status: Edit, View  -->
+	    <form-property name="action" type="java.lang.String" />
+      
+      <!-- For Search Panel in View Page, Struts 1.2 without extends -->
+      <form-property name="searchManufacturerID" type="java.lang.String" />
+      <form-property name="searchModelID" type="java.lang.String" />
+      <form-property name="searchCarrierID" type="java.lang.String" />
+      <form-property name="searchExternalID" type="java.lang.String" />
+      <form-property name="searchPhoneNumber" type="java.lang.String" />
+      <form-property name="searchActivity" type="java.lang.String" />
+      <form-property name="searchBooted" type="java.lang.String" />
+      <form-property name="searchText" type="java.lang.String" />
+      <form-property name="recordsPerPage" type="java.lang.Integer" />
+    </form-bean>
+    
+    <form-bean name="SearchDevicesForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="searchManufacturerID" type="java.lang.String" />
+      <form-property name="searchModelID" type="java.lang.String" />
+      <form-property name="searchCarrierID" type="java.lang.String" />
+      <form-property name="searchServiceProviderID" type="java.lang.String" />
+      <form-property name="searchExternalID" type="java.lang.String" />
+      <form-property name="searchPhoneNumber" type="java.lang.String" />
+      <form-property name="searchActivity" type="java.lang.String" />
+      <form-property name="searchBooted" type="java.lang.String" />
+      <form-property name="searchText" type="java.lang.String" />
+      <form-property name="searchIMSI" type="java.lang.String" />
+      <form-property name="recordsPerPage" type="java.lang.Integer" />
+    </form-bean>
+
+    <form-bean name="DeviceTreeForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="deviceID" type="java.lang.String" />
+      <form-property name="nodeID" type="java.lang.String" />
+      <form-property name="deleteNodeID" type="java.lang.String" />
+    </form-bean>
+
+    <form-bean name="DeviceJobTypeForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="jobType" type="java.lang.String" />
+      <form-property name="deviceID" type="java.lang.String" />
+    </form-bean>
+    
+    <!-- Script Job Form -->
+    <form-bean name="DeviceJobScriptForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="deviceID" type="java.lang.String" />
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="description" type="java.lang.String" />
+      <form-property name="commandScript" type="java.lang.String" />
+      <form-property name="jobSchedule" type="java.lang.String" />
+      <form-property name="sendNotification" type="java.lang.Boolean" />
+      <form-property name="uiMode" type="java.lang.String" />
+      <form-property name="initiator" type="java.lang.String" />
+      <!-- Priority for job, 10 is highest, 1 is lowest. -->
+      <form-property name="priority" type="java.lang.Integer" />
+    </form-bean>
+    
+    <form-bean name="SearchDeviceJobsForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="deviceID" type="java.lang.String" />
+    </form-bean>
+    
+    <form-bean name="SearchDeviceHistoryForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="deviceID" type="java.lang.String" />
+    </form-bean>
+    
+    <!-- Map-backed ActionForm -->
+    <form-bean name="DeviceJobProfileAssignmentForm4Save" type="com.npower.dm.action.device.ProfileAssignmentForm4Save">
+    </form-bean>
+
+    <form-bean name="DeviceJobRemoveProfileAssignmentForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="ID" type="java.lang.String" />
+      <form-property name="deviceID" type="java.lang.String" />
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="description" type="java.lang.String" />
+      <form-property name="profileID" type="java.lang.String" />
+      <form-property name="jobSchedule" type="java.lang.String" />
+      <form-property name="sendNotification" type="java.lang.Boolean" />
+      <form-property name="uiMode" type="java.lang.String" />
+      <form-property name="initiator" type="java.lang.String" />
+      <!-- Priority for job, 10 is highest, 1 is lowest. -->
+      <form-property name="priority" type="java.lang.Integer" />
+    </form-bean>
+
+    <form-bean name="RemoveDeviceJobForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="jobID" type="java.lang.String" />
+      <form-property name="deviceID" type="java.lang.String" />
+    </form-bean>
+    
+    <form-bean name="DeviceSearchAssignmentsForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="deviceID" type="java.lang.String" />
+    </form-bean>
+
+    <!-- Discovery Job Form -->
+    <form-bean name="DeviceJobDiscoveryForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="deviceID" type="java.lang.String" />
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="description" type="java.lang.String" />
+      <form-property name="nodeURIs" type="java.lang.String[]" />
+      <form-property name="jobSchedule" type="java.lang.String" />
+      <form-property name="sendNotification" type="java.lang.Boolean" />
+      <form-property name="uiMode" type="java.lang.String" />
+      <form-property name="initiator" type="java.lang.String" />
+      <!-- Priority for job, 10 is highest, 1 is lowest. -->
+      <form-property name="priority" type="java.lang.Integer" />
+      <form-property name="startjob" type="java.lang.String"/>
+      <form-property name="startprompttype" type="java.lang.String"/>
+      <form-property name="startprompttext" type="java.lang.String"/>
+      <form-property name="endjob" type="java.lang.String"/>
+      <form-property name="endprompttype" type="java.lang.String"/>
+      <form-property name="endprompttext" type="java.lang.String"/>
+      
+    </form-bean>
+    
+    <!-- Firmware update job form -->
+    <form-bean name="DeviceJobFirmwareForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="deviceID" type="java.lang.String" />
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="description" type="java.lang.String" />
+      <form-property name="updateID" type="java.lang.String" />
+      <form-property name="jobSchedule" type="java.lang.String" />
+      <form-property name="sendNotification" type="java.lang.Boolean" />
+      <form-property name="uiMode" type="java.lang.String" />
+      <form-property name="initiator" type="java.lang.String" />
+      <!-- Priority for job, 10 is highest, 1 is lowest. -->
+      <form-property name="priority" type="java.lang.Integer" />
+      <form-property name="startjob" type="java.lang.String"/>
+      <form-property name="startprompttype" type="java.lang.String"/>
+      <form-property name="startprompttext" type="java.lang.String"/>
+      <form-property name="endjob" type="java.lang.String"/>
+      <form-property name="endprompttype" type="java.lang.String"/>
+      <form-property name="endprompttext" type="java.lang.String"/>      
+    </form-bean>
+    
+    <!-- Software installation job form -->
+    <form-bean name="Form4SoftwareInstallation" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="deviceID" type="java.lang.String" />
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="description" type="java.lang.String" />
+      <form-property name="softwareID" type="java.lang.String" />
+      <form-property name="jobSchedule" type="java.lang.String" />
+      <form-property name="sendNotification" type="java.lang.Boolean" />
+      <form-property name="uiMode" type="java.lang.String" />
+      <form-property name="initiator" type="java.lang.String" />
+      <!-- Priority for job, 10 is highest, 1 is lowest. -->
+      <form-property name="priority" type="java.lang.Integer" />
+      <form-property name="startjob" type="java.lang.String"/>
+      <form-property name="startprompttype" type="java.lang.String"/>
+      <form-property name="startprompttext" type="java.lang.String"/>
+      <form-property name="endjob" type="java.lang.String"/>
+      <form-property name="endprompttype" type="java.lang.String"/>
+      <form-property name="endprompttext" type="java.lang.String"/>
+    </form-bean>
+
+    <!-- Software uninstallation job form -->
+    <form-bean name="Form4SoftwareUninstallation" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="deviceID" type="java.lang.String" />
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="description" type="java.lang.String" />
+      <form-property name="softwareID" type="java.lang.String" />
+      <form-property name="jobSchedule" type="java.lang.String" />
+      <form-property name="sendNotification" type="java.lang.Boolean" />
+      <form-property name="uiMode" type="java.lang.String" />
+      <form-property name="initiator" type="java.lang.String" />
+      <!-- Priority for job, 10 is highest, 1 is lowest. -->
+      <form-property name="priority" type="java.lang.Integer" />
+      <form-property name="startjob" type="java.lang.String"/>
+      <form-property name="startprompttype" type="java.lang.String"/>
+      <form-property name="startprompttext" type="java.lang.String"/>
+      <form-property name="endjob" type="java.lang.String"/>
+      <form-property name="endprompttype" type="java.lang.String"/>
+      <form-property name="endprompttext" type="java.lang.String"/>      
+    </form-bean>
+
+    <!-- Software upgrade job form -->
+    <form-bean name="Form4SoftwareUpgrade" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="deviceID" type="java.lang.String" />
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="description" type="java.lang.String" />
+      <form-property name="softwareID" type="java.lang.String" />
+      <form-property name="jobSchedule" type="java.lang.String" />
+      <form-property name="sendNotification" type="java.lang.Boolean" />
+      <form-property name="uiMode" type="java.lang.String" />
+      <form-property name="initiator" type="java.lang.String" />
+      <!-- Priority for job, 10 is highest, 1 is lowest. -->
+      <form-property name="priority" type="java.lang.Integer" />
+      <form-property name="startjob" type="java.lang.String"/>
+      <form-property name="startprompttype" type="java.lang.String"/>
+      <form-property name="startprompttext" type="java.lang.String"/>
+      <form-property name="endjob" type="java.lang.String"/>
+      <form-property name="endprompttype" type="java.lang.String"/>
+      <form-property name="endprompttext" type="java.lang.String"/>       
+    </form-bean>
+
+    <!-- Software active job form -->
+    <form-bean name="Form4SoftwareActive" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="deviceID" type="java.lang.String" />
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="description" type="java.lang.String" />
+      <form-property name="softwareID" type="java.lang.String" />
+      <form-property name="jobSchedule" type="java.lang.String" />
+      <form-property name="sendNotification" type="java.lang.Boolean" />
+      <form-property name="uiMode" type="java.lang.String" />
+      <form-property name="initiator" type="java.lang.String" />
+      <!-- Priority for job, 10 is highest, 1 is lowest. -->
+      <form-property name="priority" type="java.lang.Integer" />
+      <form-property name="startjob" type="java.lang.String"/>
+      <form-property name="startprompttype" type="java.lang.String"/>
+      <form-property name="startprompttext" type="java.lang.String"/>
+      <form-property name="endjob" type="java.lang.String"/>
+      <form-property name="endprompttype" type="java.lang.String"/>
+      <form-property name="endprompttext" type="java.lang.String"/>      
+    </form-bean>
+
+    <!-- Software deactive job form -->
+    <form-bean name="Form4SoftwareDeactive" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="deviceID" type="java.lang.String" />
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="description" type="java.lang.String" />
+      <form-property name="softwareID" type="java.lang.String" />
+      <form-property name="jobSchedule" type="java.lang.String" />
+      <form-property name="sendNotification" type="java.lang.Boolean" />
+      <form-property name="uiMode" type="java.lang.String" />
+      <form-property name="initiator" type="java.lang.String" />
+      <!-- Priority for job, 10 is highest, 1 is lowest. -->
+      <form-property name="priority" type="java.lang.Integer" />
+      <form-property name="startjob" type="java.lang.String"/>
+      <form-property name="startprompttype" type="java.lang.String"/>
+      <form-property name="startprompttext" type="java.lang.String"/>
+      <form-property name="endjob" type="java.lang.String"/>
+      <form-property name="endprompttype" type="java.lang.String"/>
+      <form-property name="endprompttext" type="java.lang.String"/>      
+    </form-bean>
+
+    <!-- Software discover job form -->
+    <form-bean name="Form4SoftwareDiscovery" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="deviceID" type="java.lang.String" />
+      <form-property name="name" type="java.lang.String" />
+      <form-property name="description" type="java.lang.String" />
+      <form-property name="jobSchedule" type="java.lang.String" />
+      <form-property name="sendNotification" type="java.lang.Boolean" />
+      <form-property name="uiMode" type="java.lang.String" />
+      <form-property name="initiator" type="java.lang.String" />
+      <!-- Priority for job, 10 is highest, 1 is lowest. -->
+      <form-property name="priority" type="java.lang.Integer" />
+      <form-property name="startjob" type="java.lang.String"/>
+      <form-property name="startprompttype" type="java.lang.String"/>
+      <form-property name="startprompttext" type="java.lang.String"/>
+      <form-property name="endjob" type="java.lang.String"/>
+      <form-property name="endprompttype" type="java.lang.String"/>
+      <form-property name="endprompttext" type="java.lang.String"/>       
+    </form-bean>
+
+    <form-bean name="device.JobViewForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="jobID" type="java.lang.String" />
+      <form-property name="deviceID" type="java.lang.String" />
+    </form-bean>
+    
+    <form-bean name="DeviceSoftwaresForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="deviceID" type="java.lang.String" />
+    </form-bean>
+
+    <form-bean name="SearchDeviceChangeLogForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="searchManufacturerID" type="java.lang.String" />
+      <form-property name="searchModelID" type="java.lang.String" />
+      <form-property name="searchExternalID" type="java.lang.String" />
+      <form-property name="searchIMSI" type="java.lang.String" />
+      <form-property name="searchPhoneNumber" type="java.lang.String" />
+      <form-property name="searchText" type="java.lang.String" />
+      <form-property name="searchBeginTime" type="java.lang.String" />
+      <form-property name="searchEndTime" type="java.lang.String" />            
+      <form-property name="recordsPerPage" type="java.lang.Integer" />
+    </form-bean>
+
+    <form-bean name="DeviceJobSelectSoftware4InstallForm" type="org.apache.struts.validator.DynaValidatorForm">
+      <form-property name="searchText" type="java.lang.String" />
+      <form-property name="recordsPerPage" type="java.lang.Integer" />
+    </form-bean>
+  </form-beans>
+
+  <action-mappings>
+	<!--  Related with Device  -->
+	<action attribute="SearchDevicesForm" 
+            name="SearchDevicesForm" 
+            path="/Devices" 
+            scope="request" 
+            type="com.npower.dm.action.device.DevicesAction" 
+            validate="false"
+            roles="authenticated">
+		<forward name="multiple" path="tile.device.devices" contextRelative="true" />
+    <forward name="single" path="/ViewDevice.do" contextRelative="true" />
+	</action>
+	<action 
+      path="/EditDevice"
+	  attribute="DeviceForm"
+      name="DeviceForm"
+      scope="request"
+      type="com.npower.dm.action.device.EditDeviceAction"
+      validate="false"
+      roles="authenticated">
+		<forward 
+		  name="edit"
+          path="tile.device.edit.device"
+          contextRelative="true" />
+	</action>
+	<action 
+      path="/ViewDevice"
+	  attribute="DeviceForm"
+      name="DeviceForm"
+      scope="request"
+      type="com.npower.dm.action.device.ViewDeviceAction"
+      validate="false"
+      roles="authenticated">
+		<forward 
+		  name="view"
+          path="tile.device.view.device"
+          contextRelative="true" />
+	</action>
+	<action 
+	  path="/SaveDevice" 
+	  parameter="action"
+	  attribute="DeviceForm"
+	  input="/EditDevice.do" 
+	  name="DeviceForm" 
+	  scope="request" 
+	  type="com.npower.dm.action.device.SaveDeviceAction"
+      roles="authenticated">
+		<forward 
+		  name="cancel" 
+		  path="/Devices.do" 
+		  contextRelative="true" />
+		<forward 
+		  name="success"
+          path="/ViewDevice.do" 
+          contextRelative="true" />
+	</action>
+	<action 
+	  parameter="method" 
+	  attribute="DeviceForm" 
+	  input="/Devices.do" 
+	  name="DeviceForm" 
+	  path="/RemoveDevice" 
+	  scope="request" 
+	  type="com.npower.dm.action.device.RemoveDeviceAction" 
+	  validate="false"
+      roles="authenticated">
+		<forward 
+		  name="success" 
+		  path="/Devices.do" 
+		  contextRelative="true" />
+	</action>
+
+    <!--  Related with DeviceTree -->
+    <action
+      attribute="DeviceTreeForm"
+      name="DeviceTreeForm"
+      path="/device/DeviceTree"
+      scope="request"
+      parameter="method"
+      type="com.npower.dm.action.device.DeviceTreeAction"
+      roles="authenticated">
+      <forward
+        name="success"
+        path="tile.device.view.deviceTree.main"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/device/DownloadDeviceTreeNode"
+      scope="request"
+      parameter="method"
+      type="com.npower.dm.action.device.DownloadDeviceTreeNodeAction"
+      roles="authenticated">
+    </action>
+
+    <action
+      attribute="DeviceJobTypeForm"
+      name="DeviceJobTypeForm"
+      parameter="jobType"
+      path="/device/EditJob"
+      scope="request"
+      type="com.npower.dm.action.device.EditJobAction"
+      validate="false"
+      roles="authenticated">
+      <forward
+        name="EditScript"
+        path="tile.device.edit.jobScript"
+        contextRelative="true" />
+      <forward
+        name="SelectJobType"
+        path="tile.device.edit.jobType"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/ViewDevice.do"
+        contextRelative="true" />
+      <forward
+        name="WizardAssignProfile4DM"
+        path="/device/job/dm/SelectProfileConfig.do"
+        contextRelative="true" />
+      <forward
+        name="WizardAssignProfile4CP"
+        path="/device/job/cp/SelectProfileConfig.do"
+        contextRelative="true" />
+        
+      <forward
+        name="EditDiscoveryNode"
+        path="tile.device.job.edit.discovery"
+        contextRelative="true" />
+        
+      <forward
+        name="firmwares"
+        path="tile.device.job.edit.firmwares"
+        contextRelative="true" />
+        
+      <forward
+        name="selectSoftwares4Install"
+        path="/device/job/softwareInstall/SelectSoftware.do"
+        contextRelative="true" />
+        
+      <forward
+        name="selectSoftwares4Uninstall"
+        path="tile.device.job.edit.select.softwares4uninstall"
+        contextRelative="true" />
+        
+      <forward
+        name="selectSoftwares4Upgrade"
+        path="tile.device.job.edit.select.softwares4upgrade"
+        contextRelative="true" />
+        
+      <forward
+        name="selectSoftwares4Active"
+        path="tile.device.job.edit.select.softwares4active"
+        contextRelative="true" />
+        
+      <forward
+        name="selectSoftwares4Deactive"
+        path="tile.device.job.edit.select.softwares4deactive"
+        contextRelative="true" />
+        
+      <forward
+        name="software.discovery"
+        path="/device/job/software/discovery/save.do"
+        contextRelative="true" />
+    </action>
+    <!-- Select Software for SoftwareInstall -->
+    <action
+      attribute="DeviceJobSelectSoftware4InstallForm"
+      name="DeviceJobSelectSoftware4InstallForm"
+      path="/device/job/softwareInstall/SelectSoftware"
+      scope="request"
+      type="com.npower.dm.action.device.SelectSoftware4InstallAction"
+      validate="false"
+      roles="authenticated">
+      <forward
+        name="display"
+        path="tile.device.job.edit.select.softwares4install"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/device/job/SaveScirpt"
+      attribute="DeviceJobScriptForm"
+      name="DeviceJobScriptForm"
+      parameter="action"
+      scope="request"
+      input="tile.device.edit.jobScript"
+      type="com.npower.dm.action.device.SaveJobScriptAction"
+      roles="authenticated">
+      <forward
+        name="schedule"
+        path="tile.device.view.jobScript.schedule"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/ViewDevice.do"
+        contextRelative="true" />
+      <forward
+        name="ViewScript"
+        path="tile.device.view.jobScript"
+        contextRelative="true" />
+      <forward
+        name="EditScript"
+        path="tile.device.edit.jobScript"
+        contextRelative="true" />
+      <forward
+        name="success"
+        path="tile.device.success.jobScript"
+        contextRelative="true" />
+    </action>
+    <action
+      attribute="SearchDeviceJobsForm"
+      name="SearchDeviceJobsForm"
+      path="/device/Jobs"
+      scope="request"
+      type="com.npower.dm.action.device.JobsAction"
+      validate="false"
+      roles="authenticated">
+      <forward
+        name="display"
+        path="tile.device.jobs"
+        contextRelative="true" />
+    </action>
+    <action
+      attribute="JobViewForm"
+      name="device.JobViewForm"
+      path="/device/JobView"
+      scope="request"
+      type="com.npower.dm.action.device.JobViewAction"
+      validate="false"
+      roles="authenticated">
+      <!-- DM Profile Assignment -->
+      <forward
+        name="view.dm.assign.profile"
+        path="tile.device.job.view.dm.assign.profile"
+        contextRelative="true" />
+      <!-- DM Profile Re-Assignment -->
+      <forward
+        name="view.dm.re_assign.profile"
+        path="tile.device.job.view.dm.re_assign.profile"
+        contextRelative="true" />
+      <!-- DM Device Discovery -->
+      <forward
+        name="view.dm.discovery"
+        path="tile.device.job.view.dm.discovery"
+        contextRelative="true" />
+      <!-- DM Command script -->
+      <forward
+        name="view.dm.command.script"
+        path="tile.device.job.view.dm.command.script"
+        contextRelative="true" />
+       <!-- DM Firmware Update -->
+      <forward
+        name="view.dm.firmware.update"
+        path="tile.device.job.view.dm.firmware.update"
+        contextRelative="true" />
+       <!-- DM Software Install -->
+      <forward
+        name="view.dm.software.install"
+        path="tile.device.job.view.dm.software.install"
+        contextRelative="true" />
+       <!-- DM Software UnInstall -->
+      <forward
+        name="view.dm.software.uninstall"
+        path="tile.device.job.view.dm.software.uninstall"
+        contextRelative="true" />
+       <!-- DM Software Active -->
+      <forward
+        name="view.dm.software.active"
+        path="tile.device.job.view.dm.software.active"
+        contextRelative="true" />
+       <!-- DM Software Deactive -->
+      <forward
+        name="view.dm.software.deactive"
+        path="tile.device.job.view.dm.software.deactive"
+        contextRelative="true" />
+       <!-- DM Software Upgrade -->
+      <forward
+        name="view.dm.software.upgrade"
+        path="tile.device.job.view.dm.software.upgrade"
+        contextRelative="true" />
+       <!-- DM Software Discovery -->
+      <forward
+        name="view.dm.software.discovery"
+        path="tile.device.job.view.dm.software.discovery"
+        contextRelative="true" />
+      <!-- CP Profile Assignment -->
+      <forward
+        name="view.cp.assign.profile"
+        path="tile.device.job.view.cp.assign.profile"
+        contextRelative="true" />
+    </action>
+    <!-- Select ProfileConfig for DM mode -->
+    <action
+      attribute="DeviceJobProfileAssignmentForm"
+      name="DeviceJobProfileAssignmentForm4Save"
+      path="/device/job/dm/SelectProfileConfig"
+      scope="request"
+      type="com.npower.dm.action.device.SelectProfileConfigAction4DM"
+      validate="false"
+      roles="authenticated">
+      <forward
+        name="display"
+        path="tile.device.job.dm.select.profileconfigs"
+        contextRelative="true" />
+    </action>
+    <!-- Select ProfileConfig for CP mode -->
+    <action
+      attribute="DeviceJobProfileAssignmentForm"
+      name="DeviceJobProfileAssignmentForm4Save"
+      path="/device/job/cp/SelectProfileConfig"
+      scope="request"
+      type="com.npower.dm.action.device.SelectProfileConfigAction4CP"
+      validate="false"
+      roles="authenticated">
+      <forward
+        name="display"
+        path="tile.device.job.cp.select.profileconfigs"
+        contextRelative="true" />
+    </action>
+    <!-- Edit Profile Assignment for DM mode -->
+    <action
+      attribute="DeviceJobProfileAssignmentForm"
+      input="/device/job/dm/SelectProfileConfig.do"
+      name="DeviceJobProfileAssignmentForm4Save"
+      path="/device/job/dm/EditProfileAssignment"
+      scope="request"
+      type="com.npower.dm.action.device.EditProfileAssignmentAction"
+      validate="false"
+      roles="authenticated">
+      <forward
+        name="assign.new.profile"
+        path="tile.device.job.dm.edit.profileAssignment"
+        contextRelative="true" />
+      <forward
+        name="re-assign.profile"
+        path="tile.device.job.edit.profileReAssignment"
+        contextRelative="true" />
+      <forward
+        name="inputProfileID"
+        path="/device/job/dm/SelectProfileConfig.do"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/ViewDevice.do"
+        contextRelative="true" />
+    </action>
+    <!-- Edit Profile Assignment for CP mode -->
+    <action
+      attribute="DeviceJobProfileAssignmentForm"
+      input="/device/job/dm/SelectProfileConfig.do"
+      name="DeviceJobProfileAssignmentForm4Save"
+      path="/device/job/cp/EditProfileAssignment"
+      scope="request"
+      type="com.npower.dm.action.device.EditProfileAssignmentAction"
+      validate="false"
+      roles="authenticated">
+      <forward
+        name="assign.new.profile"
+        path="tile.device.job.cp.edit.profileAssignment"
+        contextRelative="true" />
+      <forward
+        name="re-assign.profile"
+        path="tile.device.job.edit.profileReAssignment"
+        contextRelative="true" />
+      <forward
+        name="inputProfileID"
+        path="/device/job/cp/SelectProfileConfig.do"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/ViewDevice.do"
+        contextRelative="true" />
+    </action>
+    <!-- Save ProfileAssignment Job for DM Mode -->
+    <action
+      attribute="DeviceJobProfileAssignmentForm"
+      name="DeviceJobProfileAssignmentForm4Save"
+      parameter="action"
+      path="/device/job/dm/profile_assignment/submit"
+      scope="request"
+      type="com.npower.dm.action.device.SaveProfileAssignment4DMAction"
+      roles="authenticated"
+      validate="false">
+      <forward
+        name="success"
+        path="tile.device.success.jobAssign"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/ViewDevice.do"
+        contextRelative="true" />
+      <forward
+        name="edit"
+        path="/device/job/dm/EditProfileAssignment.do"
+        contextRelative="true" />
+      <forward
+        name="schedule"
+        path="tile.device.job.edit.profileAssignment.schedule4dm"
+        contextRelative="true" />
+    </action>
+    <!-- Save ProfileAssignment Job for CP Mode -->
+    <action
+      attribute="DeviceJobProfileAssignmentForm"
+      name="DeviceJobProfileAssignmentForm4Save"
+      parameter="action"
+      path="/device/job/cp/profile_assignment/submit"
+      scope="request"
+      type="com.npower.dm.action.device.SaveProfileAssignment4CPAction"
+      roles="authenticated"
+      validate="false">
+      <forward
+        name="success"
+        path="tile.device.success.jobAssign"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/ViewDevice.do"
+        contextRelative="true" />
+      <forward
+        name="edit"
+        path="/device/job/dm/EditProfileAssignment.do"
+        contextRelative="true" />
+      <forward
+        name="schedule"
+        path="tile.device.job.edit.profileAssignment.schedule4cp"
+        contextRelative="true" />
+    </action>
+    <!-- Job for remove Profile Assignment -->
+    <action
+      attribute="DeviceJobRemoveProfileAssignmentForm"
+      name="DeviceJobRemoveProfileAssignmentForm"
+      parameter="action"
+      path="/device/job/dm/RemoveProfileAssignment"
+      scope="request"
+      type="com.npower.dm.action.device.RemoveProfileAssignmentAction"
+      roles="authenticated">
+      <forward
+        name="success"
+        path="tile.device.success.jobRemoveAssign"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/device/ProfileAssignments.do"
+        contextRelative="true" />
+      <forward
+        name="schedule"
+        path="tile.device.job.edit.removeProfileAssignment.schedule"
+        contextRelative="true" />
+    </action>
+    <!-- Remove job -->
+    <action
+      attribute="RemoveDeviceJobForm"
+      name="RemoveDeviceJobForm"
+      path="/device/RemoveJob"
+      scope="request"
+      type="com.npower.dm.action.device.RemoveJobAction"
+      roles="authenticated">
+      <forward
+        name="success"
+        path="/device/Jobs.do"
+        contextRelative="true" />
+    </action>
+    <action
+      attribute="DeviceSearchAssignmentsForm"
+      name="DeviceSearchAssignmentsForm"
+      path="/device/ProfileAssignments"
+      scope="request"
+      type="com.npower.dm.action.device.ProfileAssignmentsAction"
+      validate="false"
+      roles="authenticated">
+      <forward
+        name="display"
+        path="tile.device.profileassignments"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/device/SaveDiscoveryJob"
+      parameter="action"
+      attribute="DeviceJobDiscoveryForm"
+      input="tile.device.job.edit.discovery"
+      name="DeviceJobDiscoveryForm"
+      scope="request"
+      type="com.npower.dm.action.device.SaveJobDiscoveryAction"
+      roles="authenticated">
+      <forward
+        name="edit"
+        path="tile.device.job.edit.discovery"
+        contextRelative="true" />
+      <forward
+        name="schedule"
+        path="tile.device.job.edit.jobDiscovery.schedule"
+        contextRelative="true" />
+      <forward
+        name="success"
+        path="tile.device.success.jobDiscovery"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/ViewDevice.do"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/device/SaveFirmwareJob"
+      parameter="action"
+      attribute="DeviceJobFirmwareForm"
+      name="DeviceJobFirmwareForm"
+      scope="request"
+      type="com.npower.dm.action.device.SaveJobFirmwareAction"
+      roles="authenticated">
+      <forward
+        name="schedule"
+        path="tile.device.job.edit.firmwares.schedule"
+        contextRelative="true" />
+      <forward
+        name="edit"
+        path="tile.device.job.edit.firmwares"
+        contextRelative="true" />
+      <forward
+        name="success"
+        path="tile.device.success.jobFirmware"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/ViewDevice.do"
+        contextRelative="true" />
+    </action>
+    <!-- Software Installation -->
+    <action
+      path="/device/job/software/installation/save"
+      parameter="action"
+      attribute="Form4SoftwareInstallation"
+      name="Form4SoftwareInstallation"
+      scope="request"
+      type="com.npower.dm.action.device.SaveJob4SoftwareInstallation"
+      roles="authenticated">
+      <forward
+        name="schedule"
+        path="tile.device.job.edit.software.installation.schedule"
+        contextRelative="true" />
+      <forward
+        name="edit"
+        path="tile.device.job.edit.select.softwares4install"
+        contextRelative="true" />
+      <forward
+        name="success"
+        path="tile.device.job.edit.software.installation.success"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/ViewDevice.do"
+        contextRelative="true" />
+    </action>
+    <!-- Software Uninstallation -->
+    <action
+      path="/device/job/software/uninstallation/save"
+      parameter="action"
+      attribute="Form4SoftwareUninstallation"
+      name="Form4SoftwareUninstallation"
+      scope="request"
+      type="com.npower.dm.action.device.SaveJob4SoftwareUninstallation"
+      roles="authenticated">
+      <forward
+        name="schedule"
+        path="tile.device.job.edit.software.uninstallation.schedule"
+        contextRelative="true" />
+      <forward
+        name="edit"
+        path="tile.device.job.edit.select.softwares4uninstall"
+        contextRelative="true" />
+      <forward
+        name="success"
+        path="tile.device.job.edit.software.uninstallation.success"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/ViewDevice.do"
+        contextRelative="true" />
+    </action>
+    <!-- Software Upgrade -->
+    <action
+      path="/device/job/software/upgrade/save"
+      parameter="action"
+      attribute="Form4SoftwareUpgrade"
+      name="Form4SoftwareUpgrade"
+      scope="request"
+      type="com.npower.dm.action.device.SaveJob4SoftwareUpgrade"
+      roles="authenticated">
+      <forward
+        name="schedule"
+        path="tile.device.job.edit.software.upgrade.schedule"
+        contextRelative="true" />
+      <forward
+        name="edit"
+        path="tile.device.job.edit.select.softwares4upgrade"
+        contextRelative="true" />
+      <forward
+        name="success"
+        path="tile.device.job.edit.software.upgrade.success"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/ViewDevice.do"
+        contextRelative="true" />
+    </action>
+    <!-- Software Active -->
+    <action
+      path="/device/job/software/active/save"
+      parameter="action"
+      attribute="Form4SoftwareActive"
+      name="Form4SoftwareActive"
+      scope="request"
+      type="com.npower.dm.action.device.SaveJob4SoftwareActive"
+      roles="authenticated">
+      <forward
+        name="schedule"
+        path="tile.device.job.edit.software.active.schedule"
+        contextRelative="true" />
+      <forward
+        name="edit"
+        path="tile.device.job.edit.select.softwares4active"
+        contextRelative="true" />
+      <forward
+        name="success"
+        path="tile.device.job.edit.software.active.success"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/ViewDevice.do"
+        contextRelative="true" />
+    </action>
+    <!-- Software Deactive -->
+    <action
+      path="/device/job/software/deactive/save"
+      parameter="action"
+      attribute="Form4SoftwareDeactive"
+      name="Form4SoftwareDeactive"
+      scope="request"
+      type="com.npower.dm.action.device.SaveJob4SoftwareDeactive"
+      roles="authenticated">
+      <forward
+        name="schedule"
+        path="tile.device.job.edit.software.deactive.schedule"
+        contextRelative="true" />
+      <forward
+        name="edit"
+        path="tile.device.job.edit.select.softwares4deactive"
+        contextRelative="true" />
+      <forward
+        name="success"
+        path="tile.device.job.edit.software.deactive.success"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/ViewDevice.do"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/device/job/software/discovery/save"
+      parameter="action"
+      attribute="Form4SoftwareDiscovery"
+      name="Form4SoftwareDiscovery"
+      scope="request"
+      type="com.npower.dm.action.device.SaveJob4SoftwareDiscovery"
+      roles="authenticated">
+      <forward
+        name="schedule"
+        path="tile.device.job.edit.software.discovery.schedule"
+        contextRelative="true" />
+      <forward
+        name="success"
+        path="tile.device.job.edit.software.discovery.success"
+        contextRelative="true" />
+      <forward
+        name="cancel"
+        path="/ViewDevice.do"
+        contextRelative="true" />
+    </action>
+    <!-- Device History Page -->
+    <action
+      attribute="SearchDeviceHistoryForm"
+      name="SearchDeviceHistoryForm"
+      path="/device/history"
+      scope="request"
+      type="com.npower.dm.action.device.HistoryAction"
+      validate="false"
+      roles="authenticated">
+      <forward
+        name="display"
+        path="tile.device.history"
+        contextRelative="true" />
+    </action>
+    <action
+      attribute="DeviceSoftwaresForm"
+      name="DeviceSoftwaresForm"
+      path="/device/softwares"
+      scope="request"
+      type="com.npower.dm.action.device.SoftwaresAction"
+      validate="false"
+      roles="authenticated">
+      <forward
+        name="display"
+        path="tile.device.softwares"
+        contextRelative="true" />
+    </action>
+  <!--  Related with Device Change Logs -->
+  <action attribute="SearchDeviceChangeLogForm" 
+            name="SearchDeviceChangeLogForm" 
+            path="/devices/changeLogs" 
+            scope="request" 
+            type="com.npower.dm.action.device.DeviceChangeLogsAction" 
+            validate="false"
+            roles="authenticated">
+    <forward name="list" path="tile.device.device_changeLogs" contextRelative="true" />
+  </action>
+  </action-mappings>
+</struts-config>
+

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<tiles-definitions>
+
+    <!-- Tiles: Device Management  -->
+    <definition name="baseFOTA" extends="otas.dm.main.base">
+	    <put name="title">Change_Me</put>
+		<put name="SubMenus" value="/jsp/model/menus.jsp" />
+		<put name="MainContent" value="Change_Me" />
+        <putList name="LocationLabels">
+           <add value="Change_Me"></add>
+           <add value="Change_Me"></add>
+           <add value="Change_Me"></add>
+        </putList>
+    </definition>
+    
+   <!-- Tiles: FOTA Updates -->
+   <definition name="tile.fota.updates" extends="baseFOTA">
+      <put name="title">tile.fota.updates.pageTitle</put>
+      <put name="MainContent" value="/jsp/updates/updates.jsp" />
+      <put name="SearchPannel" value="/jsp/updates/searchpannel.jsp" />
+      <putList name="LocationLabels">
+             <add value="tile.fota.updates.location1.label"></add>
+             <add value="tile.fota.updates.location2.label"></add>
+      </putList>
+   </definition>
+
+    <definition name="tile.fota.update.edit" extends="baseFOTA">
+        <put name="title">tile.fota.update.edit.pageTitle</put>
+        <put name="MainContent" value="/jsp/updates/update.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.fota.update.edit.location1.label"></add>
+              <add value="tile.fota.update.edit.location2.label"></add>
+           </putList>
+    </definition>
+
+    <definition name="tile.fota.update.view" extends="baseFOTA">
+        <put name="title">tile.fota.update.view.pageTitle</put>
+        <put name="MainContent" value="/jsp/updates/update4view.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.fota.update.view.location1.label"></add>
+              <add value="tile.fota.update.view.location2.label"></add>
+           </putList>
+    </definition>
+
+    <definition name="tile.fota.update.success" extends="baseFOTA">
+        <put name="title">tile.fota.update.success.pageTitle</put>
+        <put name="MainContent" value="/jsp/updates/success4firmwareupload.jsp" />
+           <putList name="LocationLabels">
+              <add value="tile.fota.update.success.location1.label"></add>
+              <add value="tile.fota.update.success.location2.label"></add>
+           </putList>
+    </definition>
+</tiles-definitions>
